@@ -7,6 +7,7 @@ public enum EnemyState{
     Wander,
     Follow,
     Follow2,
+    Attack,
     Die
 
 };
@@ -18,8 +19,11 @@ public class EnemyController : MonoBehaviour
     public EnemyState currState = EnemyState.Wander;
     public float range;
     public float speed;
+    public float attackRange;
+    public float coolDown;
     private bool chooseDir = false;
     private bool dead = false;
+    private bool coolDownAttack = false;
     private Vector3 randomDir;
 
     // Start is called before the first frame update
@@ -44,8 +48,10 @@ public class EnemyController : MonoBehaviour
             case(EnemyState.Follow2):
                 Follow2();
             break;
+            case(EnemyState.Attack):
+                Attack();
+            break;
             case(EnemyState.Die):
-
             break;
         }
 
@@ -59,6 +65,12 @@ public class EnemyController : MonoBehaviour
 
         }else if(!IsPlayerInRange(range) && currState != EnemyState.Die){
             currState = EnemyState.Wander;
+        }
+
+        if(Vector3.Distance(transform.position, player.transform.position) <= attackRange){
+            currState = EnemyState.Attack;
+        } else if(Vector3.Distance(transform.position, player2.transform.position) <= attackRange){
+            currState = EnemyState.Attack;
         }
 
     }
@@ -107,6 +119,19 @@ public class EnemyController : MonoBehaviour
 
     void Follow2(){
         transform.position = Vector2.MoveTowards(transform.position, player2.transform.position, speed * Time.deltaTime);
+    }
+
+    void Attack(){
+        if(!coolDownAttack){
+            GameController.DamagePlayer(1);
+            StartCoroutine(CoolDown());
+        }
+    }
+
+    private IEnumerator CoolDown(){
+        coolDownAttack = true;
+        yield return new WaitForSeconds(coolDown);
+        coolDownAttack = false;
     }
 
 }

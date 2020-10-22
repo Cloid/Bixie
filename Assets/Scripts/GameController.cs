@@ -7,13 +7,13 @@ using UnityEngine.UI;
 public class GameController : MonoBehaviour
 {
     public static GameController instance;
-    private static int health = 10;
-    private static int maxHealth = 10;
+    private static int health = 6;
+    private static int maxHealth = 6;
     private static float moveSpeed = 5f;
     private static float fireRate = 0.5f;
 
     public static int Health { get => health; set => health = value; }
-    public static int MaxHealth { get => MaxHealth; set => maxHealth = value;}
+    public static int MaxHealth { get => maxHealth; set => maxHealth = value;}
     public static float MoveSpeed { get => MoveSpeed; set => moveSpeed = value;}
     public static float FireRate { get => fireRate; set => fireRate = value;}
 

@@ -266,7 +266,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 422808435}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.88, y: -0.99, z: 0}
+  m_LocalPosition: {x: -1.51, y: -4.53, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 519420032}
@@ -411,7 +411,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -559,9 +559,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.034132957, y: 0.017066717}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.17573428
 --- !u!212 &531420130
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -601,13 +601,13 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5dbc8732a59dbba4085113d84322948a, type: 3}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: 250815d178c896649911d09ffbf17456, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.4, y: 3.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -621,8 +621,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 531420128}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.165, y: 2.518, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalPosition: {x: -4.56, y: -5.4, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -639,6 +639,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b08ef82a1b057e4ea2b2efcc9d3756a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  item:
+    name: Potion
+    description: Adds hp to Player
+    itemImage: {fileID: 21300000, guid: 250815d178c896649911d09ffbf17456, type: 3}
+  healthChange: 1
+  moveSpeedChange: 0
+  attackSpeedChange: 0
+  bulletSizeChange: 0
 --- !u!1001 &532251527
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1075,8 +1083,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5dbc8732a59dbba4085113d84322948a, type: 3}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: a3f77f9215743984598d1685931f2ca6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1095,7 +1103,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1304728057}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.794, y: -0.658, z: 0}
+  m_LocalPosition: {x: -4.41, y: -2.36, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1113,6 +1121,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b08ef82a1b057e4ea2b2efcc9d3756a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  item:
+    name: Attack Speed up
+    description: Increase Attack Speed
+    itemImage: {fileID: 21300000, guid: a3f77f9215743984598d1685931f2ca6, type: 3}
+  healthChange: 0
+  moveSpeedChange: 0
+  attackSpeedChange: 10
+  bulletSizeChange: 0
 --- !u!1 &1450044662
 GameObject:
   m_ObjectHideFlags: 0
@@ -1423,8 +1439,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5dbc8732a59dbba4085113d84322948a, type: 3}
+  m_SortingOrder: 2
+  m_Sprite: {fileID: 21300000, guid: 82f15eb8ebc51ce40b552ee0972b887a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1443,7 +1459,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1602323845}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.665, y: -2.717, z: 0}
+  m_LocalPosition: {x: -3.92, y: -6.79, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1461,6 +1477,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b08ef82a1b057e4ea2b2efcc9d3756a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  item:
+    name: Boots
+    description: +5 speed
+    itemImage: {fileID: 21300000, guid: 82f15eb8ebc51ce40b552ee0972b887a, type: 3}
+  healthChange: 0
+  moveSpeedChange: 5
+  attackSpeedChange: 0
+  bulletSizeChange: 0
 --- !u!1 &1624976921
 GameObject:
   m_ObjectHideFlags: 0
@@ -1614,13 +1638,13 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5dbc8732a59dbba4085113d84322948a, type: 3}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: 7048995d693fa07469daf14decd68f88, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.44933334, y: 0.82266665}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1634,8 +1658,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1769819603}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.519, y: -3.716, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalPosition: {x: -4.49, y: -3.82, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
@@ -1652,6 +1676,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b08ef82a1b057e4ea2b2efcc9d3756a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  item:
+    name: Bullet Up
+    description: Increases Bullet Size
+    itemImage: {fileID: 21300000, guid: 7048995d693fa07469daf14decd68f88, type: 3}
+  healthChange: 0
+  moveSpeedChange: 0
+  attackSpeedChange: 0
+  bulletSizeChange: 5
 --- !u!1 &1787568744
 GameObject:
   m_ObjectHideFlags: 0

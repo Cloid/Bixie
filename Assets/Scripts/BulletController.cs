@@ -10,6 +10,7 @@ public class BulletController : MonoBehaviour
     {
         // Coroutine are liked timed functions
         StartCoroutine(DeathDelay());
+        transform.localScale = new Vector2(GameController.BulletSize, GameController.BulletSize);
     }
 
     // Update is called once per frame

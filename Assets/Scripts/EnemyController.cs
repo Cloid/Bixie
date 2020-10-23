@@ -12,19 +12,28 @@ public enum EnemyState{
 
 };
 
+public enum EnemyType{
+    Melee,
+    Ranged
+
+};
+
 public class EnemyController : MonoBehaviour
 {
     GameObject player;
     GameObject player2;
     public EnemyState currState = EnemyState.Wander;
+    public EnemyType enemyType;
     public float range;
     public float speed;
     public float attackRange;
     public float coolDown;
     private bool chooseDir = false;
-    private bool dead = false;
+    //private bool dead = false;
     private bool coolDownAttack = false;
     private Vector3 randomDir;
+    
+    public GameObject bulletPrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -52,6 +61,7 @@ public class EnemyController : MonoBehaviour
                 Attack();
             break;
             case(EnemyState.Die):
+                Death();
             break;
         }
 
@@ -123,10 +133,32 @@ public class EnemyController : MonoBehaviour
 
     void Attack(){
         if(!coolDownAttack){
+            switch(enemyType){
+
+                case(EnemyType.Melee):
+                    GameController.DamagePlayer(1);
+                    StartCoroutine(CoolDown());
+                break;
+                case(EnemyType.Ranged):
+                    GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity) as GameObject;
+                    bullet.GetComponent<BulletController>().GetPlayer(player.transform);
+                    bullet.AddComponent<Rigidbody2D>().gravityScale = 0;
+                    bullet.GetComponent<BulletController>().isEnemyBullet=true;
+                    StartCoroutine(CoolDown());
+                break;
+            }
+        }
+        /*
+        if(!coolDownAttack){
             GameController.DamagePlayer(1);
             StartCoroutine(CoolDown());
-        }
+        }*/
     }
+
+    public void Death(){
+        Destroy(gameObject);
+    }
+    
 
     private IEnumerator CoolDown(){
         coolDownAttack = true;

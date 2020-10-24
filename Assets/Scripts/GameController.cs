@@ -25,7 +25,7 @@ public class GameController : MonoBehaviour
     public static float FireRate { get => fireRate; set => fireRate = value;}
     public static float BulletSize { get => bulletSize; set => bulletSize = value;}
 
-    //Player Variables
+    // Player Variables
     public GameObject player1;
     public GameObject player2;
 
@@ -81,6 +81,7 @@ public class GameController : MonoBehaviour
     void Update(){
         healthText.text = "Health: " + health;
 
+        // If R is pressed, switches players and camera is adjusted to the next player
         if (Input.GetKeyDown(KeyCode.R)){
             switchPlayer();
             if (PlayerController.isActive){

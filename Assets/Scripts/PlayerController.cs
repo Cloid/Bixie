@@ -3,6 +3,9 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+    // Declare whether Player1 is being controlled
+    public static bool isActive;
+
     // Declare a global variable for speed, can be edited within Unity and accessed everywhere
     public float speed;
 
@@ -19,6 +22,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        isActive = true;
         // Connect rigidbody to whatever component it's connected to
         rigidbody = GetComponent<Rigidbody2D>();
     }
@@ -26,11 +30,15 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        fireDelay = GameController.FireRate;
-        speed = GameController.MoveSpeed;
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
+        if (isActive){
+            speed = GameController.MoveSpeed;
+            float horizontal = Input.GetAxis("Horizontal");
+            float vertical = Input.GetAxis("Vertical");
 
+            rigidbody.velocity = new Vector3(horizontal * speed, vertical * speed, 0);
+        }
+
+        fireDelay = GameController.FireRate;
         float shootHor = Input.GetAxis("ShootHorizontal");
         float shootVert =  Input.GetAxis("ShootVertical");
 
@@ -39,9 +47,6 @@ public class PlayerController : MonoBehaviour
             lastFire = Time.time;
         }
 
-
-
-        rigidbody.velocity = new Vector3(horizontal * speed, vertical * speed, 0);
         collectedText.text = "Items Collected: " + collectedAmount;
 
     }
@@ -55,6 +60,14 @@ public class PlayerController : MonoBehaviour
             (y < 0) ? Mathf.Floor(y) * bulletSpeed : Mathf.Ceil(y) * bulletSpeed,
             0
         );
+    }
+
+    public static void setActive(){
+        if (isActive){
+            isActive = false;
+        } else {
+            isActive = true;
+        }
     }
 
 }

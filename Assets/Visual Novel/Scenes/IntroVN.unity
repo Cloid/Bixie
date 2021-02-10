@@ -257,6 +257,8 @@ GameObject:
   - component: {fileID: 364236913}
   - component: {fileID: 364236915}
   - component: {fileID: 364236914}
+  - component: {fileID: 364236916}
+  - component: {fileID: 364236917}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -291,7 +293,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 364236867}
   selectedCommands:
-  - {fileID: 364236875}
+  - {fileID: 364236871}
   variables: []
   description: 
   stepPause: 0
@@ -350,10 +352,12 @@ MonoBehaviour:
   - {fileID: 364236876}
   - {fileID: 364236873}
   - {fileID: 364236872}
+  - {fileID: 364236916}
   - {fileID: 364236877}
   - {fileID: 364236879}
   - {fileID: 364236878}
   - {fileID: 364236881}
+  - {fileID: 364236917}
   - {fileID: 364236871}
   - {fileID: 364236894}
   - {fileID: 364236895}
@@ -475,8 +479,8 @@ MonoBehaviour:
   itemId: 30
   indentLevel: 0
   storyText: "It is said the light created on that day was two-fold: the dragon\u2019s
-    divine flame dispelled the veil of darkness and returned the world to peace,
-    and the radiance of her smile re-lit the flames in the hearts of the people."
+    divine radiance dispelled the veil of darkness and returned the world to peace,
+    and the daylight of her smile re-lit the flames in the hearts of the people."
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -504,9 +508,7 @@ MonoBehaviour:
   itemId: 4
   indentLevel: 0
   storyText: Yet, their pleas for help did not go unheard. Their cries reached the
-    ears of a brave young dragon princess, who was gifted with the flame. Hearing
-    of the suffering of her people, she took her most trusted knight and set out
-    from her palace.
+    ears of a brave young dragon princess, who was gifted with the light.
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -676,8 +678,8 @@ MonoBehaviour:
   itemId: 11
   indentLevel: 0
   storyText: "Together, they traveled across all the forests and seas, all the mountains
-    and plains, all the towns and cities, and set alight lanterns with the dragon
-    princess\u2019 divine flame."
+    and plains, all the towns and cities, and set aflame lanterns with the dragon
+    princess\u2019 divine light."
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -733,8 +735,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: When the princess and her knight returned to the palace, having lit
     every lantern but one, a crowd had gathered to watch as the creatures of the
-    night were finally banished by her light. As the princess went to light the final
-    lantern, she turned to her people and smiled.
+    night were finally banished by her light.
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -1560,6 +1561,62 @@ MonoBehaviour:
   itemId: 52
   indentLevel: 0
   sayDialog: {fileID: 758070755}
+--- !u!114 &364236916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 364236864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 54
+  indentLevel: 0
+  storyText: Hearing of the suffering of her people, she took her most trusted knight
+    and set out from her palace.
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &364236917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 364236864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 55
+  indentLevel: 0
+  storyText: As the princess went to light the final lantern, she turned to her people
+    and smiled.
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
 --- !u!1 &411769057
 GameObject:
   m_ObjectHideFlags: 0

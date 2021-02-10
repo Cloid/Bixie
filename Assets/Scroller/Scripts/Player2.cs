@@ -96,7 +96,7 @@ public class Player2 : MonoBehaviour
             }
 
             // If player is jumping, add vertical force
-            if (isJumping2)
+            if (isJumping2 && onGround2)
             {
                 isJumping2 = false;
                 rb.AddForce(Vector3.up * jumpForce);

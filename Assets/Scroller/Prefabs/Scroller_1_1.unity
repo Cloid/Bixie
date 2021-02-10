@@ -2576,7 +2576,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &856269424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2592,8 +2592,7 @@ MonoBehaviour:
   maxZ: -1.6
   minZ: -8.4
   enemy:
-  - {fileID: 2932590317397707457, guid: 001d25c0136b145f8b34a4c53d220a19, type: 3}
-  - {fileID: 7857257777743189875, guid: 081b4eff5ed0e44f2a937fed67ebddb8, type: 3}
+  - {fileID: 7578509151722214320, guid: 55d70e1f825334497a603f64a87a3d48, type: 3}
   numberOfEnemies: 2
   spawnTime: 1
 --- !u!65 &856269425
@@ -3612,8 +3611,7 @@ MonoBehaviour:
   maxZ: -1.6
   minZ: -8.4
   enemy:
-  - {fileID: 2932590317397707457, guid: 001d25c0136b145f8b34a4c53d220a19, type: 3}
-  - {fileID: 7857257777743189875, guid: 081b4eff5ed0e44f2a937fed67ebddb8, type: 3}
+  - {fileID: 7578509151722214320, guid: 55d70e1f825334497a603f64a87a3d48, type: 3}
   numberOfEnemies: 2
   spawnTime: 1
 --- !u!65 &1165588905
@@ -8656,7 +8654,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1975907524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8815,8 +8813,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.223156, y: 2.8729491, z: 1.4205337}
-  m_Center: {x: -0.010591507, y: 0.042984486, z: -0.20973325}
+  m_Size: {x: 1.0456982, y: 1.5400343, z: 0.79316926}
+  m_Center: {x: 0.025931358, y: -0.045895815, z: 0.029207587}
 --- !u!65 &1978935645
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8828,8 +8826,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.9483547, y: 3.6744452, z: 1.8168344}
-  m_Center: {x: -0.0067892075, y: 0.042984486, z: -0.20973325}
+  m_Size: {x: 0.9058933, y: 1.471389, z: 0.6075679}
+  m_Center: {x: -0.022799492, y: 0.016467214, z: 0.015186369}
 --- !u!1 &1997480269
 GameObject:
   m_ObjectHideFlags: 0

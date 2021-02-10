@@ -628,8 +628,10 @@ MonoBehaviour:
     y: 0
     width: 0
     height: 0
-  selectedBlocks: []
-  selectedCommands: []
+  selectedBlocks:
+  - {fileID: 239300563}
+  selectedCommands:
+  - {fileID: 239300572}
   variables:
   - {fileID: 239300568}
   description: 
@@ -668,8 +670,8 @@ MonoBehaviour:
   eventHandler: {fileID: 239300570}
   commandList:
   - {fileID: 239300571}
-  - {fileID: 239300567}
   - {fileID: 239300572}
+  - {fileID: 239300567}
   - {fileID: 239300569}
   - {fileID: 239300564}
   suppressAllAutoSelections: 0
@@ -1374,8 +1376,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 13.833546, z: 5.1585727}
-  m_Center: {x: 0, y: -6.416773, z: -0.77821803}
+  m_Size: {x: 1, y: 13.833546, z: 10.097584}
+  m_Center: {x: 0, y: -6.416773, z: -3.2477236}
 --- !u!4 &282813646
 Transform:
   m_ObjectHideFlags: 0
@@ -1416,8 +1418,7 @@ MonoBehaviour:
     height: 0
   selectedBlocks:
   - {fileID: 282813648}
-  selectedCommands:
-  - {fileID: 282813650}
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
@@ -2703,8 +2704,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.43582535, y: 0.27166462, z: 0.2632854}
-  m_Center: {x: 0.011499405, y: 0.06215024, z: -0.031642675}
+  m_Size: {x: 0.6009674, y: 0.5267317, z: 1.3841902}
+  m_Center: {x: 0.094070435, y: -0.065383315, z: -0.033453166}
 --- !u!114 &674443749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2731,7 +2732,8 @@ MonoBehaviour:
     height: 0
   selectedBlocks:
   - {fileID: 674443751}
-  selectedCommands: []
+  selectedCommands:
+  - {fileID: 674443750}
   variables: []
   description: 
   stepPause: 0
@@ -3259,11 +3261,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 950546097}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 13.550053, z: 5.632419}
-  m_Center: {x: 0, y: -6.2750263, z: 2.1549704}
+  m_Size: {x: 1.6906052, y: 13.550053, z: 17.98395}
+  m_Center: {x: -0.34530258, y: -6.2750263, z: 0.8061838}
 --- !u!4 &950546100
 Transform:
   m_ObjectHideFlags: 0
@@ -3314,7 +3316,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 86
-    y: 179
+    y: 178
     width: 106
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -3380,8 +3382,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentBlock: {fileID: 950546102}
   suppressBlockAutoSelect: 0
-  tagFilter:
-  - Player2
+  tagFilter: []
   FireOn: 1
   collisionVar: {fileID: 0}
 --- !u!1 &962472679
@@ -3878,7 +3879,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -5072,7 +5073,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFlowchart: {fileID: 1948301703}
+  selectedFlowchart: {fileID: 674443749}
 --- !u!4 &1476870852
 Transform:
   m_ObjectHideFlags: 1
@@ -5964,8 +5965,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.218155, y: 16.747038, z: 15.65217}
-  m_Center: {x: 2.369217, y: -6.621766, z: -1.5431623}
+  m_Size: {x: 2.4146118, y: 16.747038, z: 15.65217}
+  m_Center: {x: 1.9674454, y: -6.621766, z: -1.5431623}
 --- !u!4 &1668408323
 Transform:
   m_ObjectHideFlags: 0
@@ -6023,7 +6024,7 @@ MonoBehaviour:
   itemId: 1
   indentLevel: 0
   targetFlowchart: {fileID: 1948301703}
-  targetBlock: {fileID: 1948301704}
+  targetBlock: {fileID: 1948301736}
   startLabel:
     stringRef: {fileID: 0}
     stringVal: 

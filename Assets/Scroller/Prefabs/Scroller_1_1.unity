@@ -7047,7 +7047,6 @@ GameObject:
   - component: {fileID: 1948301767}
   - component: {fileID: 1948301768}
   - component: {fileID: 1948301769}
-  - component: {fileID: 1948301770}
   m_Layer: 0
   m_Name: VN Controller
   m_TagString: Untagged
@@ -7095,7 +7094,8 @@ MonoBehaviour:
     height: 0
   selectedBlocks:
   - {fileID: 1948301765}
-  selectedCommands: []
+  selectedCommands:
+  - {fileID: 1948301768}
   variables: []
   description: 
   stepPause: 0
@@ -8547,9 +8547,8 @@ MonoBehaviour:
   eventHandler: {fileID: 1948301769}
   commandList:
   - {fileID: 1948301766}
-  - {fileID: 1948301770}
-  - {fileID: 1948301767}
   - {fileID: 1948301768}
+  - {fileID: 1948301767}
   suppressAllAutoSelections: 0
 --- !u!114 &1948301766
 MonoBehaviour:
@@ -8580,7 +8579,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 70
   indentLevel: 0
-  storyText: Watch out Princess!  {w=2}
+  storyText: Stand back, Princess. I will handle this. {w=2}
   description: 
   character: {fileID: 1847023012}
   portrait: {fileID: 21300000, guid: 5edcb3d181c1e4a46b3d084f241b22c3, type: 3}
@@ -8607,7 +8606,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 71
   indentLevel: 0
-  storyText: Our first real fight... Let's get em Qinyang!{w=2}
+  storyText: Monsters! So soon... {w=2}
   description: 
   character: {fileID: 164648967}
   portrait: {fileID: 21300000, guid: f9addab4ffd8e5c438a925a6b1bfe1b4, type: 3}
@@ -8635,62 +8634,6 @@ MonoBehaviour:
   parentBlock: {fileID: 1948301765}
   suppressBlockAutoSelect: 0
   waitForFrames: 120
---- !u!114 &1948301770
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1948301701}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95d9ff288f3904c05ada7ac9c9a075bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 72
-  indentLevel: 0
-  description: 
-  delay: 0
-  invokeType: 0
-  staticEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 403434319}
-        m_TargetAssemblyTypeName: UnityEngine.MonoBehaviour, UnityEngine
-        m_MethodName: CancelInvoke
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  booleanParameter:
-    booleanRef: {fileID: 0}
-    booleanVal: 0
-  booleanEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  integerParameter:
-    integerRef: {fileID: 0}
-    integerVal: 0
-  integerEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  floatParameter:
-    floatRef: {fileID: 0}
-    floatVal: 0
-  floatEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  stringParameter:
-    stringRef: {fileID: 0}
-    stringVal: 
-  stringEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &1967838845 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2036134646021136293, guid: 6ff773ca803e7814aa388c661e7cfd9d, type: 3}
@@ -8771,6 +8714,7 @@ GameObject:
   - component: {fileID: 1978935642}
   - component: {fileID: 1978935641}
   - component: {fileID: 1978935644}
+  - component: {fileID: 1978935645}
   m_Layer: 0
   m_Name: TorchBB
   m_TagString: Torch
@@ -8871,8 +8815,21 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.6, y: 2.8729491, z: 1.4205337}
-  m_Center: {x: 0, y: 0.042984486, z: -0.20973325}
+  m_Size: {x: 1.223156, y: 2.8729491, z: 1.4205337}
+  m_Center: {x: -0.010591507, y: 0.042984486, z: -0.20973325}
+--- !u!65 &1978935645
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1978935640}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.9483547, y: 3.6744452, z: 1.8168344}
+  m_Center: {x: -0.0067892075, y: 0.042984486, z: -0.20973325}
 --- !u!1 &1997480269
 GameObject:
   m_ObjectHideFlags: 0
@@ -9449,6 +9406,10 @@ PrefabInstance:
     - target: {fileID: 7578509151722214320, guid: 55d70e1f825334497a603f64a87a3d48, type: 3}
       propertyPath: m_Name
       value: shanxiao
+      objectReference: {fileID: 0}
+    - target: {fileID: 7578509151722214320, guid: 55d70e1f825334497a603f64a87a3d48, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7578509151722214326, guid: 55d70e1f825334497a603f64a87a3d48, type: 3}
       propertyPath: m_RootOrder

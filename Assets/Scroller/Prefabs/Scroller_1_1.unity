@@ -707,8 +707,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.69902325, y: 0.9814801, z: 1.5113652}
-  m_Center: {x: -0.029511612, y: -0.06960448, z: 0.15880597}
+  m_Size: {x: 0.69902325, y: 1.2645115, z: 3.4116702}
+  m_Center: {x: -0.029511612, y: -0.21111995, z: -0.79134655}
 --- !u!114 &239300566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1376,8 +1376,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 13.833546, z: 10.097584}
-  m_Center: {x: 0, y: -6.416773, z: -3.2477236}
+  m_Size: {x: 3.2206993, y: 14.558115, z: 22.47749}
+  m_Center: {x: 1.1103497, y: -6.054488, z: -6.4698734}
 --- !u!4 &282813646
 Transform:
   m_ObjectHideFlags: 0
@@ -2687,7 +2687,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 674443745}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 95.005104, y: -3.2, z: -6.44}
+  m_LocalPosition: {x: 95.005104, y: -1.9, z: -6.44}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children: []
   m_Father: {fileID: 1947984176}
@@ -2704,8 +2704,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.6009674, y: 0.5267317, z: 1.3841902}
-  m_Center: {x: 0.094070435, y: -0.065383315, z: -0.033453166}
+  m_Size: {x: 0.6009674, y: 1.9678044, z: 3.229567}
+  m_Center: {x: 0.094070435, y: -0.622416, z: -0.9561417}
 --- !u!114 &674443749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3261,11 +3261,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 950546097}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.6906052, y: 13.550053, z: 17.98395}
-  m_Center: {x: -0.34530258, y: -6.2750263, z: 0.8061838}
+  m_Size: {x: 5.4821854, y: 13.550053, z: 49.715267}
+  m_Center: {x: -2.2410927, y: -6.2750263, z: 6.590349}
 --- !u!4 &950546100
 Transform:
   m_ObjectHideFlags: 0
@@ -3879,7 +3879,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.3
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -5073,7 +5073,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFlowchart: {fileID: 674443749}
+  selectedFlowchart: {fileID: 950546098}
 --- !u!4 &1476870852
 Transform:
   m_ObjectHideFlags: 1

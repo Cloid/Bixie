@@ -21,7 +21,7 @@ public class MusicController : MonoBehaviour {
 	public void PlaySong(AudioClip clip)
 	{
 		audioS.clip = clip;
-		audioS.volume = (float)0.5;
+		audioS.volume = (float)0.02;
 		audioS.Play();
 	}
 }

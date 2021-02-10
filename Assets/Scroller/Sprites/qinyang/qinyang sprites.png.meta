@@ -1,7 +1,103 @@
 fileFormatVersion: 2
 guid: fea71ff12c8fc402ea63120e1f417513
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 8840033831450837915
+    second: qinyang sprites_0
+  - first:
+      213: 5521190040449758599
+    second: qinyang sprites_1
+  - first:
+      213: -8946209581137080918
+    second: qinyang sprites_2
+  - first:
+      213: 4749247251664779618
+    second: qinyang sprites_3
+  - first:
+      213: -4605336308425071073
+    second: qinyang sprites_4
+  - first:
+      213: 2949146635437842443
+    second: qinyang sprites_5
+  - first:
+      213: -230465107910513670
+    second: qinyang sprites_6
+  - first:
+      213: 1812097037038635805
+    second: qinyang sprites_7
+  - first:
+      213: 7691354161472268546
+    second: qinyang sprites_8
+  - first:
+      213: 7937099612260086409
+    second: qinyang sprites_9
+  - first:
+      213: 5596614339311003142
+    second: qinyang sprites_10
+  - first:
+      213: 596944854524367182
+    second: qinyang sprites_11
+  - first:
+      213: -7699150910915436397
+    second: qinyang sprites_12
+  - first:
+      213: 2072037809495151250
+    second: qinyang sprites_13
+  - first:
+      213: 4404621875877282610
+    second: qinyang sprites_14
+  - first:
+      213: 8905740551796571218
+    second: qinyang sprites_15
+  - first:
+      213: -653956414819185841
+    second: qinyang sprites_16
+  - first:
+      213: -6109018521544981097
+    second: qinyang sprites_17
+  - first:
+      213: 5353561487692675842
+    second: qinyang sprites_18
+  - first:
+      213: -131369987283301722
+    second: qinyang sprites_19
+  - first:
+      213: 1609386278798245507
+    second: qinyang sprites_20
+  - first:
+      213: 7394279130242074547
+    second: qinyang sprites_21
+  - first:
+      213: 1815944221096744703
+    second: qinyang sprites_22
+  - first:
+      213: 138328365152130429
+    second: qinyang sprites_23
+  - first:
+      213: -1272555489663554867
+    second: qinyang sprites_24
+  - first:
+      213: 5843720259298390417
+    second: qinyang sprites_25
+  - first:
+      213: 7953727602439008311
+    second: qinyang sprites_26
+  - first:
+      213: 2068002909646596273
+    second: qinyang sprites_27
+  - first:
+      213: -4760856401395317792
+    second: qinyang sprites_28
+  - first:
+      213: -7164419800578922423
+    second: qinyang sprites_29
+  - first:
+      213: 1859211115624258776
+    second: qinyang sprites_30
+  - first:
+      213: -6221570659757621406
+    second: qinyang sprites_31
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -41,7 +137,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -73,9 +169,705 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: qinyang sprites_0
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 480
+        width: 40
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b930016eeeb1eaa70800000000000000
+      internalID: 8840033831450837915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinyang sprites_1
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 480
+        width: 40
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 785be6ad6153f9c40800000000000000
+      internalID: 5521190040449758599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinyang sprites_2
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 480
+        width: 41
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aadc026f8cda8d380800000000000000
+      internalID: -8946209581137080918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinyang sprites_3
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 480
+        width: 41
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 269baf97637b8e140800000000000000
+      internalID: 4749247251664779618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinyang sprites_4
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 480
+        width: 40
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f166d11170f8610c0800000000000000
+      internalID: -4605336308425071073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinyang sprites_5
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 480
+        width: 40
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b00afcb5d397de820800000000000000
+      internalID: 2949146635437842443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinyang sprites_6
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 481
+        width: 40
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afb2fd594393dccf0800000000000000
+      internalID: -230465107910513670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinyang sprites_7
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 480
+        width: 40
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1bc93f77acd52910800000000000000
+      internalID: 1812097037038635805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinyang sprites_8
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 384
+        width: 50
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 209e64cfbdd2dba60800000000000000
+      internalID: 7691354161472268546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinyang sprites_9
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 384
+        width: 49
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98237a77b0e362e60800000000000000
+      internalID: 7937099612260086409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinyang sprites_10
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 384
+        width: 51
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6066d77e61b2bad40800000000000000
+      internalID: 5596614339311003142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinyang sprites_11
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 384
+        width: 51
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e411c64be26c84800800000000000000
+      internalID: 596944854524367182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinyang sprites_12
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 384
+        width: 50
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 390a2c2d90f172590800000000000000
+      internalID: -7699150910915436397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinyang sprites_13
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 384
+        width: 49
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 292132cd86b51cc10800000000000000
+      internalID: 2072037809495151250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinyang sprites_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 289
+        width: 63
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2338499624c502d30800000000000000
+      internalID: 4404621875877282610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinyang sprites_15
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 192
+        width: 52
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25c30a3e8db879b70800000000000000
+      internalID: 8905740551796571218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinyang sprites_16
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 192
+        width: 52
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4b4d140b1eace6f0800000000000000
+      internalID: -653956414819185841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinyang sprites_17
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 192
+        width: 64
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79587098508683ba0800000000000000
+      internalID: -6109018521544981097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinyang sprites_18
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 192
+        width: 54
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20b32250fcbab4a40800000000000000
+      internalID: 5353561487692675842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinyang sprites_19
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 192
+        width: 41
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6aac4dd41b74d2ef0800000000000000
+      internalID: -131369987283301722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinyang sprites_20
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 96
+        width: 64
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38e382e2b40b55610800000000000000
+      internalID: 1609386278798245507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinyang sprites_21
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 96
+        width: 36
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b7c92041b1cd9660800000000000000
+      internalID: 7394279130242074547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinyang sprites_22
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 96
+        width: 46
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff61566d5a7833910800000000000000
+      internalID: 1815944221096744703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinyang sprites_23
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 96
+        width: 43
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d75d04b4ae07be100800000000000000
+      internalID: 138328365152130429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinyang sprites_24
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 96
+        width: 43
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dca61a14689f65ee0800000000000000
+      internalID: -1272555489663554867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinyang sprites_25
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 0
+        width: 41
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 191fb3e4d90191150800000000000000
+      internalID: 5843720259298390417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinyang sprites_26
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 0
+        width: 48
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 730b89f1d11516e60800000000000000
+      internalID: 7953727602439008311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinyang sprites_27
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 0
+        width: 53
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b8a5f780b503bc10800000000000000
+      internalID: 2068002909646596273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinyang sprites_28
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e30038b35a0eedb0800000000000000
+      internalID: -4760856401395317792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinyang sprites_29
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 0
+        width: 58
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 948e7bc662ed29c90800000000000000
+      internalID: -7164419800578922423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinyang sprites_30
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 0
+        width: 40
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dcdd3db8ae3dc910800000000000000
+      internalID: 1859211115624258776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinyang sprites_31
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 0
+        width: 40
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26f7720c27a88a9a0800000000000000
+      internalID: -6221570659757621406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

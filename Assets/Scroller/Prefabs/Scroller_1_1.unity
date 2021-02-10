@@ -1728,6 +1728,7 @@ GameObject:
   - component: {fileID: 523248703}
   - component: {fileID: 523248702}
   - component: {fileID: 523248705}
+  - component: {fileID: 523248706}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1742,7 +1743,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 523248701}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &523248703
 Camera:
   m_ObjectHideFlags: 0
@@ -1819,6 +1820,20 @@ MonoBehaviour:
   smoothTime: 0.3
   maxXAndY: {x: 169.62, y: 0}
   minXAndY: {x: -0.77, y: 0}
+--- !u!114 &523248706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 523248701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 0}
+  ListenerNumber: -1
 --- !u!1 &527667776
 GameObject:
   m_ObjectHideFlags: 0
@@ -3353,6 +3368,7 @@ GameObject:
   - component: {fileID: 1083150387}
   - component: {fileID: 1083150386}
   - component: {fileID: 1083150385}
+  - component: {fileID: 1083150388}
   m_Layer: 0
   m_Name: Music Controller
   m_TagString: Untagged
@@ -3367,7 +3383,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1083150384}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
@@ -3463,7 +3479,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1083150384}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d27604df0182bc4685a0c1da577472b, type: 3}
   m_Name: 
@@ -3486,6 +3502,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1083150388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1083150384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Music/Forest
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params:
+  - Name: Intensity
+    Value: 0
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!114 &1087027504 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1392887016546948655, guid: 5b8755d691e4e054788a1a9136718635, type: 3}

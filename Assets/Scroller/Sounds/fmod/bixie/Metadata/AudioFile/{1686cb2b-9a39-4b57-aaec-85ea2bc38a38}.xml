@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{1686cb2b-9a39-4b57-aaec-85ea2bc38a38}">
+		<property name="assetPath">
+			<value>Music_city_transition2.ogg</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>4.149591836734694</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{c317ae0d-2b2e-435c-810c-31c7b5a6f495}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -707,8 +707,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.69902325, y: 1.2645115, z: 3.4116702}
-  m_Center: {x: -0.029511612, y: -0.21111995, z: -0.79134655}
+  m_Size: {x: 0.69902325, y: 1.8676777, z: 3.9550917}
+  m_Center: {x: -0.029511612, y: -0.06341346, z: -0.5196358}
 --- !u!114 &239300566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1376,8 +1376,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.2206993, y: 14.558115, z: 22.47749}
-  m_Center: {x: 1.1103497, y: -6.054488, z: -6.4698734}
+  m_Size: {x: 2.652954, y: 14.558115, z: 22.47749}
+  m_Center: {x: 1.3942223, y: -6.054488, z: -6.4698734}
 --- !u!4 &282813646
 Transform:
   m_ObjectHideFlags: 0
@@ -1386,7 +1386,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 282813644}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.55, y: 3.751256, z: -5.72}
+  m_LocalPosition: {x: 3.13, y: 3.751256, z: -5.72}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1947984176}
@@ -1776,8 +1776,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be2dccbf51a3ec746baffe7b96cdaf2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  torch: {fileID: 0}
-  bamboo: {fileID: 0}
+  torch: {fileID: 400976997}
+  bamboo: {fileID: 574529854}
   darkSprite: {fileID: 21300000, guid: 275b1db4f5d2eb644929f6ccbbf8fd1b, type: 3}
   litSprite: {fileID: 21300000, guid: d36906d67099fc145abc86de596abe7e, type: 3}
   isLit: 0
@@ -2732,8 +2732,7 @@ MonoBehaviour:
     height: 0
   selectedBlocks:
   - {fileID: 674443751}
-  selectedCommands:
-  - {fileID: 674443750}
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
@@ -3138,6 +3137,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2276603737524501352, guid: d00d46a330cf34de8956be298c6b33f8, type: 3}
+      propertyPath: jumpForce
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 2276603737524501352, guid: d00d46a330cf34de8956be298c6b33f8, type: 3}
+      propertyPath: playerIndex
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2276603737524501353, guid: d00d46a330cf34de8956be298c6b33f8, type: 3}
       propertyPath: m_Name
       value: Qinyang
@@ -5065,7 +5072,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFlowchart: {fileID: 950546098}
+  selectedFlowchart: {fileID: 1948301703}
 --- !u!4 &1476870852
 Transform:
   m_ObjectHideFlags: 1
@@ -5963,7 +5970,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1668408320}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 87.25511, y: 3.751256, z: -8.727854}
+  m_LocalPosition: {x: 89.05, y: 3.751256, z: -8.727854}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1947984176}
@@ -6346,7 +6353,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1710167400}
   - component: {fileID: 1710167399}
-  - component: {fileID: 1710167401}
   m_Layer: 0
   m_Name: PlayerInputManager
   m_TagString: Untagged
@@ -6423,49 +6429,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1710167401
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1710167398}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 621567455fd1c4ceb811cc8a00b6a1a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_NotificationBehavior: 0
-  m_MaxPlayerCount: 1
-  m_AllowJoining: 1
-  m_JoinBehavior: 0
-  m_PlayerJoinedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_PlayerLeftEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_JoinAction:
-    m_UseReference: 0
-    m_Action:
-      m_Name: 
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-    m_Reference: {fileID: 0}
-  m_PlayerPrefab: {fileID: 0}
-  m_SplitScreen: 0
-  m_MaintainAspectRatioInSplitScreen: 0
-  m_FixedNumberOfSplitScreens: -1
-  m_SplitScreenRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
 --- !u!1 &1710430900
 GameObject:
   m_ObjectHideFlags: 0
@@ -6557,7 +6520,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1713848442
 Transform:
   m_ObjectHideFlags: 0
@@ -7544,6 +7507,7 @@ GameObject:
   - component: {fileID: 1948301738}
   - component: {fileID: 1948301770}
   - component: {fileID: 1948301771}
+  - component: {fileID: 1948301772}
   m_Layer: 0
   m_Name: VN Controller
   m_TagString: Untagged
@@ -7578,11 +7542,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 194.68796, y: 67.78276}
+  scrollPos: {x: 302.30316, y: -338.6287}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 402
-  zoom: 0.6400002
+  zoom: 0.52000034
   scrollViewRect:
     serializedVersion: 2
     x: 0
@@ -7590,9 +7554,8 @@ MonoBehaviour:
     width: 0
     height: 0
   selectedBlocks:
-  - {fileID: 1948301757}
-  selectedCommands:
-  - {fileID: 1948301771}
+  - {fileID: 1948301737}
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
@@ -7620,7 +7583,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 71.97569
     y: 305.97626
-    width: 153.12497
+    width: 167.30762
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -7734,7 +7697,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 76.39427
     y: 509.73657
-    width: 109.374985
+    width: 115.384575
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -8853,7 +8816,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 125.26987
     y: 735.3126
-    width: 104.687485
+    width: 113.4615
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -8886,7 +8849,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 130.1879
     y: 894.3289
-    width: 126.56247
+    width: 142.30763
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -8899,6 +8862,7 @@ MonoBehaviour:
   - {fileID: 1948301764}
   - {fileID: 1948301753}
   - {fileID: 1948301752}
+  - {fileID: 1948301772}
   suppressAllAutoSelections: 0
 --- !u!114 &1948301738
 MonoBehaviour:
@@ -9307,7 +9271,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 98.40339
     y: 109.49099
-    width: 140.62497
+    width: 151.923
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -9474,7 +9438,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 170.5349
     y: 42.37969
-    width: 74.99999
+    width: 76.92306
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -9605,6 +9569,23 @@ MonoBehaviour:
   targetObject: {fileID: 523248701}
   methodName: TrackPlayer
   delay: 1.5
+--- !u!114 &1948301772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1948301701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 78
+  indentLevel: 0
+  targetObject: {fileID: 1948301701}
+  methodName: ResumeGame
+  delay: 0
 --- !u!1 &1967838845 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2036134646021136293, guid: 6ff773ca803e7814aa388c661e7cfd9d, type: 3}
@@ -9643,9 +9624,9 @@ MonoBehaviour:
   maxZ: -1.6
   minZ: -8.4
   enemy:
-  - {fileID: 1330286384457912, guid: 9df001964b74d6d44aa20e595b0607c0, type: 3}
-  numberOfEnemies: 1
-  spawnTime: 1
+  - {fileID: 7578509151722214320, guid: 55d70e1f825334497a603f64a87a3d48, type: 3}
+  numberOfEnemies: 3
+  spawnTime: 2
 --- !u!65 &1975907525
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9749,7 +9730,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 275b1db4f5d2eb644929f6ccbbf8fd1b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -9786,8 +9767,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.0456982, y: 1.5400343, z: 0.79316926}
-  m_Center: {x: 0.025931358, y: -0.045895815, z: 0.029207587}
+  m_Size: {x: 1.2819309, y: 1.5400343, z: 0.9449539}
+  m_Center: {x: -0.013941765, y: -0.045895815, z: 0.025776386}
 --- !u!65 &1978935645
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10300,6 +10281,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1584053463, guid: 6ff773ca803e7814aa388c661e7cfd9d, type: 3}
+      propertyPath: jumpForce
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 1584053463, guid: 6ff773ca803e7814aa388c661e7cfd9d, type: 3}
+      propertyPath: playerIndex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2036134646021136293, guid: 6ff773ca803e7814aa388c661e7cfd9d, type: 3}
       propertyPath: m_Name
       value: Mei Lien
@@ -10403,6 +10392,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7578509151722214326, guid: 55d70e1f825334497a603f64a87a3d48, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7578509152263533728, guid: 55d70e1f825334497a603f64a87a3d48, type: 3}
+      propertyPath: m_Size.z
+      value: 0.42380807
+      objectReference: {fileID: 0}
+    - target: {fileID: 7578509152263533728, guid: 55d70e1f825334497a603f64a87a3d48, type: 3}
+      propertyPath: m_Center.z
+      value: -0.008802915
+      objectReference: {fileID: 0}
+    - target: {fileID: 7578509152263533730, guid: 55d70e1f825334497a603f64a87a3d48, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

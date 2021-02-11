@@ -6,11 +6,11 @@ public class Player2 : MonoBehaviour
 {
     // Player attributes
     // Public variables 
-    public int playerIndex = 1;
-    public float maxSpeed = 4;
-    public float jumpForce = 400;
+    public int playerIndex;
+    public float maxSpeed;
+    public float jumpForce;
     public float minHeight, maxHeight;
-    public int maxHealth = 10;
+    public int maxHealth;
     public Collider interactObj;
     public AudioClip punchSound, collisionSound, jumpSound, healthItem;
 
@@ -27,7 +27,6 @@ public class Player2 : MonoBehaviour
     // GameObjects
     private Player player;
     private Rigidbody rb;
-    // private GameManager gManager 
     private GameObject torch;
     private Animator anim2;
     private Transform groundCheck2;
@@ -44,7 +43,7 @@ public class Player2 : MonoBehaviour
         player = FindObjectOfType<Player>();
         rb = GetComponent<Rigidbody>();
         anim2 = GetComponent<Animator>();
-        torch = GameObject.Find("Torch");
+        torch = GameObject.FindGameObjectWithTag("Torch");
         currAudioSource = GetComponent<AudioSource>();
     }
     // Start is called before the first frame update
@@ -62,8 +61,6 @@ public class Player2 : MonoBehaviour
         onGround2 = Physics.Linecast(transform.position, groundCheck2.position, 1 << LayerMask.NameToLayer("Ground"));
         anim2.SetBool("OnGround", onGround2);
         anim2.SetBool("Dead", isDead2);
-        
-        
     }
 
     public void SetInputVector(Vector2 direction)
@@ -76,9 +73,8 @@ public class Player2 : MonoBehaviour
     {
         if (!isDead2)
         {
-            // Movement
-            if (onGround2) anim2.SetFloat("Speed", 0.1f + Mathf.Abs(rb.velocity.magnitude));
             // Player 2 Movement
+            if (onGround2) anim2.SetFloat("Speed", 0.1f + Mathf.Abs(rb.velocity.magnitude));
             float h = inputVector.x;
             float v = inputVector.y;
 
@@ -112,39 +108,22 @@ public class Player2 : MonoBehaviour
             Vector3 torchPosition = torch.transform.position - transform.position;
             torchDistance = torchPosition.x;
             torchControl = torch.GetComponent<TorchControllerSS>();
-            // if(Input.GetKeyDown(KeyCode.U) && torchDistance.x <= 1.5f && !torchControl.isLit)
-            // {
-            //     print("Lighting lantern!");
-            //     torchControl.lightLantern();
-            // }else if((Input.GetKeyDown(KeyCode.U) && torchDistance.x <= 1.5f && torchControl.isLit))
-            // {
-            //     torchControl.darkLantern();
-            // }
-
-            // Attacks + Specials
-            // Currently using keycode inputs, please change to Input System Package ASAP
-            /*if ()
-            {
-                Debug.Log("Is attacking");
-                anim2.ResetTrigger("Attack");
-                anim2.SetTrigger("Attack");
-            }
-
-            if ()
-            {
-                Debug.Log("Is healing");
-                anim2.ResetTrigger("Attack");
-                anim2.SetTrigger("Attack");
-            }*/
         }
     }
 
-    
+    // Player 2's Attack Function (WIP)
+    public void Attack()
+    {
+
+    }
+
+    // Player 2's Jump Function
     public void Jump()
     {
         isJumping2 = true;
     }
 
+    // Player 2's Interact Function
     public void Interact(Collider other)
     {
         if (other.CompareTag("Health Item"))
@@ -154,7 +133,6 @@ public class Player2 : MonoBehaviour
             anim2.SetTrigger("Catching");
             PlaySong(healthItem);
             currentHealth = maxHealth;
-            // FindObjectOfType<UIManager>().UpdateHealth(currentHealth);
         }
 
         if (other.CompareTag("Torch"))
@@ -189,8 +167,6 @@ public class Player2 : MonoBehaviour
             Player.currentHealth-= damage;
             currentHealth -= damage;
             anim2.SetTrigger("HitDamage");
-            //print("Player 2 took damage!");
-            //PlaySong(collisionSound);
             if (currentHealth <= 0)
             {
                 isDead2 = true;

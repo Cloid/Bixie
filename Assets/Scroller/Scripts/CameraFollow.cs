@@ -118,6 +118,8 @@ public class CameraFollow : MonoBehaviour {
 	public Vector2 maxXAndY; // The maximum x and y coordinates the camera can have.
 	public Vector2 minXAndY; // The minimum x and y coordinates the camera can have.
 
+	public float alwaysY = 11.3f;
+
 	private bool zoomActive = false;
 	private Camera Cam;
 	private Transform player1; // Reference to the player1's transform.
@@ -164,7 +166,9 @@ public class CameraFollow : MonoBehaviour {
 		TrackPlayer();
 	}
 
-
+	private void ResetY(){
+		gameObject.transform.position = new Vector3(transform.position.x, alwaysY, transform.position.z);
+	}
 	private void TrackPlayer()
 	{
 		// By default the target x and y coordinates of the camera are it's current x and y coordinates.

@@ -10400,11 +10400,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7578509152263533728, guid: 55d70e1f825334497a603f64a87a3d48, type: 3}
       propertyPath: m_Size.z
-      value: 0.35
+      value: 0.42380807
       objectReference: {fileID: 0}
     - target: {fileID: 7578509152263533728, guid: 55d70e1f825334497a603f64a87a3d48, type: 3}
       propertyPath: m_Center.z
-      value: -0.01
+      value: -0.008802915
       objectReference: {fileID: 0}
     - target: {fileID: 7578509152263533730, guid: 55d70e1f825334497a603f64a87a3d48, type: 3}
       propertyPath: m_IsActive

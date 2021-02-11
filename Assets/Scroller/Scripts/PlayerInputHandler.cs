@@ -6,14 +6,9 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using static UnityEngine.InputSystem.InputAction;
 
-//  [Serializable]
-//  public class Multitype {
-//    public Player x;
-//    public Player2 y;
-//  }
-
 public class PlayerInputHandler : MonoBehaviour
 {
+    // Input variables
     private ArrayList players = new ArrayList();
     private float index;
     private PlayerInput playerInput;
@@ -23,59 +18,21 @@ public class PlayerInputHandler : MonoBehaviour
     Vector2 move;
 
 
+    // Initialization
     void Awake() {
-        // var player = null;
         
         playerInput = GetComponent<PlayerInput>();
         player1 = FindObjectOfType<Player>();
         player2 = FindObjectOfType<Player2>();
         players.Add(player1);
         players.Add(player2);
-        // player1.playerIndex;
         index = playerInput.playerIndex;
         print("inx:"+index);
-
-        // print("first:"+((Player)players[0]).
-        // print("first:"+(Player)players[0]);
-        // var player = players(p =>  == index);
-
         controls = new QinyangControls();
-        // controls.Gameplay.Attack.performed += context => Attack();
-        // controls.Gameplay.Move.performed += context => move = context.ReadValue<Vector2>();
-        // controls.Gameplay.Move.canceled += context => move = Vector2.zero;
-
-        //var player = player1.playerIndex;
-        //for (int i = 0; i < players.Count; i++)
-        //{
-        //    // you could, of course, use any string variable to search for.
-        //    if (players[i].playerIndex == index)
-        //        lbl.Text = players.Items[i].ToString();
-        //}
-
-        //if (player1.playerIndex == index)
-        //{
-        //    Player player = player1;
-        //} else if (player2.playerIndex == index)
-        //{
-        //    var player = player2;
-        //}
-        //print(player);
     }
 
-
-    // // Start is called before the first frame update
-    // void Start()
-    // {
-        
-    // }
-
-    // Update is called once per frame
-    // void Update()
-    // {
-    //     var index = playerInput.playerIndex;
-    //     print("inx:"+index);
-    // }
-
+    // onMove function 
+    // Allows players to move through callback context from input device
     public void OnMove(CallbackContext context) 
     {
         if(player1 != null && player2 != null)
@@ -87,23 +44,23 @@ public class PlayerInputHandler : MonoBehaviour
                 player2.SetInputVector(context.ReadValue<Vector2>());
             }
         }
-        
-        
     }
 
+    // onAttack function 
+    // Allows players to call their attack function through callback context from input device
     public void onAttack(CallbackContext context) 
     {
         if(player1 != null && player2 != null)
         {
-            if(index == 0)
+            if(index == 0 && context.performed)
             {
                 player1.Attack();
             }
         }
-        
-        
     }
 
+    // onJump function 
+    // Allows players to call their jump function through callback context from input device
     public void onJump(CallbackContext context) 
     {
         if(player1 != null && player2 != null)
@@ -119,6 +76,8 @@ public class PlayerInputHandler : MonoBehaviour
         
     }
 
+    // onJump function 
+    // Allows players to call their interact function through callback context from input device
     public void onInteract(CallbackContext context)
     {
         if (player1 != null && player2 != null)
@@ -141,15 +100,5 @@ public class PlayerInputHandler : MonoBehaviour
                 }
             }
         }
-
-
     }
-
-    // void OnEnable() {
-    //     controls.Gameplay.Enable();
-    // }
-
-    // void Ondisable() {
-    //     controls.Gameplay.Disable();
-    // }
 }

@@ -11,6 +11,6 @@ public class ResetCameraScript : MonoBehaviour {
 
 	void ResetCamera()
 	{
-		FindObjectOfType<CameraFollow>().maxXAndY.x = 42;
+		FindObjectOfType<CameraFollow>().maxXAndY.x = 170;
 	}
 }

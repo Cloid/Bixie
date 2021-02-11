@@ -70,7 +70,7 @@ public class Enemy : MonoBehaviour {
 		anim = GetComponent<Animator>();
 		groundCheck = transform.Find("GroundCheck");
 		//target = GameObject.FindGameObjectWithTag("Player").transform;
-		target = FindObjectOfType<Player>().transform;
+		// target = FindObjectOfType<Player>().transform;
 		target2 = FindObjectOfType<Player2>().transform;
 		//print(GameObject.FindGameObjectWithTag("Player").transform);
 		//print(GameObject.FindGameObjectWithTag("Player2").transform);
@@ -86,7 +86,7 @@ public class Enemy : MonoBehaviour {
 
 		if (!isDead)
 		{
-			facingRight = (target.position.x < transform.position.x) ? false : true;
+			facingRight = (target2.position.x < transform.position.x) ? false : true;
 			if (facingRight)
 			{
 				transform.eulerAngles = new Vector3(0, 180, 0);
@@ -113,29 +113,60 @@ public class Enemy : MonoBehaviour {
 
 	private void FixedUpdate()
 	{
+		// if (!isDead)
+		// {
+		// 	// Finds distance between:
+		// 	// targetDistance = player 1 (Qinyang)
+		// 	// targetDistance = player 2 (Mei Lien)
+		// 	Vector3 targetDistance = target.position - transform.position;
+		// 	Vector3 targetDistance2 = target2.position - transform.position;
+		// 	float hForce;
+		// 	if (targetDistance.x < targetDistance2.x)
+		// 	{
+		// 		 hForce = targetDistance.x / Mathf.Abs(targetDistance.x);
+		// 	} else
+        //     {
+		// 		hForce = targetDistance2.x / Mathf.Abs(targetDistance2.x);
+        //     }
+
+		// 	if(walkTimer >= Random.Range(1f, 2f))
+		// 	{
+		// 		zForce = Random.Range(-1, 2);
+		// 		walkTimer = 0;
+		// 	}
+
+		// 	if(Mathf.Abs(targetDistance.x) < 1.5f || Mathf.Abs(targetDistance2.x) < 1.5f)
+		// 	{
+		// 		hForce = 0;
+		// 	}
+
+		// 	if(!damaged)
+		// 	rb.velocity = new Vector3(hForce * currentSpeed, 0, zForce * currentSpeed);
+
+		// 	anim.SetFloat("Speed", Mathf.Abs(currentSpeed));
+
+		// 	if((Mathf.Abs(targetDistance.x) < 1.5f && Mathf.Abs(targetDistance.z) < 1.5f && Time.time > nextAttack) ||
+		// 		(Mathf.Abs(targetDistance2.x) < 1.5f && Mathf.Abs(targetDistance2.z) < 1.5f && Time.time > nextAttack))
+		// 	{
+		// 		anim.SetTrigger("Attack");
+		// 		currentSpeed = 0;
+		// 		nextAttack = Time.time + attackRate;
+		// 	}
+		// }
+
 		if (!isDead)
 		{
-			// Finds distance between:
-			// targetDistance = player 1 (Qinyang)
-			// targetDistance = player 2 (Mei Lien)
-			Vector3 targetDistance = target.position - transform.position;
-			Vector3 targetDistance2 = target2.position - transform.position;
-			float hForce;
-			if (targetDistance.x < targetDistance2.x)
-			{
-				 hForce = targetDistance.x / Mathf.Abs(targetDistance.x);
-			} else
-            {
-				hForce = targetDistance2.x / Mathf.Abs(targetDistance2.x);
-            }
+			Vector3 targetDitance = target2.position - transform.position;
+			float hForce = targetDitance.x / Mathf.Abs(targetDitance.x);
 
 			if(walkTimer >= Random.Range(1f, 2f))
 			{
-				zForce = Random.Range(-1, 2);
+				// zForce = Random.Range(-9, 3);
+				zForce = targetDitance.z / Mathf.Abs(targetDitance.z);
 				walkTimer = 0;
 			}
 
-			if(Mathf.Abs(targetDistance.x) < 1.5f || Mathf.Abs(targetDistance2.x) < 1.5f)
+			if(Mathf.Abs(targetDitance.x) < 1.5f)
 			{
 				hForce = 0;
 			}
@@ -145,8 +176,7 @@ public class Enemy : MonoBehaviour {
 
 			anim.SetFloat("Speed", Mathf.Abs(currentSpeed));
 
-			if((Mathf.Abs(targetDistance.x) < 1.5f && Mathf.Abs(targetDistance.z) < 1.5f && Time.time > nextAttack) ||
-				(Mathf.Abs(targetDistance2.x) < 1.5f && Mathf.Abs(targetDistance2.z) < 1.5f && Time.time > nextAttack))
+			if(Mathf.Abs(targetDitance.x) < 1.5f && Mathf.Abs(targetDitance.z) < 1.5f && Time.time > nextAttack)
 			{
 				anim.SetTrigger("Attack");
 				currentSpeed = 0;

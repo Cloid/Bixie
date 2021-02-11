@@ -78,7 +78,7 @@ AnimatorStateTransition:
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102534885706426738}
   m_Solo: 0
-  m_Mute: 0
+  m_Mute: 1
   m_IsExit: 0
   serializedVersion: 3
   m_TransitionDuration: 0.1
@@ -867,7 +867,7 @@ AnimatorStateTransition:
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102981938170981360}
   m_Solo: 0
-  m_Mute: 0
+  m_Mute: 1
   m_IsExit: 0
   serializedVersion: 3
   m_TransitionDuration: 0.25
@@ -1209,7 +1209,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Attack2
-  m_Speed: 1
+  m_Speed: 1.8
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101025488370154248}
@@ -1279,7 +1279,7 @@ AnimatorStateMachine:
     m_Position: {x: 624, y: 24, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102981453827385212}
-    m_Position: {x: 661, y: -62, z: 0}
+    m_Position: {x: 660, y: -60, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102534885706426738}
     m_Position: {x: 408, y: -120, z: 0}

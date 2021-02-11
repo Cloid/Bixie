@@ -707,8 +707,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.69902325, y: 1.2645115, z: 3.4116702}
-  m_Center: {x: -0.029511612, y: -0.21111995, z: -0.79134655}
+  m_Size: {x: 0.69902325, y: 1.8676777, z: 3.9550917}
+  m_Center: {x: -0.029511612, y: -0.06341346, z: -0.5196358}
 --- !u!114 &239300566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1376,8 +1376,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.2206993, y: 14.558115, z: 22.47749}
-  m_Center: {x: 1.1103497, y: -6.054488, z: -6.4698734}
+  m_Size: {x: 2.652954, y: 14.558115, z: 22.47749}
+  m_Center: {x: 1.3942223, y: -6.054488, z: -6.4698734}
 --- !u!4 &282813646
 Transform:
   m_ObjectHideFlags: 0
@@ -1386,7 +1386,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 282813644}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.55, y: 3.751256, z: -5.72}
+  m_LocalPosition: {x: 3.13, y: 3.751256, z: -5.72}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1947984176}
@@ -2235,7 +2235,6 @@ GameObject:
   - component: {fileID: 523248703}
   - component: {fileID: 523248702}
   - component: {fileID: 523248705}
-  - component: {fileID: 523248706}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2250,7 +2249,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 523248701}
-  m_Enabled: 0
+  m_Enabled: 1
 --- !u!20 &523248703
 Camera:
   m_ObjectHideFlags: 0
@@ -3856,7 +3855,6 @@ GameObject:
   - component: {fileID: 1083150387}
   - component: {fileID: 1083150386}
   - component: {fileID: 1083150385}
-  - component: {fileID: 1083150388}
   m_Layer: 0
   m_Name: Music Controller
   m_TagString: Untagged
@@ -3871,7 +3869,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1083150384}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
@@ -3967,7 +3965,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1083150384}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d27604df0182bc4685a0c1da577472b, type: 3}
   m_Name: 
@@ -3990,31 +3988,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1083150388
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1083150384}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  Event: event:/Music/Forest
-  PlayEvent: 1
-  StopEvent: 2
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params:
-  - Name: Intensity
-    Value: 0
-  OverrideAttenuation: 0
-  OverrideMinDistance: 0
-  OverrideMaxDistance: 0
 --- !u!114 &1087027504 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1392887016546948655, guid: 5b8755d691e4e054788a1a9136718635, type: 3}
@@ -5989,7 +5962,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1668408320}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 87.25511, y: 3.751256, z: -8.727854}
+  m_LocalPosition: {x: 89.05, y: 3.751256, z: -8.727854}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1947984176}
@@ -6583,7 +6556,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1713848442
 Transform:
   m_ObjectHideFlags: 0
@@ -7605,11 +7578,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 171.73453, y: -456.7565}
+  scrollPos: {x: 302.30316, y: -338.6287}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 402
-  zoom: 0.6700002
+  zoom: 0.52000034
   scrollViewRect:
     serializedVersion: 2
     x: 0
@@ -7646,7 +7619,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 71.97569
     y: 305.97626
-    width: 160.44772
+    width: 167.30762
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -7760,7 +7733,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 76.39427
     y: 509.73657
-    width: 112.686554
+    width: 115.384575
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -8877,9 +8850,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 123.77733
+    x: 125.26987
     y: 735.3126
-    width: 111.194016
+    width: 113.4615
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -8911,8 +8884,8 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 130.1879
-    y: 895.8215
-    width: 136.56714
+    y: 894.3289
+    width: 142.30763
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -9334,7 +9307,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 98.40339
     y: 109.49099
-    width: 148.50743
+    width: 151.923
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -9501,7 +9474,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 170.5349
     y: 42.37969
-    width: 76.86566
+    width: 76.92306
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -9687,9 +9660,9 @@ MonoBehaviour:
   maxZ: -1.6
   minZ: -8.4
   enemy:
-  - {fileID: 1330286384457912, guid: 9df001964b74d6d44aa20e595b0607c0, type: 3}
-  numberOfEnemies: 1
-  spawnTime: 1
+  - {fileID: 7578509151722214320, guid: 55d70e1f825334497a603f64a87a3d48, type: 3}
+  numberOfEnemies: 3
+  spawnTime: 2
 --- !u!65 &1975907525
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9793,7 +9766,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 275b1db4f5d2eb644929f6ccbbf8fd1b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -9830,8 +9803,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.0456982, y: 1.5400343, z: 0.79316926}
-  m_Center: {x: 0.025931358, y: -0.045895815, z: 0.029207587}
+  m_Size: {x: 1.2819309, y: 1.5400343, z: 0.9449539}
+  m_Center: {x: -0.013941765, y: -0.045895815, z: 0.025776386}
 --- !u!65 &1978935645
 BoxCollider:
   m_ObjectHideFlags: 0

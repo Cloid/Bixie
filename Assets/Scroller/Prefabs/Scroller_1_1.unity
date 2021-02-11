@@ -2732,7 +2732,8 @@ MonoBehaviour:
     height: 0
   selectedBlocks:
   - {fileID: 674443751}
-  selectedCommands: []
+  selectedCommands:
+  - {fileID: 674443750}
   variables: []
   description: 
   stepPause: 0
@@ -4883,7 +4884,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1392887016546948644, guid: 5b8755d691e4e054788a1a9136718635, type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 1392887016546948644, guid: 5b8755d691e4e054788a1a9136718635, type: 3}
       propertyPath: m_AnchorMax.x
@@ -4900,6 +4901,10 @@ PrefabInstance:
     - target: {fileID: 1392887016546948644, guid: 5b8755d691e4e054788a1a9136718635, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1392887016546948644, guid: 5b8755d691e4e054788a1a9136718635, type: 3}
+      propertyPath: m_RootOrder
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 1392887016546948644, guid: 5b8755d691e4e054788a1a9136718635, type: 3}
       propertyPath: m_SizeDelta.y
@@ -5064,7 +5069,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFlowchart: {fileID: 1948301703}
+  selectedFlowchart: {fileID: 950546098}
 --- !u!4 &1476870852
 Transform:
   m_ObjectHideFlags: 1
@@ -5189,7 +5194,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8020187326238795998, guid: e7e49aab1d8a2ac4cb67a5049086ecb5, type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 8020187326238795998, guid: e7e49aab1d8a2ac4cb67a5049086ecb5, type: 3}
       propertyPath: m_AnchorMax.x
@@ -5206,6 +5211,10 @@ PrefabInstance:
     - target: {fileID: 8020187326238795998, guid: e7e49aab1d8a2ac4cb67a5049086ecb5, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8020187326238795998, guid: e7e49aab1d8a2ac4cb67a5049086ecb5, type: 3}
+      propertyPath: m_RootOrder
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 8020187326238795998, guid: e7e49aab1d8a2ac4cb67a5049086ecb5, type: 3}
       propertyPath: m_SizeDelta.y
@@ -7543,7 +7552,6 @@ GameObject:
   - component: {fileID: 1948301738}
   - component: {fileID: 1948301770}
   - component: {fileID: 1948301771}
-  - component: {fileID: 1948301772}
   m_Layer: 0
   m_Name: VN Controller
   m_TagString: Untagged
@@ -7578,11 +7586,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 171.73453, y: -456.7565}
+  scrollPos: {x: 194.68796, y: 67.78276}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 402
-  zoom: 0.6700002
+  zoom: 0.6400002
   scrollViewRect:
     serializedVersion: 2
     x: 0
@@ -7590,8 +7598,9 @@ MonoBehaviour:
     width: 0
     height: 0
   selectedBlocks:
-  - {fileID: 1948301737}
-  selectedCommands: []
+  - {fileID: 1948301757}
+  selectedCommands:
+  - {fileID: 1948301771}
   variables: []
   description: 
   stepPause: 0
@@ -7619,7 +7628,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 71.97569
     y: 305.97626
-    width: 160.44772
+    width: 153.12497
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -7733,7 +7742,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 76.39427
     y: 509.73657
-    width: 112.686554
+    width: 109.374985
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -8850,9 +8859,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 123.77733
+    x: 125.26987
     y: 735.3126
-    width: 111.194016
+    width: 104.687485
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -8884,8 +8893,8 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 130.1879
-    y: 895.8215
-    width: 136.56714
+    y: 894.3289
+    width: 126.56247
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -8898,7 +8907,6 @@ MonoBehaviour:
   - {fileID: 1948301764}
   - {fileID: 1948301753}
   - {fileID: 1948301752}
-  - {fileID: 1948301772}
   suppressAllAutoSelections: 0
 --- !u!114 &1948301738
 MonoBehaviour:
@@ -9307,7 +9315,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 98.40339
     y: 109.49099
-    width: 148.50743
+    width: 140.62497
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -9474,7 +9482,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 170.5349
     y: 42.37969
-    width: 76.86566
+    width: 74.99999
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -9605,23 +9613,6 @@ MonoBehaviour:
   targetObject: {fileID: 523248701}
   methodName: TrackPlayer
   delay: 1.5
---- !u!114 &1948301772
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1948301701}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 78
-  indentLevel: 0
-  targetObject: {fileID: 1948301701}
-  methodName: ResumeGame
-  delay: 0
 --- !u!1 &1967838845 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2036134646021136293, guid: 6ff773ca803e7814aa388c661e7cfd9d, type: 3}

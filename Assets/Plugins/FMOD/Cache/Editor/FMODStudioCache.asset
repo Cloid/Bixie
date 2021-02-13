@@ -58,11 +58,9 @@ MonoBehaviour:
   Path: Assets/Scroller/Sounds/fmod/bixie/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637486465176069104
+  lastModified: 637488164170000000
   LoadResult: 0
-  FileSizes:
-  - Name: Desktop
-    Value: 1064
+  FileSizes: []
   Exists: 1
 --- !u!114 &-6375220933014424414
 MonoBehaviour:
@@ -122,7 +120,7 @@ MonoBehaviour:
   Path: Assets/Scroller/Sounds/fmod/bixie/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637486481389439808
+  lastModified: 637488164170000000
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -275,7 +273,7 @@ MonoBehaviour:
   - {fileID: -5179693889894815207}
   StringsBanks:
   - {fileID: -6416855526091704884}
-  stringsBankWriteTime: 637486465176069104
+  stringsBankWriteTime: 637488164170000000
   cacheVersion: 6
 --- !u!114 &545059297464376027
 MonoBehaviour:
@@ -332,7 +330,7 @@ MonoBehaviour:
   Path: Assets/Scroller/Sounds/fmod/bixie/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 637486481389649858
+  lastModified: 637488164170000000
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -351,7 +349,7 @@ MonoBehaviour:
   Path: Assets/Scroller/Sounds/fmod/bixie/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 637486481389649858
+  lastModified: 637488164170000000
   LoadResult: 0
   FileSizes: []
   Exists: 1

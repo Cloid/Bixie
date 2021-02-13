@@ -59,7 +59,8 @@ public class EnemySpawn : MonoBehaviour {
 		{
 			music.PlaySong(music.fightSong);
 			GetComponent<BoxCollider>().enabled = false;
-			FindObjectOfType<CameraFollow>().maxXAndY.x = transform.position.x;
+			// CAM: commented this out: temp solution for not locking the camera when enemies spawn
+			//FindObjectOfType<CameraFollow>().maxXAndY.x = transform.position.x;
 			SpawnEnemy();
 		}
 	}

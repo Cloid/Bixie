@@ -2646,6 +2646,7 @@ GameObject:
   - component: {fileID: 523248703}
   - component: {fileID: 523248702}
   - component: {fileID: 523248705}
+  - component: {fileID: 523248706}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2738,6 +2739,20 @@ MonoBehaviour:
   maxXAndY: {x: 205, y: 0}
   minXAndY: {x: -0.77, y: 0}
   alwaysY: 11.3
+--- !u!114 &523248706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 523248701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 0}
+  ListenerNumber: -1
 --- !u!1 &527667776
 GameObject:
   m_ObjectHideFlags: 0
@@ -3639,6 +3654,10 @@ PrefabInstance:
       propertyPath: playerIndex
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2276603737524501352, guid: d00d46a330cf34de8956be298c6b33f8, type: 3}
+      propertyPath: maxSpeed
+      value: 3.93
+      objectReference: {fileID: 0}
     - target: {fileID: 2276603737524501353, guid: d00d46a330cf34de8956be298c6b33f8, type: 3}
       propertyPath: m_Name
       value: Qinyang
@@ -4365,6 +4384,7 @@ GameObject:
   - component: {fileID: 1083150387}
   - component: {fileID: 1083150386}
   - component: {fileID: 1083150385}
+  - component: {fileID: 1083150388}
   m_Layer: 0
   m_Name: Music Controller
   m_TagString: Untagged
@@ -4379,7 +4399,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1083150384}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
@@ -4475,7 +4495,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1083150384}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d27604df0182bc4685a0c1da577472b, type: 3}
   m_Name: 
@@ -4498,6 +4518,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1083150388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1083150384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7093d9805c6571149ad8dd9e0a7b6cd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  songEvent: event:/Music/Forest
+  intensity: 1
 --- !u!114 &1087027504 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1392887016546948655, guid: 5b8755d691e4e054788a1a9136718635, type: 3}

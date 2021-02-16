@@ -158,12 +158,14 @@ MonoBehaviour:
   maxHealth: 10
   playerName: 
   playerImage: {fileID: 0}
+  rb: {fileID: 0}
   punchSound: {fileID: 8300000, guid: f37b1ff505ab542b8a780d6c42ddce6e, type: 3}
   collisionSound: {fileID: 8300000, guid: 70cfb968736d145e586b7d4eeb382e94, type: 3}
   jumpSound: {fileID: 0}
   healthItem: {fileID: 0}
+  hitSound: event:/Sounds/Hit
+  damageSound: event:/Sounds/Damage
   interactObj: {fileID: 0}
-  rb: {fileID: 0}
 --- !u!82 &2103566106686261780
 AudioSource:
   m_ObjectHideFlags: 0

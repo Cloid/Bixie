@@ -46,14 +46,14 @@ void OnCollisionEnter(Collision hit)
         GetComponent<Rigidbody>().AddForce(dir*force);
      }
 
- }
- 
-    private void OnCollisionStay(Collision other) {
-        Debug.Log("Hello?");
-        if(other.gameObject.tag == "StatueWall"){
+     if(hit.gameObject.tag == "StatueWall"){
+            Debug.Log("Hello!!!!");
             GetComponent<Rigidbody>().isKinematic  = true;
         }
-    }
+
+ }
+ 
+
 
 
 }

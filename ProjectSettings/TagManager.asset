@@ -13,6 +13,7 @@ TagManager:
   - Health Item
   - Door
   - StatueWall
+  - Statue
   layers:
   - Default
   - TransparentFX

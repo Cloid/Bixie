@@ -16,6 +16,7 @@ public class Player : MonoBehaviour {
 	public Sprite playerImage;
 	public Rigidbody rb;
 	public AudioClip punchSound, collisionSound, jumpSound, healthItem;
+	public string hitSound, damageSound;
 	public static int currentHealth;
 	public Collider interactObj;
 
@@ -100,7 +101,9 @@ public class Player : MonoBehaviour {
 	public void Attack()
     {
         anim.SetTrigger("Attack");
-		PlaySong(collisionSound);
+		
+		//PlaySong(collisionSound);
+		PlaySound(hitSound, "Hit Damage", 40);
     }
 
 	// Player 1's Jump Function
@@ -150,7 +153,10 @@ public class Player : MonoBehaviour {
 		{
 			currentHealth -= damage;
 			anim.SetTrigger("HitDamage");
-			PlaySong(collisionSound);
+			
+			//PlaySong(collisionSound);
+			PlaySound(damageSound, "Damage", damage);
+
 			if(currentHealth <= 0)
 			{
 				isDead = true;
@@ -172,6 +178,16 @@ public class Player : MonoBehaviour {
 	{
 		audioS.clip = clip;
 		audioS.Play();
+	}
+
+	public void PlaySound(string path, string parameterName, int parameterValue)
+	{
+		//FMODUnity.RuntimeManager.PlayOneShot(path, GetComponent<Transform>().position);
+		FMOD.Studio.EventInstance sfx = FMODUnity.RuntimeManager.CreateInstance(path);
+		sfx.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(GetComponent<Transform>().position));
+		sfx.setParameterByName(parameterName, parameterValue);
+		sfx.start();
+		sfx.release();
 	}
 
 	private void OnTriggerStay(Collider other)

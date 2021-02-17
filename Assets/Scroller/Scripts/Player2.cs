@@ -13,6 +13,7 @@ public class Player2 : MonoBehaviour
     public int maxHealth;
     public Collider interactObj;
     public AudioClip punchSound, collisionSound, jumpSound, healthItem;
+    public string hitSound, damageSound;
 
     // Private variables
     private bool onGround2;
@@ -166,7 +167,10 @@ public class Player2 : MonoBehaviour
         {
             Player.currentHealth-= damage;
             currentHealth -= damage;
+
             anim2.SetTrigger("HitDamage");
+            PlaySound(damageSound, "Damage", damage);
+
             if (currentHealth <= 0)
             {
                 isDead2 = true;
@@ -188,6 +192,20 @@ public class Player2 : MonoBehaviour
         currAudioSource.clip = clip;
         currAudioSource.Play();
     }
+
+	public void PlaySound(string path, string parameterName, int parameterValue)
+	{
+		FMOD.Studio.EventInstance sfx = FMODUnity.RuntimeManager.CreateInstance(path);
+		sfx.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(GetComponent<Transform>().position));
+		sfx.setParameterByName(parameterName, parameterValue);
+		sfx.start();
+		sfx.release();
+	}
+
+	public void PlayFootstepsSound(string path)
+	{
+		FMODUnity.RuntimeManager.PlayOneShot(path, GetComponent<Transform>().position);
+	}
 
     private void OnTriggerStay(Collider other)
     {

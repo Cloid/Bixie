@@ -132,6 +132,9 @@
 		<property name="length">
 			<value>2</value>
 		</property>
+		<property name="pitch">
+			<value>9.5</value>
+		</property>
 		<relationship name="sounds">
 			<destination>{b522f708-46d3-4173-98da-a04f13cd1fdd}</destination>
 			<destination>{eb034844-4a78-4da9-80ce-8ea64f6e8111}</destination>
@@ -165,6 +168,9 @@
 		<property name="maximumTimeDelay">
 			<value>100</value>
 		</property>
+		<property name="pitch">
+			<value>-2.79999995</value>
+		</property>
 		<relationship name="sounds">
 			<destination>{44f679da-a710-44ef-ab91-2cd89b0058b2}</destination>
 			<destination>{f87d4c90-8fa5-43be-8da8-fb15c8ffb2b5}</destination>
@@ -173,7 +179,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{fafa8b05-a5cd-4f99-8287-c7501bdde628}">
 		<property name="volume">
-			<value>-3.5</value>
+			<value>-5.5</value>
 		</property>
 		<property name="name">
 			<value>Cloth</value>
@@ -273,10 +279,19 @@
 	</object>
 	<object class="SFXReverbEffect" id="{a561b0db-58ce-4838-a83e-51626b989466}">
 		<property name="decayTime">
-			<value>300</value>
+			<value>650</value>
+		</property>
+		<property name="HFDecayRatio">
+			<value>48</value>
+		</property>
+		<property name="lowShelfGain">
+			<value>-8</value>
+		</property>
+		<property name="highCut">
+			<value>6000</value>
 		</property>
 		<property name="wetLevel">
-			<value>-13</value>
+			<value>-11</value>
 		</property>
 	</object>
 	<object class="SingleSound" id="{e13097f1-4d98-4853-8b71-cfda97a726a9}">

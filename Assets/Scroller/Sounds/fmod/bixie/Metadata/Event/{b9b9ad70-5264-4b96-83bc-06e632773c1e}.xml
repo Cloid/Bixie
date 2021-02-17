@@ -81,9 +81,6 @@
 		</relationship>
 	</object>
 	<object class="GroupTrack" id="{25e8c52c-2e82-41c6-92fe-a87a5f6d430a}">
-		<relationship name="modules">
-			<destination>{d37c9b7e-4e31-4d6b-b532-bd8bb481cd2a}</destination>
-		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{fa1e9d5b-29ee-4061-bce1-0a54fbdbb976}</destination>
 		</relationship>
@@ -91,7 +88,6 @@
 	<object class="Timeline" id="{606c5759-24aa-4f3f-a9a4-5f52fd99c377}">
 		<relationship name="modules">
 			<destination>{6bdc4a4d-8509-48e9-a578-76035d3ffa0c}</destination>
-			<destination>{d37c9b7e-4e31-4d6b-b532-bd8bb481cd2a}</destination>
 		</relationship>
 	</object>
 	<object class="ActionSheet" id="{ce471d3a-4174-4109-ab1b-c92d1e2fdea2}">
@@ -152,28 +148,9 @@
 			<destination>{cc591293-9fd7-44ad-a7f0-5415a120849a}</destination>
 		</relationship>
 	</object>
-	<object class="MultiSound" id="{d37c9b7e-4e31-4d6b-b532-bd8bb481cd2a}">
-		<property name="length">
-			<value>2</value>
-		</property>
-		<property name="delayType">
-			<value>0</value>
-		</property>
-		<property name="minimumTimeDelay">
-			<value>60</value>
-		</property>
-		<property name="maximumTimeDelay">
-			<value>100</value>
-		</property>
-		<relationship name="sounds">
-			<destination>{e6dfabb7-cd80-4e0f-995f-321e7f1a8bc4}</destination>
-			<destination>{503c0f9a-3e56-4a84-b1c4-8ad55892ec0d}</destination>
-			<destination>{edf3f54c-bf45-4eb8-9d33-60df0d0e1ffb}</destination>
-		</relationship>
-	</object>
 	<object class="EventMixerGroup" id="{fa1e9d5b-29ee-4061-bce1-0a54fbdbb976}">
 		<property name="volume">
-			<value>-14.5</value>
+			<value>-19.5</value>
 		</property>
 		<property name="name">
 			<value>Cloth</value>
@@ -236,21 +213,6 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{baecc01f-6f73-4754-851c-ae63b99129e5}" />
-	<object class="SingleSound" id="{e6dfabb7-cd80-4e0f-995f-321e7f1a8bc4}">
-		<relationship name="audioFile">
-			<destination>{a3623be5-117d-44d6-bf2c-bd67557117f0}</destination>
-		</relationship>
-	</object>
-	<object class="SingleSound" id="{503c0f9a-3e56-4a84-b1c4-8ad55892ec0d}">
-		<relationship name="audioFile">
-			<destination>{9d81d85b-1cc8-4aac-ae70-8aa4e9ff295b}</destination>
-		</relationship>
-	</object>
-	<object class="SingleSound" id="{edf3f54c-bf45-4eb8-9d33-60df0d0e1ffb}">
-		<relationship name="audioFile">
-			<destination>{223e179d-8383-4f6f-bb60-33b37cae1cd5}</destination>
-		</relationship>
-	</object>
 	<object class="MixerBusEffectChain" id="{77cff520-28b8-4e95-93cf-d644a9469d28}">
 		<relationship name="effects">
 			<destination>{e55b4813-a668-4962-905e-b4e0865f57c5}</destination>
@@ -273,7 +235,16 @@
 	</object>
 	<object class="SFXReverbEffect" id="{edc9197d-c025-45c1-a901-275decaf2585}">
 		<property name="decayTime">
-			<value>300</value>
+			<value>280</value>
+		</property>
+		<property name="HFDecayRatio">
+			<value>29.5</value>
+		</property>
+		<property name="lowShelfGain">
+			<value>-6.5</value>
+		</property>
+		<property name="highCut">
+			<value>8500</value>
 		</property>
 		<property name="wetLevel">
 			<value>-13</value>

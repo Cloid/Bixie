@@ -639,6 +639,10 @@ PrefabInstance:
       propertyPath: Wall
       value: 
       objectReference: {fileID: 1615230855}
+    - target: {fileID: 2236598048264935512, guid: b7a17519752afcd40be96ffa76da1c15, type: 3}
+      propertyPath: rb
+      value: 
+      objectReference: {fileID: 1535090314}
     - target: {fileID: 2236598048264935514, guid: b7a17519752afcd40be96ffa76da1c15, type: 3}
       propertyPath: m_LocalPosition.x
       value: 14.72
@@ -3601,6 +3605,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!54 &848729515 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 4727239881597771817, guid: 3b29f0c284e08ae4282713c069d0ef01, type: 3}
+  m_PrefabInstance: {fileID: 165524041}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &856269423
 GameObject:
   m_ObjectHideFlags: 0
@@ -5766,6 +5775,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -0}
   m_SizeDelta: {x: 27.42987, y: 27.42987}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!54 &1459623793 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 4727239881597771817, guid: 3b29f0c284e08ae4282713c069d0ef01, type: 3}
+  m_PrefabInstance: {fileID: 254196455}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1476870850
 GameObject:
   m_ObjectHideFlags: 1
@@ -7015,6 +7029,10 @@ PrefabInstance:
       propertyPath: Wall
       value: 
       objectReference: {fileID: 2141669736}
+    - target: {fileID: 3837355626840070449, guid: 16d65377b8d5cb8469a17d3e531edd6c, type: 3}
+      propertyPath: rb
+      value: 
+      objectReference: {fileID: 1459623793}
     - target: {fileID: 3837355626840070451, guid: 16d65377b8d5cb8469a17d3e531edd6c, type: 3}
       propertyPath: m_Name
       value: Statue Base 2L
@@ -11289,6 +11307,10 @@ PrefabInstance:
       propertyPath: Wall
       value: 
       objectReference: {fileID: 2141669736}
+    - target: {fileID: 3837355626840070449, guid: 16d65377b8d5cb8469a17d3e531edd6c, type: 3}
+      propertyPath: rb
+      value: 
+      objectReference: {fileID: 2081131910}
     - target: {fileID: 3837355626840070451, guid: 16d65377b8d5cb8469a17d3e531edd6c, type: 3}
       propertyPath: m_Name
       value: Statue Base 1L
@@ -11430,6 +11452,10 @@ PrefabInstance:
       propertyPath: Wall
       value: 
       objectReference: {fileID: 1615230855}
+    - target: {fileID: 3837355626840070449, guid: 16d65377b8d5cb8469a17d3e531edd6c, type: 3}
+      propertyPath: rb
+      value: 
+      objectReference: {fileID: 425445931}
     - target: {fileID: 3837355626840070451, guid: 16d65377b8d5cb8469a17d3e531edd6c, type: 3}
       propertyPath: m_Name
       value: Statue Base 1L
@@ -11546,6 +11572,10 @@ PrefabInstance:
       propertyPath: Wall
       value: 
       objectReference: {fileID: 2141669736}
+    - target: {fileID: 2236598048264935512, guid: b7a17519752afcd40be96ffa76da1c15, type: 3}
+      propertyPath: rb
+      value: 
+      objectReference: {fileID: 848729515}
     - target: {fileID: 2236598048264935514, guid: b7a17519752afcd40be96ffa76da1c15, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.93

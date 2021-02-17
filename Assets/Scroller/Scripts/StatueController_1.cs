@@ -6,13 +6,13 @@ public class StatueController_1 : MonoBehaviour
 {
     public Rigidbody rb1;
     public Rigidbody rb2;
-    public GameObject Wall;
+    public GameObject Torch;
 
     // Update is called once per frame
     void Update()
     {
      if(rb1.isKinematic == true && rb2.isKinematic == true){
-            Destroy(Wall);
+         Torch.SetActive(true);
         }   
     }
 }

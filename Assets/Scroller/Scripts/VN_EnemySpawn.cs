@@ -26,6 +26,7 @@ public class VN_EnemySpawn : MonoBehaviour {
 			if(enemies <= 0)
 			{
                 Tablet.gameObject.SetActive(true);
+				gameObject.SetActive(false);
 			}
 		}
 

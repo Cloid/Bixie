@@ -20,8 +20,9 @@ public class MusicController : MonoBehaviour {
 
 	public void PlaySong(AudioClip clip)
 	{
-		audioS.clip = clip;
-		audioS.volume = (float)0.02;
-		audioS.Play();
+		// FMod Implementation fix pls
+		//audioS.clip = clip;
+		//audioS.volume = (float)0.02;
+		//audioS.Play();
 	}
 }

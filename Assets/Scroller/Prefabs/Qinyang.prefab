@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 2276603737524501353}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7.08, y: 1.42, z: -2.6}
-  m_LocalScale: {x: 3.5, y: 4, z: 4}
+  m_LocalScale: {x: 3.56, y: 4, z: 4}
   m_Children:
   - {fileID: 2276603737915973554}
   - {fileID: 2276603738749615671}
@@ -99,7 +99,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.09
+  m_Radius: 0.13
   m_Height: 0.74
   m_Direction: 1
   m_Center: {x: 0.01, y: 0, z: 0}
@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerIndex: 0
-  maxSpeed: 4
+  maxSpeed: 3.93
   jumpForce: 400
   minHeight: -8.4
   maxHeight: 3

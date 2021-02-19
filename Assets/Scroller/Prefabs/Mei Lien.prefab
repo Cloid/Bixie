@@ -189,6 +189,8 @@ MonoBehaviour:
   collisionSound: {fileID: 0}
   jumpSound: {fileID: 0}
   healthItem: {fileID: 0}
+  hitSound: event:/Sounds/Hit
+  damageSound: event:/Sounds/Damage
   currAudioSource: {fileID: 0}
   collisionSound2: {fileID: 0}
   jumpSound2: {fileID: 0}

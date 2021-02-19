@@ -12,6 +12,7 @@ public class TorchControllerSS : MonoBehaviour
     public Sprite darkSprite;
     public Sprite litSprite;
     public bool isLit;
+    public GameObject EnemySpawn;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +40,9 @@ public class TorchControllerSS : MonoBehaviour
         sprite.sprite = litSprite;
         isLit = true;
         Destroy(bamboo);
+        if(EnemySpawn != null){
+            Destroy(EnemySpawn);
+        }
     }
 
     public void darkLantern()

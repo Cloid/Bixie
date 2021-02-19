@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Visual Novel/Scenes/IntroVN.unity
     guid: cff0dc9a5ee77ef49bc633a8c6f794a2
   - enabled: 1

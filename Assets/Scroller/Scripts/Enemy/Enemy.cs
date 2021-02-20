@@ -224,4 +224,9 @@ public class Enemy : MonoBehaviour {
 		audioS.clip = clip;
 		audioS.Play();
 	}
+
+	public void PlayFootstepsSound(string path)
+	{
+		FMODUnity.RuntimeManager.PlayOneShot(path, GetComponent<Transform>().position);
+	}
 }

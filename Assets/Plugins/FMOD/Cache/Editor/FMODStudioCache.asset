@@ -103,7 +103,7 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 1
   Parameters:
-  - {fileID: -5750826083986288689}
+  - {fileID: -4212860683211797230}
   MinDistance: 1
   MaxDistance: 20
   Length: 0
@@ -142,11 +142,9 @@ MonoBehaviour:
   Path: Assets/Scroller/Sounds/fmod/bixie/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637491729656334158
+  lastModified: 637494214720000000
   LoadResult: 0
-  FileSizes:
-  - Name: Desktop
-    Value: 1286
+  FileSizes: []
   Exists: 1
 --- !u!114 &-6375220933014424414
 MonoBehaviour:
@@ -286,7 +284,7 @@ MonoBehaviour:
   Path: Assets/Scroller/Sounds/fmod/bixie/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637491729656304246
+  lastModified: 637494214720000000
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -370,6 +368,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 0
+--- !u!114 &-4212860683211797230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Damage/Damage
+  m_EditorClassIdentifier: 
+  Name: Damage
+  Min: 0
+  Max: 10
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &-4016964907273272221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -430,7 +448,7 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 1
   Parameters:
-  - {fileID: -7650630286851704397}
+  - {fileID: -1468244749477099004}
   MinDistance: 1
   MaxDistance: 20
   Length: 0
@@ -454,6 +472,29 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 1
+--- !u!114 &-3394520963063228137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sounds/Monster_Footsteps
+  m_EditorClassIdentifier: 
+  Path: event:/Sounds/Monster_Footsteps
+  guid: 3ad944a42e3fdb47a0f7b20e91c0f78d
+  Banks:
+  - {fileID: 7259550954571290483}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
 --- !u!114 &-3345056046978133590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -614,6 +655,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 0
+--- !u!114 &-1468244749477099004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Hit/Hit Damage
+  m_EditorClassIdentifier: 
+  Name: Hit Damage
+  Min: 0
+  Max: 20
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &-658351317594651975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -778,12 +839,13 @@ MonoBehaviour:
   - {fileID: -6971455426320609936}
   - {fileID: 5775258082670661318}
   - {fileID: 2887055372845517764}
+  - {fileID: -3394520963063228137}
   EditorParameters: []
   MasterBanks:
   - {fileID: -5179693889894815207}
   StringsBanks:
   - {fileID: -6416855526091704884}
-  stringsBankWriteTime: 637491729656334158
+  stringsBankWriteTime: 637494214720000000
   cacheVersion: 6
 --- !u!114 &545059297464376027
 MonoBehaviour:
@@ -1166,7 +1228,7 @@ MonoBehaviour:
   Path: Assets/Scroller/Sounds/fmod/bixie/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 637491729657196173
+  lastModified: 637494214720000000
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -1205,7 +1267,7 @@ MonoBehaviour:
   Path: Assets/Scroller/Sounds/fmod/bixie/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 637491729656887152
+  lastModified: 637494214720000000
   LoadResult: 0
   FileSizes: []
   Exists: 1

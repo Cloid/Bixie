@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 
 public class Enemy : MonoBehaviour {
 
@@ -10,6 +11,7 @@ public class Enemy : MonoBehaviour {
 	public int maxHealth;
 	public float attackRate = 1f;
 	public string enemyName;
+	
 	public Sprite enemyImage;
 	public AudioClip collisionSound, deathSound;
 
@@ -29,6 +31,11 @@ public class Enemy : MonoBehaviour {
 	private float damageTimer;
 	private float nextAttack;
 	private AudioSource audioS;
+
+	//global event handler for enemies
+	public delegate void UnitEventHandler(GameObject Unit);
+	//global event Handler for destroying units
+	public static event UnitEventHandler OnUnitDestroy;
 
 	//[Header("Attack Data")]
 	//public DamageObject[] AttackList; //a list of attacks
@@ -205,6 +212,8 @@ public class Enemy : MonoBehaviour {
 				isDead = true;
 				rb.AddRelativeForce(new Vector3(3, 5, 0), ForceMode.Impulse);
 				PlaySong(deathSound);
+				DisableEnemy();
+				Destroy(gameObject);
 			}
 		}
 	}
@@ -228,5 +237,10 @@ public class Enemy : MonoBehaviour {
 	public void PlayFootstepsSound(string path)
 	{
 		FMODUnity.RuntimeManager.PlayOneShot(path, GetComponent<Transform>().position);
+	}
+
+	public void DestroyUnit()
+	{
+		if (OnUnitDestroy != null) OnUnitDestroy(gameObject);
 	}
 }

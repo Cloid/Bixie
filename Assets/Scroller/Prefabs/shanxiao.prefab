@@ -273,7 +273,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7578509152263533731
 Transform:
   m_ObjectHideFlags: 0
@@ -299,7 +299,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.358619, y: 0.4608097, z: 0.42380807}
+  m_Size: {x: 0.358619, y: 0.4608097, z: 0.48}
   m_Center: {x: -0.25717694, y: -0.029624367, z: -0.008802915}
 --- !u!114 &7578509152263533729
 MonoBehaviour:

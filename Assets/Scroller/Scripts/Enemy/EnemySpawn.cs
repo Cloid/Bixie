@@ -18,11 +18,12 @@ public class EnemySpawn : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-		if(currentEnemies >= numberOfEnemies)
+        print("currentEnemies: " + currentEnemies);
+        print("numberOfEnemies: " + numberOfEnemies);
+        if (currentEnemies >= numberOfEnemies)
 		{
 			int enemies = FindObjectsOfType<Enemy>().Length;
-			if(enemies <= 0)
+			if (enemies <= 0)
 			{
 				FindObjectOfType<ResetCameraScript>().Activate();
 				gameObject.SetActive(false);
@@ -59,9 +60,9 @@ public class EnemySpawn : MonoBehaviour {
 		{
 			music.PlaySong(music.fightSong);
 			GetComponent<BoxCollider>().enabled = false;
-			// CAM: commented this out: temp solution for not locking the camera when enemies spawn
-			//FindObjectOfType<CameraFollow>().maxXAndY.x = transform.position.x;
-			SpawnEnemy();
+            // CAM: commented this out: temp solution for not locking the camera when enemies spawn
+            //FindObjectOfType<CameraFollow>().maxXAndY.x = transform.position.x;
+            SpawnEnemy();
 		}
 	}
 }

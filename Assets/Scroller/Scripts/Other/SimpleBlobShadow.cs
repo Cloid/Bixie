@@ -41,9 +41,9 @@ public class SimpleBlobShadow : MonoBehaviour
 			}
 			else
 			{
-
+				transform.position = new Vector3(transform.position.x, (float)(-0.464), transform.position.z);
 				//hide blobshadow
-				GetComponent<MeshRenderer>().enabled = false;
+				//GetComponent<MeshRenderer>().enabled = false;
 			}
 		}
 	}
@@ -51,8 +51,10 @@ public class SimpleBlobShadow : MonoBehaviour
 	//set shadow position
 	void setPosition(RaycastHit hit)
 	{
-		transform.position = hit.point + Vector3.up * Yoffset;
-	}
+        //var temp = (hit.point + Vector3.up * Yoffset);
+        //transform.position = new Vector3(temp.x, (float)(-0.464), temp.z);
+        transform.position = (hit.point + Vector3.up * Yoffset);
+    }
 
 	//set shadow rotation to floor angle
 	void setRotation(Vector3 normal)

@@ -110,7 +110,7 @@ public class Player : MonoBehaviour {
 		anim.SetTrigger("Attack");
 
 		//PlaySong(collisionSound);
-		PlaySound(hitSound, "Hit Damage", 40);
+		PlaySound(hitSound, "Hit Damage", 3);
     }
 
 	// Player 1's HeavyAttack Function

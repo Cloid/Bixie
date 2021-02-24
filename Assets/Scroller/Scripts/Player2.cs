@@ -189,6 +189,20 @@ public class Player2 : MonoBehaviour
         currAudioSource.Play();
     }
 
+	public void PlaySound(string path, string parameterName, int parameterValue)
+	{
+		FMOD.Studio.EventInstance sfx = FMODUnity.RuntimeManager.CreateInstance(path);
+		sfx.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(GetComponent<Transform>().position));
+		sfx.setParameterByName(parameterName, parameterValue);
+		sfx.start();
+		sfx.release();
+	}
+
+	public void PlayFootstepsSound(string path)
+	{
+		FMODUnity.RuntimeManager.PlayOneShot(path, GetComponent<Transform>().position);
+	}
+    
     private void OnTriggerStay(Collider other)
     {
         interactObj = other;

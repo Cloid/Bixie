@@ -438,6 +438,7 @@ GameObject:
   - component: {fileID: 449946102}
   - component: {fileID: 449946101}
   - component: {fileID: 449946103}
+  - component: {fileID: 449946104}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -487,6 +488,78 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainSlider: {fileID: 1653762884}
   text: {fileID: 1726685850}
+--- !u!114 &449946104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 449946100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02fd6fdd0d2558441bbf6956bc551190, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wasd:
+    m_Name: Wasd
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: b416ec56-c117-4902-b988-716b33f1a1d5
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 2D Vector
+      m_Id: 76ebd605-0065-4b46-9f91-352252bc37ce
+      m_Path: 2DVector
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Wasd
+      m_Flags: 4
+    - m_Name: up
+      m_Id: 34ffc113-31c8-4d20-8458-d5f9dabe9db2
+      m_Path: <Keyboard>/w
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Wasd
+      m_Flags: 8
+    - m_Name: down
+      m_Id: 03179271-7985-4685-962c-018b59b2a93d
+      m_Path: <Keyboard>/s
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Wasd
+      m_Flags: 8
+    - m_Name: 2D Vector
+      m_Id: ac64864f-4205-4f06-8203-0bf319c9b559
+      m_Path: 2DVector
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Wasd
+      m_Flags: 4
+    - m_Name: up
+      m_Id: 51caafba-8829-4688-b756-25fef75a73df
+      m_Path: <Gamepad>/leftStick/up
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Wasd
+      m_Flags: 8
+    - m_Name: down
+      m_Id: df112534-5edc-478f-a105-d68ab5da3e6e
+      m_Path: <Gamepad>/leftStick/down
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Wasd
+      m_Flags: 8
+  tracker: 0
+  Music: {fileID: 1725645692}
+  Sound: {fileID: 1217404418}
+  Credits: {fileID: 741989725}
 --- !u!1 &489123006
 GameObject:
   m_ObjectHideFlags: 0
@@ -647,7 +720,7 @@ GameObject:
   - component: {fileID: 741989725}
   - component: {fileID: 741989724}
   m_Layer: 5
-  m_Name: Options_Text (1)
+  m_Name: Credits
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -665,7 +738,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1951646514}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -912,7 +985,7 @@ RectTransform:
   - {fileID: 331850971}
   - {fileID: 1725645690}
   m_Father: {fileID: 1951646514}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1004,7 +1077,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -33.522034, y: 1.2500002}
+  m_AnchoredPosition: {x: -33.522034, y: -10}
   m_SizeDelta: {x: 200, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1217404417
@@ -1703,7 +1776,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -33.522034, y: 1.2500002}
+  m_AnchoredPosition: {x: -33.522034, y: 4}
   m_SizeDelta: {x: 200, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1725645691
@@ -1887,8 +1960,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1619839634}
-  - {fileID: 876670040}
   - {fileID: 741989723}
+  - {fileID: 876670040}
   - {fileID: 1653762883}
   m_Father: {fileID: 297862845}
   m_RootOrder: 0

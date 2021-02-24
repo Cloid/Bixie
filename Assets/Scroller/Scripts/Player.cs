@@ -9,14 +9,14 @@ public class Player : MonoBehaviour {
 	// Public variables
 	public int playerIndex;
 	public float maxSpeed;
-	public float jumpForce;
+	public float dashForce;
 	public float minHeight, maxHeight;
 	public int maxHealth;
 	public string playerName;
 	public Sprite playerImage;
 	public Rigidbody rb;
 	public AudioClip punchSound, collisionSound, jumpSound, healthItem;
-	public static int currentHealth;
+	public int currentHealth;
 	public Collider interactObj;
 
 	// Protected variables
@@ -28,7 +28,8 @@ public class Player : MonoBehaviour {
 	protected bool facingRight = true;
 
 	// Private variables
-	private bool isjump = false;
+	private bool isDash = false;
+	private float dashTime = 0f;
 	private AudioSource audioS;
 	private Vector2 inputVector;
 
@@ -80,13 +81,18 @@ public class Player : MonoBehaviour {
 				Flip();
 			}
 
-			// If player is jumping, add vertical force
-			if (onGround && isjump)
-			{
-				isjump = false;
-				rb.AddForce(Vector3.up * jumpForce);
+            if (isDash && dashTime == 0f)
+            {
+				rb.velocity = rb.velocity * dashForce;
 				PlaySong(jumpSound);
-			}
+				isDash = false;
+				dashTime = 100f;
+			} else {
+				if(dashTime > 0f)
+                {
+					dashTime -= 1f;
+				}
+            }
 
 			float minWidth = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 10)).x;
 			float maxWidth = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0, 10)).x;
@@ -99,15 +105,31 @@ public class Player : MonoBehaviour {
 	// Player 1's Attack Function
 	public void Attack()
     {
-        anim.SetTrigger("Attack");
+		Debug.Log("Player1 is doing an attack!");
+		anim.SetTrigger("Attack");
 		PlaySong(collisionSound);
     }
 
-	// Player 1's Jump Function
-	public void Jump()
+	// Player 1's HeavyAttack Function
+	public void HeavyAttack()
+	{
+		Debug.Log("Player1 is doing a heavy attack!");
+	}
+
+
+	// Player 1's Special Function
+	public void Special()
+	{
+		Debug.Log("Player1 is doing a special attack!");
+	}
+
+	// Player 1's Dash Function
+	public void Dash()
     {
-        isjump = true;
-    }
+		Debug.Log("Player1 is doing a dash!");
+		// If player is jumping, add vertical force
+		isDash = true;
+	}
 
 	// Player 1's Interact Function
 	public void Interact(Collider other)
@@ -151,6 +173,7 @@ public class Player : MonoBehaviour {
 			currentHealth -= damage;
 			anim.SetTrigger("HitDamage");
 			PlaySong(collisionSound);
+			Debug.Log(currentHealth);
 			if(currentHealth <= 0)
 			{
 				isDead = true;
@@ -204,6 +227,8 @@ public class Player : MonoBehaviour {
 		SceneManager.LoadScene(0);
 	}
 
-	public int curHealth() {
-		return currentHealth;}
+	public int curHealth()
+	{
+		return currentHealth;
+	}
 }

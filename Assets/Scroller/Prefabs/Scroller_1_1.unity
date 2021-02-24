@@ -3139,8 +3139,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2276603737524501352, guid: d00d46a330cf34de8956be298c6b33f8, type: 3}
+      propertyPath: dashForce
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2276603737524501352, guid: d00d46a330cf34de8956be298c6b33f8, type: 3}
       propertyPath: jumpForce
-      value: 400
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 2276603737524501352, guid: d00d46a330cf34de8956be298c6b33f8, type: 3}
       propertyPath: playerIndex
@@ -3149,6 +3153,30 @@ PrefabInstance:
     - target: {fileID: 2276603737524501353, guid: d00d46a330cf34de8956be298c6b33f8, type: 3}
       propertyPath: m_Name
       value: Qinyang
+      objectReference: {fileID: 0}
+    - target: {fileID: 2276603737524501354, guid: d00d46a330cf34de8956be298c6b33f8, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2276603737524501355, guid: d00d46a330cf34de8956be298c6b33f8, type: 3}
+      propertyPath: m_Drag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2276603737524501355, guid: d00d46a330cf34de8956be298c6b33f8, type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2276603737524501355, guid: d00d46a330cf34de8956be298c6b33f8, type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2276603737524501355, guid: d00d46a330cf34de8956be298c6b33f8, type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 2276603737524501355, guid: d00d46a330cf34de8956be298c6b33f8, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2276603737524501364, guid: d00d46a330cf34de8956be298c6b33f8, type: 3}
       propertyPath: m_RootOrder
@@ -10266,7 +10294,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1584053463, guid: 6ff773ca803e7814aa388c661e7cfd9d, type: 3}
       propertyPath: jumpForce
-      value: 400
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 1584053463, guid: 6ff773ca803e7814aa388c661e7cfd9d, type: 3}
       propertyPath: playerIndex

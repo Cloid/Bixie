@@ -57,13 +57,21 @@ public class @QinyangControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""HeavyAttack"",
+                    ""type"": ""Button"",
+                    ""id"": ""ae58c22c-4edb-4201-9938-0a7538d6bc75"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
                 {
                     ""name"": """",
                     ""id"": ""d81fbccd-5aa9-4bc6-890b-c78552ccf9c0"",
-                    ""path"": ""<Keyboard>/k"",
+                    ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -151,7 +159,7 @@ public class @QinyangControls : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""3de5164e-8429-4e76-86ab-d0a2473989fe"",
-                    ""path"": ""<Keyboard>/j"",
+                    ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -169,6 +177,39 @@ public class @QinyangControls : IInputActionCollection, IDisposable
                     ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1c4d3e98-339c-4d84-8423-ec6b798e9d64"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cd9aaacb-73a2-410b-bde9-d152960920c2"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Special"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ce5c5721-b666-4cfd-8dd7-dba4ab0ef2b4"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""HeavyAttack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -182,6 +223,7 @@ public class @QinyangControls : IInputActionCollection, IDisposable
         m_Gameplay_Jump = m_Gameplay.FindAction("Jump", throwIfNotFound: true);
         m_Gameplay_Interact = m_Gameplay.FindAction("Interact", throwIfNotFound: true);
         m_Gameplay_Special = m_Gameplay.FindAction("Special", throwIfNotFound: true);
+        m_Gameplay_HeavyAttack = m_Gameplay.FindAction("HeavyAttack", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -236,6 +278,7 @@ public class @QinyangControls : IInputActionCollection, IDisposable
     private readonly InputAction m_Gameplay_Jump;
     private readonly InputAction m_Gameplay_Interact;
     private readonly InputAction m_Gameplay_Special;
+    private readonly InputAction m_Gameplay_HeavyAttack;
     public struct GameplayActions
     {
         private @QinyangControls m_Wrapper;
@@ -245,6 +288,7 @@ public class @QinyangControls : IInputActionCollection, IDisposable
         public InputAction @Jump => m_Wrapper.m_Gameplay_Jump;
         public InputAction @Interact => m_Wrapper.m_Gameplay_Interact;
         public InputAction @Special => m_Wrapper.m_Gameplay_Special;
+        public InputAction @HeavyAttack => m_Wrapper.m_Gameplay_HeavyAttack;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -269,6 +313,9 @@ public class @QinyangControls : IInputActionCollection, IDisposable
                 @Special.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSpecial;
                 @Special.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSpecial;
                 @Special.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSpecial;
+                @HeavyAttack.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnHeavyAttack;
+                @HeavyAttack.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnHeavyAttack;
+                @HeavyAttack.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnHeavyAttack;
             }
             m_Wrapper.m_GameplayActionsCallbackInterface = instance;
             if (instance != null)
@@ -288,6 +335,9 @@ public class @QinyangControls : IInputActionCollection, IDisposable
                 @Special.started += instance.OnSpecial;
                 @Special.performed += instance.OnSpecial;
                 @Special.canceled += instance.OnSpecial;
+                @HeavyAttack.started += instance.OnHeavyAttack;
+                @HeavyAttack.performed += instance.OnHeavyAttack;
+                @HeavyAttack.canceled += instance.OnHeavyAttack;
             }
         }
     }
@@ -299,5 +349,6 @@ public class @QinyangControls : IInputActionCollection, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
         void OnSpecial(InputAction.CallbackContext context);
+        void OnHeavyAttack(InputAction.CallbackContext context);
     }
 }

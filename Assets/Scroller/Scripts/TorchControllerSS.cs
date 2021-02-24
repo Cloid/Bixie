@@ -23,7 +23,7 @@ public class TorchControllerSS : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print("actually lit: " + isLit);
+        // print("actually lit: " + isLit);
     }
 
     private void OnTriggerEnter(Collider other) {

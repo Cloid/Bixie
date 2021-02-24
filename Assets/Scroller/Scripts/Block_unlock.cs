@@ -17,7 +17,7 @@ public class Block_unlock : MonoBehaviour
     void Update()
     {
         isActive = FindObjectOfType<TorchControllerSS>().isLit;
-        print(isActive);
+        // print(isActive);
 
         gameObject.SetActive(!isActive);
 

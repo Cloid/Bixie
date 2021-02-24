@@ -10,23 +10,21 @@ public class Player2 : MonoBehaviour
     public float maxSpeed;
     public float jumpForce;
     public float minHeight, maxHeight;
-    public int maxHealth;
+    // public int maxHealth;
     public Collider interactObj;
     public AudioClip punchSound, collisionSound, jumpSound, healthItem;
-    public string hitSound, damageSound;
 
     // Private variables
     private bool onGround2;
     private bool isDead2 = false;
     private bool isFacingRight2 = false;
-    private bool isJumping2 = false;
-    private int currentHealth;
+    private bool isJump2 = false;
     private float currentSpeed;
     private float torchDistance;
 
 
     // GameObjects
-    private Player player;
+    private Player player1;
     private Rigidbody rb;
     private GameObject torch;
     private Animator anim2;
@@ -41,7 +39,7 @@ public class Player2 : MonoBehaviour
     // Initialization
     void Awake()
     {
-        player = FindObjectOfType<Player>();
+        player1 = FindObjectOfType<Player>();
         rb = GetComponent<Rigidbody>();
         anim2 = GetComponent<Animator>();
         torch = GameObject.FindGameObjectWithTag("Torch");
@@ -51,7 +49,6 @@ public class Player2 : MonoBehaviour
     void Start()
     {
         groundCheck2 = gameObject.transform.Find("GroundCheck2");
-        currentHealth = maxHealth;
         currentSpeed = maxSpeed;
     }
 
@@ -92,12 +89,11 @@ public class Player2 : MonoBehaviour
                 Flip();
             }
 
-            // If player is jumping, add vertical force
-            if (isJumping2 && onGround2)
+            // If player is jumping, then set it to false once player lands
+            if (isJump2 && onGround2)
             {
-                isJumping2 = false;
-                rb.AddForce(Vector3.up * jumpForce);
-            }
+                isJump2 = false;
+            } 
 
             float minWidth = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 10)).x;
 			float maxWidth = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0, 10)).x;
@@ -121,7 +117,11 @@ public class Player2 : MonoBehaviour
     // Player 2's Jump Function
     public void Jump()
     {
-        isJumping2 = true;
+        if (!isJump2)
+        {
+            rb.AddForce(Vector3.up * jumpForce);
+            isJump2 = true;
+        }
     }
 
     // Player 2's Interact Function
@@ -133,7 +133,7 @@ public class Player2 : MonoBehaviour
             interactObj = null;
             anim2.SetTrigger("Catching");
             PlaySong(healthItem);
-            currentHealth = maxHealth;
+            player1.currentHealth = player1.maxHealth;
         }
 
         if (other.CompareTag("Torch"))
@@ -165,13 +165,9 @@ public class Player2 : MonoBehaviour
     {
         if (!isDead2)
         {
-            Player.currentHealth-= damage;
-            currentHealth -= damage;
-
+            player1.currentHealth-= damage;
             anim2.SetTrigger("HitDamage");
-            PlaySound(damageSound, "Damage", damage);
-
-            if (currentHealth <= 0)
+            if (player1.currentHealth <= 0)
             {
                 isDead2 = true;
                 FindObjectOfType<GameManager>().lives--;
@@ -193,20 +189,6 @@ public class Player2 : MonoBehaviour
         currAudioSource.Play();
     }
 
-	public void PlaySound(string path, string parameterName, int parameterValue)
-	{
-		FMOD.Studio.EventInstance sfx = FMODUnity.RuntimeManager.CreateInstance(path);
-		sfx.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(GetComponent<Transform>().position));
-		sfx.setParameterByName(parameterName, parameterValue);
-		sfx.start();
-		sfx.release();
-	}
-
-	public void PlayFootstepsSound(string path)
-	{
-		FMODUnity.RuntimeManager.PlayOneShot(path, GetComponent<Transform>().position);
-	}
-
     private void OnTriggerStay(Collider other)
     {
         interactObj = other;
@@ -219,7 +201,7 @@ public class Player2 : MonoBehaviour
         {
             isDead2 = false;
             FindObjectOfType<UIManager>().UpdateLives();
-            currentHealth = maxHealth;
+           // currentHealth = maxHealth;
             // FindObjectOfType<UIManager>().UpdateHealth(currentHealth;
             anim2.Rebind();
             float minWidth = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 10)).x;

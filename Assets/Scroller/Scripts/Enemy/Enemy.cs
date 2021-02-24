@@ -202,6 +202,7 @@ public class Enemy : MonoBehaviour {
 	{
 		if (!isDead)
 		{
+			Debug.Log("damage");
 			damaged = true;
 			currentHealth -= damage;
 			anim.SetTrigger("HitDamage");

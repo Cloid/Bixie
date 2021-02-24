@@ -59,6 +59,32 @@ public class PlayerInputHandler : MonoBehaviour
         }
     }
 
+    // onHeavyAttack function 
+    // Allows players to call their attack function through callback context from input device
+    public void onHeavyAttack(CallbackContext context)
+    {
+        if (player1 != null && player2 != null)
+        {
+            if (index == 0 && context.performed)
+            {
+                player1.HeavyAttack();
+            }
+        }
+    }
+
+    // onSpecial function 
+    // Allows players to call their attack function through callback context from input device
+    public void onSpecial(CallbackContext context)
+    {
+        if (player1 != null && player2 != null)
+        {
+            if (index == 0 && context.performed)
+            {
+                player1.Special();
+            }
+        }
+    }
+
     // onJump function 
     // Allows players to call their jump function through callback context from input device
     public void onJump(CallbackContext context) 
@@ -67,9 +93,9 @@ public class PlayerInputHandler : MonoBehaviour
         {
             if(index == 0)
             {
-                player1.Jump();
+                if(context.performed) player1.Dash();
             }else{
-                player2.Jump();
+                if(context.performed) player2.Jump();
             }
         }
         

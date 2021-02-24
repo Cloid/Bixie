@@ -557,9 +557,12 @@ MonoBehaviour:
       m_Action: Wasd
       m_Flags: 8
   tracker: 0
-  Music: {fileID: 1725645692}
-  Sound: {fileID: 1217404418}
-  Credits: {fileID: 741989725}
+  Music: {fileID: 1725645689}
+  Sound: {fileID: 1217404415}
+  Credits: {fileID: 741989722}
+  EventSystem: {fileID: 1606344922}
+  Music_Slider: {fileID: 876670039}
+  Sound_Slider: {fileID: 1653762882}
 --- !u!1 &489123006
 GameObject:
   m_ObjectHideFlags: 0
@@ -1077,7 +1080,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -33.522034, y: -10}
+  m_AnchoredPosition: {x: -33.522034, y: 2.5}
   m_SizeDelta: {x: 200, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1217404417
@@ -1776,7 +1779,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -33.522034, y: 4}
+  m_AnchoredPosition: {x: -33.522034, y: 2.5}
   m_SizeDelta: {x: 200, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1725645691

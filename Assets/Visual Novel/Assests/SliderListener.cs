@@ -17,7 +17,6 @@ public class SliderListener : MonoBehaviour
 	// Invoked when the value of the slider changes.
 	public void ValueChangeCheck()
 	{
-		Debug.Log (mainSlider.value);
         text.text = mainSlider.value.ToString();
 	}
 }

@@ -206,8 +206,10 @@ public class Player : MonoBehaviour {
 	public void PlaySound(string path, string parameterName, int parameterValue)
 	{
 		FMOD.Studio.EventInstance sfx = FMODUnity.RuntimeManager.CreateInstance(path);
+		
 		sfx.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(GetComponent<Transform>().position));
 		sfx.setParameterByName(parameterName, parameterValue);
+
 		sfx.start();
 		sfx.release();
 	}

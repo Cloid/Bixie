@@ -495,6 +495,58 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &585896935
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 585896937}
+  - component: {fileID: 585896936}
+  m_Layer: 0
+  m_Name: AudioController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &585896936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 585896935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac82e6d568fd96c40b4fed441c919b9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Pause:
+    m_Name: Pause
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: b64132e5-3958-40b3-aeab-3f4705c09639
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+  sceneNum: 0
+--- !u!4 &585896937
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 585896935}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &641788548
 GameObject:
   m_ObjectHideFlags: 0
@@ -826,6 +878,7 @@ GameObject:
   - component: {fileID: 1051065035}
   - component: {fileID: 1051065036}
   - component: {fileID: 1051065037}
+  - component: {fileID: 1051065038}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -902,9 +955,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 1051065027}
+  - {fileID: 1051065028}
   selectedCommands:
-  - {fileID: 1051065036}
+  - {fileID: 1051065038}
   variables: []
   description: 
   stepPause: 0
@@ -1038,6 +1091,7 @@ MonoBehaviour:
   commandList:
   - {fileID: 1051065033}
   - {fileID: 1051065032}
+  - {fileID: 1051065038}
   - {fileID: 1051065029}
   suppressAllAutoSelections: 0
 --- !u!114 &1051065029
@@ -1225,6 +1279,23 @@ MonoBehaviour:
   fadeColor: {r: 0, g: 0, b: 0, a: 1}
   fadeTexture: {fileID: 0}
   fadeTweenType: 4
+--- !u!114 &1051065038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1051065020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 15
+  indentLevel: 0
+  targetObject: {fileID: 585896935}
+  methodName: incNum
+  delay: 0
 --- !u!1 &1087027496
 GameObject:
   m_ObjectHideFlags: 0

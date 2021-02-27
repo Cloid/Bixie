@@ -99,10 +99,17 @@ public class OptionsInput : MonoBehaviour
             Txt.GetComponent<Text>().color = Color.red;
             Credits.GetComponent<Text>().color = Color.black;
             EventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(null);
-            if(kb.aKey.wasPressedThisFrame){
+            if(gp==null){
+                if(kb.enterKey.wasPressedThisFrame){
                 SceneManager.LoadScene("Title");
-
+                }
+            } else {
+                if(kb.enterKey.wasPressedThisFrame || gp.aButton.wasPressedThisFrame){
+                SceneManager.LoadScene("Title");
+                }
             }
+            
+
         } 
         else if (tracker == 3)
         {

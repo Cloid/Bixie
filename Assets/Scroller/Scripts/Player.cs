@@ -108,9 +108,6 @@ public class Player : MonoBehaviour {
     {
 		Debug.Log("Player1 is doing an attack!");
 		anim.SetTrigger("Attack");
-
-		//PlaySong(collisionSound);
-		PlaySound(hitSound, "Hit Damage", 3);
     }
 
 	// Player 1's HeavyAttack Function
@@ -176,7 +173,6 @@ public class Player : MonoBehaviour {
 			currentHealth -= damage;
 			anim.SetTrigger("HitDamage");
 
-			//PlaySong(collisionSound);
 			PlaySound(damageSound, "Damage", damage);
 
 			Debug.Log(currentHealth);
@@ -214,7 +210,7 @@ public class Player : MonoBehaviour {
 		sfx.release();
 	}
 
-	public void PlayFootstepsSound(string path)
+	public void PlayAnimSound(string path)
 	{
 		FMODUnity.RuntimeManager.PlayOneShot(path, GetComponent<Transform>().position);
 	}

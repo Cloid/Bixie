@@ -17,6 +17,19 @@ public class SliderListener : MonoBehaviour
 	// Invoked when the value of the slider changes.
 	public void ValueChangeCheck()
 	{
-        text.text = mainSlider.value.ToString();
+		Debug.Log(mainSlider.value*100);
+		if(Mathf.Ceil(mainSlider.value*100) % 10 != 0){
+			text.text = Mathf.Floor(mainSlider.value*100).ToString();
+		} else{
+			text.text = Mathf.Ceil(mainSlider.value*100).ToString();
+		}
+
+		/*
+		if((mainSlider.value *100)>=50){
+			text.text = Mathf.Floor((mainSlider.value *100)).ToString();
+		} else {
+			text.text = Mathf.Ceil((mainSlider.value *100)).ToString();
+		}*/
+        
 	}
 }

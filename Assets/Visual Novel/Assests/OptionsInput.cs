@@ -21,8 +21,14 @@ public class OptionsInput : MonoBehaviour
     public GameObject Music_Slider;
 
     public GameObject Sound_Slider;
+    public GameObject AudioOptions;
+    public Text cornerText;
 
+    public int sceneNum;
 
+    private void Start() {
+        AudioOptions = GameObject.Find("AudioController");
+    }
     void OnEnable()
     {
         wasd.Enable();
@@ -36,6 +42,18 @@ public class OptionsInput : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(AudioOptions == null){
+            AudioOptions = GameObject.Find("AudioController");  
+        } else{
+            sceneNum = AudioOptions.GetComponent<AudioOptions>().sceneNum;
+            Debug.Log(sceneNum);
+        }
+
+        if(sceneNum==0){
+            cornerText.text = "Title";
+        } else {
+            cornerText.text = "Back";
+        }
 
         Keyboard kb = InputSystem.GetDevice<Keyboard>();
         Gamepad gp = InputSystem.GetDevice<Gamepad>();
@@ -101,11 +119,19 @@ public class OptionsInput : MonoBehaviour
             EventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(null);
             if(gp==null){
                 if(kb.enterKey.wasPressedThisFrame){
-                SceneManager.LoadScene("Title");
+                    if(sceneNum==0){
+                        SceneManager.LoadScene("Title");
+                    } else {
+                        SceneManager.LoadScene(sceneNum);
+                    }
                 }
             } else {
                 if(kb.enterKey.wasPressedThisFrame || gp.aButton.wasPressedThisFrame){
-                SceneManager.LoadScene("Title");
+                    if(sceneNum==0){
+                        SceneManager.LoadScene("Title");
+                    } else {
+                        SceneManager.LoadScene(sceneNum);
+                    }
                 }
             }
             
@@ -118,6 +144,15 @@ public class OptionsInput : MonoBehaviour
             Credits.GetComponent<Text>().color = Color.red;
             Txt.GetComponent<Text>().color = Color.black;
             EventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(null);
+            if(gp==null){
+                if(kb.enterKey.wasPressedThisFrame){
+                SceneManager.LoadScene("Title");
+                }
+            } else {
+                if(kb.enterKey.wasPressedThisFrame || gp.aButton.wasPressedThisFrame){
+                SceneManager.LoadScene("Title");
+                }
+            }
         }
 
 

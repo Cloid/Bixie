@@ -524,6 +524,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac82e6d568fd96c40b4fed441c919b9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Pause:
+    m_Name: Pause
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: b64132e5-3958-40b3-aeab-3f4705c09639
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
   sceneNum: 0
 --- !u!4 &585896937
 Transform:

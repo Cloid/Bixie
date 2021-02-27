@@ -532,8 +532,9 @@ GameObject:
   - component: {fileID: 449946101}
   - component: {fileID: 449946103}
   - component: {fileID: 449946104}
+  - component: {fileID: 449946105}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Options_Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -664,6 +665,21 @@ MonoBehaviour:
   cornerText: {fileID: 473888062}
   sceneNum: 0
   inCredits: 0
+--- !u!114 &449946105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 449946100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7585e85a4fc899b4e9951883e300c544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MusicVol: 0.5
+  SFXVol: 0.5
+  Aud: {fileID: 0}
 --- !u!1 &473888059
 GameObject:
   m_ObjectHideFlags: 0
@@ -1240,9 +1256,9 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: AudioOptions, Assembly-CSharp
-        m_MethodName: MusicVolumeLevel
+      - m_Target: {fileID: 449946105}
+        m_TargetAssemblyTypeName: AudioProxy, Assembly-CSharp
+        m_MethodName: MusicProxy
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2117,9 +2133,9 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: AudioOptions, Assembly-CSharp
-        m_MethodName: SFXVolumeLevel
+      - m_Target: {fileID: 449946105}
+        m_TargetAssemblyTypeName: AudioProxy, Assembly-CSharp
+        m_MethodName: SFXProxy
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

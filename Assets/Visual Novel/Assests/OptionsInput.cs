@@ -105,7 +105,6 @@ public class OptionsInput : MonoBehaviour
             else
             {
                 sceneNum = AudioOptions.GetComponent<AudioOptions>().sceneNum;
-                Debug.Log(sceneNum);
             }
 
             if (sceneNum == 0)
@@ -121,14 +120,14 @@ public class OptionsInput : MonoBehaviour
             Gamepad gp = InputSystem.GetDevice<Gamepad>();
             if (gp == null)
             {
-                if (kb.wKey.wasPressedThisFrame)
+                if (kb.wKey.wasPressedThisFrame || kb.upArrowKey.wasPressedThisFrame)
                 {
                     if (tracker > 0 && tracker <= 3)
                     {
                         tracker--;
                     }
                 }
-                else if (kb.sKey.wasPressedThisFrame)
+                else if (kb.sKey.wasPressedThisFrame || kb.downArrowKey.wasPressedThisFrame)
                 {
                     if (tracker >= 0 && tracker < 3)
                     {
@@ -138,14 +137,14 @@ public class OptionsInput : MonoBehaviour
             }
             else
             {
-                if (kb.wKey.wasPressedThisFrame || gp.leftStick.up.wasPressedThisFrame)
+                if (kb.wKey.wasPressedThisFrame || kb.upArrowKey.wasPressedThisFrame || gp.leftStick.up.wasPressedThisFrame)
                 {
                     if (tracker > 0 && tracker <= 3)
                     {
                         tracker--;
                     }
                 }
-                else if (kb.sKey.wasPressedThisFrame || gp.leftStick.down.wasPressedThisFrame)
+                else if (kb.sKey.wasPressedThisFrame || kb.downArrowKey.wasPressedThisFrame || gp.leftStick.down.wasPressedThisFrame)
                 {
                     if (tracker >= 0 && tracker < 3)
                     {

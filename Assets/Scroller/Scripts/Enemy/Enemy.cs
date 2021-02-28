@@ -13,7 +13,8 @@ public class Enemy : MonoBehaviour {
 	public string enemyName;
 	
 	public Sprite enemyImage;
-	public AudioClip collisionSound, deathSound;
+	public AudioClip collisionSound;
+	public string damageSound, deathSound;
 
 	private int currentHealth;
 	private float currentSpeed;
@@ -206,13 +207,13 @@ public class Enemy : MonoBehaviour {
 			damaged = true;
 			currentHealth -= damage;
 			anim.SetTrigger("HitDamage");
-			PlaySong(collisionSound);
+			PlaySound(damageSound, "Damage", damage);
 			FindObjectOfType<UIManager>().UpdateEnemyUI(maxHealth, currentHealth, enemyName, enemyImage);
 			if(currentHealth <= 0)
 			{
 				isDead = true;
 				rb.AddRelativeForce(new Vector3(3, 5, 0), ForceMode.Impulse);
-				PlaySong(deathSound);
+				PlaySound(deathSound, "Damage", damage);
 				DisableEnemy();
 				Destroy(gameObject);
 			}
@@ -235,7 +236,18 @@ public class Enemy : MonoBehaviour {
 		audioS.Play();
 	}
 
-	public void PlayFootstepsSound(string path)
+	public void PlaySound(string path, string parameterName, int parameterValue)
+	{
+		FMOD.Studio.EventInstance sfx = FMODUnity.RuntimeManager.CreateInstance(path);
+		
+		sfx.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(GetComponent<Transform>().position));
+		sfx.setParameterByName(parameterName, parameterValue);
+
+		sfx.start();
+		sfx.release();
+	}
+
+	public void PlayAnimSound(string path)
 	{
 		FMODUnity.RuntimeManager.PlayOneShot(path, GetComponent<Transform>().position);
 	}

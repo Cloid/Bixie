@@ -110,7 +110,8 @@ MonoBehaviour:
   enemyName: OXhead
   enemyImage: {fileID: 4851455166573753226, guid: a8208259a36074083b5b0408b6b2f2eb, type: 3}
   collisionSound: {fileID: 8300000, guid: bd57b795d021da74ba15f266af9cf7e9, type: 3}
-  deathSound: {fileID: 8300000, guid: 6bbe20784e7a3f14aabe8d7ee0808ef7, type: 3}
+  damageSound: event:/Sounds/Monster_Damage
+  deathSound: event:/Sounds/Monster_Death
 --- !u!95 &7578509151722214324
 Animator:
   serializedVersion: 3
@@ -167,7 +168,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7578509151722214320}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}

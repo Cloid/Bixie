@@ -10,6 +10,7 @@ public class FMODMusicController : MonoBehaviour {
 
     // event insttance variable for fmod
     private static FMOD.Studio.EventInstance music;
+    private int enemiesCount;
 
     void Start()
     {
@@ -20,7 +21,20 @@ public class FMODMusicController : MonoBehaviour {
         
         // directly set music to fight
         // need to implement auto music transition later
-        SetIntensity(intensity);
+        //SetIntensity(intensity);
+    }
+
+    void Update()
+    {
+        enemiesCount = FindObjectsOfType<Enemy>().Length;
+        if (enemiesCount > 0)
+        {
+            SetIntensity(1);
+        }
+        else
+        {
+            SetIntensity(0);
+        }
     }
 
     public void SetIntensity(int i)

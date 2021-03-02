@@ -18,13 +18,15 @@ public class OptionsInput : MonoBehaviour
 
     public GameObject EventSystem;
 
-    public GameObject Music_Slider;
+    public Selectable Music_Slider;
+    public Selectable tmpNull;
 
-    public GameObject Sound_Slider;
-    public GameObject AudioOptions;
+    public Selectable Sound_Slider;
     public GameObject OptionsUI;
     public GameObject Credits_1;
     public GameObject Credits_2;
+    public GameObject parentScene;
+    public DestroyMe Play;
     public Text cornerText;
 
     public int sceneNum;
@@ -33,7 +35,7 @@ public class OptionsInput : MonoBehaviour
 
     private void Start()
     {
-        AudioOptions = GameObject.Find("AudioController");
+        Play = parentScene.GetComponent<DestroyMe>();
     }
     void OnEnable()
     {
@@ -98,23 +100,6 @@ public class OptionsInput : MonoBehaviour
         }
         else
         {
-            if (AudioOptions == null)
-            {
-                AudioOptions = GameObject.Find("AudioController");
-            }
-            else
-            {
-                sceneNum = AudioOptions.GetComponent<AudioOptions>().sceneNum;
-            }
-
-            if (sceneNum == 0)
-            {
-                cornerText.text = "Title";
-            }
-            else
-            {
-                cornerText.text = "Back";
-            }
 
             Keyboard kb = InputSystem.GetDevice<Keyboard>();
             Gamepad gp = InputSystem.GetDevice<Gamepad>();
@@ -161,7 +146,8 @@ public class OptionsInput : MonoBehaviour
                 Sound.GetComponent<Text>().color = Color.black;
                 Credits.GetComponent<Text>().color = Color.black;
                 Txt.GetComponent<Text>().color = Color.black;
-                EventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(Music_Slider);
+                //EventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(Music_Slider);
+                Music_Slider.Select();
             }
             else if (tracker == 1)
             {
@@ -169,7 +155,7 @@ public class OptionsInput : MonoBehaviour
                 Sound.GetComponent<Text>().color = Color.red;
                 Credits.GetComponent<Text>().color = Color.black;
                 Txt.GetComponent<Text>().color = Color.black;
-                EventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(Sound_Slider);
+                Sound_Slider.Select();
             }
             else if (tracker == 2)
             {
@@ -177,33 +163,40 @@ public class OptionsInput : MonoBehaviour
                 Sound.GetComponent<Text>().color = Color.black;
                 Txt.GetComponent<Text>().color = Color.red;
                 Credits.GetComponent<Text>().color = Color.black;
-                EventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(null);
+                //EventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(null);
+                tmpNull.Select();
+                
                 if (gp == null)
                 {
                     if (kb.enterKey.wasPressedThisFrame)
                     {
-                        if (sceneNum == 0)
-                        {
-                            SceneManager.LoadScene("Title");
-                        }
-                        else
-                        {
-                            SceneManager.LoadScene(sceneNum);
-                        }
+                        // if (sceneNum == 0)
+                        // {
+                        //     SceneManager.LoadScene("Title");
+                        // }
+                        // else
+                        // {
+                        //     SceneManager.LoadScene(sceneNum);
+                        // }
+                        Play.DestroyScene();
                     }
                 }
                 else
                 {
                     if (kb.enterKey.wasPressedThisFrame || gp.aButton.wasPressedThisFrame)
                     {
-                        if (sceneNum == 0)
-                        {
-                            SceneManager.LoadScene("Title");
-                        }
-                        else
-                        {
-                            SceneManager.LoadScene(sceneNum);
-                        }
+                        // if (sceneNum == 0)
+                        // {
+                        //     SceneManager.LoadScene("Title");
+                        // }
+                        // else
+                        // {
+                        //     SceneManager.LoadScene(sceneNum);
+                        // }
+
+                        Play.DestroyScene();
+
+
                     }
                 }
 
@@ -215,8 +208,8 @@ public class OptionsInput : MonoBehaviour
                 Sound.GetComponent<Text>().color = Color.black;
                 Credits.GetComponent<Text>().color = Color.red;
                 Txt.GetComponent<Text>().color = Color.black;
-                EventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(null);
-
+                //EventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(null);
+                tmpNull.Select();
                 if (gp == null)
                 {
                     if (kb.enterKey.wasPressedThisFrame)

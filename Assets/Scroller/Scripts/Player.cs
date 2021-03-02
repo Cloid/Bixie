@@ -24,6 +24,7 @@ public class Player : MonoBehaviour {
 	protected float currentSpeed;
 	protected Animator anim;
 	protected Transform groundCheck;
+	protected Attack playerAttack;
 	protected bool onGround;
 	protected bool isDead = false;
 	protected bool facingRight = true;
@@ -42,7 +43,7 @@ public class Player : MonoBehaviour {
 		currentSpeed = maxSpeed;
 		currentHealth = maxHealth;
 		audioS = GetComponent<AudioSource>();
-
+		playerAttack = GetComponent<Attack>();
 	}
 	
 	// Update is called once per frame
@@ -227,6 +228,7 @@ public class Player : MonoBehaviour {
 			isDead = false;
 			FindObjectOfType<UIManager>().UpdateLives();
 			currentHealth = maxHealth;
+			FindObjectOfType<UIManager>().UpdateHealth();
 			anim.Rebind();
 			float minWidth = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 10)).x;
 			transform.position = new Vector3(minWidth, 10, -4);

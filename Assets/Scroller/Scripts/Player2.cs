@@ -77,7 +77,15 @@ public class Player2 : MonoBehaviour
             float h = inputVector.x;
             float v = inputVector.y;
 
-            if (!onGround2) v = 0;
+            if (!onGround2)
+            {
+                v = 0;
+                currentSpeed = (maxSpeed * 1.5f);
+            }
+            else
+            {
+                currentSpeed = maxSpeed;
+            }
 
             rb.velocity = new Vector3(h * currentSpeed, rb.velocity.y, v * currentSpeed);
 
@@ -93,6 +101,7 @@ public class Player2 : MonoBehaviour
             // If player is jumping, then set it to false once player lands
             if (isJump2 && onGround2)
             {
+                rb.AddForce(Vector3.up * jumpForce);
                 isJump2 = false;
             } 
 
@@ -219,8 +228,8 @@ public class Player2 : MonoBehaviour
         {
             isDead2 = false;
             FindObjectOfType<UIManager>().UpdateLives();
-           // currentHealth = maxHealth;
-            // FindObjectOfType<UIManager>().UpdateHealth(currentHealth;
+            player1.currentHealth = player1.maxHealth;
+            FindObjectOfType<UIManager>().UpdateHealth();
             anim2.Rebind();
             float minWidth = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 10)).x;
             transform.position = new Vector3(minWidth, 10, -4);

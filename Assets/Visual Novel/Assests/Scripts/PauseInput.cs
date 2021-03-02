@@ -88,6 +88,10 @@ public class PauseInput : MonoBehaviour
         //gameObject.SetActive(false);
     }
 
+    public void ResetBool(){
+        inOptions = false;
+    }
+
     public void OptionScene()
     {
         Application.LoadLevelAdditive("Options");

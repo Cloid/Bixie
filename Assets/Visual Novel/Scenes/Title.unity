@@ -364,7 +364,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFlowchart: {fileID: 1051065023}
+  selectedFlowchart: {fileID: 1505592733}
 --- !u!4 &290452597
 Transform:
   m_ObjectHideFlags: 1
@@ -522,9 +522,53 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5689671278206466718, guid: 01f764bc8bee9d24d959eb9723e700cc, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5689671278206466718, guid: 01f764bc8bee9d24d959eb9723e700cc, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5689671278206466718, guid: 01f764bc8bee9d24d959eb9723e700cc, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 5689671278206466718, guid: 01f764bc8bee9d24d959eb9723e700cc, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 360
+      objectReference: {fileID: 0}
+    - target: {fileID: 5689671278206466718, guid: 01f764bc8bee9d24d959eb9723e700cc, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7393806712895799851, guid: 01f764bc8bee9d24d959eb9723e700cc, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7393806712895799854, guid: 01f764bc8bee9d24d959eb9723e700cc, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: -785
+      objectReference: {fileID: 0}
+    - target: {fileID: 7393806712895799854, guid: 01f764bc8bee9d24d959eb9723e700cc, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7393806712895799854, guid: 01f764bc8bee9d24d959eb9723e700cc, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7393806712895799854, guid: 01f764bc8bee9d24d959eb9723e700cc, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7393806712895799854, guid: 01f764bc8bee9d24d959eb9723e700cc, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -1773.8264
+      objectReference: {fileID: 0}
+    - target: {fileID: 7393806712895799855, guid: 01f764bc8bee9d24d959eb9723e700cc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7393806712983926756, guid: 01f764bc8bee9d24d959eb9723e700cc, type: 3}
       propertyPath: m_AnchorMin.y
@@ -600,7 +644,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7393806713516824017, guid: 01f764bc8bee9d24d959eb9723e700cc, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: -933.8264
       objectReference: {fileID: 0}
     - target: {fileID: 7393806713676374160, guid: 01f764bc8bee9d24d959eb9723e700cc, type: 3}
       propertyPath: m_FontData.m_Font
@@ -1094,9 +1138,53 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 585896937}
     m_Modifications:
+    - target: {fileID: 4488545949920227261, guid: 93cd44e60d0824b4f934c2af75736cdd, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4488545949920227261, guid: 93cd44e60d0824b4f934c2af75736cdd, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4488545949920227261, guid: 93cd44e60d0824b4f934c2af75736cdd, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4488545949920227261, guid: 93cd44e60d0824b4f934c2af75736cdd, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4488545949920227261, guid: 93cd44e60d0824b4f934c2af75736cdd, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4488545950265128153, guid: 93cd44e60d0824b4f934c2af75736cdd, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4488545950265128153, guid: 93cd44e60d0824b4f934c2af75736cdd, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4488545950265128153, guid: 93cd44e60d0824b4f934c2af75736cdd, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4488545950265128153, guid: 93cd44e60d0824b4f934c2af75736cdd, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4488545950265128153, guid: 93cd44e60d0824b4f934c2af75736cdd, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4488545950935043274, guid: 93cd44e60d0824b4f934c2af75736cdd, type: 3}
       propertyPath: m_Name
       value: SkipDialouge
+      objectReference: {fileID: 0}
+    - target: {fileID: 4488545950935043274, guid: 93cd44e60d0824b4f934c2af75736cdd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4488545950935043284, guid: 93cd44e60d0824b4f934c2af75736cdd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1181,6 +1269,14 @@ PrefabInstance:
     - target: {fileID: 4488545950935043284, guid: 93cd44e60d0824b4f934c2af75736cdd, type: 3}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4488545951318833448, guid: 93cd44e60d0824b4f934c2af75736cdd, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4488545951318833449, guid: 93cd44e60d0824b4f934c2af75736cdd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93cd44e60d0824b4f934c2af75736cdd, type: 3}
@@ -2568,6 +2664,8 @@ GameObject:
   - component: {fileID: 1505592764}
   - component: {fileID: 1505592763}
   - component: {fileID: 1505592765}
+  - component: {fileID: 1505592767}
+  - component: {fileID: 1505592768}
   m_Layer: 0
   m_Name: PauseFlowchart
   m_TagString: Untagged
@@ -2605,7 +2703,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 52.885254
     y: 145.24591
-    width: 82.786865
+    width: 83.333305
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2633,11 +2731,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 141.1628, y: 41.914032}
+  scrollPos: {x: 223.54079, y: 31.604418}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
-  zoom: 0.6100004
+  zoom: 0.52000046
   scrollViewRect:
     serializedVersion: 2
     x: -343
@@ -2645,7 +2743,7 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 1505592747}
+  - {fileID: 1505592762}
   selectedCommands: []
   variables: []
   description: 
@@ -2728,7 +2826,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 314.19672
     y: 155.65576
-    width: 74.0437
+    width: 73.076904
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2757,7 +2855,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 281
     y: 77
-    width: 92.622925
+    width: 93.58971
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2767,6 +2865,7 @@ MonoBehaviour:
   eventHandler: {fileID: 0}
   commandList:
   - {fileID: 1505592742}
+  - {fileID: 1505592767}
   suppressAllAutoSelections: 0
 --- !u!114 &1505592739
 MonoBehaviour:
@@ -2876,7 +2975,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 300.14752
     y: 322.77045
-    width: 91.53003
+    width: 91.025604
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2903,7 +3002,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 151.78693
     y: 438.99994
-    width: 72.950806
+    width: 71.79485
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2972,7 +3071,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 456.92215
     y: 126.25264
-    width: 75.1366
+    width: 76.92305
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2982,6 +3081,7 @@ MonoBehaviour:
   eventHandler: {fileID: 0}
   commandList:
   - {fileID: 1505592765}
+  - {fileID: 1505592768}
   - {fileID: 1505592750}
   suppressAllAutoSelections: 0
 --- !u!114 &1505592748
@@ -3000,7 +3100,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 453.64346
     y: 214.77718
-    width: 70.765015
+    width: 71.79485
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -3169,7 +3269,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 386.4304
     y: 413.1377
-    width: 76.22949
+    width: 76.92305
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -3196,7 +3296,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 383.1517
     y: 504.94092
-    width: 71.85791
+    width: 71.79485
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -3303,7 +3403,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -28.989685
     y: 713.1072
-    width: 124.316895
+    width: 124.35891
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -3399,6 +3499,40 @@ MonoBehaviour:
   itemId: 27
   indentLevel: 0
   menuDialog: {fileID: 561503864}
+--- !u!114 &1505592767
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505592730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 35
+  indentLevel: 0
+  targetObject: {fileID: 1505592730}
+  methodName: ResetBool
+  delay: 0
+--- !u!114 &1505592768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505592730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 36
+  indentLevel: 0
+  targetObject: {fileID: 1505592730}
+  methodName: ResetBool
+  delay: 0
 --- !u!1 &1518887041
 GameObject:
   m_ObjectHideFlags: 0

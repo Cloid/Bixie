@@ -6,7 +6,6 @@ public class DestroyMe : MonoBehaviour
 {
     public Flowchart Resume;
     public AudioOptions incNum;
-
     public PauseInput IntroScene;
     // Start is called before the first frame update
     void Start()
@@ -39,9 +38,11 @@ public class DestroyMe : MonoBehaviour
         if(incNum.sceneNum == 0){
             Destroy(gameObject);
             IntroScene.IntroScene();
+            IntroScene.ResetBool();
         } else {
             Destroy(gameObject);
             Resume.ExecuteBlock("Pause");
+            IntroScene.ResetBool();
         }
         
     }

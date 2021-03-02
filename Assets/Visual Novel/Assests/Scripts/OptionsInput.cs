@@ -26,6 +26,9 @@ public class OptionsInput : MonoBehaviour
     public GameObject Credits_1;
     public GameObject Credits_2;
     public GameObject parentScene;
+    public Text MusicNum;
+    public Text SoundNum;
+    public AudioOptions AudOptions;
     public DestroyMe Play;
     public Text cornerText;
 
@@ -50,6 +53,7 @@ public class OptionsInput : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (inCredits)
         {
             Keyboard kb = InputSystem.GetDevice<Keyboard>();

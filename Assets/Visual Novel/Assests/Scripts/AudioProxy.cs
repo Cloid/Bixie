@@ -9,11 +9,17 @@ public class AudioProxy : MonoBehaviour
     
     public AudioOptions Aud;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         Aud = GameObject.Find("AudioController").GetComponent<AudioOptions>();
         MusicVol = Aud.MusicVolume;
         SFXVol = Aud.SFXVolume;
+    }
+
+     private void Update() {
+        if(Aud == null){
+            Aud = GameObject.Find("AudioController").GetComponent<AudioOptions>();
+        }
     }
 
     public void MusicProxy(float newVol){

@@ -655,7 +655,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 449946102}
-  - component: {fileID: 449946101}
   - component: {fileID: 449946103}
   - component: {fileID: 449946104}
   - component: {fileID: 449946105}
@@ -666,20 +665,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &449946101
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 449946100}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98d49ffd8a01b0c4a91cb3b27bd5b4b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainSlider: {fileID: 876670041}
-  text: {fileID: 331850972}
 --- !u!4 &449946102
 Transform:
   m_ObjectHideFlags: 0
@@ -706,8 +691,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98d49ffd8a01b0c4a91cb3b27bd5b4b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainSlider: {fileID: 1653762884}
-  text: {fileID: 1726685850}
+  musicSlider: {fileID: 876670041}
+  sfxSlider: {fileID: 1653762884}
+  musicNum: {fileID: 331850972}
+  sfxNum: {fileID: 1726685850}
+  AudOptions: {fileID: 0}
 --- !u!114 &449946104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -789,6 +777,9 @@ MonoBehaviour:
   Credits_1: {fileID: 918106556}
   Credits_2: {fileID: 365875416}
   parentScene: {fileID: 1330025586}
+  MusicNum: {fileID: 0}
+  SoundNum: {fileID: 0}
+  AudOptions: {fileID: 0}
   Play: {fileID: 0}
   cornerText: {fileID: 473888062}
   sceneNum: 0

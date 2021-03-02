@@ -153,7 +153,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerIndex: 0
   maxSpeed: 3.93
-  jumpForce: 400
+  dashForce: 0
   minHeight: -8.4
   maxHeight: 3
   maxHealth: 10
@@ -166,6 +166,7 @@ MonoBehaviour:
   healthItem: {fileID: 0}
   hitSound: event:/Sounds/Hit
   damageSound: event:/Sounds/Damage
+  currentHealth: 0
   interactObj: {fileID: 0}
 --- !u!82 &2103566106686261780
 AudioSource:
@@ -174,7 +175,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2276603737524501353}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}

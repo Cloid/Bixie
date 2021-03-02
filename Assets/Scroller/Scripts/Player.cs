@@ -24,6 +24,7 @@ public class Player : MonoBehaviour {
 	protected float currentSpeed;
 	protected Animator anim;
 	protected Transform groundCheck;
+	protected Attack playerAttack;
 	protected bool onGround;
 	protected bool isDead = false;
 	protected bool facingRight = true;
@@ -42,7 +43,7 @@ public class Player : MonoBehaviour {
 		currentSpeed = maxSpeed;
 		currentHealth = maxHealth;
 		audioS = GetComponent<AudioSource>();
-
+		playerAttack = GetComponent<Attack>();
 	}
 	
 	// Update is called once per frame
@@ -108,9 +109,6 @@ public class Player : MonoBehaviour {
     {
 		Debug.Log("Player1 is doing an attack!");
 		anim.SetTrigger("Attack");
-
-		//PlaySong(collisionSound);
-		PlaySound(hitSound, "Hit Damage", 3);
     }
 
 	// Player 1's HeavyAttack Function
@@ -176,7 +174,6 @@ public class Player : MonoBehaviour {
 			currentHealth -= damage;
 			anim.SetTrigger("HitDamage");
 
-			//PlaySong(collisionSound);
 			PlaySound(damageSound, "Damage", damage);
 
 			Debug.Log(currentHealth);
@@ -214,7 +211,7 @@ public class Player : MonoBehaviour {
 		sfx.release();
 	}
 
-	public void PlayFootstepsSound(string path)
+	public void PlayAnimSound(string path)
 	{
 		FMODUnity.RuntimeManager.PlayOneShot(path, GetComponent<Transform>().position);
 	}
@@ -231,6 +228,7 @@ public class Player : MonoBehaviour {
 			isDead = false;
 			FindObjectOfType<UIManager>().UpdateLives();
 			currentHealth = maxHealth;
+			FindObjectOfType<UIManager>().UpdateHealth();
 			anim.Rebind();
 			float minWidth = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 10)).x;
 			transform.position = new Vector3(minWidth, 10, -4);

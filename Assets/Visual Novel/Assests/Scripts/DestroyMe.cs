@@ -39,9 +39,13 @@ public class DestroyMe : MonoBehaviour
             Destroy(gameObject);
             IntroScene.IntroScene();
             IntroScene.ResetBool();
-        } else {
+        } else if(incNum.sceneNum == 2){
             Destroy(gameObject);
             Resume.ExecuteBlock("Pause");
+            IntroScene.ResetBool();
+        } else {
+            Destroy(gameObject);
+            Resume.ExecuteBlock("Pause_nonVN");
             IntroScene.ResetBool();
         }
         

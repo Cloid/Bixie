@@ -8,6 +8,7 @@ public class PauseInput : MonoBehaviour
 {
     public Flowchart Pause;
     public Flowchart Intro;
+    private bool inOptions = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,50 +22,59 @@ public class PauseInput : MonoBehaviour
         Keyboard kb = InputSystem.GetDevice<Keyboard>();
         Gamepad gp = InputSystem.GetDevice<Gamepad>();
 
-
-        if (SceneManager.GetActiveScene().buildIndex == 2)
+        if (!inOptions)
         {
-            if (gp == null)
+            if (SceneManager.GetActiveScene().buildIndex == 2)
             {
-                if (kb.escapeKey.wasPressedThisFrame)
+                if (gp == null)
                 {
-                    Time.timeScale = 0;
-                    //PauseMenu.SetActive(true);
-                    Pause.ExecuteBlock("Pause");
-                    //Application.LoadLevelAdditive("Options");
+                    if (kb.escapeKey.wasPressedThisFrame)
+                    {
+                        Time.timeScale = 0;
+                        //PauseMenu.SetActive(true);
+                        inOptions = true;
+                        Pause.ExecuteBlock("Pause");
+                        //Application.LoadLevelAdditive("Options");
+                    }
+                }
+                else
+                {
+                    if (kb.escapeKey.wasPressedThisFrame || gp.startButton.wasPressedThisFrame)
+                    {
+                        Time.timeScale = 0;
+                        //PauseMenu.SetActive(true);
+                        inOptions = true;
+                        Pause.ExecuteBlock("Pause");
+                        //Application.LoadLevelAdditive("Options");
+                    }
                 }
             }
-            else
+            else if (SceneManager.GetActiveScene().buildIndex == 3)
             {
-                if (kb.escapeKey.wasPressedThisFrame || gp.startButton.wasPressedThisFrame)
+                if (gp == null)
                 {
-                    Time.timeScale = 0;
-                    //PauseMenu.SetActive(true);
-                    Pause.ExecuteBlock("Pause");
-                    //Application.LoadLevelAdditive("Options");
+                    if (kb.escapeKey.wasPressedThisFrame)
+                    {
+                        Time.timeScale = 0;
+                        //PauseMenu.SetActive(true);
+                        inOptions = true;
+                        Pause.ExecuteBlock("Pause_nonVN");
+                        //Application.LoadLevelAdditive("Options");
+                    }
+                }
+                else
+                {
+                    if (kb.escapeKey.wasPressedThisFrame || gp.startButton.wasPressedThisFrame)
+                    {
+                        Time.timeScale = 0;
+                        //PauseMenu.SetActive(true);
+                        inOptions = true;
+                        Pause.ExecuteBlock("Pause_nonVN");
+                        //Application.LoadLevelAdditive("Options");
+                    }
                 }
             }
-        } else if(SceneManager.GetActiveScene().buildIndex == 3){
-            if (gp == null)
-            {
-                if (kb.escapeKey.wasPressedThisFrame)
-                {
-                    Time.timeScale = 0;
-                    //PauseMenu.SetActive(true);
-                    Pause.ExecuteBlock("Pause_nonVN");
-                    //Application.LoadLevelAdditive("Options");
-                }
-            }
-            else
-            {
-                if (kb.escapeKey.wasPressedThisFrame || gp.startButton.wasPressedThisFrame)
-                {
-                    Time.timeScale = 0;
-                    //PauseMenu.SetActive(true);
-                    Pause.ExecuteBlock("Pause_nonVN");
-                    //Application.LoadLevelAdditive("Options");
-                }
-            }
+
         }
 
 
@@ -82,7 +92,8 @@ public class PauseInput : MonoBehaviour
     {
         Application.LoadLevelAdditive("Options");
     }
-    public void IntroScene(){
+    public void IntroScene()
+    {
         Intro.ExecuteBlock("TitleList");
     }
 

@@ -9246,6 +9246,7 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &1881599364
 GameObject:
   m_ObjectHideFlags: 0
@@ -9420,6 +9421,8 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.652954, y: 14.558115, z: 22.47749}
   m_Center: {x: 1.3942223, y: -6.054488, z: -6.4698734}
+=======
+>>>>>>> parent of 21b8309 (fixed shader and added animation)
 =======
 >>>>>>> parent of 21b8309 (fixed shader and added animation)
 =======
@@ -13959,10 +13962,13 @@ PrefabInstance:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     - target: {fileID: 1584053463, guid: 6ff773ca803e7814aa388c661e7cfd9d, type: 3}
       propertyPath: jumpForce
       value: 200
       objectReference: {fileID: 0}
+=======
+>>>>>>> parent of 21b8309 (fixed shader and added animation)
 =======
 >>>>>>> parent of 21b8309 (fixed shader and added animation)
 =======

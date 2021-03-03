@@ -27,6 +27,7 @@ AnimationClip:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       value: {fileID: 7565479660374459284, guid: 97635dd5b9d9a46259741c198dd5b493, type: 3}
     - time: 0.33333334
       value: {fileID: 8995221774191331766, guid: 97635dd5b9d9a46259741c198dd5b493, type: 3}
@@ -36,6 +37,9 @@ AnimationClip:
       value: {fileID: -4205642544259032231, guid: 97635dd5b9d9a46259741c198dd5b493, type: 3}
     - time: 1.3333334
       value: {fileID: -8905565753635023058, guid: 97635dd5b9d9a46259741c198dd5b493, type: 3}
+=======
+      value: {fileID: 4404621875877282610, guid: fea71ff12c8fc402ea63120e1f417513, type: 3}
+>>>>>>> parent of 21b8309 (fixed shader and added animation)
 =======
       value: {fileID: 4404621875877282610, guid: fea71ff12c8fc402ea63120e1f417513, type: 3}
 >>>>>>> parent of 21b8309 (fixed shader and added animation)
@@ -73,7 +77,11 @@ AnimationClip:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_StopTime: 1.5
+=======
+    m_StopTime: 0.083333336
+>>>>>>> parent of 21b8309 (fixed shader and added animation)
 =======
     m_StopTime: 0.083333336
 >>>>>>> parent of 21b8309 (fixed shader and added animation)

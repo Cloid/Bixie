@@ -91,17 +91,6 @@ public class @QinyangControls : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": """",
-                    ""id"": ""63fd26bf-b5bb-4832-83e2-e80fe33f4ea2"",
-                    ""path"": ""<Keyboard>/j"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Attack"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
                     ""name"": ""2D Vector"",
                     ""id"": ""f133f6c5-7ffd-4d9b-a9e2-a4ed3751eaba"",
                     ""path"": ""2DVector"",
@@ -192,7 +181,7 @@ public class @QinyangControls : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""1c4d3e98-339c-4d84-8423-ec6b798e9d64"",
-                    ""path"": ""<Keyboard>/j"",
+                    ""path"": ""<Keyboard>/q"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -203,7 +192,7 @@ public class @QinyangControls : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""cd9aaacb-73a2-410b-bde9-d152960920c2"",
-                    ""path"": ""<Keyboard>/l"",
+                    ""path"": ""<Keyboard>/e"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -214,7 +203,7 @@ public class @QinyangControls : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""ce5c5721-b666-4cfd-8dd7-dba4ab0ef2b4"",
-                    ""path"": ""<Keyboard>/k"",
+                    ""path"": ""<Mouse>/rightButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

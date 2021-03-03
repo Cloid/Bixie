@@ -5,12 +5,10 @@ using UnityEngine;
 public class Attack : MonoBehaviour {
 
 	public int damage;
-	public bool isHeavyAttack;
-	public float attackDirection;
 
 	// Use this for initialization
 	void Start () {
-
+		
 	}
 	
 	// Update is called once per frame
@@ -27,7 +25,7 @@ public class Attack : MonoBehaviour {
 		Player2 player2 = other.GetComponent<Player2>();
 		if(enemy != null)
 		{
-			enemy.TookDamage(damage, isHeavyAttack, attackDirection);
+			enemy.TookDamage(damage);
 		}
 
 		if (player != null)

@@ -199,20 +199,16 @@ public class Enemy : MonoBehaviour {
 				Mathf.Clamp(rb.position.z, minHeight, maxHeight));
 	}
 
-	public void TookDamage(int damage, bool state, float attackDir)
+	public void TookDamage(int damage)
 	{
 		if (!isDead)
 		{
+			Debug.Log("damage");
 			damaged = true;
 			currentHealth -= damage;
 			anim.SetTrigger("HitDamage");
 			PlaySound(damageSound, "Damage", damage);
 			FindObjectOfType<UIManager>().UpdateEnemyUI(maxHealth, currentHealth, enemyName, enemyImage);
-			// If state is true (only one state which is heavyAttack for now) then it will do an effect
-			if (state)
-            {
-				rb.AddForce(new Vector3(attackDir * 10, 5, 0), ForceMode.Impulse);
-			}
 			if(currentHealth <= 0)
 			{
 				isDead = true;

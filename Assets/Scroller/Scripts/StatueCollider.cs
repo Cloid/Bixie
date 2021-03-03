@@ -21,7 +21,7 @@ void OnCollisionEnter(Collision hit)
  {
      //Source Code by MythralFTW: https://answers.unity.com/questions/1100879/push-object-in-opposite-direction-of-collision.html
      // Adapted by Miguelcloid Reniva
-   // Debug.Log("Hit");
+    Debug.Log("Hit");
      float force = .05f;
      Rigidbody hitRigidbody = hit.collider.attachedRigidbody;
 

@@ -5904,10 +5904,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac82e6d568fd96c40b4fed441c919b9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MusicVolume: 0.5
-  SFXVolume: 0.5
-  MasterVolume: 1
-  sceneNum: 0
 --- !u!1 &1326738512
 GameObject:
   m_ObjectHideFlags: 0
@@ -9247,6 +9243,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!1 &1881599364
 GameObject:
   m_ObjectHideFlags: 0
@@ -9421,6 +9418,8 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.652954, y: 14.558115, z: 22.47749}
   m_Center: {x: 1.3942223, y: -6.054488, z: -6.4698734}
+=======
+>>>>>>> parent of 21b8309 (fixed shader and added animation)
 --- !u!1 &1892027311 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2276603737524501353, guid: d00d46a330cf34de8956be298c6b33f8, type: 3}
@@ -13951,10 +13950,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+<<<<<<< HEAD
     - target: {fileID: 1584053463, guid: 6ff773ca803e7814aa388c661e7cfd9d, type: 3}
       propertyPath: jumpForce
       value: 200
       objectReference: {fileID: 0}
+=======
+>>>>>>> parent of 21b8309 (fixed shader and added animation)
     - target: {fileID: 2036134646021136293, guid: 6ff773ca803e7814aa388c661e7cfd9d, type: 3}
       propertyPath: m_Name
       value: Mei Lien

@@ -149,26 +149,6 @@ MonoBehaviour:
   - Name: 
     Value: 1346
   Exists: 1
---- !u!114 &-7990501574998541220
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Damage/Damage
-  m_EditorClassIdentifier: 
-  Name: Damage
-  Min: 0
-  Max: 10
-  Default: 0
-  ID:
-    data1: 0
-    data2: 0
-  Exists: 1
 --- !u!114 &-7650630286851704397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -763,7 +743,7 @@ MonoBehaviour:
   Path: Assets/Scroller/Sounds/fmod/bixie/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 637494177200000000
+  lastModified: 637496640082741272
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -954,26 +934,6 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 0
---- !u!114 &-2482883330476937215
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Hit/Hit Damage
-  m_EditorClassIdentifier: 
-  Name: Hit Damage
-  Min: 0
-  Max: 20
-  Default: 0
-  ID:
-    data1: 0
-    data2: 0
-  Exists: 1
 --- !u!114 &-2402380275093984278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1330,7 +1290,7 @@ MonoBehaviour:
   - {fileID: 2996822521302905408}
   StringsBanks:
   - {fileID: 3247716826359509706}
-  stringsBankWriteTime: 637502974620000000
+  stringsBankWriteTime: 637500391439366602
   cacheVersion: 6
 --- !u!114 &218099047571954118
 MonoBehaviour:
@@ -1512,7 +1472,7 @@ MonoBehaviour:
   Path: Assets/Scroller/Sounds/fmod/bixie/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 637502974620000000
+  lastModified: 637500391439376603
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -1727,7 +1687,7 @@ MonoBehaviour:
   Path: Assets/Scroller/Sounds/fmod/bixie/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637494177200000000
+  lastModified: 637496640082511214
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -1828,7 +1788,7 @@ MonoBehaviour:
   Path: Assets/Scroller/Sounds/fmod/bixie/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637502974620000000
+  lastModified: 637500391439366602
   LoadResult: 0
   FileSizes:
   - Name: 
@@ -1934,7 +1894,7 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 1
   Parameters:
-  - {fileID: 4467274562075992886}
+  - {fileID: -5553484081598859179}
   MinDistance: 1
   MaxDistance: 20
   Length: 0
@@ -1972,26 +1932,6 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/Damage/Damage
-  m_EditorClassIdentifier: 
-  Name: Damage
-  Min: 0
-  Max: 10
-  Default: 0
-  ID:
-    data1: 0
-    data2: 0
-  Exists: 1
---- !u!114 &4467274562075992886
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Monster_Damage/Damage
   m_EditorClassIdentifier: 
   Name: Damage
   Min: 0
@@ -2379,7 +2319,7 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 1
   Parameters:
-  - {fileID: -2482883330476937215}
+  - {fileID: -4971619971105023469}
   MinDistance: 1
   MaxDistance: 20
   Length: 0
@@ -2566,7 +2506,7 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 1
   Parameters:
-  - {fileID: -7990501574998541220}
+  - {fileID: 7949004789795574680}
   MinDistance: 1
   MaxDistance: 20
   Length: 0

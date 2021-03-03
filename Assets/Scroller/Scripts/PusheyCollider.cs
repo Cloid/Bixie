@@ -9,7 +9,7 @@ public class PusheyCollider : MonoBehaviour
     public GameObject Wall;
 
     public void OnTriggerEnter(Collider other) {
-        Debug.Log("working?");
+        //Debug.Log("working?");
         if(other.gameObject.tag == "Statue"){
             Debug.Log("Working");
             rb = other.gameObject.GetComponent<Rigidbody>();

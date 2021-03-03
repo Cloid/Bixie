@@ -3875,6 +3875,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &847701991 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2276603738749615665, guid: d00d46a330cf34de8956be298c6b33f8, type: 3}
+  m_PrefabInstance: {fileID: 917170545}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4080bcbc917286241b23a7cde57aedec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!54 &848729515 stripped
 Rigidbody:
   m_CorrespondingSourceObject: {fileID: 4727239881597771817, guid: 3b29f0c284e08ae4282713c069d0ef01, type: 3}
@@ -3950,6 +3961,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2276603737524501352, guid: d00d46a330cf34de8956be298c6b33f8, type: 3}
+      propertyPath: dashForce
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2276603737524501352, guid: d00d46a330cf34de8956be298c6b33f8, type: 3}
+      propertyPath: playerAttack
+      value: 
+      objectReference: {fileID: 847701991}
     - target: {fileID: 2276603737524501353, guid: d00d46a330cf34de8956be298c6b33f8, type: 3}
       propertyPath: m_Name
       value: Qinyang
@@ -5711,6 +5730,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac82e6d568fd96c40b4fed441c919b9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MusicVolume: 0.5
+  SFXVolume: 0.5
+  MasterVolume: 1
+  sceneNum: 0
 --- !u!1 &1326738512
 GameObject:
   m_ObjectHideFlags: 0
@@ -13079,6 +13102,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1584053463, guid: 6ff773ca803e7814aa388c661e7cfd9d, type: 3}
+      propertyPath: jumpForce
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 2036134646021136293, guid: 6ff773ca803e7814aa388c661e7cfd9d, type: 3}
       propertyPath: m_Name
       value: Mei Lien

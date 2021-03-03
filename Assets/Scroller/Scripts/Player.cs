@@ -24,14 +24,19 @@ public class Player : MonoBehaviour {
 	protected float currentSpeed;
 	protected Animator anim;
 	protected Transform groundCheck;
-	protected Attack playerAttack;
+	protected GameObject playerAttack;
+	protected Attack curAttack;
 	protected bool onGround;
 	protected bool isDead = false;
 	protected bool facingRight = true;
 
 	// Private variables
+	private Vector3 dashVector;
 	private bool isDash = false;
+	private bool isAttack = false;
+	private bool heavyAttack = false;
 	private float dashTime = 0f;
+	private float heavyAttackTime = 0f;
 	private AudioSource audioS;
 	private Vector2 inputVector;
 
@@ -43,7 +48,9 @@ public class Player : MonoBehaviour {
 		currentSpeed = maxSpeed;
 		currentHealth = maxHealth;
 		audioS = GetComponent<AudioSource>();
-		playerAttack = GetComponent<Attack>();
+		playerAttack = gameObject.transform.Find("Attack").gameObject;
+		curAttack = playerAttack.GetComponent<Attack>();
+		dashVector = new Vector3(maxSpeed, 0, 0);
 	}
 	
 	// Update is called once per frame
@@ -73,27 +80,44 @@ public class Player : MonoBehaviour {
 			if (onGround)
 				anim.SetFloat("Speed", Mathf.Abs(rb.velocity.magnitude));
 
+			Debug.Log(isAttack);
+
 			// Flips sprite based on movement
-			if (h > 0 && !facingRight)
+			if (!isAttack)
 			{
-				Flip();
-			}
-			else if(h < 0 && facingRight)
-			{
-				Flip();
+				if (h > 0 && !facingRight)
+				{
+					Flip();
+					dashVector = -dashVector;
+				}
+				else if (h < 0 && facingRight)
+				{
+					Flip();
+					dashVector = -dashVector;
+				}
 			}
 
+			// Player dash functionality 
             if (isDash && dashTime == 0f)
             {
-				rb.velocity = rb.velocity * dashForce;
-				PlaySong(jumpSound);
+				rb.velocity = dashVector * dashForce;
+				//PlaySong(jumpSound);
 				isDash = false;
 				dashTime = 100f;
+				anim.SetBool("IsDashing", false);
 			} else {
 				if(dashTime > 0f)
                 {
 					dashTime -= 1f;
 				}
+            }
+
+			// Player heavy attack cooldown counter
+			if (heavyAttackTime <= 0f && !heavyAttack)
+            {
+				heavyAttack = true;
+			} else {
+				heavyAttackTime -= 1f;
             }
 
 			float minWidth = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 10)).x;
@@ -108,13 +132,43 @@ public class Player : MonoBehaviour {
 	public void Attack()
     {
 		Debug.Log("Player1 is doing an attack!");
+		curAttack.damage = 1;
+		isAttack = true;
+		curAttack.isHeavyAttack = false;
 		anim.SetTrigger("Attack");
-    }
+		Invoke("setAttack", 2);
+		
+	}
 
+	// Helper function for Player1's attack which reverses the isAttack value 
+	// This prevents Qinyang's sprite from flipping mid animation
+	private void setAttack()
+	{
+		if (isAttack) {
+			isAttack = false;
+		} else {
+			isAttack = true;
+		}
+	}
 	// Player 1's HeavyAttack Function
 	public void HeavyAttack()
 	{
-		Debug.Log("Player1 is doing a heavy attack!");
+		if (heavyAttack)
+		{
+			Debug.Log("Player1 is doing a heavy attack!");
+			curAttack.isHeavyAttack = true;
+			curAttack.damage = 2;
+            if (facingRight) {
+				curAttack.attackDirection = 1f;
+			} else
+            {
+				curAttack.attackDirection = -1f;
+			}
+			anim.SetTrigger("HeavyAttack");
+			heavyAttackTime = 120f;
+		}
+
+		heavyAttack = false;
 	}
 
 
@@ -127,8 +181,8 @@ public class Player : MonoBehaviour {
 	// Player 1's Dash Function
 	public void Dash()
     {
+		anim.SetBool("IsDashing", true);
 		Debug.Log("Player1 is doing a dash!");
-		// If player is jumping, add vertical force
 		isDash = true;
 	}
 

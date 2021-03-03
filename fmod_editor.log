@@ -8,7 +8,11 @@
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
 <<<<<<< HEAD
+<<<<<<< HEAD
 [LOG] AsyncManager::init                       : manager 0000013F29D68088 isAsync 0 updatePeriod 0.02
+=======
+[LOG] AsyncManager::init                       : manager 0000013F29D6FE28 isAsync 0 updatePeriod 0.02
+>>>>>>> parent of 21b8309 (fixed shader and added animation)
 =======
 [LOG] AsyncManager::init                       : manager 0000013F29D6FE28 isAsync 0 updatePeriod 0.02
 >>>>>>> parent of 21b8309 (fixed shader and added animation)

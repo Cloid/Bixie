@@ -309,9 +309,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 364236867}
+  - {fileID: 364236922}
   selectedCommands:
-  - {fileID: 364236876}
+  - {fileID: 364236924}
   variables: []
   description: 
   stepPause: 0
@@ -352,8 +352,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 77.766495
-    y: 70
+    x: 68.17746
+    y: 64.52054
     width: 74.657524
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -599,7 +599,7 @@ MonoBehaviour:
   indentLevel: 0
   _sceneName:
     stringRef: {fileID: 0}
-    stringVal: Scroller_1_1
+    stringVal: Character_Select
   loadingImage: {fileID: 0}
   sceneNameOLD: 
 --- !u!114 &364236876
@@ -1443,7 +1443,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 45
   indentLevel: 0
-  sayDialog: {fileID: 0}
+  sayDialog: {fileID: 1881220405}
 --- !u!114 &364236909
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1473,7 +1473,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 47
   indentLevel: 0
-  sayDialog: {fileID: 0}
+  sayDialog: {fileID: 1881220405}
 --- !u!114 &364236911
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1503,7 +1503,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 50
   indentLevel: 0
-  sayDialog: {fileID: 0}
+  sayDialog: {fileID: 1881220405}
 --- !u!114 &364236913
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1548,7 +1548,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 52
   indentLevel: 0
-  sayDialog: {fileID: 0}
+  sayDialog: {fileID: 1881220405}
 --- !u!114 &364236916
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1769,7 +1769,7 @@ MonoBehaviour:
   indentLevel: 0
   _sceneName:
     stringRef: {fileID: 0}
-    stringVal: Scroller_1_1
+    stringVal: Character_Select
   loadingImage: {fileID: 0}
   sceneNameOLD: 
 --- !u!114 &364236925
@@ -2815,7 +2815,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1392887016546948644, guid: 5b8755d691e4e054788a1a9136718635, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 1392887016546948644, guid: 5b8755d691e4e054788a1a9136718635, type: 3}
       propertyPath: m_AnchorMax.x

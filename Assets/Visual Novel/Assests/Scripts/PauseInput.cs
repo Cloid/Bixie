@@ -49,28 +49,31 @@ public class PauseInput : MonoBehaviour
                     }
                 }
             }
-            else if (SceneManager.GetActiveScene().buildIndex == 3)
+            else if (SceneManager.GetActiveScene().buildIndex == 4)
             {
-                if (gp == null)
+                if (!inOptions)
                 {
-                    if (kb.escapeKey.wasPressedThisFrame)
+                    if (gp == null)
                     {
-                        Time.timeScale = 0;
-                        //PauseMenu.SetActive(true);
-                        inOptions = true;
-                        Pause.ExecuteBlock("Pause_nonVN");
-                        //Application.LoadLevelAdditive("Options");
+                        if (kb.escapeKey.wasPressedThisFrame)
+                        {
+                            Time.timeScale = 0;
+                            //PauseMenu.SetActive(true);
+                            inOptions = true;
+                            Pause.ExecuteBlock("Pause_nonVN");
+                            //Application.LoadLevelAdditive("Options");
+                        }
                     }
-                }
-                else
-                {
-                    if (kb.escapeKey.wasPressedThisFrame || gp.startButton.wasPressedThisFrame)
+                    else
                     {
-                        Time.timeScale = 0;
-                        //PauseMenu.SetActive(true);
-                        inOptions = true;
-                        Pause.ExecuteBlock("Pause_nonVN");
-                        //Application.LoadLevelAdditive("Options");
+                        if (kb.escapeKey.wasPressedThisFrame || gp.startButton.wasPressedThisFrame)
+                        {
+                            Time.timeScale = 0;
+                            //PauseMenu.SetActive(true);
+                            inOptions = true;
+                            Pause.ExecuteBlock("Pause_nonVN");
+                            //Application.LoadLevelAdditive("Options");
+                        }
                     }
                 }
             }
@@ -88,7 +91,8 @@ public class PauseInput : MonoBehaviour
         //gameObject.SetActive(false);
     }
 
-    public void ResetBool(){
+    public void ResetBool()
+    {
         inOptions = false;
     }
 

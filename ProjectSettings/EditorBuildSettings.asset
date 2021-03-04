@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Visual Novel/Scenes/IntroVN.unity
     guid: cff0dc9a5ee77ef49bc633a8c6f794a2
   - enabled: 1
+    path: Assets/Visual Novel/Scenes/Character_Select.unity
+    guid: 02230e913fa672a489f94a616a13c524
+  - enabled: 1
     path: Assets/Scroller/Prefabs/Scroller_1_1.unity
     guid: 7bf376cd068c1dfee817bddb4f1e272f
   - enabled: 0

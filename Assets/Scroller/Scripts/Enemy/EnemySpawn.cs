@@ -18,8 +18,8 @@ public class EnemySpawn : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        print("currentEnemies: " + currentEnemies);
-        print("numberOfEnemies: " + numberOfEnemies);
+        //print("currentEnemies: " + currentEnemies);
+        //print("numberOfEnemies: " + numberOfEnemies);
         if (currentEnemies >= numberOfEnemies)
 		{
 			int enemies = FindObjectsOfType<Enemy>().Length;

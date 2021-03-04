@@ -11,7 +11,7 @@ public class PlayerInputHandler : MonoBehaviour
 {
     // Input variables
     private ArrayList players = new ArrayList();
-    private float index;
+    public float index;
     private int sceneIndex;
     private PlayerInput playerInput;
     private Player player1;
@@ -23,7 +23,7 @@ public class PlayerInputHandler : MonoBehaviour
 
     // Initialization
     void Awake() {
-        sceneIndex = SceneManager.GetActiveScene().buildIndex;
+        DontDestroyOnLoad(gameObject);
         cs = GameObject.FindObjectOfType<CS_Control>();
         playerInput = GetComponent<PlayerInput>();
         player1 = FindObjectOfType<Player>();
@@ -33,6 +33,15 @@ public class PlayerInputHandler : MonoBehaviour
         index = playerInput.playerIndex;
         print("inx:"+index);
         controls = new QinyangControls();
+    }
+    private void Update() {
+        if(player1 == null && SceneManager.GetActiveScene().buildIndex > 3){
+            player1 = FindObjectOfType<Player>();
+        }
+
+        if(player2 == null && SceneManager.GetActiveScene().buildIndex > 3){
+            player2 = FindObjectOfType<Player2>();
+        }
     }
 
     // onMove function 
@@ -49,7 +58,7 @@ public class PlayerInputHandler : MonoBehaviour
             }
         }
 
-        if(sceneIndex == 3){
+        if(SceneManager.GetActiveScene().buildIndex == 3 && cs!=null && index == 0){
             cs.moveMe(context.ReadValue<Vector2>());
         }
 
@@ -107,6 +116,12 @@ public class PlayerInputHandler : MonoBehaviour
                 if(context.performed) player2.Jump();
             }
         }
+
+        if( cs!= null && (!cs.p1_selected) && SceneManager.GetActiveScene().buildIndex == 3 
+                && index == 0 ){
+            cs.charSelect();
+        }
+        
         
         
     }

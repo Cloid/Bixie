@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CS_Control : MonoBehaviour
 {
@@ -9,50 +11,90 @@ public class CS_Control : MonoBehaviour
     public GameObject q_sel;
     public GameObject q_unsel;
     public GameObject blur;
+    public GameObject[] myObj;
+    public GameObject p2_text;
+    private PlayerInputHandler p1;
+    private PlayerInputHandler p2;
+    private CameraShake goCam;
     private bool ml_on = false;
     private bool q_on = false;
-
     public bool p1_selected = false;
     // Start is called before the first frame update
     void Start()
     {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        goCam = gameObject.GetComponent<CameraShake>();
     }
 
     public void moveMe(Vector2 vector)
     {
         Debug.Log(vector);
-        if (vector.x == -1 && (!ml_on))
+        if (!p1_selected)
         {
-            blur.SetActive(true);
-            q_sel.SetActive(false);
-            //ml_unsel.SetActive(false);
-            ml_sel.SetActive(true);
-            ml_on = true;
-            q_on = false;
-        }
-        else if (vector.x == 1 && (!q_on))
-        {
-            blur.SetActive(true);
-            ml_sel.SetActive(false);
-            //q_unsel.SetActive(false);
-            q_sel.SetActive(true);
-            ml_on = false;
-            q_on = true;
+            if (vector.x == -1 && (!ml_on))
+            {
+                blur.SetActive(true);
+                q_sel.SetActive(false);
+                //ml_unsel.SetActive(false);
+                ml_sel.SetActive(true);
+                ml_on = true;
+                q_on = false;
+            }
+            else if (vector.x == 1 && (!q_on))
+            {
+                blur.SetActive(true);
+                ml_sel.SetActive(false);
+                //q_unsel.SetActive(false);
+                q_sel.SetActive(true);
+                ml_on = false;
+                q_on = true;
+            }
         }
     }
 
-    public void charSelect(){
-        if(ml_sel.activeSelf == true){
-
-        } else {
-            
+    public void charSelect()
+    {
+        if (q_sel.activeSelf == true && !(p1_selected))
+        {
+            myObj = GameObject.FindGameObjectsWithTag("PlayerInput");
+            p1 = myObj[0].GetComponent<PlayerInputHandler>();
+            Debug.Log("Before: " + p1.index);
+            p1.index = 1;
+            Debug.Log("afer: " + p1.index);
+            p2 = myObj[1].GetComponent<PlayerInputHandler>();
+            if (p2 == null)
+            {
+                p2_text.SetActive(true);
+            }
+            else
+            {
+                p1_selected = true;
+                Debug.Log("Before: " + p2.index);
+                p2.index = 0;
+                Debug.Log("afer: " + p2.index);
+                ml_sel.SetActive(true);
+                goCam.ShakeIt();
+                Invoke("changeScene", 1);
+            }
         }
+        else if (!p1_selected)
+        {
+            myObj = GameObject.FindGameObjectsWithTag("PlayerInput");
+            p2 = myObj[1].GetComponent<PlayerInputHandler>();
+            if (p2 == null)
+            {
+                p2_text.SetActive(true);
+            }
+            else
+            {
+                p1_selected = true;
+                q_sel.SetActive(true);
+                goCam.ShakeIt();
+                Invoke("changeScene", 1);
+            }
+        }
+    }
+
+    private void changeScene(){
+        SceneManager.LoadScene("Scroller_1_1");
     }
 }

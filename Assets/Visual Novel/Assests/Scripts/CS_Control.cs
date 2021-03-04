@@ -13,6 +13,7 @@ public class CS_Control : MonoBehaviour
     public GameObject blur;
     public GameObject[] myObj;
     public GameObject p2_text;
+    public GameObject ctext;
     private PlayerInputHandler p1;
     private PlayerInputHandler p2;
     private CameraShake goCam;
@@ -30,7 +31,7 @@ public class CS_Control : MonoBehaviour
         Debug.Log(vector);
         if (!p1_selected)
         {
-            if (vector.x == -1 && (!ml_on))
+            if (vector.x < 0 && vector.x >= -1 && (!ml_on))
             {
                 blur.SetActive(true);
                 q_sel.SetActive(false);
@@ -39,7 +40,7 @@ public class CS_Control : MonoBehaviour
                 ml_on = true;
                 q_on = false;
             }
-            else if (vector.x == 1 && (!q_on))
+            else if (vector.x <= 1 && vector.x > 0 && (!q_on))
             {
                 blur.SetActive(true);
                 ml_sel.SetActive(false);
@@ -57,20 +58,17 @@ public class CS_Control : MonoBehaviour
         {
             myObj = GameObject.FindGameObjectsWithTag("PlayerInput");
             p1 = myObj[0].GetComponent<PlayerInputHandler>();
-            Debug.Log("Before: " + p1.index);
-            p1.index = 1;
-            Debug.Log("afer: " + p1.index);
-            p2 = myObj[1].GetComponent<PlayerInputHandler>();
-            if (p2 == null)
+            if (myObj.Length == 1)
             {
+                ctext.SetActive(false);
                 p2_text.SetActive(true);
             }
             else
             {
+                ctext.SetActive(false);
+                p2_text.SetActive(false);
+                p2 = myObj[1].GetComponent<PlayerInputHandler>();
                 p1_selected = true;
-                Debug.Log("Before: " + p2.index);
-                p2.index = 0;
-                Debug.Log("afer: " + p2.index);
                 ml_sel.SetActive(true);
                 goCam.ShakeIt();
                 Invoke("changeScene", 1);
@@ -79,14 +77,21 @@ public class CS_Control : MonoBehaviour
         else if (!p1_selected)
         {
             myObj = GameObject.FindGameObjectsWithTag("PlayerInput");
-            p2 = myObj[1].GetComponent<PlayerInputHandler>();
-            if (p2 == null)
+            p1 = myObj[0].GetComponent<PlayerInputHandler>();
+            Debug.Log(p2);
+            if (myObj.Length == 1)
             {
+                ctext.SetActive(false);
                 p2_text.SetActive(true);
             }
             else
             {
+                ctext.SetActive(false);
+                p2_text.SetActive(false);
+                p2 = myObj[1].GetComponent<PlayerInputHandler>();
                 p1_selected = true;
+                p1.index = 1;
+                p2.index = 0;
                 q_sel.SetActive(true);
                 goCam.ShakeIt();
                 Invoke("changeScene", 1);

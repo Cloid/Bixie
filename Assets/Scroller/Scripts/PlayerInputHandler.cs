@@ -5,22 +5,26 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using static UnityEngine.InputSystem.InputAction;
+using UnityEngine.SceneManagement;
 
 public class PlayerInputHandler : MonoBehaviour
 {
     // Input variables
     private ArrayList players = new ArrayList();
     private float index;
+    private int sceneIndex;
     private PlayerInput playerInput;
     private Player player1;
     private Player2 player2;
+    private CS_Control cs;
     QinyangControls controls;
     Vector2 move;
 
 
     // Initialization
     void Awake() {
-        
+        sceneIndex = SceneManager.GetActiveScene().buildIndex;
+        cs = GameObject.FindObjectOfType<CS_Control>();
         playerInput = GetComponent<PlayerInput>();
         player1 = FindObjectOfType<Player>();
         player2 = FindObjectOfType<Player2>();
@@ -44,6 +48,11 @@ public class PlayerInputHandler : MonoBehaviour
                 player2.SetInputVector(context.ReadValue<Vector2>());
             }
         }
+
+        if(sceneIndex == 3){
+            cs.moveMe(context.ReadValue<Vector2>());
+        }
+
     }
 
     // onAttack function 

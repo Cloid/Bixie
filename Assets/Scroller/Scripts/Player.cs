@@ -136,7 +136,7 @@ public class Player : MonoBehaviour {
 		isAttack = true;
 		curAttack.isHeavyAttack = false;
 		anim.SetTrigger("Attack");
-		Invoke("setAttack", 2);
+		Invoke("setAttack", 1);
 		
 	}
 

@@ -80,7 +80,7 @@ public class Player : MonoBehaviour {
 			if (onGround)
 				anim.SetFloat("Speed", Mathf.Abs(rb.velocity.magnitude));
 
-			Debug.Log(isAttack);
+			// Debug.Log(isAttack);
 
 			// Flips sprite based on movement
 			if (!isAttack)
@@ -136,7 +136,7 @@ public class Player : MonoBehaviour {
 		isAttack = true;
 		curAttack.isHeavyAttack = false;
 		anim.SetTrigger("Attack");
-		Invoke("setAttack", 2);
+		Invoke("setAttack", 1);
 		
 	}
 

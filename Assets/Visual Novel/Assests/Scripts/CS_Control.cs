@@ -14,6 +14,7 @@ public class CS_Control : MonoBehaviour
     public GameObject[] myObj;
     public GameObject p2_text;
     public GameObject ctext;
+    public GameObject controls;
     private PlayerInputHandler p1;
     private PlayerInputHandler p2;
     private CameraShake goCam;
@@ -54,6 +55,10 @@ public class CS_Control : MonoBehaviour
 
     public void charSelect()
     {
+        if(controls.activeSelf == true){
+            Debug.Log("test");
+            changeScene();
+        }
         if (q_sel.activeSelf == true && !(p1_selected))
         {
             myObj = GameObject.FindGameObjectsWithTag("PlayerInput");
@@ -71,7 +76,7 @@ public class CS_Control : MonoBehaviour
                 p1_selected = true;
                 ml_sel.SetActive(true);
                 goCam.ShakeIt();
-                Invoke("changeScene", 1);
+                Invoke("showControls", 1);
             }
         }
         else if (!p1_selected)
@@ -94,12 +99,18 @@ public class CS_Control : MonoBehaviour
                 p2.index = 0;
                 q_sel.SetActive(true);
                 goCam.ShakeIt();
-                Invoke("changeScene", 1);
+                Invoke("showControls", 1);
             }
         }
     }
 
     private void changeScene(){
         SceneManager.LoadScene("Scroller_1_1");
+    }
+
+    private void showControls(){
+        Canvas mcanvas = blur.GetComponent<Canvas>();
+        mcanvas.sortingOrder = 4;
+        controls.SetActive(true);
     }
 }

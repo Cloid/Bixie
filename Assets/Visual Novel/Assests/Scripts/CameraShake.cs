@@ -12,7 +12,6 @@ public class CameraShake : MonoBehaviour {
 
 	public void ShakeIt()
 	{
-		Debug.Log("here");
 		cameraInitialPosition = mainCamera.transform.position;
 		InvokeRepeating ("StartCameraShaking", 0f, 0.005f);
 		Invoke ("StopCameraShaking", shakeTime);
@@ -20,7 +19,6 @@ public class CameraShake : MonoBehaviour {
 
 	void StartCameraShaking()
 	{
-		Debug.Log("am here now");
 		float cameraShakingOffsetX = Random.value * shakeMagnetude * 2 - shakeMagnetude;
 		float cameraShakingOffsetY = Random.value * shakeMagnetude * 2 - shakeMagnetude;
 		Vector3 cameraIntermadiatePosition = mainCamera.transform.position;

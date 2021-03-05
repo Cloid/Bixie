@@ -15,6 +15,7 @@ public class OptionsInput : MonoBehaviour
     public GameObject Sound;
     public GameObject Credits;
     public GameObject Txt;
+    public GameObject controls;
 
     public GameObject EventSystem;
 
@@ -26,6 +27,7 @@ public class OptionsInput : MonoBehaviour
     public GameObject Credits_1;
     public GameObject Credits_2;
     public GameObject parentScene;
+    public GameObject controls_txt;
     public Text MusicNum;
     public Text SoundNum;
     public AudioOptions AudOptions;
@@ -35,6 +37,8 @@ public class OptionsInput : MonoBehaviour
     public int sceneNum;
 
     public bool inCredits = false;
+
+    public bool inControls = false;
 
     private void Start()
     {
@@ -102,6 +106,30 @@ public class OptionsInput : MonoBehaviour
                 }
             }
         }
+        else if (inControls)
+        {
+            Keyboard kb = InputSystem.GetDevice<Keyboard>();
+            Gamepad gp = InputSystem.GetDevice<Gamepad>();
+            
+            if (gp == null)
+            {
+                if (kb.enterKey.wasPressedThisFrame)
+                {
+                    controls.SetActive(false);
+                    OptionsUI.SetActive(true);
+                    inControls = false;
+                }
+            }
+            else
+            {
+                if (kb.enterKey.wasPressedThisFrame || gp.aButton.wasPressedThisFrame)
+                {
+                    controls.SetActive(false);
+                    OptionsUI.SetActive(true);
+                    inControls = false;
+                }
+            }
+        }
         else
         {
 
@@ -111,14 +139,14 @@ public class OptionsInput : MonoBehaviour
             {
                 if (kb.wKey.wasPressedThisFrame || kb.upArrowKey.wasPressedThisFrame)
                 {
-                    if (tracker > 0 && tracker <= 3)
+                    if (tracker > 0 && tracker <= 4)
                     {
                         tracker--;
                     }
                 }
                 else if (kb.sKey.wasPressedThisFrame || kb.downArrowKey.wasPressedThisFrame)
                 {
-                    if (tracker >= 0 && tracker < 3)
+                    if (tracker >= 0 && tracker < 4)
                     {
                         tracker++;
                     }
@@ -128,14 +156,14 @@ public class OptionsInput : MonoBehaviour
             {
                 if (kb.wKey.wasPressedThisFrame || kb.upArrowKey.wasPressedThisFrame || gp.leftStick.up.wasPressedThisFrame)
                 {
-                    if (tracker > 0 && tracker <= 3)
+                    if (tracker > 0 && tracker <= 4)
                     {
                         tracker--;
                     }
                 }
                 else if (kb.sKey.wasPressedThisFrame || kb.downArrowKey.wasPressedThisFrame || gp.leftStick.down.wasPressedThisFrame)
                 {
-                    if (tracker >= 0 && tracker < 3)
+                    if (tracker >= 0 && tracker < 4)
                     {
                         tracker++;
                     }
@@ -150,6 +178,7 @@ public class OptionsInput : MonoBehaviour
                 Sound.GetComponent<Text>().color = Color.black;
                 Credits.GetComponent<Text>().color = Color.black;
                 Txt.GetComponent<Text>().color = Color.black;
+                controls_txt.GetComponent<Text>().color = Color.black;
                 //EventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(Music_Slider);
                 Music_Slider.Select();
             }
@@ -159,6 +188,7 @@ public class OptionsInput : MonoBehaviour
                 Sound.GetComponent<Text>().color = Color.red;
                 Credits.GetComponent<Text>().color = Color.black;
                 Txt.GetComponent<Text>().color = Color.black;
+                controls_txt.GetComponent<Text>().color = Color.black;
                 Sound_Slider.Select();
             }
             else if (tracker == 2)
@@ -167,9 +197,10 @@ public class OptionsInput : MonoBehaviour
                 Sound.GetComponent<Text>().color = Color.black;
                 Txt.GetComponent<Text>().color = Color.red;
                 Credits.GetComponent<Text>().color = Color.black;
+                controls_txt.GetComponent<Text>().color = Color.black;
                 //EventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(null);
                 tmpNull.Select();
-                
+
                 if (gp == null)
                 {
                     if (kb.enterKey.wasPressedThisFrame)
@@ -212,6 +243,7 @@ public class OptionsInput : MonoBehaviour
                 Sound.GetComponent<Text>().color = Color.black;
                 Credits.GetComponent<Text>().color = Color.red;
                 Txt.GetComponent<Text>().color = Color.black;
+                controls_txt.GetComponent<Text>().color = Color.black;
                 //EventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(null);
                 tmpNull.Select();
                 if (gp == null)
@@ -235,6 +267,34 @@ public class OptionsInput : MonoBehaviour
 
 
 
+            }
+            else if (tracker == 4)
+            {
+                Music.GetComponent<Text>().color = Color.black;
+                Sound.GetComponent<Text>().color = Color.black;
+                Credits.GetComponent<Text>().color = Color.black;
+                Txt.GetComponent<Text>().color = Color.black;
+                controls_txt.GetComponent<Text>().color = Color.red;
+                tmpNull.Select();
+
+                if (gp == null)
+                {
+                    if (kb.enterKey.wasPressedThisFrame)
+                    {
+                        OptionsUI.SetActive(false);
+                        controls.SetActive(true);
+                        inControls = true;
+                    }
+                }
+                else
+                {
+                    if (kb.enterKey.wasPressedThisFrame || gp.aButton.wasPressedThisFrame)
+                    {
+                        OptionsUI.SetActive(false);
+                        controls.SetActive(true);
+                        inControls = true;
+                    }
+                }
             }
 
         }

@@ -2801,6 +2801,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1392887016366406930, guid: 5b8755d691e4e054788a1a9136718635, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1392887016366406930, guid: 5b8755d691e4e054788a1a9136718635, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 55
+      objectReference: {fileID: 0}
+    - target: {fileID: 1392887016366406930, guid: 5b8755d691e4e054788a1a9136718635, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1392887016366406930, guid: 5b8755d691e4e054788a1a9136718635, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1392887016366406956, guid: 5b8755d691e4e054788a1a9136718635, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e52b3e93292423b43a112fc9e5fd31bf, type: 3}
+    - target: {fileID: 1392887016366406956, guid: 5b8755d691e4e054788a1a9136718635, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1392887016546948626, guid: 5b8755d691e4e054788a1a9136718635, type: 3}
       propertyPath: m_Name
       value: NarratorDialog
@@ -2815,7 +2839,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1392887016546948644, guid: 5b8755d691e4e054788a1a9136718635, type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1392887016546948644, guid: 5b8755d691e4e054788a1a9136718635, type: 3}
       propertyPath: m_AnchorMax.x
@@ -3147,6 +3171,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8020187324669848212, guid: e7e49aab1d8a2ac4cb67a5049086ecb5, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8020187324669848212, guid: e7e49aab1d8a2ac4cb67a5049086ecb5, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 55
+      objectReference: {fileID: 0}
+    - target: {fileID: 8020187324669848212, guid: e7e49aab1d8a2ac4cb67a5049086ecb5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8020187324669848212, guid: e7e49aab1d8a2ac4cb67a5049086ecb5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8020187324669848214, guid: e7e49aab1d8a2ac4cb67a5049086ecb5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e52b3e93292423b43a112fc9e5fd31bf, type: 3}
+    - target: {fileID: 8020187324669848214, guid: e7e49aab1d8a2ac4cb67a5049086ecb5, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8020187326238795972, guid: e7e49aab1d8a2ac4cb67a5049086ecb5, type: 3}
       propertyPath: m_Name
       value: SayDialog

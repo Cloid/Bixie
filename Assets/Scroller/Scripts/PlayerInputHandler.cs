@@ -120,6 +120,8 @@ public class PlayerInputHandler : MonoBehaviour
         if( cs!= null && (!cs.p1_selected) && SceneManager.GetActiveScene().buildIndex == 3 
                 && index == 0 ){
             cs.charSelect();
+        } else if(cs!=null && cs.controls.activeSelf){
+            cs.charSelect();
         }
         
         

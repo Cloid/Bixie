@@ -9042,18 +9042,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a266d60f6a90463fa08dfd17eff938c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 4
-  minHeight: 0
-  maxHeight: 0
+  maxSpeed: 2
+  minHeight: -7.86
+  maxHeight: 1.86
   damageTime: 0.2
   maxHealth: 25
-  attackRate: 1
+  attackRate: 5
   enemyName: 
   enemyImage: {fileID: 0}
   collisionSound: {fileID: 0}
   damageSound: 
   deathSound: 
-  cage: {fileID: 0}
+  cage: {fileID: 3489004711877300025, guid: ff297912d2e104ca1846b910063f3111, type: 3}
   minBoomerangTime: 8
   maxBoomerangTime: 12
 --- !u!1 &1800099152
@@ -13999,63 +13999,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6660449767298255418, guid: 662d9f5bcc71a454f87b093b98da1190, type: 3}
   m_PrefabInstance: {fileID: 2141669734}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &344641929530724668
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2693216038724523860, guid: ff297912d2e104ca1846b910063f3111, type: 3}
-      propertyPath: m_RootOrder
-      value: 31
-      objectReference: {fileID: 0}
-    - target: {fileID: 2693216038724523860, guid: ff297912d2e104ca1846b910063f3111, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2.02
-      objectReference: {fileID: 0}
-    - target: {fileID: 2693216038724523860, guid: ff297912d2e104ca1846b910063f3111, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2693216038724523860, guid: ff297912d2e104ca1846b910063f3111, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2693216038724523860, guid: ff297912d2e104ca1846b910063f3111, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2693216038724523860, guid: ff297912d2e104ca1846b910063f3111, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2693216038724523860, guid: ff297912d2e104ca1846b910063f3111, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2693216038724523860, guid: ff297912d2e104ca1846b910063f3111, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2693216038724523860, guid: ff297912d2e104ca1846b910063f3111, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2693216038724523860, guid: ff297912d2e104ca1846b910063f3111, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2693216038724523860, guid: ff297912d2e104ca1846b910063f3111, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3489004711877300025, guid: ff297912d2e104ca1846b910063f3111, type: 3}
-      propertyPath: m_Name
-      value: Cage
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: ff297912d2e104ca1846b910063f3111, type: 3}
 --- !u!1001 &422463815883202471
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14411,7 +14354,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8149512824856040176, guid: f9db4260eba037e41b1001baf65bbdcb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4
+      value: -7.86
       objectReference: {fileID: 0}
     - target: {fileID: 8149512824856040176, guid: f9db4260eba037e41b1001baf65bbdcb, type: 3}
       propertyPath: m_LocalRotation.w

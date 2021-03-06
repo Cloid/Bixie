@@ -27,7 +27,7 @@ public class Shanxiao_BossACT1 : Enemy
 	{
 		if (!isDead)
 		{
-			anim.SetTrigger("Boomerang");
+			anim.SetTrigger("cage Attack");
 			GameObject tempCage = Instantiate(cage, player2.transform.position, transform.rotation);
 			//if (facingRight)
 			//{

@@ -52,9 +52,13 @@ public class PlayerInputHandler : MonoBehaviour
     {
         if(player1 != null && player2 != null)
         {
-            if(index == 0 && context.performed)
+            if (index == 0)
             {
-                player1.Attack();
+                if (context.performed)  player1.Attack();
+            }
+            else
+            {
+                if (context.performed) player2.Attack();
             }
         }
     }
@@ -65,9 +69,13 @@ public class PlayerInputHandler : MonoBehaviour
     {
         if (player1 != null && player2 != null)
         {
-            if (index == 0 && context.performed)
+            if (index == 0)
             {
-                player1.HeavyAttack();
+                if (context.performed) player1.HeavyAttack();
+            }
+            else
+            {
+                if (context.performed) player2.HeavyAttack();
             }
         }
     }
@@ -78,9 +86,13 @@ public class PlayerInputHandler : MonoBehaviour
     {
         if (player1 != null && player2 != null)
         {
-            if (index == 0 && context.performed)
+            if (index == 0)
             {
-                player1.Special();
+                if (context.performed) player1.Special();
+            }
+            else
+            {
+                if (context.performed) player2.Special();
             }
         }
     }
@@ -95,7 +107,7 @@ public class PlayerInputHandler : MonoBehaviour
             {
                 if(context.performed) player1.Dash();
             }else{
-                if(context.performed) player2.Jump();
+                player2.Jump();
             }
         }
         
@@ -121,7 +133,6 @@ public class PlayerInputHandler : MonoBehaviour
                 
                 if (player2.interactObj != null)
                 {
-                    print("pls2");
                     player2.Interact(player2.interactObj);
                 }
             }

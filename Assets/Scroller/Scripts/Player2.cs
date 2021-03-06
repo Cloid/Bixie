@@ -19,10 +19,10 @@ public class Player2 : MonoBehaviour
     private bool onGround2;
     private bool isDead2 = false;
     private bool isFacingRight2 = false;
-    private bool isJump2 = false;
+    private bool canAttack = false;
     private float currentSpeed;
     private float torchDistance;
-
+    private float attackTime = 0f;
 
     // GameObjects
     private Player player1;
@@ -33,7 +33,7 @@ public class Player2 : MonoBehaviour
     private Vector2 inputVector;
     private TorchControllerSS torchControl;
     public AudioSource currAudioSource;
-    GameObject fireBall;
+    public GameObject projectile;
 
     public AudioClip collisionSound2, jumpSound2, healthItem2;
 
@@ -77,6 +77,8 @@ public class Player2 : MonoBehaviour
             float h = inputVector.x;
             float v = inputVector.y;
 
+            // Debug.Log(onGround2);
+
             if (!onGround2)
             {
                 v = 0;
@@ -98,12 +100,14 @@ public class Player2 : MonoBehaviour
                 Flip();
             }
 
-            // If player is jumping, then set it to false once player lands
-            if (isJump2 && onGround2)
+            // Attack cooldown
+            if(attackTime <= 0 && !canAttack)
             {
-                rb.AddForce(Vector3.up * jumpForce);
-                isJump2 = false;
-            } 
+                canAttack = true;
+            } else
+            {
+                attackTime -= 1f;
+            }
 
             float minWidth = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 10)).x;
 			float maxWidth = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0, 10)).x;
@@ -118,19 +122,55 @@ public class Player2 : MonoBehaviour
         }
     }
 
-    // Player 2's Attack Function (WIP)
+    // Player 2's Attack Function 
     public void Attack()
     {
+        if (onGround2 && canAttack)
+        {
+            Debug.Log("Player2 is doing an attack!");
+            anim2.SetTrigger("Attack");
+            // Spawn projectile and get properties
+            GameObject newProjectile = Instantiate(projectile, transform.position, Quaternion.identity) as GameObject;
+            Projectile nProj = newProjectile.GetComponent<Projectile>();
 
+            // Flip direction and sprite orientation depending on where Mei Lien is facing
+            if (!isFacingRight2)
+            {
+                newProjectile.GetComponent<Rigidbody>().AddForce(200f, 0, 0);
+            }
+            else
+            {
+                Vector3 projectileScale = newProjectile.transform.localScale;
+                projectileScale.x *= -1;
+                newProjectile.transform.localScale = projectileScale;
+                nProj.attackDir = -1f;
+                newProjectile.GetComponent<Rigidbody>().AddForce(-200f, 0, 0);
+            }
+
+            attackTime = 100f;
+            canAttack = false;
+        }
+    }
+
+    // Player 1's HeavyAttack Function
+    public void HeavyAttack()
+    {
+        Debug.Log("Player2 is doing a heavy attack!");
+    }
+
+    // Player 2's Special Function
+    public void Special()
+    {
+        Debug.Log("Player2 is doing a special!");
     }
 
     // Player 2's Jump Function
     public void Jump()
     {
-        if (!isJump2)
+        if (onGround2)
         {
+            Debug.Log("Player2 is doing a jump!");
             rb.AddForce(Vector3.up * jumpForce);
-            isJump2 = true;
         }
     }
 
@@ -173,7 +213,7 @@ public class Player2 : MonoBehaviour
     // Hit Damage function
     public void TookDamage(int damage) 
     {
-        if (!isDead2)
+        if (!isDead2 && onGround2)
         {
             player1.currentHealth-= damage;
             anim2.SetTrigger("HitDamage");
@@ -182,18 +222,26 @@ public class Player2 : MonoBehaviour
 
             if (player1.currentHealth <= 0)
             {
-                isDead2 = true;
-                FindObjectOfType<GameManager>().lives--;
-                if (isFacingRight2)
-                {
-                    rb.AddForce(new Vector3(-3, 5, 0), ForceMode.Impulse);
-                }
-                else
-                {
-                    rb.AddForce(new Vector3(3, 5, 0), ForceMode.Impulse);
-                }
+                playerDying();
+                player1.playerDying();
             }
         }
+    }
+
+    // Helper function -> player dies and respawns if they reach 0 health
+    public void playerDying()
+    {
+        isDead2 = true;
+        //FindObjectOfType<GameManager>().lives--;
+        if (isFacingRight2)
+        {
+            rb.AddForce(new Vector3(-3, 5, 0), ForceMode.Impulse);
+        }
+        else
+        {
+            rb.AddForce(new Vector3(3, 5, 0), ForceMode.Impulse);
+        }
+        Invoke("PlayerRespawn", 2f);
     }
 
     public void PlaySong(AudioClip clip)

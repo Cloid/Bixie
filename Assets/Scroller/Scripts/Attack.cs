@@ -5,7 +5,7 @@ using UnityEngine;
 public class Attack : MonoBehaviour {
 
 	public int damage;
-	public bool isHeavyAttack;
+	public string attackState;
 	public float attackDirection;
 
 	// Use this for initialization
@@ -25,9 +25,10 @@ public class Attack : MonoBehaviour {
 		Enemy enemy = other.GetComponent<Enemy>();
 		Player player = other.GetComponent<Player>();
 		Player2 player2 = other.GetComponent<Player2>();
+		// Projectile playerProjectile = other.GetComponent<Projectile>();
 		if(enemy != null)
 		{
-			enemy.TookDamage(damage, isHeavyAttack, attackDirection);
+			enemy.TookDamage(damage, attackState, attackDirection);
 		}
 
 		if (player != null)

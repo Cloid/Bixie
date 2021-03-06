@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6810642812144980569}
   - component: {fileID: 6939757365036342577}
   - component: {fileID: 4459283036712147337}
+  - component: {fileID: 4191020735160819863}
   m_Layer: 14
   m_Name: Cage
   m_TagString: Untagged
@@ -157,9 +158,21 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3489004711877300025}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9428680b8997f6748a5aa2fe5e2e699b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   destroyTime: 4
+--- !u!114 &4191020735160819863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3489004711877300025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22cf8be6ca9badb48b41d883569dfc1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

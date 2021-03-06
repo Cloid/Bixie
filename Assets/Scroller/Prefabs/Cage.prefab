@@ -95,11 +95,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3489004711877300025}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
+  m_IsTrigger: 0
+  m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.3, y: 0.45, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.6492317, y: 1.3802118, z: 0.67424583}
+  m_Center: {x: 0.05560732, y: 0.024874121, z: -0.03457105}
 --- !u!54 &836249243756775620
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -114,7 +114,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!114 &6810642812144980569
 MonoBehaviour:
@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
-  isHeavyAttack: 0
+  attackState: 
   attackDirection: 0
 --- !u!95 &6939757365036342577
 Animator:

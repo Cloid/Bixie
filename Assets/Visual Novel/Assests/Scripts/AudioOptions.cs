@@ -17,6 +17,11 @@ public class AudioOptions : MonoBehaviour
 
     public int sceneNum = 0;
 
+    private AudioSource Narr_vol;
+    private AudioSource Char_vol;
+    private AudioSource Real_vol;
+
+
     void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
@@ -42,6 +47,7 @@ public class AudioOptions : MonoBehaviour
 
         Music.setVolume(MusicVolume);
         SFX.setVolume(SFXVolume);
+        
     }
 
 
@@ -69,5 +75,25 @@ public class AudioOptions : MonoBehaviour
         {
             SFXVolumeTestEvent.start();
         }
+
+/*
+        if(Narr_vol == null){
+            Narr_vol = GameObject.Find("NarrativeDialog").GetComponent<AudioSource>();
+            Narr_vol.volume = newSFXVolume;
+            Debug.Log("Finished NArr");
+        }
+
+        if(Char_vol == null){
+            Char_vol = GameObject.Find("SayDialog").GetComponent<AudioSource>();            
+            Char_vol.volume = newSFXVolume;
+            Debug.Log("Finished char");
+
+        }
+
+        if(Real_vol == null){
+            Real_vol = GameObject.Find("SayDialog").GetComponent<AudioSource>();           
+            Real_vol.volume = newSFXVolume;
+            Debug.Log("Finished real");
+        }*/
     }
 }

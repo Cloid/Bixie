@@ -30,11 +30,10 @@ public class Shanxiao_BossACT1 : Enemy
 	{
 		if (!isDead)
 		{
-			Debug.Log("Test");
-			anim.SetTrigger("Boomerang");
+			anim.SetTrigger("cage Attack");
 			GameObject tempCage = Instantiate(cage, player2.transform.position, transform.rotation);
 			Mei.constraints = RigidbodyConstraints.FreezeAll;
-			
+
 			//use the code below to bring mei lien back to full control;
 			//Mei.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
 

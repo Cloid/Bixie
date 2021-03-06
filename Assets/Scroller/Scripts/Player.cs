@@ -28,7 +28,7 @@ public class Player : MonoBehaviour {
 	protected Attack curAttack;
 	protected bool onGround;
 	protected bool isDead = false;
-	protected bool facingRight = true;
+	protected bool isFacingRight = true;
 
 	// Private variables
 	private Vector3 dashVector;
@@ -39,9 +39,11 @@ public class Player : MonoBehaviour {
 	private float heavyAttackTime = 0f;
 	private AudioSource audioS;
 	private Vector2 inputVector;
+	private Player2 player2;
 
 	// Use this for initialization
 	void Start () {
+		player2 = FindObjectOfType<Player2>();
 		rb = GetComponent<Rigidbody>();
 		anim = GetComponent<Animator>();
 		groundCheck = gameObject.transform.Find("GroundCheck");
@@ -80,17 +82,15 @@ public class Player : MonoBehaviour {
 			if (onGround)
 				anim.SetFloat("Speed", Mathf.Abs(rb.velocity.magnitude));
 
-			// Debug.Log(isAttack);
-
 			// Flips sprite based on movement
 			if (!isAttack)
 			{
-				if (h > 0 && !facingRight)
+				if (h > 0 && !isFacingRight)
 				{
 					Flip();
 					dashVector = -dashVector;
 				}
-				else if (h < 0 && facingRight)
+				else if (h < 0 && isFacingRight)
 				{
 					Flip();
 					dashVector = -dashVector;
@@ -134,10 +134,9 @@ public class Player : MonoBehaviour {
 		Debug.Log("Player1 is doing an attack!");
 		curAttack.damage = 1;
 		isAttack = true;
-		curAttack.isHeavyAttack = false;
+		curAttack.attackState = "qinyangBasicAttack";
 		anim.SetTrigger("Attack");
 		Invoke("setAttack", 1);
-		
 	}
 
 	// Helper function for Player1's attack which reverses the isAttack value 
@@ -156,9 +155,10 @@ public class Player : MonoBehaviour {
 		if (heavyAttack)
 		{
 			Debug.Log("Player1 is doing a heavy attack!");
-			curAttack.isHeavyAttack = true;
+			curAttack.attackState = "qinyangHeavyAttack";
 			curAttack.damage = 2;
-            if (facingRight) {
+            if (isFacingRight)
+			{
 				curAttack.attackDirection = 1f;
 			} else
             {
@@ -203,7 +203,7 @@ public class Player : MonoBehaviour {
 	// Player 1's flip function
 	void Flip()
 	{
-		facingRight = !facingRight;
+		isFacingRight = !isFacingRight;
 
 		Vector3 scale = transform.localScale;
 		scale.x *= -1;
@@ -230,22 +230,28 @@ public class Player : MonoBehaviour {
 
 			PlaySound(damageSound, "Damage", damage);
 
-			Debug.Log(currentHealth);
-			if(currentHealth <= 0)
+			if (currentHealth <= 0)
 			{
-				isDead = true;
-				FindObjectOfType<GameManager>().lives--;
-				
-				if (facingRight)
-				{
-					rb.AddForce(new Vector3(-3, 5, 0), ForceMode.Impulse);
-				}
-				else
-				{
-					rb.AddForce(new Vector3(3, 5, 0), ForceMode.Impulse);
-				}
+				playerDying();
+				player2.playerDying();
 			}
 		}
+	}
+
+	// Helper function -> player dies and respawns if they reach 0 health
+	public void playerDying()
+	{
+		isDead = true;
+		FindObjectOfType<GameManager>().lives--;
+		if (isFacingRight)
+		{
+			rb.AddForce(new Vector3(-3, 5, 0), ForceMode.Impulse);
+		}
+		else
+		{
+			rb.AddForce(new Vector3(3, 5, 0), ForceMode.Impulse);
+		}
+		Invoke("PlayerRespawn", 2f);
 	}
 
 	public void PlaySong(AudioClip clip)

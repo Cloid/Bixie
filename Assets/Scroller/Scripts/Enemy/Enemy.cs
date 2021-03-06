@@ -199,7 +199,7 @@ public class Enemy : MonoBehaviour {
 				Mathf.Clamp(rb.position.z, minHeight, maxHeight));
 	}
 
-	public void TookDamage(int damage, bool state, float attackDir)
+	public void TookDamage(int damage, string stateTag, float attackDir)
 	{
 		if (!isDead)
 		{
@@ -208,10 +208,22 @@ public class Enemy : MonoBehaviour {
 			anim.SetTrigger("HitDamage");
 			PlaySound(damageSound, "Damage", damage);
 			FindObjectOfType<UIManager>().UpdateEnemyUI(maxHealth, currentHealth, enemyName, enemyImage);
-			// If state is true (only one state which is heavyAttack for now) then it will do an effect
-			if (state)
+			// Enemies get an effect depending on stateTag
+			switch(stateTag)
             {
-				rb.AddForce(new Vector3(attackDir * 10, 5, 0), ForceMode.Impulse);
+				case "qinyangBasicAttack":
+					break;
+				case "qinyangHeavyAttack":
+					rb.AddForce(new Vector3(attackDir * 10, 5, 0), ForceMode.Impulse);
+					break;
+				case "meiLienBasicAttack":
+					rb.AddForce(new Vector3(attackDir * 10, 5, 0), ForceMode.Impulse);
+					break;
+				case "meiLienHeavyAttack":
+					break;
+				default:
+					Debug.Log("Unregistered enemy state tag");
+					break;
 			}
 			if(currentHealth <= 0)
 			{

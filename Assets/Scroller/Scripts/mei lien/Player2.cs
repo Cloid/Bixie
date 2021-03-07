@@ -196,6 +196,7 @@ public class Player2 : MonoBehaviour
         if (onGround2)
         {
             Debug.Log("Player2 is doing a jump!");
+            anim2.SetTrigger("Jumping");
             rb.AddForce(Vector3.up * jumpForce);
         }
     }

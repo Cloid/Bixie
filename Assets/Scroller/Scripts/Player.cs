@@ -114,7 +114,8 @@ public class Player : MonoBehaviour
                 //PlaySong(jumpSound);
                 isDash = false;
                 dashTime = 100f;
-                anim.SetBool("IsDashing", false);
+                StartCoroutine(setDash());
+                
             }
             else
             {
@@ -122,6 +123,12 @@ public class Player : MonoBehaviour
                 {
                     dashTime -= 1f;
                 }
+            }
+
+            IEnumerator setDash()
+            {
+                yield return new WaitForSeconds(0.5f);
+                anim.SetBool("IsDashing", false);
             }
 
             // Player heavy attack cooldown counter

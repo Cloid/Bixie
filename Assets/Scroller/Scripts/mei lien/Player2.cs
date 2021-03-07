@@ -132,24 +132,28 @@ public class Player2 : MonoBehaviour
             // Spawn projectile and get properties
             GameObject newProjectile = Instantiate(projectile, transform.position, Quaternion.identity) as GameObject;
             Projectile nProj = newProjectile.GetComponent<Projectile>();
-
-            // Flip direction and sprite orientation depending on where Mei Lien is facing
-            if (!isFacingRight2)
-            {
-                newProjectile.GetComponent<Rigidbody>().AddForce(200f, 0, 0);
-                nProj.attackDir = 1f;
-            }
-            else
-            {
-                Vector3 projectileScale = newProjectile.transform.localScale;
-                projectileScale.x *= -1;
-                newProjectile.transform.localScale = projectileScale;
-                nProj.attackDir = -1f;
-                newProjectile.GetComponent<Rigidbody>().AddForce(-200f, 0, 0);
-            }
+            StartCoroutine(MoveWaterwave(newProjectile, nProj));
+            
 
             attackTime = 100f;
             canAttack = false;
+        }
+    }
+
+    IEnumerator MoveWaterwave(GameObject newProjectile, Projectile nProj) {
+        yield return new WaitForSeconds(0.5f);
+        // Flip direction and sprite orientation depending on where Mei Lien is facing
+        if (!isFacingRight2)
+        {
+            newProjectile.GetComponent<Rigidbody>().AddForce(200f, 0, 0);
+        }
+        else
+        {
+            Vector3 projectileScale = newProjectile.transform.localScale;
+            projectileScale.x *= -1;
+            newProjectile.transform.localScale = projectileScale;
+            nProj.attackDir = -1f;
+            newProjectile.GetComponent<Rigidbody>().AddForce(-200f, 0, 0);
         }
     }
 

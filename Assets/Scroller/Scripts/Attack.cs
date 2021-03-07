@@ -25,6 +25,7 @@ public class Attack : MonoBehaviour {
 		Enemy enemy = other.GetComponent<Enemy>();
 		Player player = other.GetComponent<Player>();
 		Player2 player2 = other.GetComponent<Player2>();
+		CageController cage = other.GetComponent<CageController>();
 		// Projectile playerProjectile = other.GetComponent<Projectile>();
 		if(enemy != null)
 		{
@@ -40,5 +41,10 @@ public class Attack : MonoBehaviour {
 		{
 			player2.TookDamage(damage);
 		}
+
+		if(cage != null){
+			cage.TookDamage(damage);
+		}
+
 	}
 }

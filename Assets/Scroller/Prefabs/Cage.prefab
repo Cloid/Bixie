@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6939757365036342577}
   - component: {fileID: 4459283036712147337}
   - component: {fileID: 4191020735160819863}
-  m_Layer: 14
+  m_Layer: 13
   m_Name: Cage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -613332221
   m_SortingLayer: 2
-  m_SortingOrder: 3
+  m_SortingOrder: 0
   m_Sprite: {fileID: -7030209949260721145, guid: 26970172792f64b8da7ab9e87440eda5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -99,8 +99,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.6492317, y: 1.3802118, z: 0.67424583}
-  m_Center: {x: 0.05560732, y: 0.024874121, z: -0.03457105}
+  m_Size: {x: 1.4754558, y: 1.3802118, z: 0.53198016}
+  m_Center: {x: 0.0037600994, y: 0.024874091, z: 0.036561787}
 --- !u!54 &836249243756775620
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4080bcbc917286241b23a7cde57aedec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
+  damage: 1
   attackState: 
   attackDirection: 0
 --- !u!95 &6939757365036342577
@@ -176,3 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22cf8be6ca9badb48b41d883569dfc1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minBoomerangTime: 4
+  maxBoomerangTime: 8
+  maxHealth: 4
+  rock_piece: {fileID: 849759281890708582, guid: 0df32ede0c7f1ab42bd6260d1a3d95c1, type: 3}

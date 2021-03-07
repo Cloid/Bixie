@@ -27,6 +27,7 @@ public class CageController : MonoBehaviour
 	{
 		if (!isDead)
 		{
+            Debug.Log("Current Health: " + currentHealth);
 			currentHealth -= damage;
 			// TODO: Make anim + sound
 			//anim.SetTrigger("HitDamage");
@@ -34,7 +35,7 @@ public class CageController : MonoBehaviour
 
 			if (currentHealth <= 0)
 			{
-				//CageBroken();
+				CageBroken();
 			}
 		}
 	}
@@ -47,10 +48,17 @@ public class CageController : MonoBehaviour
 	}
 
     public void SpawnRocks(){
+        //As long as player2 is not null proceed w/ function, else find player and call function again
+        if(player2 != null){
         Vector3 spawnLoc = player2.transform.position;
+        //Add a random int 1 thru 5 at mei lien's locaiton
         spawnLoc.x += Random.Range(1,5);
         spawnLoc.y += Random.Range(1,5);
-        spawnLoc.z = 0;
 		GameObject rock = Instantiate(rock_piece, spawnLoc, transform.rotation);
+        } else {
+            player2 = FindObjectOfType<Player2>();
+            SpawnRocks();
+        }
+        
     }
 }

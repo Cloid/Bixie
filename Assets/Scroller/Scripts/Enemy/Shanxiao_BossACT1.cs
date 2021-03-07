@@ -13,9 +13,9 @@ public class Shanxiao_BossACT1 : Enemy
 	private Player player1;
 	private Player2 player2;
 	private Rigidbody Mei;
-	private bool isDead = false;
+	//private bool isDead = false;
 	private int currentHealth;
-	public int maxHealth = 10;
+	//public int maxHealth = 10;
 
 	// Use this for initialization
 	void Awake()
@@ -48,7 +48,7 @@ public class Shanxiao_BossACT1 : Enemy
 			//{
 			//	tempCage.GetComponent<Boomerang>().direction = -1;
 			//}
-			Invoke("SpawnCage", Random.Range(minBoomerangTime, maxBoomerangTime));
+			//Invoke("SpawnCage", Random.Range(minBoomerangTime, maxBoomerangTime));
 		}
 	}
 

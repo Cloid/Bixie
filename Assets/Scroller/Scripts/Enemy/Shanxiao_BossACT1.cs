@@ -33,7 +33,7 @@ public class Shanxiao_BossACT1 : Enemy
 	{
 		if (!isDead)
 		{
-			anim.SetTrigger("Cage");
+			//anim.SetTrigger("Cage");
 			GameObject tempCage = Instantiate(cage, player2.transform.position, transform.rotation);
 			Mei.constraints = RigidbodyConstraints.FreezeAll;
 

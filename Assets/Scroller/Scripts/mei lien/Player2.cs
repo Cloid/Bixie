@@ -130,7 +130,30 @@ public class Player2 : MonoBehaviour
             Debug.Log("Player2 is doing an attack!");
             anim2.SetTrigger("Attack");
             // Spawn projectile and get properties
-            GameObject newProjectile = Instantiate(projectile, transform.position, Quaternion.identity) as GameObject;
+            //Vector3 projectileScale;
+            //Vector3 tempPosition = transform.position;
+            Vector3 tempPosition;
+            if (!isFacingRight2)
+            {
+                tempPosition = new Vector3(transform.position.x + 2,
+                transform.position.y,
+                Mathf.Clamp(transform.position.z, minHeight, maxHeight));
+            }
+            else
+            {
+                tempPosition = new Vector3(transform.position.x - 2,
+                transform.position.y,
+                Mathf.Clamp(transform.position.z, minHeight, maxHeight));
+            }
+
+
+            GameObject newProjectile = Instantiate(projectile, tempPosition, Quaternion.identity) as GameObject;
+            if (isFacingRight2)
+            {
+                Vector3 projectileScale = newProjectile.transform.localScale;
+                projectileScale.x *= -1;
+                newProjectile.transform.localScale = projectileScale;
+            }
             Projectile nProj = newProjectile.GetComponent<Projectile>();
             StartCoroutine(MoveWaterwave(newProjectile, nProj));
             
@@ -150,9 +173,6 @@ public class Player2 : MonoBehaviour
         }
         else
         {
-            Vector3 projectileScale = newProjectile.transform.localScale;
-            projectileScale.x *= -1;
-            newProjectile.transform.localScale = projectileScale;
             nProj.attackDir = -1f;
             newProjectile.GetComponent<Rigidbody>().AddForce(-200f, 0, 0);
         }

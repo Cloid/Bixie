@@ -69,3 +69,8 @@ fmod_editor.log
 /FMOD/**.unsaved
 /FMOD/**.cache
 /FMOD/**.restore
+
+#FMOD go away
+**/FMODStudioCache.asset
+**/fmod_editor.log
+**/fmod.log

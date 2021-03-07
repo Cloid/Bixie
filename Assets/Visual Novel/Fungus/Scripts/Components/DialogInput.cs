@@ -3,6 +3,7 @@
 
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 
 namespace Fungus
 {
@@ -33,7 +34,7 @@ namespace Fungus
         [SerializeField] protected float nextClickDelay = 0f;
 
         [Tooltip("Allow holding Cancel to fast forward text")]
-        [SerializeField] protected bool cancelEnabled = true;
+        [SerializeField] protected bool cancelEnabled = false;
 
         [Tooltip("Ignore input if a Menu dialog is currently active")]
         [SerializeField] protected bool ignoreMenuClicks = true;
@@ -41,6 +42,8 @@ namespace Fungus
         protected bool dialogClickedFlag;
 
         protected bool nextLineInputFlag;
+
+        protected bool Paused = false;
 
         protected float ignoreClickTimer;
 
@@ -51,7 +54,6 @@ namespace Fungus
 #endif
 
         protected Writer writer;
-
         protected virtual void Awake()
         {
             writer = GetComponent<Writer>();
@@ -78,6 +80,20 @@ namespace Fungus
             
         protected virtual void Update()
         {
+            Keyboard kb = InputSystem.GetDevice<Keyboard>();
+            Gamepad gp = InputSystem.GetDevice<Gamepad>();
+
+            if(gp == null){
+                if(kb.escapeKey.wasPressedThisFrame){
+                Paused = true;
+                }
+            } else {
+                if(kb.escapeKey.wasPressedThisFrame || gp.startButton.wasPressedThisFrame){
+                    Paused = true;
+                }
+            }
+            
+
             if (EventSystem.current == null)
             {
                 return;
@@ -91,7 +107,7 @@ namespace Fungus
             
             if (writer != null && writer.IsWriting)
             {
-                if (inputSystemUIInputModule.submit.action.triggered ||
+                if ( ( (!Paused) && inputSystemUIInputModule.submit.action.triggered) ||
                     (cancelEnabled && inputSystemUIInputModule.cancel.action.triggered))
                 {
                     SetNextLineFlag();

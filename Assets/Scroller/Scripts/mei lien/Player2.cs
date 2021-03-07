@@ -146,6 +146,7 @@ public class Player2 : MonoBehaviour
         if (!isFacingRight2)
         {
             newProjectile.GetComponent<Rigidbody>().AddForce(200f, 0, 0);
+            nProj.attackDir = 1f;
         }
         else
         {

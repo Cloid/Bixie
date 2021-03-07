@@ -40,6 +40,7 @@ public class Projectile : MonoBehaviour
         {
             Debug.Log("Projectile collided with enemy!");
             enemy.TookDamage(0, "meiLienBasicAttack", attackDir);
+            Debug.Log(attackDir);
             Destroy(gameObject);
         }
     }

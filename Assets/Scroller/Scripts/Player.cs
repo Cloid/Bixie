@@ -167,12 +167,14 @@ public class Player : MonoBehaviour
             isAttack = true;
         }
     }
+
     // Player 1's HeavyAttack Function
     public void HeavyAttack()
     {
         if (heavyAttack)
         {
             Debug.Log("Player1 is doing a heavy attack!");
+            anim.SetTrigger("HeavyAttack");
             curAttack.attackState = "qinyangHeavyAttack";
             curAttack.damage = 2;
             if (isFacingRight)
@@ -183,7 +185,6 @@ public class Player : MonoBehaviour
             {
                 curAttack.attackDirection = -1f;
             }
-            anim.SetTrigger("HeavyAttack");
             heavyAttackTime = 120f;
         }
 

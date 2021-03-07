@@ -87,6 +87,12 @@ public class PauseInput : MonoBehaviour
     public void ResumeScene()
     {
         Time.timeScale = 1;
+        var FungusPause = FindObjectsOfType<DialogInput>();
+        Debug.Log(FungusPause);
+        for(int idx = 0; idx <= FungusPause.Length-1; idx++){
+            DialogInput dig = FungusPause[idx].GetComponent<DialogInput>();
+            dig.setPause();
+        }
         //Destroy(gameObject);
         //gameObject.SetActive(false);
     }

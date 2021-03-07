@@ -24,7 +24,7 @@ namespace Fungus
     {
         [Tooltip("Volume level of writing sound effects")]
         [Range(0,1)]
-        [SerializeField] protected float volume = 1f;
+        [SerializeField] protected float volume = 0.5f;
 
         [Tooltip("Loop the audio when in Sound Effect mode. Has no effect in Beeps mode.")]
         [SerializeField] protected bool loop = true;
@@ -318,6 +318,10 @@ namespace Fungus
             lastUsedAudioSource.Play();
         }
 
+        public void setVolume(float vol){
+            targetVolume = vol;
+            volume = vol;
+        }
         public void OnAllWordsWritten()
         {
         }

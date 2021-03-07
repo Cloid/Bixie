@@ -77,6 +77,10 @@ namespace Fungus
                 }
             }
         }
+
+        public void setPause(){
+            Paused = false;
+        }
             
         protected virtual void Update()
         {
@@ -92,8 +96,8 @@ namespace Fungus
                     Paused = true;
                 }
             }
-            
 
+        
             if (EventSystem.current == null)
             {
                 return;

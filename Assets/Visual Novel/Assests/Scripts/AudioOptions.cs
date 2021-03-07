@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
+using Fungus;
 
 public class AudioOptions : MonoBehaviour
 {
@@ -15,11 +16,8 @@ public class AudioOptions : MonoBehaviour
     public float SFXVolume = 0.5f;
     public float MasterVolume = 1f;
 
+    public float sfxVolSave = 0f;
     public int sceneNum = 0;
-
-    private AudioSource Narr_vol;
-    private AudioSource Char_vol;
-    private AudioSource Real_vol;
 
 
     void Awake()
@@ -27,6 +25,7 @@ public class AudioOptions : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
         Music = FMODUnity.RuntimeManager.GetBus("bus:/Music");
         SFX = FMODUnity.RuntimeManager.GetBus("bus:/SFX");
+        sfxVolSave = SFXVolume;
 
         //SFXVolumeTestEvent = FMODUnity.RuntimeManager.CreateInstance ("event:/SFX/SFXVolumeTest");
     }
@@ -47,7 +46,13 @@ public class AudioOptions : MonoBehaviour
 
         Music.setVolume(MusicVolume);
         SFX.setVolume(SFXVolume);
-        
+        var FungusAudio = FindObjectsOfType<WriterAudio>(true);
+        Debug.Log(FungusAudio.Length);
+        for(int idx = 0; idx <= FungusAudio.Length-1; idx++){
+            WriterAudio aud = FungusAudio[idx].GetComponent<WriterAudio>();
+            aud.setVolume(sfxVolSave);
+        }
+
     }
 
 
@@ -68,6 +73,7 @@ public class AudioOptions : MonoBehaviour
     public void SFXVolumeLevel(float newSFXVolume)
     {
         SFXVolume = newSFXVolume;
+        sfxVolSave = newSFXVolume;
 
         FMOD.Studio.PLAYBACK_STATE PbState;
         SFXVolumeTestEvent.getPlaybackState(out PbState);
@@ -75,25 +81,13 @@ public class AudioOptions : MonoBehaviour
         {
             SFXVolumeTestEvent.start();
         }
-
-/*
-        if(Narr_vol == null){
-            Narr_vol = GameObject.Find("NarrativeDialog").GetComponent<AudioSource>();
-            Narr_vol.volume = newSFXVolume;
-            Debug.Log("Finished NArr");
+        
+        var FungusAudio = FindObjectsOfType<WriterAudio>(true);
+        Debug.Log(FungusAudio.Length);
+        for(int idx = 0; idx <= FungusAudio.Length-1; idx++){
+            WriterAudio aud = FungusAudio[idx].GetComponent<WriterAudio>();
+            aud.setVolume(newSFXVolume);
         }
 
-        if(Char_vol == null){
-            Char_vol = GameObject.Find("SayDialog").GetComponent<AudioSource>();            
-            Char_vol.volume = newSFXVolume;
-            Debug.Log("Finished char");
-
-        }
-
-        if(Real_vol == null){
-            Real_vol = GameObject.Find("SayDialog").GetComponent<AudioSource>();           
-            Real_vol.volume = newSFXVolume;
-            Debug.Log("Finished real");
-        }*/
     }
 }

@@ -214,10 +214,10 @@ public class Enemy : MonoBehaviour {
 				case "qinyangBasicAttack":
 					break;
 				case "qinyangHeavyAttack":
-					rb.AddForce(new Vector3(attackDir * 10, 5, 0), ForceMode.Impulse);
+					rb.AddForce(new Vector3(attackDir * 10, 0, 0), ForceMode.Impulse);
 					break;
 				case "meiLienBasicAttack":
-					rb.AddForce(new Vector3(attackDir * 10, 5, 0), ForceMode.Impulse);
+					rb.AddForce(new Vector3(attackDir * 10, 0, 0), ForceMode.Impulse);
 					break;
 				case "meiLienHeavyAttack":
 					break;

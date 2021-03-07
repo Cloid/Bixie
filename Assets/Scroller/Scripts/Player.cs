@@ -150,7 +150,8 @@ public class Player : MonoBehaviour
         isAttack = true;
         curAttack.attackState = "qinyangBasicAttack";
         anim.SetTrigger("Attack");
-        Invoke("setAttack", 1);
+        setAttack();
+        //Invoke("setAttack", 1);
     }
 
     // Helper function for Player1's attack which reverses the isAttack value 

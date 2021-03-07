@@ -46,7 +46,7 @@ public class Shanxiao_BossACT1 : Enemy
 			anim_cage = tempCage.GetComponent<Animator>();
 			anim_cage.SetBool("Cage",true);
             Mei.constraints = RigidbodyConstraints.FreezeAll;
-			anim_cage.SetBool("Cage",false);
+			
             //use the code below to bring mei lien back to full control;
             //Mei.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
 

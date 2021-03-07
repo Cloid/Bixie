@@ -4884,6 +4884,10 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2276603737524501352, guid: d00d46a330cf34de8956be298c6b33f8, type: 3}
+      propertyPath: maxHealth
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2276603737524501352, guid: d00d46a330cf34de8956be298c6b33f8, type: 3}
       propertyPath: playerAttack
       value: 
       objectReference: {fileID: 847701991}

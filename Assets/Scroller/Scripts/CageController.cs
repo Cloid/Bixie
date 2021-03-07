@@ -10,18 +10,20 @@ public class CageController : MonoBehaviour
 	public int maxHealth = 4;
     private Player2 player2;
     public GameObject rock_piece;
+    private Animator anim;
+
+    private GameObject boss;
     // Start is called before the first frame update
     void Awake()
     {
         player2 = FindObjectOfType<Player2>();
-        currentHealth = maxHealth; 
+        currentHealth = maxHealth;
+        //anim = GetComponent<Animator>();
+        //Debug.Log(anim); 
+        //anim.SetTrigger("Cage");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    // Update is called once per fram
 
     public void TookDamage(int damage)
 	{
@@ -55,6 +57,9 @@ public class CageController : MonoBehaviour
         spawnLoc.x += Random.Range(1,5);
         spawnLoc.y += Random.Range(1,5);
 		GameObject rock = Instantiate(rock_piece, spawnLoc, transform.rotation);
+        if(rock.activeSelf){
+            Destroy(gameObject);
+        }
         } else {
             player2 = FindObjectOfType<Player2>();
             SpawnRocks();

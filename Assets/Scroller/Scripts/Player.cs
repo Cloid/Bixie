@@ -32,7 +32,7 @@ public class Player : MonoBehaviour
     protected bool isFacingRight = true;
 
     // Private variables
-    //private Vector3 dashVector;
+    private Vector3 dashVector;
     private bool isDash = false;
     private bool isAttack = false;
     private bool heavyAttack = false;
@@ -94,7 +94,7 @@ public class Player : MonoBehaviour
                 anim.SetFloat("Speed", Mathf.Abs(rb.velocity.magnitude));
 
             // Flips sprite based on movement
-            if (!isAttack)
+            if (!isDash)
             {
                 if (h > 0 && !isFacingRight)
                 {
@@ -106,21 +106,17 @@ public class Player : MonoBehaviour
                 }
             }
 
+            Debug.Log(isAttack);
+
             // Player dash functionality 
             if (!isDash && dashTime <= 0f)
             {
                 dashTime = startDashTime;
                 rb.velocity = Vector3.zero;
-            } else if(isDash)
+            } else if(!isAttack && isDash)
             {
                 dashTime -= Time.deltaTime;
-                if (isFacingRight)
-                {
-                    rb.velocity = Vector3.right * dashForce;
-                } else
-                {
-                    rb.velocity = Vector3.left * dashForce;
-                }
+                rb.velocity = dashVector * dashForce;
                 StartCoroutine(setDashAnim());
             }
 
@@ -157,8 +153,8 @@ public class Player : MonoBehaviour
         isAttack = true;
         curAttack.attackState = "qinyangBasicAttack";
         anim.SetTrigger("Attack");
-        setAttack();
-        //Invoke("setAttack", 1);
+        //setAttack();
+        Invoke("setAttack", 1);
     }
 
     // Helper function for Player1's attack which reverses the isAttack value 
@@ -211,6 +207,13 @@ public class Player : MonoBehaviour
         anim.SetBool("IsDashing", true);
         Debug.Log("Player1 is doing a dash!");
         isDash = true;
+        if (isFacingRight)
+        {
+            dashVector = Vector3.right;
+        } else
+        {
+            dashVector = Vector3.left;
+        }
     }
 
     // Player 1's Interact Function

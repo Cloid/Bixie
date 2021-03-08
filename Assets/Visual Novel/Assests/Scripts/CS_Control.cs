@@ -15,6 +15,7 @@ public class CS_Control : MonoBehaviour
     public GameObject p2_text;
     public GameObject ctext;
     public GameObject controls;
+    public GameObject sceneTransition;
     private PlayerInputHandler p1;
     private PlayerInputHandler p2;
     private CameraShake goCam;
@@ -57,7 +58,8 @@ public class CS_Control : MonoBehaviour
     {
         if(controls.activeSelf == true){
             Debug.Log("test");
-            changeScene();
+            sceneTransition.SetActive(true);
+            Invoke("changeScene", 1f);
         }
         if (q_sel.activeSelf == true && !(p1_selected))
         {

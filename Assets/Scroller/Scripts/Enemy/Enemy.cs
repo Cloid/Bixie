@@ -91,17 +91,28 @@ public class Enemy : MonoBehaviour {
 		onGround = Physics.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
 		anim.SetBool("Grounded", onGround);
 		anim.SetBool("Dead", isDead);
-
+		SpriteRenderer Sprite = gameObject.GetComponent<SpriteRenderer>();
+		//FindCheckpoint.G
 		if (!isDead)
 		{
 			facingRight = (target2.position.x < transform.position.x) ? false : true;
+			Debug.Log("facingRight: "+ facingRight);
 			if (facingRight)
 			{
-				transform.eulerAngles = new Vector3(0, 180, 0);
+				//transform.eulerAngles = new Vector3(0, 180, 0);
+				Sprite.flipX = true;
+				//sprite.flipX;
+				//var shadow = gameObject.transform.Find("shadow").gameObject;
+				//shadow.transform.eulerAngles = new Vector3(0, 180, 0);
+				//Debug.Log(shadow.transform.eulerAngles);
+
 			}
 			else
 			{
-				transform.eulerAngles = new Vector3(0, 0, 0);
+				Sprite.flipX = false;
+				//transform.eulerAngles = new Vector3(0, 0, 0);
+				//var shadow = gameObject.transform.Find("shadow").gameObject;
+				//shadow.transform.eulerAngles = new Vector3(0, 0, 0);
 			}
 		}
 		

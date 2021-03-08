@@ -14,7 +14,6 @@ public class Shanxiao_BossACT1 : Enemy
     private Player2 player2;
     private Rigidbody Mei;
     //private bool isDead = false;
-    private int currentHealth;
     private Animator anim_cage;
     private GameObject tempCage;
     //public int maxHealth = 10;
@@ -28,7 +27,7 @@ public class Shanxiao_BossACT1 : Enemy
         Invoke("SpawnCage", Random.Range(minBoomerangTime, maxBoomerangTime));
         music = FindObjectOfType<MusicController>();
         music.PlaySong(music.bossSong);
-        currentHealth = maxHealth;
+        //currentHealth = maxHealth;
     }
 
     private void Update()

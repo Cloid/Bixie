@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿/*using UnityEngine;
 using UnityEditor;
 using System.Linq;
 
@@ -51,4 +51,4 @@ public class MeshRendererSortingEditor : Editor
         return layers[newLayerValue].id;
     }
 
-}
+}*/

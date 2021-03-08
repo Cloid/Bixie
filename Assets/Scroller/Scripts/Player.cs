@@ -32,11 +32,12 @@ public class Player : MonoBehaviour
     protected bool isFacingRight = true;
 
     // Private variables
-    private Vector3 dashVector;
+    //private Vector3 dashVector;
     private bool isDash = false;
     private bool isAttack = false;
     private bool heavyAttack = false;
-    private float dashTime = 0f;
+    private float dashTime;
+    private float startDashTime = 0.1f;
     private float heavyAttackTime = 0f;
     private AudioSource audioS;
     private Vector2 inputVector;
@@ -54,7 +55,7 @@ public class Player : MonoBehaviour
         audioS = GetComponent<AudioSource>();
         playerAttack = gameObject.transform.Find("Attack").gameObject;
         curAttack = playerAttack.GetComponent<Attack>();
-        dashVector = new Vector3(maxSpeed, 0, 0);
+        dashTime = startDashTime;
     }
 
     // Update is called once per frame
@@ -98,37 +99,36 @@ public class Player : MonoBehaviour
                 if (h > 0 && !isFacingRight)
                 {
                     Flip();
-                    dashVector = -dashVector;
                 }
                 else if (h < 0 && isFacingRight)
                 {
                     Flip();
-                    dashVector = -dashVector;
                 }
             }
 
             // Player dash functionality 
-            if (isDash && dashTime == 0f)
+            if (!isDash && dashTime <= 0f)
             {
-                rb.velocity = dashVector * dashForce;
-                //PlaySong(jumpSound);
-                isDash = false;
-                dashTime = 100f;
-                StartCoroutine(setDash());
-                
-            }
-            else
+                dashTime = startDashTime;
+                rb.velocity = Vector3.zero;
+            } else if(isDash)
             {
-                if (dashTime > 0f)
+                dashTime -= Time.deltaTime;
+                if (isFacingRight)
                 {
-                    dashTime -= 1f;
+                    rb.velocity = Vector3.right * dashForce;
+                } else
+                {
+                    rb.velocity = Vector3.left * dashForce;
                 }
+                StartCoroutine(setDashAnim());
             }
 
-            IEnumerator setDash()
+            IEnumerator setDashAnim()
             {
                 yield return new WaitForSeconds(0.5f);
                 anim.SetBool("IsDashing", false);
+                isDash = false;
             }
 
             // Player heavy attack cooldown counter

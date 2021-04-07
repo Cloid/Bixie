@@ -5238,6 +5238,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: LifeUI
       objectReference: {fileID: 0}
+    - target: {fileID: 7753269863196886069, guid: e77769a74a59b4ccdad3c5fd4a87604a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3e608cd292826ae4f9fda9c5a64e3129, type: 3}
+    - target: {fileID: 7753269863395231287, guid: e77769a74a59b4ccdad3c5fd4a87604a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f50ad9429a0f6b543a108e9404b4e3c5, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e77769a74a59b4ccdad3c5fd4a87604a, type: 3}
 --- !u!224 &970530739 stripped

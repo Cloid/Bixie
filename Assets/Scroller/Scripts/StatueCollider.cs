@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class StatueCollider : MonoBehaviour
 {
+    
+    // event insttance variable for fmod
+    private static FMOD.Studio.EventInstance stone_sound;
+    
     /*
     // Start is called before the first frame update
     void Start()
@@ -44,6 +48,12 @@ void OnCollisionEnter(Collision hit)
          // And finally we add force in the direction of dir and multiply it by force. 
          // This will push back the player
         GetComponent<Rigidbody>().AddForce(dir*force);
+
+        // Start playing the grinding sound
+        stone_sound = FMODUnity.RuntimeManager.CreateInstance("event:/Sounds/Stone_Grind");
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(stone_sound, GetComponent<Transform>(), GetComponent<Rigidbody>());
+        stone_sound.start();
+        stone_sound.release();
      }
 
      if(hit.gameObject.tag == "StatueWall"){
@@ -52,8 +62,14 @@ void OnCollisionEnter(Collision hit)
         }
 
  }
+
+void OnCollisionExit(Collision hit)
+{
+    if (hit.gameObject.tag == "Player2")
+    {
+        stone_sound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+    } 
+}
  
-
-
 
 }

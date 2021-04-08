@@ -12,6 +12,10 @@ public class PusheyCollider : MonoBehaviour
         //Debug.Log("working?");
         if(other.gameObject.tag == "Statue"){
             Debug.Log("Working");
+
+            // Play stone pad pushed sound
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Sounds/Stone_Pushed", GetComponent<Transform>().position);
+
             rb = other.gameObject.GetComponent<Rigidbody>();
             rb.isKinematic = true;
             if(rb.isKinematic == true){

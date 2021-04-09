@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using static UnityEngine.InputSystem.InputAction;
 using UnityEngine.SceneManagement;
-
+using Photon.Pun;
 public class PlayerInputHandler : MonoBehaviour
 {
     // Input variables
@@ -17,66 +17,96 @@ public class PlayerInputHandler : MonoBehaviour
     private Player player1;
     private Player2 player2;
     private CS_Control cs;
+    private PhotonView photonView;
     QinyangControls controls;
     Vector2 move;
 
 
     // Initialization
-    void Awake() {
-        DontDestroyOnLoad(gameObject);
-        cs = GameObject.FindObjectOfType<CS_Control>();
-        playerInput = GetComponent<PlayerInput>();
-        player1 = FindObjectOfType<Player>();
-        player2 = FindObjectOfType<Player2>();
-        players.Add(player1);
-        players.Add(player2);
-        index = playerInput.playerIndex;
-        print("inx:"+index);
-        controls = new QinyangControls();
-    }
-    private void Update() {
-        if(player1 == null && SceneManager.GetActiveScene().buildIndex > 3){
+    void Awake()
+    {
+        photonView = GetComponent<PhotonView>();
+        if (photonView.IsMine)
+        {
+            DontDestroyOnLoad(gameObject);
+            cs = GameObject.FindObjectOfType<CS_Control>();
+            playerInput = GetComponent<PlayerInput>();
             player1 = FindObjectOfType<Player>();
-        }
-
-        if(player2 == null && SceneManager.GetActiveScene().buildIndex > 3){
             player2 = FindObjectOfType<Player2>();
+            players.Add(player1);
+            players.Add(player2);
+            //index = playerInput.playerIndex;
+            //print("inx:"+index);
+            if (PhotonNetwork.PlayerList.Length == 2)
+            {
+                index = 1;
+            }
+            else
+            {
+                index = 0;
+            }
+            controls = new QinyangControls();
+        }
+    }
+    private void Update()
+    {
+        if (photonView.IsMine)
+        {
+            if (player1 == null && SceneManager.GetActiveScene().buildIndex > 3)
+            {
+                player1 = FindObjectOfType<Player>();
+            }
+
+            if (player2 == null && SceneManager.GetActiveScene().buildIndex > 3)
+            {
+                player2 = FindObjectOfType<Player2>();
+            }
         }
     }
 
     // onMove function 
     // Allows players to move through callback context from input device
-    public void OnMove(CallbackContext context) 
+    public void OnMove(CallbackContext context)
     {
-        if(player1 != null && player2 != null)
+        if (photonView.IsMine)
         {
-            if(index == 0)
+            if (player1 != null && player2 != null)
             {
-                player1.SetInputVector(context.ReadValue<Vector2>());
-            }else{
-                player2.SetInputVector(context.ReadValue<Vector2>());
+                if (index == 0)
+                {
+                    player1.SetInputVector(context.ReadValue<Vector2>());
+                }
+                else
+                {
+                    player2.SetInputVector(context.ReadValue<Vector2>());
+                }
+            }
+
+            if (SceneManager.GetActiveScene().buildIndex == 3 && cs != null && index == 0)
+            {
+                cs.moveMe(context.ReadValue<Vector2>());
             }
         }
 
-        if(SceneManager.GetActiveScene().buildIndex == 3 && cs!=null && index == 0){
-            cs.moveMe(context.ReadValue<Vector2>());
-        }
 
     }
 
     // onAttack function 
     // Allows players to call their attack function through callback context from input device
-    public void onAttack(CallbackContext context) 
+    public void onAttack(CallbackContext context)
     {
-        if(player1 != null && player2 != null)
+        if (photonView.IsMine)
         {
-            if (index == 0)
+            if (player1 != null && player2 != null)
             {
-                if (context.performed)  player1.Attack();
-            }
-            else
-            {
-                if (context.performed) player2.Attack();
+                if (index == 0)
+                {
+                    if (context.performed) player1.Attack();
+                }
+                else
+                {
+                    if (context.performed) player2.Attack();
+                }
             }
         }
     }
@@ -85,15 +115,18 @@ public class PlayerInputHandler : MonoBehaviour
     // Allows players to call their attack function through callback context from input device
     public void onHeavyAttack(CallbackContext context)
     {
-        if (player1 != null && player2 != null)
+        if (photonView.IsMine)
         {
-            if (index == 0)
+            if (player1 != null && player2 != null)
             {
-                if (context.performed) player1.HeavyAttack();
-            }
-            else
-            {
-                if (context.performed) player2.HeavyAttack();
+                if (index == 0)
+                {
+                    if (context.performed) player1.HeavyAttack();
+                }
+                else
+                {
+                    if (context.performed) player2.HeavyAttack();
+                }
             }
         }
     }
@@ -102,64 +135,78 @@ public class PlayerInputHandler : MonoBehaviour
     // Allows players to call their attack function through callback context from input device
     public void onSpecial(CallbackContext context)
     {
-        if (player1 != null && player2 != null)
+        if (photonView.IsMine)
         {
-            if (index == 0)
+            if (player1 != null && player2 != null)
             {
-                if (context.performed) player1.Special();
-            }
-            else
-            {
-                if (context.performed) player2.Special();
+                if (index == 0)
+                {
+                    if (context.performed) player1.Special();
+                }
+                else
+                {
+                    if (context.performed) player2.Special();
+                }
             }
         }
     }
 
     // onJump function 
     // Allows players to call their jump function through callback context from input device
-    public void onJump(CallbackContext context) 
+    public void onJump(CallbackContext context)
     {
-        if(player1 != null && player2 != null)
+        if (photonView.IsMine)
         {
-            if(index == 0)
+            if (player1 != null && player2 != null)
             {
-                if(context.performed) player1.Dash();
-            }else{
-                player2.Jump();
+                if (index == 0)
+                {
+                    if (context.performed) player1.Dash();
+                }
+                else
+                {
+                    player2.Jump();
+                }
+            }
+
+            if (cs != null && (!cs.p1_selected) && SceneManager.GetActiveScene().buildIndex == 3
+                    && index == 0)
+            {
+                cs.charSelect();
+            }
+            else if (cs != null && cs.controls.activeSelf)
+            {
+                cs.charSelect();
             }
         }
 
-        if( cs!= null && (!cs.p1_selected) && SceneManager.GetActiveScene().buildIndex == 3 
-                && index == 0 ){
-            cs.charSelect();
-        } else if(cs!=null && cs.controls.activeSelf){
-            cs.charSelect();
-        }
-        
-        
-        
+
+
     }
 
     // onJump function 
     // Allows players to call their interact function through callback context from input device
     public void onInteract(CallbackContext context)
     {
-        if (player1 != null && player2 != null)
+        if (photonView.IsMine)
         {
-            if (index == 0)
+            if (player1 != null && player2 != null)
             {
-                if (player1.interactObj != null)
+                if (index == 0)
                 {
-                    player1.Interact(player1.interactObj);
+                    if (player1.interactObj != null)
+                    {
+                        player1.Interact(player1.interactObj);
+                    }
+
                 }
-                
-            }
-            else
-            {
-                
-                if (player2.interactObj != null)
+                else
                 {
-                    player2.Interact(player2.interactObj);
+
+                    if (player2.interactObj != null)
+                    {
+                        player2.Interact(player2.interactObj);
+                    }
                 }
             }
         }

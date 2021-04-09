@@ -5,16 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Visual Novel/Scenes/Title.unity
     guid: 5343837d2004e8f43afa0798d8369cfc
-  - enabled: 1
+  - enabled: 0
     path: Assets/Visual Novel/Scenes/Options.unity
     guid: f494f6373d253c249a5079dbffa2eded
-  - enabled: 1
+  - enabled: 0
     path: Assets/Visual Novel/Scenes/IntroVN.unity
     guid: cff0dc9a5ee77ef49bc633a8c6f794a2
-  - enabled: 1
+  - enabled: 0
     path: Assets/Visual Novel/Scenes/Character_Select.unity
     guid: 02230e913fa672a489f94a616a13c524
   - enabled: 1
@@ -24,7 +24,7 @@ EditorBuildSettings:
     path: Assets/Scroller/Prefabs/Game.unity
     guid: 6d50d8f2daa564d0fb7991d9736f5dd2
   - enabled: 0
-    path: Assets/Simulator/Scenes/Simulator.unity
-    guid: 92b00b2cf43642845ada8bdae775276c
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 5ec37aa789bd0410a9acd81766f4ddcd, type: 2}

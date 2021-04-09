@@ -52,12 +52,12 @@ public class PlayerInputHandler : MonoBehaviour
     {
         if (photonView.IsMine)
         {
-            if (player1 == null && SceneManager.GetActiveScene().buildIndex > 3)
+            if (player1 == null)
             {
                 player1 = FindObjectOfType<Player>();
             }
 
-            if (player2 == null && SceneManager.GetActiveScene().buildIndex > 3)
+            if (player2 == null)
             {
                 player2 = FindObjectOfType<Player2>();
             }

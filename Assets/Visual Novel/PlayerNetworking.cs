@@ -7,7 +7,7 @@ public class PlayerNetworking : MonoBehaviourPunCallbacks
 
 {
     public GameObject PlayerInput;
-    public GameObject Mei;
+    public GameObject MeiLien;
     private PhotonView photonView;
     void Start()
     {
@@ -33,9 +33,11 @@ public class PlayerNetworking : MonoBehaviourPunCallbacks
         //base.OnJoinedRoom();
         Debug.Log("Joined");
         PhotonNetwork.Instantiate(PlayerInput.name, new Vector3(0,0,0), Quaternion.identity);
+        
         if(PhotonNetwork.PlayerList.Length==2){
-            photonView = Mei.GetComponent<PhotonView>();
-            photonView.TransferOwnership(PhotonNetwork.PlayerList[1]);
+            //photonView = Mei.GetComponent<PhotonView>();
+            //photonView.TransferOwnership(PhotonNetwork.PlayerList[1]);
+            PhotonNetwork.Instantiate("Mei Lien", new Vector3(0,0,0), Quaternion.identity);
         }
         //if conditional for offline
         

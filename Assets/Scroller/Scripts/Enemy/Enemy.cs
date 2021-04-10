@@ -79,15 +79,19 @@ public class Enemy : MonoBehaviour {
 		groundCheck = transform.Find("GroundCheck");
 		//target = GameObject.FindGameObjectWithTag("Player").transform;
 		// target = FindObjectOfType<Player>().transform;
-		target2 = FindObjectOfType<Player2>().transform;
+		//target2 = FindObjectOfType<Player2>().transform;
 		//print(GameObject.FindGameObjectWithTag("Player").transform);
 		//print(GameObject.FindGameObjectWithTag("Player2").transform);
 		currentHealth = maxHealth;
 		audioS = GetComponent<AudioSource>();
+		Debug.Log("Current Health: " + currentHealth);
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		if(target2 == null){
+			target2 = FindObjectOfType<Player2>().transform; 
+		}
 		onGround = Physics.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
 		anim.SetBool("Grounded", onGround);
 		anim.SetBool("Dead", isDead);
@@ -212,6 +216,8 @@ public class Enemy : MonoBehaviour {
 
 	public void TookDamage(int damage, string stateTag, float attackDir)
 	{
+		Debug.Log("Current Health: " + currentHealth);
+		Debug.Log("State Tag: "+ stateTag);
 		if (!isDead)
 		{
 			damaged = true;

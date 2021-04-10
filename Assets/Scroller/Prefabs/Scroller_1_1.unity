@@ -10961,7 +10961,7 @@ MonoBehaviour:
   ShowParameterInspector: 1
   m_SynchronizeParameters:
   - Type: 9
-    SynchronizeType: 2
+    SynchronizeType: 0
     Name: Attack
   - Type: 1
     SynchronizeType: 2
@@ -15734,6 +15734,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4141270686686593784, guid: 25e5574a740d026499be7cfb8483411f, type: 3}
+      propertyPath: sceneViewId
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6453405657549233681, guid: 25e5574a740d026499be7cfb8483411f, type: 3}
       propertyPath: m_Name
       value: shanxiao_tempboss
@@ -15868,13 +15872,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 710407748054257497, guid: 55d70e1f825334497a603f64a87a3d48, type: 3}
+      propertyPath: sceneViewId
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4113359731268288723, guid: 55d70e1f825334497a603f64a87a3d48, type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[0].SynchronizeType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4113359731268288723, guid: 55d70e1f825334497a603f64a87a3d48, type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[1].SynchronizeType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4113359731268288723, guid: 55d70e1f825334497a603f64a87a3d48, type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[4].SynchronizeType
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7578509151722214320, guid: 55d70e1f825334497a603f64a87a3d48, type: 3}
       propertyPath: m_Name
       value: shanxiao
       objectReference: {fileID: 0}
     - target: {fileID: 7578509151722214320, guid: 55d70e1f825334497a603f64a87a3d48, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7578509151722214326, guid: 55d70e1f825334497a603f64a87a3d48, type: 3}
       propertyPath: m_RootOrder
@@ -15929,6 +15949,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1292329971117608479, guid: f9db4260eba037e41b1001baf65bbdcb, type: 3}
+      propertyPath: sceneViewId
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5363721677851071197, guid: f9db4260eba037e41b1001baf65bbdcb, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.08

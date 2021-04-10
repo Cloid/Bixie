@@ -64,12 +64,11 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (photonView.IsMine)
-        {
+
             onGround = Physics.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
             anim.SetBool("OnGround", onGround);
             anim.SetBool("Dead", isDead);
-        }
+        
         /*
         if (transform.position.y != 0)
         {
@@ -81,10 +80,9 @@ public class Player : MonoBehaviour
 
     public void SetInputVector(Vector2 direction)
     {
-        if (photonView.IsMine)
-        {
+        
             inputVector = direction;
-        }
+        
     }
 
     private void FixedUpdate()
@@ -156,10 +154,10 @@ public class Player : MonoBehaviour
     }
 
     // Player 1's Attack Function
+    [PunRPC]
     public void Attack()
     {
-        if (photonView.IsMine)
-        {
+
             Debug.Log("Player1 is doing an attack!");
             curAttack.damage = 1;
             isAttack = true;
@@ -167,15 +165,14 @@ public class Player : MonoBehaviour
             anim.SetTrigger("Attack");
             //setAttack();
             Invoke("setAttack", 1);
-        }
+        
     }
 
     // Helper function for Player1's attack which reverses the isAttack value 
     // This prevents Qinyang's sprite from flipping mid animation
     private void setAttack()
     {
-        if (photonView.IsMine)
-        {
+
             if (isAttack)
             {
                 isAttack = false;
@@ -184,14 +181,13 @@ public class Player : MonoBehaviour
             {
                 isAttack = true;
             }
-        }
+        
     }
 
     // Player 1's HeavyAttack Function
     public void HeavyAttack()
     {
-        if (photonView.IsMine)
-        {
+ 
             if (heavyAttack)
             {
                 Debug.Log("Player1 is doing a heavy attack!");
@@ -210,24 +206,22 @@ public class Player : MonoBehaviour
             }
 
             heavyAttack = false;
-        }
+        
     }
 
 
     // Player 1's Special Function
     public void Special()
     {
-        if (photonView.IsMine)
-        {
+        
             Debug.Log("Player1 is doing a special attack!");
-        }
+        
     }
 
     // Player 1's Dash Function
     public void Dash()
     {
-        if (photonView.IsMine)
-        {
+       
             anim.SetBool("IsDashing", true);
             Debug.Log("Player1 is doing a dash!");
             isDash = true;
@@ -239,14 +233,13 @@ public class Player : MonoBehaviour
             {
                 dashVector = Vector3.left;
             }
-        }
+        
     }
 
     // Player 1's Interact Function
     public void Interact(Collider other)
     {
-        if (photonView.IsMine)
-        {
+        
             if (other.CompareTag("Health Item"))
             {
                 Destroy(other.gameObject);
@@ -255,7 +248,7 @@ public class Player : MonoBehaviour
                 PlaySong(healthItem);
                 currentHealth = maxHealth;
             }
-        }
+        
 
     }
 

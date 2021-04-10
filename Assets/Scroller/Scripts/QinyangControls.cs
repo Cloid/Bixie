@@ -70,17 +70,6 @@ public class @QinyangControls : IInputActionCollection, IDisposable
             ""bindings"": [
                 {
                     ""name"": """",
-                    ""id"": ""d81fbccd-5aa9-4bc6-890b-c78552ccf9c0"",
-                    ""path"": ""<Mouse>/leftButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Attack"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""63fd26bf-b5bb-4832-83e2-e80fe33f4ea2"",
                     ""path"": ""<Keyboard>/j"",
                     ""interactions"": """",

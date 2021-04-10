@@ -101,11 +101,11 @@ public class PlayerInputHandler : MonoBehaviour
             {
                 if (index == 0)
                 {
-                    if (context.performed) player1.Attack();
+                    if (context.performed) player1.photonView.RPC("Attack", RpcTarget.All);//player1.Attack();
                 }
                 else
                 {
-                    if (context.performed) player2.Attack();
+                    if (context.performed) player2.photonView.RPC("Attack", RpcTarget.All);//player2.Attack();
                 }
             }
         }

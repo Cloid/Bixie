@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 1584053463}
   - component: {fileID: 1682291828842334884}
   - component: {fileID: 340022212059022747}
+  - component: {fileID: 4763456767366711884}
   m_Layer: 11
   m_Name: Mei Lien
   m_TagString: Player2
@@ -193,7 +194,8 @@ MonoBehaviour:
   jumpSound: event:/Sounds/Hit
   damageSound: event:/Sounds/Damage
   currAudioSource: {fileID: 0}
-  projectile: {fileID: 0}
+  projectile: {fileID: 3272319517615755612, guid: b64e15b717e212e48ac074f3659efb9c, type: 3}
+  photonView: {fileID: 0}
   collisionSound2: {fileID: 0}
   jumpSound2: {fileID: 0}
   healthItem2: {fileID: 0}
@@ -217,6 +219,7 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: 340022212059022747}
+  - {fileID: 4763456767366711884}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -253,6 +256,48 @@ MonoBehaviour:
     InterpolateOption: 0
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 0
+--- !u!114 &4763456767366711884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2036134646021136293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowLayerWeightsInspector: 1
+  ShowParameterInspector: 1
+  m_SynchronizeParameters:
+  - Type: 9
+    SynchronizeType: 0
+    Name: Attack
+  - Type: 1
+    SynchronizeType: 2
+    Name: Speed
+  - Type: 4
+    SynchronizeType: 2
+    Name: OnGround
+  - Type: 4
+    SynchronizeType: 0
+    Name: AirAttack
+  - Type: 9
+    SynchronizeType: 0
+    Name: HitDamage
+  - Type: 4
+    SynchronizeType: 0
+    Name: Dead
+  - Type: 9
+    SynchronizeType: 0
+    Name: Catching
+  - Type: 9
+    SynchronizeType: 0
+    Name: Jumping
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
 --- !u!1001 &4861194372053118231
 PrefabInstance:
   m_ObjectHideFlags: 0

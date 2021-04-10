@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Photon.Pun;
 
 public class Player : MonoBehaviour
 {
@@ -42,29 +43,34 @@ public class Player : MonoBehaviour
     private AudioSource audioS;
     private Vector2 inputVector;
     private Player2 player2;
+    public PhotonView photonView;
 
     // Use this for initialization
     void Start()
     {
-        player2 = FindObjectOfType<Player2>();
-        rb = GetComponent<Rigidbody>();
-        anim = GetComponent<Animator>();
-        groundCheck = gameObject.transform.Find("GroundCheck");
-        currentSpeed = maxSpeed;
-        currentHealth = maxHealth;
-        audioS = GetComponent<AudioSource>();
-        playerAttack = gameObject.transform.Find("Attack").gameObject;
-        curAttack = playerAttack.GetComponent<Attack>();
-        dashTime = startDashTime;
+            photonView = GetComponent<PhotonView>();
+            player2 = FindObjectOfType<Player2>();
+            rb = GetComponent<Rigidbody>();
+            anim = GetComponent<Animator>();
+            groundCheck = gameObject.transform.Find("GroundCheck");
+            currentSpeed = maxSpeed;
+            currentHealth = maxHealth;
+            audioS = GetComponent<AudioSource>();
+            playerAttack = gameObject.transform.Find("Attack").gameObject;
+            curAttack = playerAttack.GetComponent<Attack>();
+            dashTime = startDashTime;
     }
 
     // Update is called once per frame
     void Update()
     {
-        onGround = Physics.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
-        anim.SetBool("OnGround", onGround);
-        anim.SetBool("Dead", isDead);
-		/*
+        if (photonView.IsMine)
+        {
+            onGround = Physics.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
+            anim.SetBool("OnGround", onGround);
+            anim.SetBool("Dead", isDead);
+        }
+        /*
         if (transform.position.y != 0)
         {
             Vector3 pos = transform.position;
@@ -75,166 +81,189 @@ public class Player : MonoBehaviour
 
     public void SetInputVector(Vector2 direction)
     {
-        inputVector = direction;
+        if (photonView.IsMine)
+        {
+            inputVector = direction;
+        }
     }
 
     private void FixedUpdate()
     {
-        if (!isDead)
-        {
-            // Player 1 Movement
-            float h = inputVector.x;
-            float v = inputVector.y;
-            if (!onGround)
-                v = 0;
-
-            rb.velocity = new Vector3(h * currentSpeed, rb.velocity.y, v * currentSpeed);
-
-            if (onGround)
-                anim.SetFloat("Speed", Mathf.Abs(rb.velocity.magnitude));
-
-            // Flips sprite based on movement
-            if (!isDash)
+            if (!isDead)
             {
-                if (h > 0 && !isFacingRight)
+                // Player 1 Movement
+                float h = inputVector.x;
+                float v = inputVector.y;
+                if (!onGround)
+                    v = 0;
+
+                rb.velocity = new Vector3(h * currentSpeed, rb.velocity.y, v * currentSpeed);
+
+                if (onGround)
+                    anim.SetFloat("Speed", Mathf.Abs(rb.velocity.magnitude));
+
+                // Flips sprite based on movement
+                if (!isDash)
                 {
-                    Flip();
+                    if (h > 0 && !isFacingRight)
+                    {
+                         photonView.RPC("Flip", RpcTarget.All);//Flip();
+                    }
+                    else if (h < 0 && isFacingRight)
+                    {
+                        photonView.RPC("Flip", RpcTarget.All);//Flip();
+                    }
                 }
-                else if (h < 0 && isFacingRight)
+
+                Debug.Log(isAttack);
+
+                // Player dash functionality 
+                if (!isDash && dashTime <= 0f)
                 {
-                    Flip();
+                    dashTime = startDashTime;
+                    rb.velocity = Vector3.zero;
                 }
-            }
+                else if (!isAttack && isDash)
+                {
+                    dashTime -= Time.deltaTime;
+                    rb.velocity = dashVector * dashForce;
+                    StartCoroutine(setDashAnim());
+                }
 
-            Debug.Log(isAttack);
+                IEnumerator setDashAnim()
+                {
+                    yield return new WaitForSeconds(0.5f);
+                    anim.SetBool("IsDashing", false);
+                    isDash = false;
+                }
 
-            // Player dash functionality 
-            if (!isDash && dashTime <= 0f)
-            {
-                dashTime = startDashTime;
-                rb.velocity = Vector3.zero;
-            } else if(!isAttack && isDash)
-            {
-                dashTime -= Time.deltaTime;
-                rb.velocity = dashVector * dashForce;
-                StartCoroutine(setDashAnim());
-            }
+                // Player heavy attack cooldown counter
+                if (heavyAttackTime <= 0f && !heavyAttack)
+                {
+                    heavyAttack = true;
+                }
+                else
+                {
+                    heavyAttackTime -= 1f;
+                }
 
-            IEnumerator setDashAnim()
-            {
-                yield return new WaitForSeconds(0.5f);
-                anim.SetBool("IsDashing", false);
-                isDash = false;
+                float minWidth = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 10)).x;
+                float maxWidth = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0, 10)).x;
+                rb.position = new Vector3(Mathf.Clamp(rb.position.x, minWidth + 1, maxWidth - 1),
+                    rb.position.y,
+                    Mathf.Clamp(rb.position.z, minHeight, maxHeight));
             }
-
-            // Player heavy attack cooldown counter
-            if (heavyAttackTime <= 0f && !heavyAttack)
-            {
-                heavyAttack = true;
-            }
-            else
-            {
-                heavyAttackTime -= 1f;
-            }
-
-            float minWidth = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 10)).x;
-            float maxWidth = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0, 10)).x;
-            rb.position = new Vector3(Mathf.Clamp(rb.position.x, minWidth + 1, maxWidth - 1),
-                rb.position.y,
-                Mathf.Clamp(rb.position.z, minHeight, maxHeight));
-        }
     }
 
     // Player 1's Attack Function
     public void Attack()
     {
-        Debug.Log("Player1 is doing an attack!");
-        curAttack.damage = 1;
-        isAttack = true;
-        curAttack.attackState = "qinyangBasicAttack";
-        anim.SetTrigger("Attack");
-        //setAttack();
-        Invoke("setAttack", 1);
+        if (photonView.IsMine)
+        {
+            Debug.Log("Player1 is doing an attack!");
+            curAttack.damage = 1;
+            isAttack = true;
+            curAttack.attackState = "qinyangBasicAttack";
+            anim.SetTrigger("Attack");
+            //setAttack();
+            Invoke("setAttack", 1);
+        }
     }
 
     // Helper function for Player1's attack which reverses the isAttack value 
     // This prevents Qinyang's sprite from flipping mid animation
     private void setAttack()
     {
-        if (isAttack)
+        if (photonView.IsMine)
         {
-            isAttack = false;
-        }
-        else
-        {
-            isAttack = true;
+            if (isAttack)
+            {
+                isAttack = false;
+            }
+            else
+            {
+                isAttack = true;
+            }
         }
     }
 
     // Player 1's HeavyAttack Function
     public void HeavyAttack()
     {
-        if (heavyAttack)
+        if (photonView.IsMine)
         {
-            Debug.Log("Player1 is doing a heavy attack!");
-            anim.SetTrigger("HeavyAttack");
-            curAttack.attackState = "qinyangHeavyAttack";
-            curAttack.damage = 2;
-            if (isFacingRight)
+            if (heavyAttack)
             {
-                curAttack.attackDirection = 1f;
+                Debug.Log("Player1 is doing a heavy attack!");
+                anim.SetTrigger("HeavyAttack");
+                curAttack.attackState = "qinyangHeavyAttack";
+                curAttack.damage = 2;
+                if (isFacingRight)
+                {
+                    curAttack.attackDirection = 1f;
+                }
+                else
+                {
+                    curAttack.attackDirection = -1f;
+                }
+                heavyAttackTime = 120f;
             }
-            else
-            {
-                curAttack.attackDirection = -1f;
-            }
-            heavyAttackTime = 120f;
-        }
 
-        heavyAttack = false;
+            heavyAttack = false;
+        }
     }
 
 
     // Player 1's Special Function
     public void Special()
     {
-        Debug.Log("Player1 is doing a special attack!");
+        if (photonView.IsMine)
+        {
+            Debug.Log("Player1 is doing a special attack!");
+        }
     }
 
     // Player 1's Dash Function
     public void Dash()
     {
-        anim.SetBool("IsDashing", true);
-        Debug.Log("Player1 is doing a dash!");
-        isDash = true;
-        if (isFacingRight)
+        if (photonView.IsMine)
         {
-            dashVector = Vector3.right;
-        } else
-        {
-            dashVector = Vector3.left;
+            anim.SetBool("IsDashing", true);
+            Debug.Log("Player1 is doing a dash!");
+            isDash = true;
+            if (isFacingRight)
+            {
+                dashVector = Vector3.right;
+            }
+            else
+            {
+                dashVector = Vector3.left;
+            }
         }
     }
 
     // Player 1's Interact Function
     public void Interact(Collider other)
     {
-        if (other.CompareTag("Health Item"))
+        if (photonView.IsMine)
         {
-            Destroy(other.gameObject);
-            interactObj = null;
-            anim.SetTrigger("Catching");
-            PlaySong(healthItem);
-            currentHealth = maxHealth;
+            if (other.CompareTag("Health Item"))
+            {
+                Destroy(other.gameObject);
+                interactObj = null;
+                anim.SetTrigger("Catching");
+                PlaySong(healthItem);
+                currentHealth = maxHealth;
+            }
         }
 
     }
 
     // Player 1's flip function
+[PunRPC]
     void Flip()
     {
         isFacingRight = !isFacingRight;
-
         Vector3 scale = transform.localScale;
         scale.x *= -1;
         transform.localScale = scale;

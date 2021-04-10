@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Photon.Pun;
 public class Player2 : MonoBehaviour
 {
     // Player attributes
@@ -34,12 +34,14 @@ public class Player2 : MonoBehaviour
     private TorchControllerSS torchControl;
     public AudioSource currAudioSource;
     public GameObject projectile;
+    public PhotonView photonView;
 
     public AudioClip collisionSound2, jumpSound2, healthItem2;
 
     // Initialization
     void Awake()
     {
+        photonView = GetComponent<PhotonView>();
         player1 = FindObjectOfType<Player>();
         rb = GetComponent<Rigidbody>();
         anim2 = GetComponent<Animator>();
@@ -94,10 +96,10 @@ public class Player2 : MonoBehaviour
             // Flips sprite based on movement
             if(h < 0 && !isFacingRight2)
             {
-                Flip();
+                 photonView.RPC("Flip", RpcTarget.All);//Flip();
             } else if(h > 0 && isFacingRight2)
             {
-                Flip();
+                 photonView.RPC("Flip", RpcTarget.All);//Flip();
             }
 
             // Attack cooldown
@@ -229,6 +231,7 @@ public class Player2 : MonoBehaviour
     }
 
     // Flip function for flipping sprite when facing in a direction
+    [PunRPC]
     private void Flip()
     {
         isFacingRight2 = !isFacingRight2;

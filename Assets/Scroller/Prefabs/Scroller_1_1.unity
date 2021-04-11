@@ -691,6 +691,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2021729918}
     m_Modifications:
+    - target: {fileID: 3144939276535848778, guid: 3b29f0c284e08ae4282713c069d0ef01, type: 3}
+      propertyPath: sceneViewId
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 4727239881597771816, guid: 3b29f0c284e08ae4282713c069d0ef01, type: 3}
       propertyPath: m_Name
       value: Statue 1R
@@ -2012,6 +2016,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2021729918}
     m_Modifications:
+    - target: {fileID: 3144939276535848778, guid: 3b29f0c284e08ae4282713c069d0ef01, type: 3}
+      propertyPath: sceneViewId
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4727239881597771816, guid: 3b29f0c284e08ae4282713c069d0ef01, type: 3}
       propertyPath: m_Name
       value: Statue 2L
@@ -3210,6 +3218,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 523818235}
     m_Modifications:
+    - target: {fileID: 3144939276535848778, guid: 3b29f0c284e08ae4282713c069d0ef01, type: 3}
+      propertyPath: sceneViewId
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 4727239881597771816, guid: 3b29f0c284e08ae4282713c069d0ef01, type: 3}
       propertyPath: m_Name
       value: Statue 1
@@ -8421,6 +8433,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 523818235}
     m_Modifications:
+    - target: {fileID: 3144939276535848778, guid: 3b29f0c284e08ae4282713c069d0ef01, type: 3}
+      propertyPath: sceneViewId
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4727239881597771816, guid: 3b29f0c284e08ae4282713c069d0ef01, type: 3}
       propertyPath: m_Name
       value: Statue 2
@@ -10990,6 +11006,21 @@ MonoBehaviour:
   m_SynchronizeLayers:
   - SynchronizeType: 0
     LayerIndex: 0
+--- !u!114 &1892027316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1892027311}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4080bcbc917286241b23a7cde57aedec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
+  attackState: 
+  attackDirection: 0
 --- !u!1 &1903918186
 GameObject:
   m_ObjectHideFlags: 0
@@ -11552,11 +11583,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 426.6487, y: 32.862106}
+  scrollPos: {x: 168.91516, y: 315.703}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 402
-  zoom: 0.5500004
+  zoom: 0.6700003
   scrollViewRect:
     serializedVersion: 2
     x: 0
@@ -11564,9 +11595,8 @@ MonoBehaviour:
     width: 0
     height: 0
   selectedBlocks:
-  - {fileID: 1948301798}
-  selectedCommands:
-  - {fileID: 1948301801}
+  - {fileID: 1948301765}
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
@@ -11594,7 +11624,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 73.29148
     y: 305.97626
-    width: 155.45447
+    width: 156.46762
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -11708,7 +11738,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 74.90173
     y: 509.73657
-    width: 110.60602
+    width: 110.69649
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -12840,7 +12870,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 127.44378
     y: 735.3126
-    width: 108.18178
+    width: 107.71141
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -12873,7 +12903,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 130.1879
     y: 894.3289
-    width: 133.63629
+    width: 132.58704
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -13307,7 +13337,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 98.40339
     y: 110.98353
-    width: 143.33325
+    width: 143.53229
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -13438,7 +13468,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 170.1453
     y: 40.88715
-    width: 74.2424
+    width: 74.87561
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -13602,7 +13632,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 167.2992
     y: 217.34186
-    width: 123.93934
+    width: 121.641754
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -14049,7 +14079,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -202.68307
     y: 158.55841
-    width: 102.12117
+    width: 101.74127
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -14250,7 +14280,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -178.69221
     y: 307.09558
-    width: 128.78781
+    width: 125.62186
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -14552,6 +14582,7 @@ GameObject:
   - component: {fileID: 1997480271}
   - component: {fileID: 1997480270}
   - component: {fileID: 1997480274}
+  - component: {fileID: 1997480275}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -14668,6 +14699,28 @@ MonoBehaviour:
   enemyName: {fileID: 0}
   enemyImage: {fileID: 1410012682}
   enemyUITime: 4
+--- !u!114 &1997480275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1997480269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 12
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &2021729917
 GameObject:
   m_ObjectHideFlags: 0
@@ -14861,6 +14914,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2021729918}
     m_Modifications:
+    - target: {fileID: 3144939276535848778, guid: 3b29f0c284e08ae4282713c069d0ef01, type: 3}
+      propertyPath: sceneViewId
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4727239881597771816, guid: 3b29f0c284e08ae4282713c069d0ef01, type: 3}
       propertyPath: m_Name
       value: Statue 1L

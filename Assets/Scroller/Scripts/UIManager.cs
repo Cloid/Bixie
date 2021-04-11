@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using Photon.Pun;
 public class UIManager : MonoBehaviour {
 
 	public Slider healthUI;
@@ -24,10 +24,12 @@ public class UIManager : MonoBehaviour {
 
 	private float enemyTimer;
 	private Player player;
+	public PhotonView photonView;
 
 	// Use this for initialization
 	void Start () {
 		player = FindObjectOfType<Player>();
+		photonView = GetComponent<PhotonView>();
 		// healthUI.maxValue = player.maxHealth;
 		// healthUI.value = healthUI.maxValue;
 		// playerName.text = player.playerName;
@@ -49,10 +51,12 @@ public class UIManager : MonoBehaviour {
 		// fillValue = (float)GameController.Health;
         // fillValue = fillValue / GameController.MaxHealth;
         // print(Time.deltaTime);
-		UpdateHealth();
+		//UpdateHealth();
+		photonView.RPC("UpdateHealth", RpcTarget.All);
 
 	}
 
+	[PunRPC]
 	public void UpdateHealth()
 	{
 		// healthUI.value = amount;

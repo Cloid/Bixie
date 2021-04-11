@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{0a5e2a40-16ea-40a3-aa27-302d8f96469a}">
+		<property name="assetPath">
+			<value>Sounds/lantern_ignite.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>4.4951927437641723</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{c317ae0d-2b2e-435c-810c-31c7b5a6f495}</destination>
+		</relationship>
+	</object>
+</objects>

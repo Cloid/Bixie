@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
     public string hitSound, damageSound;
     public int currentHealth;
     public Collider interactObj;
+    public GameObject VNSayDialog;
 
     // Protected variables
     protected float currentSpeed;
@@ -105,8 +106,6 @@ public class Player : MonoBehaviour
                     Flip();
                 }
             }
-
-            Debug.Log(isAttack);
 
             // Player dash functionality 
             if (!isDash && dashTime <= 0f)
@@ -204,15 +203,20 @@ public class Player : MonoBehaviour
     // Player 1's Dash Function
     public void Dash()
     {
-        anim.SetBool("IsDashing", true);
-        Debug.Log("Player1 is doing a dash!");
-        isDash = true;
-        if (isFacingRight)
+        // If VN SayDialog is not active, then she can jump
+        if (!(VNSayDialog.activeSelf))
         {
-            dashVector = Vector3.right;
-        } else
-        {
-            dashVector = Vector3.left;
+            anim.SetBool("IsDashing", true);
+            Debug.Log("Player1 is doing a dash!");
+            isDash = true;
+            if (isFacingRight)
+            {
+                dashVector = Vector3.right;
+            }
+            else
+            {
+                dashVector = Vector3.left;
+            }
         }
     }
 

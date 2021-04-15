@@ -563,6 +563,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 133049143}
   m_CullTransparentMesh: 0
+--- !u!1 &140619824 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8020187326238795972, guid: e7e49aab1d8a2ac4cb67a5049086ecb5, type: 3}
+  m_PrefabInstance: {fileID: 1487021310}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &164648966
 GameObject:
   m_ObjectHideFlags: 0
@@ -4873,6 +4878,10 @@ PrefabInstance:
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2276603737524501352, guid: d00d46a330cf34de8956be298c6b33f8, type: 3}
+      propertyPath: VNSayDialog
+      value: 
+      objectReference: {fileID: 140619824}
+    - target: {fileID: 2276603737524501352, guid: d00d46a330cf34de8956be298c6b33f8, type: 3}
       propertyPath: playerAttack
       value: 
       objectReference: {fileID: 847701991}
@@ -7282,7 +7291,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8020187326238795971, guid: e7e49aab1d8a2ac4cb67a5049086ecb5, type: 3}
   m_PrefabInstance: {fileID: 1487021310}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 140619824}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3a0bbe22c246e4c78ad8e9816cbae9d5, type: 3}
@@ -15610,6 +15619,10 @@ PrefabInstance:
       propertyPath: projectile
       value: 
       objectReference: {fileID: 3272319517615755612, guid: b64e15b717e212e48ac074f3659efb9c, type: 3}
+    - target: {fileID: 1584053463, guid: 6ff773ca803e7814aa388c661e7cfd9d, type: 3}
+      propertyPath: VNSayDialog
+      value: 
+      objectReference: {fileID: 140619824}
     - target: {fileID: 560290902629324803, guid: 6ff773ca803e7814aa388c661e7cfd9d, type: 3}
       propertyPath: m_SortingLayer
       value: 0
@@ -15929,6 +15942,10 @@ PrefabInstance:
     - target: {fileID: 7578509151722214326, guid: 55d70e1f825334497a603f64a87a3d48, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7578509151722214330, guid: 55d70e1f825334497a603f64a87a3d48, type: 3}
+      propertyPath: m_Interpolate
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55d70e1f825334497a603f64a87a3d48, type: 3}

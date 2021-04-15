@@ -20,7 +20,6 @@ public class PlayerInputHandler : MonoBehaviour
     QinyangControls controls;
     Vector2 move;
 
-
     // Initialization
     void Awake() {
         DontDestroyOnLoad(gameObject);
@@ -34,6 +33,7 @@ public class PlayerInputHandler : MonoBehaviour
         print("inx:"+index);
         controls = new QinyangControls();
     }
+
     private void Update() {
         if(player1 == null && SceneManager.GetActiveScene().buildIndex > 3){
             player1 = FindObjectOfType<Player>();

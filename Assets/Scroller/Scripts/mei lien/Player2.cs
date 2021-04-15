@@ -34,6 +34,7 @@ public class Player2 : MonoBehaviour
     private TorchControllerSS torchControl;
     public AudioSource currAudioSource;
     public GameObject projectile;
+    public GameObject VNSayDialog;
 
     public AudioClip collisionSound2, jumpSound2, healthItem2;
 
@@ -193,7 +194,8 @@ public class Player2 : MonoBehaviour
     // Player 2's Jump Function
     public void Jump()
     {
-        if (onGround2)
+        // If player is on ground and VN SayDialog is not active, then she can jump
+        if (onGround2 && !(VNSayDialog.activeSelf))
         {
             Debug.Log("Player2 is doing a jump!");
             anim2.SetTrigger("Jumping");

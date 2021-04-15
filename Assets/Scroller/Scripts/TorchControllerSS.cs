@@ -36,12 +36,18 @@ public class TorchControllerSS : MonoBehaviour
     // Lights lantern
     public void lightLantern()
     {
-        print("Lantern lit!");
-        sprite.sprite = litSprite;
-        isLit = true;
-        Destroy(bamboo);
-        if(EnemySpawn != null){
-            Destroy(EnemySpawn);
+        if (isLit == false) {
+            print("Lantern lit!");
+            sprite.sprite = litSprite;
+            isLit = true;
+
+            // Play FMOD lit lantern sound
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Sounds/Lantern_Ignite", GetComponent<Transform>().position);
+
+            Destroy(bamboo);
+            if(EnemySpawn != null){
+                Destroy(EnemySpawn);
+            }
         }
     }
 

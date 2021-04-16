@@ -158,6 +158,8 @@ public class Player2 : MonoBehaviour
             Projectile nProj = newProjectile.GetComponent<Projectile>();
             StartCoroutine(MoveWaterwave(newProjectile, nProj));
             
+            // Spawn FMOD attack sound **maybe attach to the wave for better effect
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Sounds/M_Attack", newProjectile.GetComponent<Transform>().position);
 
             attackTime = 100f;
             canAttack = false;

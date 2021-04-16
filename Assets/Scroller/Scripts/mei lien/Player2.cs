@@ -215,6 +215,8 @@ public class Player2 : MonoBehaviour
             player1.currentHealth = player1.maxHealth;
         }
 
+        // BUGGED CODE meilien's interaction with the lantern.
+        /*
         if (other.CompareTag("Torch"))
             print("here");
         {
@@ -227,7 +229,7 @@ public class Player2 : MonoBehaviour
             {
                 torchControl.darkLantern();
             }
-        }
+        } */
     }
 
     // Flip function for flipping sprite when facing in a direction

@@ -158,6 +158,8 @@ public class Player2 : MonoBehaviour
             Projectile nProj = newProjectile.GetComponent<Projectile>();
             StartCoroutine(MoveWaterwave(newProjectile, nProj));
             
+            // Spawn FMOD attack sound **maybe attach to the wave for better effect
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Sounds/M_Attack", newProjectile.GetComponent<Transform>().position);
 
             attackTime = 100f;
             canAttack = false;
@@ -215,6 +217,8 @@ public class Player2 : MonoBehaviour
             player1.currentHealth = player1.maxHealth;
         }
 
+        // BUGGED CODE meilien's interaction with the lantern.
+        /*
         if (other.CompareTag("Torch"))
             print("here");
         {
@@ -227,7 +231,7 @@ public class Player2 : MonoBehaviour
             {
                 torchControl.darkLantern();
             }
-        }
+        } */
     }
 
     // Flip function for flipping sprite when facing in a direction

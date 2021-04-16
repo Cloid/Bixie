@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using Photon.Pun;
 
 public class Enemy : MonoBehaviour {
 
@@ -15,6 +16,7 @@ public class Enemy : MonoBehaviour {
 	public Sprite enemyImage;
 	public AudioClip collisionSound;
 	public string damageSound, deathSound;
+	public PhotonView photonView;
 
 	private int currentHealth;
 	private float currentSpeed;
@@ -73,7 +75,7 @@ public class Enemy : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+		photonView = GetComponent<PhotonView>();
 		rb = GetComponent<Rigidbody>();
 		anim = GetComponent<Animator>();
 		groundCheck = transform.Find("GroundCheck");
@@ -92,6 +94,7 @@ public class Enemy : MonoBehaviour {
 		if(target2 == null){
 			target2 = FindObjectOfType<Player2>().transform; 
 		}
+
 		onGround = Physics.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
 		anim.SetBool("Grounded", onGround);
 		anim.SetBool("Dead", isDead);
@@ -214,6 +217,7 @@ public class Enemy : MonoBehaviour {
 				Mathf.Clamp(rb.position.z, minHeight, maxHeight));
 	}
 
+	[PunRPC]
 	public void TookDamage(int damage, string stateTag, float attackDir)
 	{
 		Debug.Log("Current Health: " + currentHealth);
@@ -248,11 +252,16 @@ public class Enemy : MonoBehaviour {
 				rb.AddRelativeForce(new Vector3(3, 5, 0), ForceMode.Impulse);
 				PlaySound(deathSound, "Damage", damage);
 				DisableEnemy();
-				Destroy(gameObject);
+				//Destroy(gameObject);
+				photonView.RPC("DestroyEnemy", RpcTarget.AllBuffered);
 			}
 		}
 	}
 
+	[PunRPC]
+	public void DestroyEnemy(){
+		Destroy(gameObject);
+	}
 	public void DisableEnemy()
 	{
 		gameObject.SetActive(false);

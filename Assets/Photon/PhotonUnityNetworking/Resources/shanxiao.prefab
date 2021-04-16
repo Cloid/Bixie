@@ -117,6 +117,7 @@ MonoBehaviour:
   collisionSound: {fileID: 8300000, guid: bd57b795d021da74ba15f266af9cf7e9, type: 3}
   damageSound: event:/Sounds/Monster_Damage
   deathSound: event:/Sounds/Monster_Death
+  photonView: {fileID: 0}
 --- !u!95 &7578509151722214324
 Animator:
   serializedVersion: 3

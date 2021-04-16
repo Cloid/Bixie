@@ -244,6 +244,7 @@ public class Player2 : MonoBehaviour
     }
 
     // Hit Damage function
+    [PunRPC]
     public void TookDamage(int damage) 
     {
         if (!isDead2 && onGround2)

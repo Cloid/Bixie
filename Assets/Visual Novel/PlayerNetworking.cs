@@ -32,6 +32,7 @@ public class PlayerNetworking : MonoBehaviourPunCallbacks
     {
         //base.OnJoinedRoom();
         Debug.Log("Joined");
+        //Debug.Log(PhotonNetwork.CurrentRoom.GetPlayer(2));
         PhotonNetwork.Instantiate(PlayerInput.name, new Vector3(0,0,0), Quaternion.identity);
         
         if(PhotonNetwork.PlayerList.Length==2){

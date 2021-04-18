@@ -3767,8 +3767,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1622789885}
-  - component: {fileID: 1622789884}
   - component: {fileID: 1622789886}
+  - component: {fileID: 1622789884}
   m_Layer: 0
   m_Name: FMODController
   m_TagString: Untagged
@@ -3785,11 +3785,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 1622789883}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7093d9805c6571149ad8dd9e0a7b6cd9, type: 3}
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  songEvent: event:/Music/City
-  intensity: 0
+  CollisionTag: 
+  Event: event:/Music/City
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 1
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!4 &1622789885
 Transform:
   m_ObjectHideFlags: 0

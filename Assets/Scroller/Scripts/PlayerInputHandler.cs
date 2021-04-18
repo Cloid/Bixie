@@ -16,27 +16,29 @@ public class PlayerInputHandler : MonoBehaviour
     private PlayerInput playerInput;
     private Player player1;
     private Player2 player2;
+    private GameObject cs_holder;
+    private PhotonView cs_photonView;
     private CS_Control cs;
     private PhotonView photonView;
+    public bool hostClient = false;
     QinyangControls controls;
     Vector2 move;
-
 
     // Initialization
     void Awake()
     {
         photonView = GetComponent<PhotonView>();
-        if (photonView.IsMine)
-        {
-            DontDestroyOnLoad(gameObject);
-            cs = GameObject.FindObjectOfType<CS_Control>();
-            playerInput = GetComponent<PlayerInput>();
-            player1 = FindObjectOfType<Player>();
-            player2 = FindObjectOfType<Player2>();
-            players.Add(player1);
-            players.Add(player2);
-            //index = playerInput.playerIndex;
-            //print("inx:"+index);
+        cs_holder = GameObject.Find("cc_control");
+        cs = cs_holder.GetComponent<CS_Control>();
+
+        if(PhotonNetwork.IsMasterClient){
+            hostClient = true;
+        }
+
+        if(PhotonNetwork.OfflineMode){
+            //photonView.TransferOwnership(Photon.Realtime.Player.Get());
+        } else{
+            cs_photonView = cs_holder.GetPhotonView();
             if (PhotonNetwork.PlayerList.Length == 2)
             {
                 index = 1;
@@ -45,6 +47,20 @@ public class PlayerInputHandler : MonoBehaviour
             {
                 index = 0;
             }
+
+        }
+
+        if (photonView.IsMine)
+        {
+            DontDestroyOnLoad(gameObject);
+            playerInput = GetComponent<PlayerInput>();
+            player1 = FindObjectOfType<Player>();
+            player2 = FindObjectOfType<Player2>();
+            players.Add(player1);
+            players.Add(player2);
+            //index = playerInput.playerIndex;
+            //print("inx:"+index);
+            
             controls = new QinyangControls();
         }
     }
@@ -84,7 +100,8 @@ public class PlayerInputHandler : MonoBehaviour
 
             if (SceneManager.GetActiveScene().buildIndex == 3 && cs != null && index == 0)
             {
-                cs.moveMe(context.ReadValue<Vector2>());
+                cs_photonView.RPC("moveMe",RpcTarget.AllBuffered,context.ReadValue<Vector2>());
+                //cs.moveMe(context.ReadValue<Vector2>());
             }
         }
 
@@ -172,10 +189,12 @@ public class PlayerInputHandler : MonoBehaviour
             if (cs != null && (!cs.p1_selected) && SceneManager.GetActiveScene().buildIndex == 3
                     && index == 0)
             {
+                cs_photonView.RPC("charSelect",RpcTarget.AllBuffered);
                 cs.charSelect();
             }
             else if (cs != null && cs.controls.activeSelf)
             {
+                cs_photonView.RPC("charSelect",RpcTarget.AllBuffered);
                 cs.charSelect();
             }
         }

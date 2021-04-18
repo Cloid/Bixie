@@ -5,7 +5,7 @@ using Photon.Pun;
 
 public class StatueCollider : MonoBehaviour
 {
-    public PhotonView photonView;   
+    private PhotonView photonView;   
     // event insttance variable for fmod
     private static FMOD.Studio.EventInstance stone_sound;
     
@@ -23,14 +23,10 @@ public class StatueCollider : MonoBehaviour
     }*/
 private void Start() {
     photonView = GetComponent<PhotonView>();
-    Invoke("fuckMe", 5.0f);
-    //photonView.TransferOwnership(PhotonNetwork.CurrentRoom.GetPlayer(2));
+    //Invoke("fuckMe", 5.0f);
+    photonView.TransferOwnership(PhotonNetwork.CurrentRoom.GetPlayer(2));
     //StartCoroutine(test());
     //Debug.Log("TEST");
-}
-
-private void fuckMe(){
-    photonView.TransferOwnership(PhotonNetwork.CurrentRoom.GetPlayer(2));
 }
 
 void OnCollisionEnter(Collision hit)

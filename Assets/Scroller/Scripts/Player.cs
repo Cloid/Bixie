@@ -157,7 +157,7 @@ public class Player : MonoBehaviour
     [PunRPC]
     public void Attack()
     {
-
+            if(photonView.IsMine){
             Debug.Log("Player1 is doing an attack!");
             curAttack.damage = 1;
             isAttack = true;
@@ -165,7 +165,7 @@ public class Player : MonoBehaviour
             anim.SetTrigger("Attack");
             //setAttack();
             Invoke("setAttack", 1);
-        
+            }
     }
 
     // Helper function for Player1's attack which reverses the isAttack value 
@@ -187,7 +187,7 @@ public class Player : MonoBehaviour
     // Player 1's HeavyAttack Function
     public void HeavyAttack()
     {
- 
+        if(photonView.IsMine){
             if (heavyAttack)
             {
                 Debug.Log("Player1 is doing a heavy attack!");
@@ -206,7 +206,7 @@ public class Player : MonoBehaviour
             }
 
             heavyAttack = false;
-        
+        }
     }
 
 

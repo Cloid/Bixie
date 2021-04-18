@@ -8,6 +8,9 @@ public class PauseInput : MonoBehaviour
 {
     public Flowchart Pause;
     public Flowchart Intro;
+    public GameObject PhotonGet;
+    public PhotonProxy photonProxy;
+    
     private bool inOptions = false;
     // Start is called before the first frame update
     void Start()
@@ -18,7 +21,7 @@ public class PauseInput : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+    
         Keyboard kb = InputSystem.GetDevice<Keyboard>();
         Gamepad gp = InputSystem.GetDevice<Gamepad>();
 
@@ -109,6 +112,17 @@ public class PauseInput : MonoBehaviour
     public void IntroScene()
     {
         Intro.ExecuteBlock("TitleList");
+    }
+
+    public void GetPhotonProxy(){
+            PhotonGet = GameObject.Find("1");
+            Debug.Log(PhotonGet);
+            photonProxy = PhotonGet.GetComponent<PhotonProxy>();
+
+            if(photonProxy != null){
+                photonProxy.PhotonMenuPop();
+            }
+        
     }
 
 }

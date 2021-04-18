@@ -259,7 +259,7 @@ public class @QinyangControls : IInputActionCollection, IDisposable
                     ""name"": """",
                     ""id"": ""3de5164e-8429-4e76-86ab-d0a2473989fe"",
                     ""path"": ""<Keyboard>/space"",
-                    ""interactions"": """",
+                    ""interactions"": ""Press"",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Jump"",

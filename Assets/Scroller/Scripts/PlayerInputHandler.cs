@@ -30,13 +30,22 @@ public class PlayerInputHandler : MonoBehaviour
         photonView = GetComponent<PhotonView>();
         cs_holder = GameObject.Find("cc_control");
         cs = cs_holder.GetComponent<CS_Control>();
+        //int i = 0;
+        //var myUser = PlayerInput.all[0].user;
 
         if(PhotonNetwork.IsMasterClient){
             hostClient = true;
         }
 
         if(PhotonNetwork.OfflineMode){
-            //photonView.TransferOwnership(Photon.Realtime.Player.Get());
+            //photonView.TransferOwnership(Photon.Realtime.Player);
+            //pInput = GetComponent<PlayerInput>();
+            //pInput.UnpairDeice.
+            //myUser.UnpairDevices();
+            //myUser.
+            cs_photonView = cs_holder.GetPhotonView();
+
+            //InputSystem.UnpairDevice
         } else{
             cs_photonView = cs_holder.GetPhotonView();
             if (PhotonNetwork.PlayerList.Length == 2)

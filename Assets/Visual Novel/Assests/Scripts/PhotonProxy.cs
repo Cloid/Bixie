@@ -9,6 +9,7 @@ public class PhotonProxy : MonoBehaviour
     private GameObject PhotonProxy_get;
     private PhotonGetter photonGetter;
     public Flowchart PhotonMenu;
+    public int num = 0;
     void Start()
     {
        PhotonProxy_get = GameObject.Find("AudioController");
@@ -34,6 +35,10 @@ public class PhotonProxy : MonoBehaviour
     public void PhotonMenuPop(){
         PhotonMenu.StopAllBlocks();
         PhotonMenu.ExecuteBlock("Yes (option)");
+    }
+
+    public void updateLobbies(){
+        num = PhotonMenu.GetIntegerVariable("lobby1");
     }
 
 }

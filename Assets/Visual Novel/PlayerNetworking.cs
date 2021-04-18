@@ -59,8 +59,8 @@ public class PlayerNetworking : MonoBehaviourPunCallbacks
         //Debug.Log(PhotonNetwork.CurrentRoom.GetPlayer(2));
         if(PhotonNetwork.OfflineMode == true){
             Debug.Log("IN HERE");
-            PManager.SetActive(true);
-                    //PhotonNetwork.Instantiate("PlayerInput", new Vector3(0,0,0), Quaternion.identity);
+            //PManager.SetActive(true);
+            PhotonNetwork.Instantiate("PlayerInput", new Vector3(0,0,0), Quaternion.identity);
 
             //PhotonNetwork.Instantiate("Mei Lien", new Vector3(0,0,0), Quaternion.identity);
         }else{

@@ -89,5 +89,8 @@ public class AudioOptions : MonoBehaviour
             aud.setVolume(newSFXVolume);
         }
 
+        // Play a test sound (funky frog)
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Sounds/Go");
+
     }
 }

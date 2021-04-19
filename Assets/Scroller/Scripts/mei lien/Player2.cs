@@ -35,6 +35,7 @@ public class Player2 : MonoBehaviour
     public AudioSource currAudioSource;
     public GameObject projectile;
     public PhotonView photonView;
+    public GameObject VNSayDialog;
 
     public AudioClip collisionSound2, jumpSound2, healthItem2;
 
@@ -162,6 +163,8 @@ public class Player2 : MonoBehaviour
             Projectile nProj = newProjectile.GetComponent<Projectile>();
             StartCoroutine(MoveWaterwave(newProjectile, nProj));
             
+            // Spawn FMOD attack sound **maybe attach to the wave for better effect
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Sounds/M_Attack", newProjectile.GetComponent<Transform>().position);
 
             attackTime = 100f;
             canAttack = false;
@@ -198,7 +201,8 @@ public class Player2 : MonoBehaviour
     // Player 2's Jump Function
     public void Jump()
     {
-        if (onGround2)
+        // If player is on ground and VN SayDialog is not active, then she can jump
+        if (onGround2 && !(VNSayDialog.activeSelf))
         {
             Debug.Log("Player2 is doing a jump!");
             anim2.SetTrigger("Jumping");
@@ -218,6 +222,8 @@ public class Player2 : MonoBehaviour
             player1.currentHealth = player1.maxHealth;
         }
 
+        // BUGGED CODE meilien's interaction with the lantern.
+        /*
         if (other.CompareTag("Torch"))
             print("here");
         {
@@ -230,7 +236,7 @@ public class Player2 : MonoBehaviour
             {
                 torchControl.darkLantern();
             }
-        }
+        } */
     }
 
     // Flip function for flipping sprite when facing in a direction

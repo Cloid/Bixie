@@ -95,8 +95,7 @@ public class Enemy : MonoBehaviour {
 		//FindCheckpoint.G
 		if (!isDead)
 		{
-			facingRight = (target2.position.x < transform.position.x) ? false : true;
-			Debug.Log("facingRight: "+ facingRight);
+			// facingRight = (target2.position.x < transform.position.x) ? false : true;
 			if (facingRight)
 			{
 				//transform.eulerAngles = new Vector3(0, 180, 0);

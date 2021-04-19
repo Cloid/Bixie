@@ -10,10 +10,35 @@ public class PhotonProxy : MonoBehaviour
     private PhotonGetter photonGetter;
     public Flowchart PhotonMenu;
     public int num = 0;
+    private GameObject Op;
     void Start()
     {
+        Op = GameObject.Find("AudioController");
        PhotonProxy_get = GameObject.Find("AudioController");
        photonGetter = PhotonProxy_get.GetComponent<PhotonGetter>();
+
+        if(photonGetter.error){
+            PhotonMenu.StopAllBlocks();
+            PhotonMenu.ExecuteBlock("ErrorJoin");
+        } else if(photonGetter.errorCreate){
+            PhotonMenu.StopAllBlocks();
+            PhotonMenu.ExecuteBlock("ErrorCreate");
+        }
+        
+
+    }
+
+    public void changeOptions(){
+
+
+        //Op.SetActive(false);
+
+        if(Op.activeSelf){
+            Op.SetActive(false);
+        } else {
+            Op.SetActive(true);
+        }
+        
     }
 
     public void changeLocal(){

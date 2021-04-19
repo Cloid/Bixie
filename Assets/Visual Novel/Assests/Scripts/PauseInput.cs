@@ -11,7 +11,9 @@ public class PauseInput : MonoBehaviour
     public GameObject PhotonGet;
     public PhotonProxy photonProxy;
     
-    private bool inOptions = false;
+    public bool inOptions = false;
+
+    //public bool error = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +26,6 @@ public class PauseInput : MonoBehaviour
     
         Keyboard kb = InputSystem.GetDevice<Keyboard>();
         Gamepad gp = InputSystem.GetDevice<Gamepad>();
-
         if (!inOptions)
         {
             if (SceneManager.GetActiveScene().buildIndex == 2)
@@ -118,6 +119,8 @@ public class PauseInput : MonoBehaviour
             PhotonGet = GameObject.Find("1");
             Debug.Log(PhotonGet);
             photonProxy = PhotonGet.GetComponent<PhotonProxy>();
+
+
 
             if(photonProxy != null){
                 photonProxy.PhotonMenuPop();

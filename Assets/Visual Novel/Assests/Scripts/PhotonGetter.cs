@@ -6,6 +6,8 @@ public class PhotonGetter : MonoBehaviour
 {
     //Make a getter and setter function for this
     public bool local = false;
+    public bool error = false;
+    public bool errorCreate = false;
     public string lobby; 
     // Start is called before the first frame update
     

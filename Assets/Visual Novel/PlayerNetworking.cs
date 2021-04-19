@@ -59,8 +59,9 @@ public class PlayerNetworking : MonoBehaviourPunCallbacks
         //Debug.Log(PhotonNetwork.CurrentRoom.GetPlayer(2));
         if(PhotonNetwork.OfflineMode == true){
             Debug.Log("IN HERE");
-            //PManager.SetActive(true);
-            PhotonNetwork.Instantiate("PlayerInput", new Vector3(0,0,0), Quaternion.identity);
+            //PhotonNetwork.Instantiate("Player Input Manager", new Vector3(0,0,0), Quaternion.identity);
+            PManager.SetActive(true);
+            //PhotonNetwork.Instantiate("PlayerInput", new Vector3(0,0,0), Quaternion.identity);
 
             //PhotonNetwork.Instantiate("Mei Lien", new Vector3(0,0,0), Quaternion.identity);
         }else{
@@ -75,4 +76,21 @@ public class PlayerNetworking : MonoBehaviourPunCallbacks
         //if conditional for offline
         
     }
+    public override void OnJoinRoomFailed(short returnCode, string message){
+        //Debug.Log("Shit");
+        PhotonNetwork.Disconnect();
+        GameObject.FindObjectOfType<PhotonGetter>().error = true;
+        SceneManager.LoadScene("IntroVN");
+    }
+
+    public override void OnCreateRoomFailed(short returnCode, string message)
+    {
+        //base.OnCreateRoomFailed(returnCode, message);
+        PhotonNetwork.Disconnect();
+        GameObject.FindObjectOfType<PhotonGetter>().errorCreate = true;
+        SceneManager.LoadScene("IntroVN");
+
+    }
+
+    
 }

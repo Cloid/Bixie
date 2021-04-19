@@ -29,25 +29,41 @@ public class PlayerInputHandler : MonoBehaviour
     {
         photonView = GetComponent<PhotonView>();
         cs_holder = GameObject.Find("cc_control");
-        cs = cs_holder.GetComponent<CS_Control>();
-        //int i = 0;
-        //var myUser = PlayerInput.all[0].user;
 
-        if(PhotonNetwork.IsMasterClient){
+        if(SceneManager.GetActiveScene().buildIndex == 3){
+            cs = cs_holder.GetComponent<CS_Control>();
+            cs_photonView = cs_holder.GetPhotonView();
+        }
+        
+
+        //int i = 0;
+       // var myUser = PlayerInput.all[0].user;
+
+        if(PhotonNetwork.IsMasterClient && !PhotonNetwork.OfflineMode){
             hostClient = true;
         }
 
         if(PhotonNetwork.OfflineMode){
+            //var device = myUser.pairedDevices;
+           // GameObject go = PhotonNetwork.Instantiate("Player Input Manager", new Vector3(0,0,0), Quaternion.identity);
+            
+            //go.GetComponent<PlayerInput>().AddDevice
+            
+            //var plop = GameObject.FindObjectOfType<PlayerInputManager>();
+            //photonView.TransferOwnership(plop.GetComponent<PhotonView>().Owner);
+            //photonView.TransferOwnership(PhotonNetwork.Player.id);
             //photonView.TransferOwnership(Photon.Realtime.Player);
             //pInput = GetComponent<PlayerInput>();
             //pInput.UnpairDeice.
             //myUser.UnpairDevices();
             //myUser.
-            cs_photonView = cs_holder.GetPhotonView();
+            playerInput = GetComponent<PlayerInput>();
+            index = playerInput.playerIndex;
+            DontDestroyOnLoad(gameObject);
+            //photonView.RPC("Test", RpcTarget.AllBuffered);
 
             //InputSystem.UnpairDevice
         } else{
-            cs_photonView = cs_holder.GetPhotonView();
             if (PhotonNetwork.PlayerList.Length == 2)
             {
                 index = 1;
@@ -75,7 +91,7 @@ public class PlayerInputHandler : MonoBehaviour
     }
     private void Update()
     {
-        if (photonView.IsMine)
+        if (PhotonNetwork.OfflineMode || photonView.IsMine)
         {
             if (player1 == null)
             {
@@ -93,7 +109,7 @@ public class PlayerInputHandler : MonoBehaviour
     // Allows players to move through callback context from input device
     public void OnMove(CallbackContext context)
     {
-        if (photonView.IsMine)
+        if (PhotonNetwork.OfflineMode ||photonView.IsMine)
         {
             if (player1 != null && player2 != null)
             {
@@ -121,7 +137,7 @@ public class PlayerInputHandler : MonoBehaviour
     // Allows players to call their attack function through callback context from input device
     public void onAttack(CallbackContext context)
     {
-        if (photonView.IsMine)
+        if (PhotonNetwork.OfflineMode ||photonView.IsMine)
         {
             if (player1 != null && player2 != null)
             {
@@ -141,7 +157,7 @@ public class PlayerInputHandler : MonoBehaviour
     // Allows players to call their attack function through callback context from input device
     public void onHeavyAttack(CallbackContext context)
     {
-        if (photonView.IsMine)
+        if (PhotonNetwork.OfflineMode || photonView.IsMine)
         {
             if (player1 != null && player2 != null)
             {
@@ -161,7 +177,7 @@ public class PlayerInputHandler : MonoBehaviour
     // Allows players to call their attack function through callback context from input device
     public void onSpecial(CallbackContext context)
     {
-        if (photonView.IsMine)
+        if (PhotonNetwork.OfflineMode || photonView.IsMine)
         {
             if (player1 != null && player2 != null)
             {
@@ -181,7 +197,7 @@ public class PlayerInputHandler : MonoBehaviour
     // Allows players to call their jump function through callback context from input device
     public void onJump(CallbackContext context)
     {
-        if (photonView.IsMine)
+        if (PhotonNetwork.OfflineMode || photonView.IsMine)
         {
             if (player1 != null && player2 != null)
             {
@@ -216,7 +232,7 @@ public class PlayerInputHandler : MonoBehaviour
     // Allows players to call their interact function through callback context from input device
     public void onInteract(CallbackContext context)
     {
-        if (photonView.IsMine)
+        if (PhotonNetwork.OfflineMode || photonView.IsMine)
         {
             if (player1 != null && player2 != null)
             {
@@ -239,4 +255,5 @@ public class PlayerInputHandler : MonoBehaviour
             }
         }
     }
+
 }

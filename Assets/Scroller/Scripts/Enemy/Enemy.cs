@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using Photon.Pun;
 
 public class Enemy : MonoBehaviour {
 
@@ -15,6 +16,7 @@ public class Enemy : MonoBehaviour {
 	public Sprite enemyImage;
 	public AudioClip collisionSound;
 	public string damageSound, deathSound;
+	public PhotonView photonView;
 
 	private int currentHealth;
 	private float currentSpeed;
@@ -73,21 +75,26 @@ public class Enemy : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+		photonView = GetComponent<PhotonView>();
 		rb = GetComponent<Rigidbody>();
 		anim = GetComponent<Animator>();
 		groundCheck = transform.Find("GroundCheck");
 		//target = GameObject.FindGameObjectWithTag("Player").transform;
 		// target = FindObjectOfType<Player>().transform;
-		target2 = FindObjectOfType<Player2>().transform;
+		//target2 = FindObjectOfType<Player2>().transform;
 		//print(GameObject.FindGameObjectWithTag("Player").transform);
 		//print(GameObject.FindGameObjectWithTag("Player2").transform);
 		currentHealth = maxHealth;
 		audioS = GetComponent<AudioSource>();
+		Debug.Log("Current Health: " + currentHealth);
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		if(target2 == null){
+			target2 = FindObjectOfType<Player2>().transform; 
+		}
+
 		onGround = Physics.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
 		anim.SetBool("Grounded", onGround);
 		anim.SetBool("Dead", isDead);
@@ -209,8 +216,11 @@ public class Enemy : MonoBehaviour {
 				Mathf.Clamp(rb.position.z, minHeight, maxHeight));
 	}
 
+	[PunRPC]
 	public void TookDamage(int damage, string stateTag, float attackDir)
 	{
+		Debug.Log("Current Health: " + currentHealth);
+		Debug.Log("State Tag: "+ stateTag);
 		if (!isDead)
 		{
 			damaged = true;
@@ -241,11 +251,16 @@ public class Enemy : MonoBehaviour {
 				rb.AddRelativeForce(new Vector3(3, 5, 0), ForceMode.Impulse);
 				PlaySound(deathSound, "Damage", damage);
 				DisableEnemy();
-				Destroy(gameObject);
+				//Destroy(gameObject);
+				photonView.RPC("DestroyEnemy", RpcTarget.AllBuffered);
 			}
 		}
 	}
 
+	[PunRPC]
+	public void DestroyEnemy(){
+		Destroy(gameObject);
+	}
 	public void DisableEnemy()
 	{
 		gameObject.SetActive(false);

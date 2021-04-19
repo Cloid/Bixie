@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class StatueCollider : MonoBehaviour
 {
-    
+    private PhotonView photonView;
+
     // event insttance variable for fmod
     private static FMOD.Studio.EventInstance stone_sound;
     
@@ -20,12 +22,20 @@ public class StatueCollider : MonoBehaviour
     {
         
     }*/
+private void Start() {
+    photonView = GetComponent<PhotonView>();
+    //Invoke("fuckMe", 5.0f);
+    //photonView.TransferOwnership(PhotonNetwork.CurrentRoom.GetPlayer(2));
+    //StartCoroutine(test());
+    //Debug.Log("TEST");
+}
 
 void OnCollisionEnter(Collision hit)
  {
-     //Source Code by MythralFTW: https://answers.unity.com/questions/1100879/push-object-in-opposite-direction-of-collision.html
-     // Adapted by Miguelcloid Reniva
-   // Debug.Log("Hit");
+    //Source Code by MythralFTW: https://answers.unity.com/questions/1100879/push-object-in-opposite-direction-of-collision.html
+    // Adapted by Miguelcloid Reniva
+    // Debug.Log("Hit");
+
      float force = .05f;
      Rigidbody hitRigidbody = hit.collider.attachedRigidbody;
 

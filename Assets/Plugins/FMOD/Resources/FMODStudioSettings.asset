@@ -146,6 +146,8 @@ MonoBehaviour:
   sourceProjectPath: Assets/Scroller/Sounds/fmod/bixie/bixie.fspro
   sourceBankPath: Assets/Scroller/Sounds/fmod/bixie/Build/Desktop
   SourceBankPathUnformatted: 
+  BankRefreshCooldown: 5
+  ShowBankRefreshWindow: 1
   AutomaticEventLoading: 0
   BankLoadType: 0
   AutomaticSampleLoading: 0
@@ -175,6 +177,21 @@ MonoBehaviour:
   MeterChannelOrdering: 0
   StopEventsOutsideMaxDistance: 0
   BoltUnitOptionsBuildPending: 0
+  EnableErrorCallback: 0
+  SharedLibraryUpdateStage: 0
+  SharedLibraryTimeSinceStart: 0
+  HideSetupWizard: 1
+  Platforms:
+  - {fileID: -8876217786657531488}
+  - {fileID: -2390877638805221749}
+  - {fileID: 1526259256649823445}
+  - {fileID: 3770957302191622806}
+  - {fileID: 6978773740553374263}
+  - {fileID: 7753576649795338678}
+  - {fileID: 7760062280115937030}
+  - {fileID: 8930835835547380213}
+  - {fileID: 9096554341669468696}
+  - {fileID: 9126678547927615768}
   MigratedPlatforms: 0c000000150000000b0000000a00000009000000120000000800000005000000060000000200000001000000
 --- !u!114 &1526259256649823445
 MonoBehaviour:
@@ -188,7 +205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc1f51bc35d549941904cf062bae93a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  identifier: 0f8eb3f400726694eb47beb1a9f94ce8
+  identifier: fd7c55dab0fce234b8c25f6ffca523c1
   parentIdentifier: default
   displaySortOrder: 0
   active: 0
@@ -358,11 +375,10 @@ MonoBehaviour:
   SharedLibraryTimeSinceStart: 285.246706
   HideSetupWizard: 1
   Platforms:
-  - {fileID: -9032082505220640396}
   - {fileID: -8876217786657531488}
-  - {fileID: -2980029813729474270}
   - {fileID: -2390877638805221749}
   - {fileID: 1526259256649823445}
+  - {fileID: 3770957302191622806}
   - {fileID: 6978773740553374263}
   - {fileID: 7753576649795338678}
   - {fileID: 7760062280115937030}
@@ -370,70 +386,6 @@ MonoBehaviour:
   - {fileID: 9096554341669468696}
   - {fileID: 9126678547927615768}
   MigratedPlatforms: 0c000000150000000b0000000a00000009000000120000000800000005000000060000000200000001000000
---- !u!114 &1526259256649823445
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc1f51bc35d549941904cf062bae93a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  identifier: fd7c55dab0fce234b8c25f6ffca523c1
-  parentIdentifier: default
-  displaySortOrder: 0
-  active: 0
-  Properties:
-    LiveUpdate:
-      Value: 0
-      HasValue: 0
-    LiveUpdatePort:
-      Value: 0
-      HasValue: 0
-    Overlay:
-      Value: 0
-      HasValue: 0
-    Logging:
-      Value: 0
-      HasValue: 0
-    SampleRate:
-      Value: 0
-      HasValue: 0
-    BuildDirectory:
-      Value: 
-      HasValue: 0
-    SpeakerMode:
-      Value: 0
-      HasValue: 0
-    VirtualChannelCount:
-      Value: 0
-      HasValue: 0
-    RealChannelCount:
-      Value: 0
-      HasValue: 0
-    DSPBufferLength:
-      Value: 0
-      HasValue: 0
-    DSPBufferCount:
-      Value: 0
-      HasValue: 0
-    Plugins:
-      Value: []
-      HasValue: 0
-    StaticPlugins:
-      Value: []
-      HasValue: 0
-    CallbackHandler:
-      Value: {fileID: 0}
-      HasValue: 0
-  childIdentifiers: []
-  outputType: 
-  threadAffinities:
-    Value: []
-    HasValue: 0
 --- !u!114 &6978773740553374263
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Photon.Pun;
 public class EnemySpawn : MonoBehaviour {
 
 	public float maxZ, minZ;
@@ -46,7 +46,10 @@ public class EnemySpawn : MonoBehaviour {
 			spawnPosition = new Vector3(transform.position.x - 10, 0, spawnPosition.z);
 		}
 		// randomly gen enemy types
-		Instantiate(enemy[Random.Range(0, enemy.Length)], spawnPosition, Quaternion.identity);
+		//Instantiate(enemy[Random.Range(0, enemy.Length)], spawnPosition, Quaternion.identity);
+		if(PhotonNetwork.IsMasterClient){
+			PhotonNetwork.Instantiate("shanxiao", spawnPosition, Quaternion.identity);
+		}
 		currentEnemies++;
 		if(currentEnemies < numberOfEnemies)
 		{

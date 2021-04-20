@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-
+using Photon.Pun;
 public class CS_Control : MonoBehaviour
 {
     public GameObject ml_sel;
@@ -22,14 +22,58 @@ public class CS_Control : MonoBehaviour
     private bool ml_on = false;
     private bool q_on = false;
     public bool p1_selected = false;
+    public GameObject photonc_text;
+    public GameObject connected_text;
+    public GameObject connection_p2_text;
+    public GameObject photon_controls;
+    public GameObject loadObject;
+    private GameObject PhotonProxy_get;
+    private PhotonGetter photonGetter;
+    private PhotonView photonView;
+    public bool loadVar = false;
+    private bool runOnce = false;
     // Start is called before the first frame update
     void Start()
     {
+        PhotonProxy_get = GameObject.Find("AudioController");
+        photonGetter = PhotonProxy_get.GetComponent<PhotonGetter>();
+
+        if(photonGetter.local==false){
+            ctext.SetActive(false);
+            photonc_text.SetActive(true);
+            photonView = GetComponent<PhotonView>();
+            //photonView.TransferOwnership(1);
+        }
+
         goCam = gameObject.GetComponent<CameraShake>();
     }
 
+    private void Update() {
+        if(photonc_text.activeSelf && PhotonNetwork.IsConnectedAndReady == true){
+            photonc_text.SetActive(false);
+            connected_text.SetActive(true);
+        }
+
+        if(PhotonNetwork.PlayerList.Length==2 && runOnce == false){
+            runOnce = true;
+            connected_text.SetActive(false);
+            connection_p2_text.SetActive(true);
+            Invoke("changeText", 2f);
+        }
+
+        if(PhotonNetwork.IsMasterClient && loadVar){
+            loadObject.SetActive(true);
+        }
+
+    }
+
+    [PunRPC]
     public void moveMe(Vector2 vector)
     {
+        if(connected_text.activeSelf){
+            return;
+        }
+
         Debug.Log(vector);
         if (!p1_selected)
         {
@@ -54,26 +98,48 @@ public class CS_Control : MonoBehaviour
         }
     }
 
+    [PunRPC]
     public void charSelect()
     {
+        if(connected_text.activeSelf){
+            return;
+        }
+
         if(controls.activeSelf == true){
             Debug.Log("test");
             sceneTransition.SetActive(true);
-            Invoke("changeScene", 1f);
+            //Invoke("changeScene", 1f);
+            if(PhotonNetwork.IsMasterClient){
+                changeScene();
+            }
         }
+        
         if (q_sel.activeSelf == true && !(p1_selected))
         {
             myObj = GameObject.FindGameObjectsWithTag("PlayerInput");
             p1 = myObj[0].GetComponent<PlayerInputHandler>();
-            if (myObj.Length == 1)
+            if (myObj.Length == 1 && PhotonNetwork.OfflineMode)
             {
                 ctext.SetActive(false);
                 p2_text.SetActive(true);
+            }
+            else if(!PhotonNetwork.OfflineMode){
+                ctext.SetActive(false);
+                p2_text.SetActive(false);
+                photon_controls.SetActive(false);
+
+                p1_selected = true;
+                ml_sel.SetActive(true);
+                goCam.ShakeIt();
+                Invoke("showControls", 1);
+
             }
             else
             {
                 ctext.SetActive(false);
                 p2_text.SetActive(false);
+                photon_controls.SetActive(false);
+
                 p2 = myObj[1].GetComponent<PlayerInputHandler>();
                 p1_selected = true;
                 ml_sel.SetActive(true);
@@ -85,16 +151,35 @@ public class CS_Control : MonoBehaviour
         {
             myObj = GameObject.FindGameObjectsWithTag("PlayerInput");
             p1 = myObj[0].GetComponent<PlayerInputHandler>();
-            Debug.Log(p2);
+            //Debug.Log(p2);
             if (myObj.Length == 1)
             {
                 ctext.SetActive(false);
                 p2_text.SetActive(true);
             }
+            else if(!PhotonNetwork.OfflineMode){
+
+                ctext.SetActive(false);
+                p2_text.SetActive(false);
+                photon_controls.SetActive(false);
+
+                if(PhotonNetwork.IsMasterClient){
+                    p1.index = 1;
+                } else{
+                    p1.index = 0;
+                }
+                p1_selected = true;
+                q_sel.SetActive(true);
+                goCam.ShakeIt();
+                Invoke("showControls", 1);
+
+            }
             else
             {
                 ctext.SetActive(false);
                 p2_text.SetActive(false);
+                photon_controls.SetActive(false);
+
                 p2 = myObj[1].GetComponent<PlayerInputHandler>();
                 p1_selected = true;
                 p1.index = 1;
@@ -107,12 +192,18 @@ public class CS_Control : MonoBehaviour
     }
 
     private void changeScene(){
-        SceneManager.LoadScene("Scroller_1_1");
+        //SceneManager.LoadScene("Scroller_1_1");
+        loadVar = true;
     }
 
     private void showControls(){
         Canvas mcanvas = blur.GetComponent<Canvas>();
         mcanvas.sortingOrder = 4;
         controls.SetActive(true);
+    }
+
+    private void changeText(){
+        connection_p2_text.SetActive(false);
+        photon_controls.SetActive(true);
     }
 }

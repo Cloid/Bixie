@@ -169,7 +169,7 @@ public class Player : MonoBehaviour
     [PunRPC]
     public void Attack()
     {
-            if(photonView.IsMine){
+            if(photonView.IsMine && !isDash){
             Debug.Log("Player1 is doing an attack!");
             curAttack.damage = 1;
             isAttack = true;

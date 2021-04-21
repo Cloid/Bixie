@@ -147,12 +147,15 @@ public class Player : MonoBehaviour
     // Player 1's Attack Function
     public void Attack()
     {
-        Debug.Log("Player1 is doing an attack!");
-        curAttack.damage = 1;
-        isAttack = true;
-        curAttack.attackState = "qinyangBasicAttack";
-        anim.SetTrigger("Attack");
-        //setAttack();
+        // If Qinyang is not dashing, then she can attack.
+        if (!isDash)
+        {
+            Debug.Log("Player1 is doing an attack!");
+            curAttack.damage = 1;
+            isAttack = true;
+            curAttack.attackState = "qinyangBasicAttack";
+            anim.SetTrigger("Attack");
+        }
         Invoke("setAttack", 1);
     }
 
@@ -203,8 +206,8 @@ public class Player : MonoBehaviour
     // Player 1's Dash Function
     public void Dash()
     {
-        // If VN SayDialog is not active, then she can jump
-        if (!(VNSayDialog.activeSelf))
+        // If she is not attacking and VNSayDialog is not active, then she can dash
+        if (!isAttack && !(VNSayDialog.activeSelf))
         {
             anim.SetBool("IsDashing", true);
             Debug.Log("Player1 is doing a dash!");

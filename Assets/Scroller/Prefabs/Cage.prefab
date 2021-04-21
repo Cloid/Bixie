@@ -178,5 +178,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minBoomerangTime: 4
   maxBoomerangTime: 8
+  amountOfObjectsToSpawn: 6
   maxHealth: 4
-  rock_piece: {fileID: 849759281890708582, guid: 0df32ede0c7f1ab42bd6260d1a3d95c1, type: 3}
+  rock_pieces:
+  - {fileID: 8999922045301091228, guid: 816acdc3d7fff42b8911d736d4f4e871, type: 3}
+  - {fileID: 849759281890708582, guid: 0df32ede0c7f1ab42bd6260d1a3d95c1, type: 3}

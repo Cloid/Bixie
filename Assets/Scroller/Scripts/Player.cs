@@ -114,7 +114,7 @@ public class Player : MonoBehaviour
                     }
                 }
 
-                Debug.Log(isAttack);
+                // Debug.Log(isAttack);
 
                 // Player dash functionality 
                 if (!isDash && dashTime <= 0f)

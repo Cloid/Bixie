@@ -216,7 +216,7 @@ namespace FMODUnity
 
         static void CreateSystem()
         {
-            UnityEngine.Debug.Log("FMOD Studio: Creating editor system instance");
+            // UnityEngine.Debug.Log("FMOD Studio: Creating editor system instance");
             RuntimeUtils.EnforceLibraryOrder();
 
             FMOD.RESULT result = FMOD.Debug.Initialize(FMOD.DEBUG_FLAGS.LOG, FMOD.DEBUG_MODE.FILE, null, "fmod_editor.log");

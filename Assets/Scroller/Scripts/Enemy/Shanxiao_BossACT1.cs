@@ -24,7 +24,7 @@ public class Shanxiao_BossACT1 : Enemy
         player1 = FindObjectOfType<Player>();
         player2 = FindObjectOfType<Player2>();
         Mei = GameObject.Find("Mei Lien").GetComponent<Rigidbody>();
-        Invoke("SpawnCage", Random.Range(minBoomerangTime, maxBoomerangTime));
+        // Invoke("SpawnCage", Random.Range(minBoomerangTime, maxBoomerangTime));
         music = FindObjectOfType<MusicController>();
         music.PlaySong(music.bossSong);
         //currentHealth = maxHealth;
@@ -34,7 +34,7 @@ public class Shanxiao_BossACT1 : Enemy
     {
         if (tempCage != null && tempCage.activeSelf == false)
         {
-			Invoke("SpawnCage", Random.Range(minBoomerangTime, maxBoomerangTime));
+			// Invoke("SpawnCage", Random.Range(minBoomerangTime, maxBoomerangTime));
         }
     }
     void SpawnCage()

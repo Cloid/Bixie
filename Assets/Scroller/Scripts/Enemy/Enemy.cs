@@ -18,6 +18,8 @@ public class Enemy : MonoBehaviour {
 	public string damageSound, deathSound;
 	public PhotonView photonView;
 
+	private float newTime = 0.0f;
+	private float curTime;
 	private int currentHealth;
 	private float currentSpeed;
 	private Rigidbody rb;
@@ -25,8 +27,9 @@ public class Enemy : MonoBehaviour {
 	private Transform groundCheck;
 	private bool onGround;
 	protected bool facingRight = false;
-	private Transform target;
+	private Transform target1;
 	private Transform target2;
+	private Transform realTarget;
 	protected bool isDead = false;
 	private float zForce;
 	private float walkTimer;
@@ -80,21 +83,20 @@ public class Enemy : MonoBehaviour {
 		anim = GetComponent<Animator>();
 		groundCheck = transform.Find("GroundCheck");
 		//target = GameObject.FindGameObjectWithTag("Player").transform;
-		// target = FindObjectOfType<Player>().transform;
-		//target2 = FindObjectOfType<Player2>().transform;
+		target1 = FindObjectOfType<Player>().transform;
+		target2 = FindObjectOfType<Player2>().transform;
 		//print(GameObject.FindGameObjectWithTag("Player").transform);
 		//print(GameObject.FindGameObjectWithTag("Player2").transform);
 		currentHealth = maxHealth;
 		audioS = GetComponent<AudioSource>();
-		Debug.Log("Current Health: " + currentHealth);
+		// Debug.Log("Current Health: " + currentHealth);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if(target2 == null){
-			target2 = FindObjectOfType<Player2>().transform; 
-		}
-
+		// if(target2 == null){
+		// 	target2 = FindObjectOfType<Player2>().transform;
+		// }
 		onGround = Physics.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
 		anim.SetBool("Grounded", onGround);
 		anim.SetBool("Dead", isDead);
@@ -102,9 +104,14 @@ public class Enemy : MonoBehaviour {
 		//FindCheckpoint.G
 		if (!isDead)
 		{
-			// facingRight = (target2.position.x < transform.position.x) ? false : true;
+			// facingRight = (realTarget.position.x < transform.position.x) ? false : true;
+			Debug.Log("meilien.position.x: " + target2.position.x);
+			Debug.Log("boss.position.x: " + transform.position.x);
+
+			facingRight = (target2.position.x < transform.position.x) ? false : true;
 			if (facingRight)
 			{
+				print("facing right");
 				//transform.eulerAngles = new Vector3(0, 180, 0);
 				Sprite.flipX = true;
 				//sprite.flipX;
@@ -181,9 +188,22 @@ public class Enemy : MonoBehaviour {
 
 		if (!isDead)
 		{
-			Vector3 targetDitance = target2.position - transform.position;
+			realTarget = target2;
+			curTime = Time.time;
+			
+			float timeDiff = curTime - newTime;
+			// print("curTime: " + curTime);
+			// print("newTime: " + newTime);
+			// print("timeDiff: " + timeDiff);
+			if(timeDiff < 3.0f){
+				realTarget = target1;
+			}
+			print("realTarget: " + realTarget);
+			Vector3 targetDitance = realTarget.position - transform.position;
 			float hForce = targetDitance.x / Mathf.Abs(targetDitance.x);
 
+			// print("hForce: " + hForce);
+			// print("Mathf.Abs(targetDitance.x): " + Mathf.Abs(targetDitance.x));
 			if(walkTimer >= Random.Range(1f, 2f))
 			{
 				// zForce = Random.Range(-9, 3);
@@ -196,9 +216,11 @@ public class Enemy : MonoBehaviour {
 				hForce = 0;
 			}
 
+			print("currentSpeed: " + currentSpeed);
 			if(!damaged)
 			rb.velocity = new Vector3(hForce * currentSpeed, 0, zForce * currentSpeed);
 
+			print("rb.velocity: " + rb.velocity);
 			anim.SetFloat("Speed", Mathf.Abs(currentSpeed));
 
 			if(Mathf.Abs(targetDitance.x) < 1.5f && Mathf.Abs(targetDitance.z) < 1.5f && Time.time > nextAttack)
@@ -207,6 +229,8 @@ public class Enemy : MonoBehaviour {
 				currentSpeed = 0;
 				nextAttack = Time.time + attackRate;
 			}
+
+			// ResetSpeed();
 		}
 
 		rb.position = new Vector3
@@ -219,21 +243,30 @@ public class Enemy : MonoBehaviour {
 	[PunRPC]
 	public void TookDamage(int damage, string stateTag, float attackDir)
 	{
-		Debug.Log("Current Health: " + currentHealth);
-		Debug.Log("State Tag: "+ stateTag);
+		// Debug.Log("Current Health: " + currentHealth);
+		// Debug.Log("State Tag: "+ stateTag);
 		if (!isDead)
 		{
+			
 			damaged = true;
 			currentHealth -= damage;
+			
 			anim.SetTrigger("HitDamage");
-			PlaySound(damageSound, "Damage", damage);
+			
+			// PlaySound(damageSound, "Damage", damage);
+			
 			FindObjectOfType<UIManager>().UpdateEnemyUI(maxHealth, currentHealth, enemyName, enemyImage);
+			// Debug.Log("HIIIIIII");
+			
 			// Enemies get an effect depending on stateTag
 			switch(stateTag)
             {
 				case "qinyangBasicAttack":
+					newTime = Time.time;
+					// Debug.Log("newTime: " + newTime);
 					break;
 				case "qinyangHeavyAttack":
+					newTime = Time.time;
 					rb.AddForce(new Vector3(attackDir * 10, 0, 0), ForceMode.Impulse);
 					break;
 				case "meiLienBasicAttack":
@@ -249,7 +282,7 @@ public class Enemy : MonoBehaviour {
 			{
 				isDead = true;
 				rb.AddRelativeForce(new Vector3(3, 5, 0), ForceMode.Impulse);
-				PlaySound(deathSound, "Damage", damage);
+				// PlaySound(deathSound, "Damage", damage);
 				DisableEnemy();
 				//Destroy(gameObject);
 				photonView.RPC("DestroyEnemy", RpcTarget.AllBuffered);

@@ -1,31 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &1785820876
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8149512824856040182}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a266d60f6a90463fa08dfd17eff938c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxSpeed: 2
-  minHeight: -5.5
-  maxHeight: 3.9
-  damageTime: 0.2
-  maxHealth: 25
-  attackRate: 5
-  enemyName: 
-  enemyImage: {fileID: 0}
-  collisionSound: {fileID: 0}
-  damageSound: 
-  deathSound: 
-  cage: {fileID: 3489004711877300025, guid: ff297912d2e104ca1846b910063f3111, type: 3}
-  minBoomerangTime: 1
-  maxBoomerangTime: 3
 --- !u!1001 &1744202951049331014
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33,45 +7,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5934445946218468251, guid: 55d70e1f825334497a603f64a87a3d48, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 5934445946218468251, guid: 55d70e1f825334497a603f64a87a3d48, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.019
-      objectReference: {fileID: 0}
-    - target: {fileID: 5934445946218468251, guid: 55d70e1f825334497a603f64a87a3d48, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 7578509151722214320, guid: 55d70e1f825334497a603f64a87a3d48, type: 3}
       propertyPath: m_Name
-      value: shanxiao_Boss
+      value: shanxiao_boss
       objectReference: {fileID: 0}
-    - target: {fileID: 7578509151722214321, guid: 55d70e1f825334497a603f64a87a3d48, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -1112785937065867924, guid: 8e275f5f402ce984784917ab8160bcd4, type: 3}
-    - target: {fileID: 7578509151722214324, guid: 55d70e1f825334497a603f64a87a3d48, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 972733d9b04f54cd39da35315279bf31, type: 2}
     - target: {fileID: 7578509151722214326, guid: 55d70e1f825334497a603f64a87a3d48, type: 3}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7578509151722214326, guid: 55d70e1f825334497a603f64a87a3d48, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7578509151722214326, guid: 55d70e1f825334497a603f64a87a3d48, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7578509151722214326, guid: 55d70e1f825334497a603f64a87a3d48, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7578509151722214326, guid: 55d70e1f825334497a603f64a87a3d48, type: 3}
       propertyPath: m_LocalPosition.x
@@ -79,11 +21,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7578509151722214326, guid: 55d70e1f825334497a603f64a87a3d48, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.4600001
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 7578509151722214326, guid: 55d70e1f825334497a603f64a87a3d48, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.93
+      value: 1.51
       objectReference: {fileID: 0}
     - target: {fileID: 7578509151722214326, guid: 55d70e1f825334497a603f64a87a3d48, type: 3}
       propertyPath: m_LocalRotation.w
@@ -113,23 +55,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7578509151722214327, guid: 55d70e1f825334497a603f64a87a3d48, type: 3}
-      propertyPath: maxHealth
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 7578509151722214327, guid: 55d70e1f825334497a603f64a87a3d48, type: 3}
-      propertyPath: attackRate
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7578509151722214330, guid: 55d70e1f825334497a603f64a87a3d48, type: 3}
-      propertyPath: m_Constraints
-      value: 120
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 7578509151722214327, guid: 55d70e1f825334497a603f64a87a3d48, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55d70e1f825334497a603f64a87a3d48, type: 3}
---- !u!1 &8149512824856040182 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7578509151722214320, guid: 55d70e1f825334497a603f64a87a3d48, type: 3}
-  m_PrefabInstance: {fileID: 1744202951049331014}
-  m_PrefabAsset: {fileID: 0}

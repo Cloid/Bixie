@@ -14,9 +14,11 @@ public class StatueController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(rb1.isKinematic == true && rb2.isKinematic == true && rb3.isKinematic == true){
+        if(rb1.isKinematic == true && rb2.isKinematic == true && rb3.isKinematic == true && Torch.activeSelf == false){
             Torch.SetActive(true);
+
+            // Play FMOD spawn lantern sound
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Sounds/Lantern_Spawn", GetComponent<Transform>().position);
         }
-        
     }
 }

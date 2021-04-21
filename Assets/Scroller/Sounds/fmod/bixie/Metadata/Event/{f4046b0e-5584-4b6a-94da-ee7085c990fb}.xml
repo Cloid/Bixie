@@ -169,10 +169,10 @@
 			<value>0</value>
 		</property>
 		<property name="minimumTimeDelay">
-			<value>60</value>
+			<value>140</value>
 		</property>
 		<property name="maximumTimeDelay">
-			<value>100</value>
+			<value>940</value>
 		</property>
 		<property name="pitch">
 			<value>-2.79999995</value>

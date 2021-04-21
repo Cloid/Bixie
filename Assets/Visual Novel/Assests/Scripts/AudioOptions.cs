@@ -47,7 +47,7 @@ public class AudioOptions : MonoBehaviour
         Music.setVolume(MusicVolume);
         SFX.setVolume(SFXVolume);
         var FungusAudio = FindObjectsOfType<WriterAudio>(true);
-        Debug.Log(FungusAudio.Length);
+        //Debug.Log(FungusAudio.Length);
         for(int idx = 0; idx <= FungusAudio.Length-1; idx++){
             WriterAudio aud = FungusAudio[idx].GetComponent<WriterAudio>();
             aud.setVolume(sfxVolSave);
@@ -88,6 +88,9 @@ public class AudioOptions : MonoBehaviour
             WriterAudio aud = FungusAudio[idx].GetComponent<WriterAudio>();
             aud.setVolume(newSFXVolume);
         }
+
+        // Play a test sound (funky frog)
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Sounds/Go");
 
     }
 }

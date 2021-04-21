@@ -129,11 +129,8 @@ public class CameraFollow : MonoBehaviour {
 	private void Awake()
 	{
 		// Setting up the reference.
-		player1 = GameObject.FindGameObjectWithTag("Player").transform;
-		player2 = GameObject.FindGameObjectWithTag("Player2").transform;
 		Cam = Camera.main;
 	}
-
 
 	private bool CheckXMarginRight()
 	{
@@ -163,7 +160,13 @@ public class CameraFollow : MonoBehaviour {
 
 	private void Update()
 	{
-		TrackPlayer();
+		if (player1 == null) player1 = GameObject.FindGameObjectWithTag("Player").transform;
+			
+		if (player2 == null) player2 = GameObject.FindGameObjectWithTag("Player2").transform;
+	
+		if(player1 != null && player2 != null){
+			TrackPlayer();
+		}
 	}
 
 	private void ResetY(){

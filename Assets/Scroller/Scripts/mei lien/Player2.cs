@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Photon.Pun;
 public class Player2 : MonoBehaviour
 {
     // Player attributes
@@ -34,12 +34,15 @@ public class Player2 : MonoBehaviour
     private TorchControllerSS torchControl;
     public AudioSource currAudioSource;
     public GameObject projectile;
+    public PhotonView photonView;
+    public GameObject VNSayDialog;
 
     public AudioClip collisionSound2, jumpSound2, healthItem2;
 
     // Initialization
     void Awake()
     {
+        photonView = GetComponent<PhotonView>();
         player1 = FindObjectOfType<Player>();
         rb = GetComponent<Rigidbody>();
         anim2 = GetComponent<Animator>();
@@ -94,10 +97,10 @@ public class Player2 : MonoBehaviour
             // Flips sprite based on movement
             if(h < 0 && !isFacingRight2)
             {
-                Flip();
+                 photonView.RPC("Flip", RpcTarget.All);//Flip();
             } else if(h > 0 && isFacingRight2)
             {
-                Flip();
+                 photonView.RPC("Flip", RpcTarget.All);//Flip();
             }
 
             // Attack cooldown
@@ -122,7 +125,8 @@ public class Player2 : MonoBehaviour
         }
     }
 
-    // Player 2's Attack Function 
+    // Player 2's Attack Function
+    [PunRPC] 
     public void Attack()
     {
         if (onGround2 && canAttack)
@@ -147,9 +151,11 @@ public class Player2 : MonoBehaviour
             }
 
 
-            GameObject newProjectile = Instantiate(projectile, tempPosition, Quaternion.identity) as GameObject;
+            GameObject newProjectile = Instantiate(projectile, tempPosition, Quaternion.identity) as GameObject;//PhotonNetwork.Instantiate("Projectile", tempPosition, Quaternion.identity) as GameObject;
+            //Instantiate(projectile, tempPosition, Quaternion.identity) as GameObject;
             if (isFacingRight2)
             {
+                Debug.Log("Does this run in p1");
                 Vector3 projectileScale = newProjectile.transform.localScale;
                 projectileScale.x *= -1;
                 newProjectile.transform.localScale = projectileScale;
@@ -157,6 +163,8 @@ public class Player2 : MonoBehaviour
             Projectile nProj = newProjectile.GetComponent<Projectile>();
             StartCoroutine(MoveWaterwave(newProjectile, nProj));
             
+            // Spawn FMOD attack sound **maybe attach to the wave for better effect
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Sounds/M_Attack", newProjectile.GetComponent<Transform>().position);
 
             attackTime = 100f;
             canAttack = false;
@@ -193,7 +201,8 @@ public class Player2 : MonoBehaviour
     // Player 2's Jump Function
     public void Jump()
     {
-        if (onGround2)
+        // If player is on ground and VN SayDialog is not active, then she can jump
+        if (onGround2 && !(VNSayDialog.activeSelf))
         {
             Debug.Log("Player2 is doing a jump!");
             anim2.SetTrigger("Jumping");
@@ -213,6 +222,8 @@ public class Player2 : MonoBehaviour
             player1.currentHealth = player1.maxHealth;
         }
 
+        // BUGGED CODE meilien's interaction with the lantern.
+        /*
         if (other.CompareTag("Torch"))
             print("here");
         {
@@ -225,10 +236,11 @@ public class Player2 : MonoBehaviour
             {
                 torchControl.darkLantern();
             }
-        }
+        } */
     }
 
     // Flip function for flipping sprite when facing in a direction
+    [PunRPC]
     private void Flip()
     {
         isFacingRight2 = !isFacingRight2;
@@ -238,6 +250,7 @@ public class Player2 : MonoBehaviour
     }
 
     // Hit Damage function
+    [PunRPC]
     public void TookDamage(int damage) 
     {
         if (!isDead2 && onGround2)

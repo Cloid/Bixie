@@ -525,6 +525,7 @@ GameObject:
   - component: {fileID: 364236899}
   - component: {fileID: 364236901}
   - component: {fileID: 364236876}
+  - component: {fileID: 364236902}
   m_Layer: 0
   m_Name: IntroVN_Flowchart
   m_TagString: Untagged
@@ -545,7 +546,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 182.07074, y: 244.13002}
+  scrollPos: {x: 201.30151, y: 355.6684}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 490.66666
@@ -557,9 +558,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 364236932}
+  - {fileID: 364236867}
   selectedCommands:
-  - {fileID: 364236876}
+  - {fileID: 364236902}
   variables:
   - {fileID: 364236951}
   description: 
@@ -601,8 +602,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: -52.384804
-    y: 227.60553
+    x: -50.461727
+    y: 225.68245
     width: 73.076904
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -651,6 +652,7 @@ MonoBehaviour:
   - {fileID: 364236901}
   - {fileID: 364236927}
   - {fileID: 364236929}
+  - {fileID: 364236902}
   - {fileID: 364236875}
   - {fileID: 364236928}
   - {fileID: 364236935}
@@ -844,7 +846,7 @@ MonoBehaviour:
   menuDialog: {fileID: 276962030}
 --- !u!114 &364236876
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -1548,6 +1550,23 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+--- !u!114 &364236902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 364236864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 135
+  indentLevel: 0
+  targetObject: {fileID: 1259966406}
+  methodName: changeOptions
+  delay: 0
 --- !u!114 &364236904
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -2016,7 +2035,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 220.07784
-    y: 309.9082
+    y: 307.98514
     width: 123.07686
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -2072,7 +2091,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 423.5524
+    x: 419.70624
     y: 298.3445
     width: 91.025604
     height: 40

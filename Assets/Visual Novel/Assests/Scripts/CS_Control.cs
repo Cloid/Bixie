@@ -70,6 +70,7 @@ public class CS_Control : MonoBehaviour
     [PunRPC]
     public void moveMe(Vector2 vector)
     {
+        Debug.Log("Test");
         if(connected_text.activeSelf){
             return;
         }

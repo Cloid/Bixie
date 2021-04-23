@@ -234,7 +234,7 @@ public class Player : MonoBehaviour
     public void Dash()
     {
         // If VN SayDialog is not active, then she can jump
-        if (!(VNSayDialog.activeSelf))
+        if (!(VNSayDialog.activeSelf) && !isAttack)
         {
             anim.SetBool("IsDashing", true);
             Debug.Log("Player1 is doing a dash!");

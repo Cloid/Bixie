@@ -119,9 +119,9 @@ public class Player2 : MonoBehaviour
 				Mathf.Clamp(rb.position.z, minHeight, maxHeight));
 
             // Torch Interaction
-            Vector3 torchPosition = torch.transform.position - transform.position;
-            torchDistance = torchPosition.x;
-            torchControl = torch.GetComponent<TorchControllerSS>();
+            //Vector3 torchPosition = torch.transform.position - transform.position;
+           // torchDistance = torchPosition.x;
+           // torchControl = torch.GetComponent<TorchControllerSS>();
         }
     }
 

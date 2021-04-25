@@ -15,6 +15,7 @@ TagManager:
   - StatueWall
   - Statue
   - PlayerInput
+  - MeiWave
   layers:
   - Default
   - TransparentFX

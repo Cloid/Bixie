@@ -42,6 +42,11 @@ public class Projectile : MonoBehaviour
             enemy.TookDamage(0, "meiLienBasicAttack", attackDir);
             Debug.Log(attackDir);
             Destroy(gameObject);
+        } else if (other.gameObject.tag == "Statue"){
+            StatueCollider statue = other.GetComponent<StatueCollider>();
+            Debug.Log(attackDir);
+            statue.PushingStatue(attackDir);
+            Destroy(gameObject);
         }
     }
 

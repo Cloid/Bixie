@@ -120,8 +120,8 @@ public class Player2 : MonoBehaviour
 
             // Torch Interaction
             //Vector3 torchPosition = torch.transform.position - transform.position;
-            //torchDistance = torchPosition.x;
-            //torchControl = torch.GetComponent<TorchControllerSS>();
+           // torchDistance = torchPosition.x;
+           // torchControl = torch.GetComponent<TorchControllerSS>();
         }
     }
 

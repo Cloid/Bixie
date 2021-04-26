@@ -14,23 +14,35 @@ public class Shanxiao_BossACT1 : Enemy
     private Rigidbody Mei;
     private Animator anim_cage;
     private GameObject tempCage;
+	private bool isSpawned = false;
 
 	// Use this for initialization
 	void Awake () {
         player1 = FindObjectOfType<Player>();
         player2 = FindObjectOfType<Player2>();
         Mei = GameObject.Find("Mei Lien").GetComponent<Rigidbody>();
-		// Invoke("SpawnCage", Random.Range(minBoomerangTime, maxBoomerangTime));
+		Invoke("SpawnCage", Random.Range(minBoomerangTime, maxBoomerangTime));
 		music = FindObjectOfType<MusicController>();
 		music.PlaySong(music.bossSong);
 	}
 	
+	void Update()
+    {
+		// Mei = GameObject.Find("Mei Lien")
+		Debug.Log("tempCage non-exist: " + (tempCage == null));
+        // if(tempCage == null && tempCage.activeSelf == false) {
+		if(tempCage == null && isSpawned) {
+			Invoke("SpawnCage", Random.Range(minBoomerangTime, maxBoomerangTime));
+		}
+    }
+
 	void SpawnCage()
 	{
 		if (!isDead)
 		{
+			isSpawned = true;
 			// anim_cage.SetTrigger("cage");
-			GameObject tempCage = Instantiate(cage, player2.transform.position, transform.rotation);
+			tempCage = Instantiate(cage, player2.transform.position, transform.rotation);
 			anim_cage = tempCage.GetComponent<Animator>();
             anim_cage.SetBool("Cage", true);
             Mei.constraints = RigidbodyConstraints.FreezeAll;

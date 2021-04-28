@@ -135,17 +135,6 @@ public class Player : MonoBehaviour
                     anim.SetBool("IsDashing", false);
                     isDash = false;
                 }
-            // Player dash functionality 
-            if (!isDash && dashTime <= 0f)
-            {
-                dashTime = startDashTime;
-                rb.velocity = Vector3.zero;
-            } else if(!isAttack && isDash)
-            {
-                dashTime -= Time.deltaTime;
-                rb.velocity = dashVector * dashForce;
-                StartCoroutine(setDashAnim());
-            }
 
                 // Player heavy attack cooldown counter
                 if (heavyAttackTime <= 0f && !heavyAttack)

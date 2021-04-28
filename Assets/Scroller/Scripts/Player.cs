@@ -371,7 +371,7 @@ public class Player : MonoBehaviour
 
     void LoadScene()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public int curHealth()

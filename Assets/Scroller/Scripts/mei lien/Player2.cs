@@ -125,7 +125,7 @@ public class Player2 : MonoBehaviour
         }
     }
 
-    // Player 2's Attack Function
+    // Player 2's Attack Function - Knockback Wave
     [PunRPC] 
     public void Attack()
     {
@@ -134,8 +134,6 @@ public class Player2 : MonoBehaviour
             Debug.Log("Player2 is doing an attack!");
             anim2.SetTrigger("Attack");
             // Spawn projectile and get properties
-            //Vector3 projectileScale;
-            //Vector3 tempPosition = transform.position;
             Vector3 tempPosition;
             if (!isFacingRight2)
             {
@@ -155,13 +153,14 @@ public class Player2 : MonoBehaviour
             //Instantiate(projectile, tempPosition, Quaternion.identity) as GameObject;
             if (isFacingRight2)
             {
-                Debug.Log("Does this run in p1");
+                Debug.Log("Does this run in p2");
                 Vector3 projectileScale = newProjectile.transform.localScale;
                 projectileScale.x *= -1;
                 newProjectile.transform.localScale = projectileScale;
             }
             Projectile nProj = newProjectile.GetComponent<Projectile>();
-            StartCoroutine(MoveWaterwave(newProjectile, nProj));
+            nProj.projTag = "WaterWave";
+            StartCoroutine(MoveProjectile(newProjectile, nProj));
             
             // Spawn FMOD attack sound **maybe attach to the wave for better effect
             FMODUnity.RuntimeManager.PlayOneShot("event:/Sounds/M_Attack", newProjectile.GetComponent<Transform>().position);
@@ -171,7 +170,48 @@ public class Player2 : MonoBehaviour
         }
     }
 
-    IEnumerator MoveWaterwave(GameObject newProjectile, Projectile nProj) {
+    // Player 2's HeavyAttack Function - Ice Freeze Attack
+    public void HeavyAttack()
+    {
+        Debug.Log("Player2 is doing a heavy attack!");
+        anim2.SetTrigger("Attack");
+        // Spawn projectile and get properties
+        Vector3 tempPosition;
+        if (!isFacingRight2)
+        {
+            tempPosition = new Vector3(transform.position.x + 2,
+            transform.position.y,
+            Mathf.Clamp(transform.position.z, minHeight, maxHeight));
+        }
+        else
+        {
+            tempPosition = new Vector3(transform.position.x - 2,
+            transform.position.y,
+            Mathf.Clamp(transform.position.z, minHeight, maxHeight));
+        }
+
+        GameObject newProjectile = Instantiate(projectile, tempPosition, Quaternion.identity) as GameObject;
+
+        //Instantiate(projectile, tempPosition, Quaternion.identity) as GameObject;
+        if (isFacingRight2)
+        {
+            Debug.Log("Does this run in p2");
+            Vector3 projectileScale = newProjectile.transform.localScale;
+            projectileScale.x *= -1;
+            newProjectile.transform.localScale = projectileScale;
+        }
+        Projectile nProj = newProjectile.GetComponent<Projectile>();
+        nProj.projTag = "IceBall";
+        StartCoroutine(MoveProjectile(newProjectile, nProj));
+
+        // Spawn FMOD attack sound **maybe attach to the wave for better effect
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Sounds/M_Attack", newProjectile.GetComponent<Transform>().position);
+
+        attackTime = 180f;
+        canAttack = false;
+    }
+
+    IEnumerator MoveProjectile(GameObject newProjectile, Projectile nProj) {
         yield return new WaitForSeconds(0.5f);
         // Flip direction and sprite orientation depending on where Mei Lien is facing
         if (!isFacingRight2)
@@ -184,12 +224,6 @@ public class Player2 : MonoBehaviour
             nProj.attackDir = -1f;
             newProjectile.GetComponent<Rigidbody>().AddForce(-200f, 0, 0);
         }
-    }
-
-    // Player 1's HeavyAttack Function
-    public void HeavyAttack()
-    {
-        Debug.Log("Player2 is doing a heavy attack!");
     }
 
     // Player 2's Special Function

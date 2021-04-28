@@ -230,10 +230,10 @@ public class Enemy : MonoBehaviour {
 	}
 
 	[PunRPC]
-	public void TookDamage(int damage, string stateTag, float attackDir)
+	public void TookDamage(int damage, string attackTag, string stateTag, float attackDir)
 	{
 		// Debug.Log("Current Health: " + currentHealth);
-		// Debug.Log("State Tag: "+ stateTag);
+		// Debug.Log("Attack Tag: "+ attackTag);
 		if (!isDead)
 		{
 			damaged = true;
@@ -241,8 +241,8 @@ public class Enemy : MonoBehaviour {
 			anim.SetTrigger("HitDamage");
 			// PlaySound(damageSound, "Damage", damage);
 			FindObjectOfType<UIManager>().UpdateEnemyUI(maxHealth, currentHealth, enemyName, enemyImage);
-			// Enemies get an effect depending on stateTag
-			switch(stateTag)
+			// Enemies get an effect depending on attackTag and stateTag
+			switch(attackTag)
             {
 				case "qinyangBasicAttack":
 					newTime = Time.time;
@@ -252,9 +252,13 @@ public class Enemy : MonoBehaviour {
 					rb.AddForce(new Vector3(attackDir * 10, 0, 0), ForceMode.Impulse);
 					break;
 				case "meiLienBasicAttack":
-					rb.AddForce(new Vector3(attackDir * 10, 0, 0), ForceMode.Impulse);
+					if (stateTag.Equals("WaterWave")) rb.AddForce(new Vector3(attackDir * 10, 0, 0), ForceMode.Impulse);
 					break;
 				case "meiLienHeavyAttack":
+					if (stateTag.Equals("IceBall"))
+					{
+						StartCoroutine(EffectTime(5, stateTag));
+					}
 					break;
 				default:
 					Debug.Log("Unregistered enemy state tag");
@@ -269,6 +273,18 @@ public class Enemy : MonoBehaviour {
 				//Destroy(gameObject);
 				photonView.RPC("DestroyEnemy", RpcTarget.AllBuffered);
 			}
+		}
+	}
+
+	// Helper function to determine long-standing enemy effects (freeze, burn, etc.)
+	IEnumerator EffectTime(float numSecs, string effectType)
+    {
+		// Implementation of freeze effect
+        if (effectType.Equals("IceBall"))
+        {
+			rb.isKinematic = true;
+			yield return new WaitForSeconds(numSecs);
+			rb.isKinematic = false;
 		}
 	}
 

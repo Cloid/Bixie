@@ -7,6 +7,7 @@ public class Projectile : MonoBehaviour
     // Public Variables
     public float lifespan;
     public float attackDir;
+    public string projTag;
 
     // Private Variables
 
@@ -39,10 +40,19 @@ public class Projectile : MonoBehaviour
         if(enemy != null)
         {
             Debug.Log("Projectile collided with enemy!");
-            enemy.TookDamage(0, "meiLienBasicAttack", attackDir);
-            Debug.Log(attackDir);
+            switch (projTag)
+            {
+                case "WaterWave":
+                    enemy.TookDamage(0, "meiLienBasicAttack", projTag, attackDir);
+                    break;
+                case "IceBall":
+                    enemy.TookDamage(1, "meiLienHeavyAttack", projTag, attackDir);
+                    break;
+                default:
+                    break;
+              } 
+            //Debug.Log(attackDir);
             Destroy(gameObject);
         }
     }
-
 }

@@ -20,19 +20,16 @@ public class Attack : MonoBehaviour {
 		// Projectile playerProjectile = other.GetComponent<Projectile>();
 		if(enemy != null)
 		{
-			//enemy.TookDamage(damage, attackState, attackDirection);
-			enemy.photonView.RPC("TookDamage",RpcTarget.AllBuffered,damage,attackState,attackDirection);
+			enemy.photonView.RPC("TookDamage",RpcTarget.AllBuffered,damage,attackState,"",attackDirection);
 		}
 
 		if (player != null)
 		{
-			//player.TookDamage(damage);
 			player.photonView.RPC("TookDamage", RpcTarget.AllBuffered,damage);
 		}
 
 		if (player2 != null)
 		{
-			//player2.TookDamage(damage);
 			player2.photonView.RPC("TookDamage", RpcTarget.AllBuffered,damage);
 		}
 

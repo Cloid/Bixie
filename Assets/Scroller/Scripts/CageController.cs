@@ -4,13 +4,15 @@ using UnityEngine;
 public class CageController : MonoBehaviour
 {
     public float minBoomerangTime, maxBoomerangTime;
-    public int amountOfObjectsToSpawn = 6;
+    public int amountOfObjectsToSpawn = 1;
     private bool isDead = false;
 	private int currentHealth;
 	public int maxHealth = 4;
     private Player2 player2;
     public GameObject[] rock_pieces;
+    public Transform[] spawnPoints;
     private GameObject rock;
+
     private Animator anim;
 
     private GameObject boss;
@@ -21,7 +23,7 @@ public class CageController : MonoBehaviour
         player2 = FindObjectOfType<Player2>();
         currentHealth = maxHealth;
         Mei = GameObject.Find("Mei Lien").GetComponent<Rigidbody>();
-        //anim = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
         //Debug.Log(anim); 
         //anim.SetTrigger("Cage");
     }
@@ -35,7 +37,8 @@ public class CageController : MonoBehaviour
             Debug.Log("Current Health: " + currentHealth);
 			currentHealth -= damage;
 			// TODO: Make anim + sound
-			//anim.SetTrigger("HitDamage");
+            // anim.SetBool("Cage", false);
+			anim.SetTrigger("Hitdamage");
 			//PlaySound(damageSound, "Damage", damage);
 
 			if (currentHealth <= 0)
@@ -61,13 +64,14 @@ public class CageController : MonoBehaviour
             
             for (int i = 0; i < amountOfObjectsToSpawn; i ++)
             {
-                Vector3 spawnLoc = player2.transform.position;
+                // Vector3 spawnLoc = player2.transform.position;
                 //Add a random int 1 thru 5 at mei lien's locaiton
-                spawnLoc.x += Random.Range(1,5);
-                spawnLoc.y += Random.Range(1,5);
+                // spawnLoc.x += Random.Range(1,5);
+                // spawnLoc.y += Random.Range(1,5);
                 int gameObjectIndex = Random.Range( 0, 2 );
+                int spawnIndex = Random.Range(0, spawnPoints.Length);
                 // GameObject rock = Instantiate(rock_pieces[gameObjectIndex], spawnLoc, transform.rotation);
-                rock = Instantiate(rock_pieces[gameObjectIndex], spawnLoc, Quaternion.identity);
+                rock = Instantiate(rock_pieces[gameObjectIndex], spawnPoints[spawnIndex].position, Quaternion.identity);
             }
             
             Destroy(gameObject);

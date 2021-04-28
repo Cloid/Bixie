@@ -31,7 +31,7 @@ public class Offline_Networking : MonoBehaviourPunCallbacks
     {
         //base.OnJoinedRoom();
         Debug.Log("Joined");
-        Debug.Log("Test2: "+PhotonNetwork.OfflineMode);
+        // Debug.Log("Test2: "+PhotonNetwork.OfflineMode);
         pInput.SetActive(true);
         
     }

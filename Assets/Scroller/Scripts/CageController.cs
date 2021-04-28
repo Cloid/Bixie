@@ -14,11 +14,13 @@ public class CageController : MonoBehaviour
     private Animator anim;
 
     private GameObject boss;
+    private Rigidbody Mei;
     // Start is called before the first frame update
     void Awake()
     {
         player2 = FindObjectOfType<Player2>();
         currentHealth = maxHealth;
+        Mei = GameObject.Find("Mei Lien").GetComponent<Rigidbody>();
         //anim = GetComponent<Animator>();
         //Debug.Log(anim); 
         //anim.SetTrigger("Cage");
@@ -45,6 +47,8 @@ public class CageController : MonoBehaviour
 	
 	void CageBroken(){
         isDead = true;
+        Mei.constraints = RigidbodyConstraints.FreezeRotation;
+        
 		//TODO: Make anim for broken cage
 		//anim.SetTrigger()
 		// Invoke("SpawnRocks", Random.Range(minBoomerangTime, maxBoomerangTime));

@@ -8,13 +8,16 @@ public class Projectile : MonoBehaviour
     public float lifespan;
     public float attackDir;
     public string projTag;
+    public Animator currAnim;
+    public SpriteRenderer currSprite;
 
     // Private Variables
 
     // Start is called before the first frame update
     void Start()
     {
-
+        currAnim = GetComponent<Animator>();
+        currSprite = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -29,6 +32,24 @@ public class Projectile : MonoBehaviour
         } else
         {
             lifespan -= Time.deltaTime;
+        }
+    }
+
+    // Helper function that determines animation and sprites of a projectile 
+    public void projSprite(string tag)
+    {
+        switch(tag)
+        {
+            case "WaterWave":
+                currAnim.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>("Assets/Scroller/Animations/Mei Lien/WaterWave.controller");
+                currSprite.sprite = Resources.Load<Sprite>("");
+                break;
+            case "IceBall":
+                currAnim.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>("Assets/Scroller/Animations/Mei Lien/IceBall.controller");
+                break;
+            default:
+                currAnim.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>("Assets/Scroller/Animations/Mei Lien/WaterWave.controller");
+                break;
         }
     }
 
@@ -49,6 +70,7 @@ public class Projectile : MonoBehaviour
                     enemy.TookDamage(1, "meiLienHeavyAttack", projTag, attackDir);
                     break;
                 default:
+                    enemy.TookDamage(0, "meiLienBasicAttack", projTag, attackDir);
                     break;
               } 
             //Debug.Log(attackDir);

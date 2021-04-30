@@ -274,8 +274,8 @@ MonoBehaviour:
   sourceProjectPath: Assets/Scroller/Sounds/fmod/bixie/bixie.fspro
   sourceBankPath: Assets/Scroller/Sounds/fmod/bixie/Build/Desktop
   SourceBankPathUnformatted: 
-  BankRefreshCooldown: 5
-  ShowBankRefreshWindow: 1
+  BankRefreshCooldown: 30
+  ShowBankRefreshWindow: 0
   AutomaticEventLoading: 0
   BankLoadType: 0
   AutomaticSampleLoading: 0

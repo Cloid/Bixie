@@ -4,12 +4,18 @@ using UnityEngine;
 
 public class RockPush : MonoBehaviour
 {
-    private Rigidbody Boss1;
+    public float stunTime;
+    private Rigidbody Boss1_body;
+    private Shanxiao_BossACT1 Boss1_script;
+    private Animator Boss1_anim;
 
     // Start is called before the first frame update
     void Start()
     {
-        Boss1 = GameObject.Find("Shanxiao_ACT1Boss").GetComponent<Rigidbody>();
+        Boss1_body = GameObject.Find("Shanxiao_ACT1Boss").GetComponent<Rigidbody>();
+        Boss1_script = GameObject.Find("Shanxiao_ACT1Boss").GetComponent<Shanxiao_BossACT1>();
+        Boss1_anim = GameObject.Find("Shanxiao_ACT1Boss").GetComponent<Animator>();
+
     }
 
     // Update is called once per frame
@@ -22,21 +28,31 @@ public class RockPush : MonoBehaviour
     {
         if (other.gameObject.tag == "Boss1")
         {
-            // Shanxiao_BossACT1 moveScript = other.GetComponent<Shanxiao_BossACT1>();
-            Boss1.constraints = RigidbodyConstraints.FreezeAll;
-            attente();
+            StartCoroutine(stun());
+            // print("this should be called after wait");
+            // Destroy(gameObject);
             // move.enabled=false;
             // touche = true;
-            // Debug.Log ("Il y a eu collision");
+            
  
         }
  
     }
 
-    IEnumerator attente ()
+    IEnumerator stun()
     {
-        Boss1.constraints = RigidbodyConstraints.FreezeRotation;
-        yield return new WaitForSeconds (3);
+        Debug.Log ("with rock boss");
+        // Shanxiao_BossACT1 moveScript = other.GetComponent<Shanxiao_BossACT1>();
+        Boss1_body.constraints = RigidbodyConstraints.FreezeAll;
+        Boss1_script.enabled = false;
+        Boss1_anim.enabled = false;
+        yield return new WaitForSeconds(stunTime);
+        
+        Boss1_body.constraints = RigidbodyConstraints.FreezeRotation;
+        Boss1_script.enabled = true;
+        Boss1_anim.enabled = true;
+        Destroy(gameObject);
+        
     }
 
     // IEnumerator returnattente ()

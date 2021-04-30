@@ -139,31 +139,68 @@ public class OptionsInput : MonoBehaviour
             {
                 if (kb.wKey.wasPressedThisFrame || kb.upArrowKey.wasPressedThisFrame)
                 {
-                    if (tracker > 0 && tracker <= 4)
+                    if (tracker > 0 && tracker <= 2)
                     {
                         tracker--;
+                    }
+                    else if (tracker > 2)
+                    {
+                        tracker = 1;
                     }
                 }
                 else if (kb.sKey.wasPressedThisFrame || kb.downArrowKey.wasPressedThisFrame)
                 {
-                    if (tracker >= 0 && tracker < 4)
+                    if (tracker >= 0 && tracker < 2)
+                    {
+                        tracker++;
+                    }
+                }
+                else if (kb.aKey.wasPressedThisFrame || kb.leftArrowKey.wasPressedThisFrame)
+                {
+                    if (tracker > 2 && tracker <= 4)
+                    {
+                        tracker--;
+                    }
+                }
+                else if (kb.dKey.wasPressedThisFrame || kb.rightArrowKey.wasPressedThisFrame)
+                {
+                    if (tracker >= 2 && tracker < 4)
                     {
                         tracker++;
                     }
                 }
             }
+
             else
             {
                 if (kb.wKey.wasPressedThisFrame || kb.upArrowKey.wasPressedThisFrame || gp.leftStick.up.wasPressedThisFrame)
                 {
-                    if (tracker > 0 && tracker <= 4)
+                    if (tracker > 0 && tracker <= 2)
                     {
                         tracker--;
+                    }
+                    else if (tracker > 2)
+                    {
+                        tracker = 1;
                     }
                 }
                 else if (kb.sKey.wasPressedThisFrame || kb.downArrowKey.wasPressedThisFrame || gp.leftStick.down.wasPressedThisFrame)
                 {
-                    if (tracker >= 0 && tracker < 4)
+                    if (tracker >= 0 && tracker < 2)
+                    {
+                        tracker++;
+                    }
+                }
+                else if (kb.aKey.wasPressedThisFrame || kb.leftArrowKey.wasPressedThisFrame || gp.leftStick.left.wasPressedThisFrame)
+                {
+                    if (tracker > 2 && tracker <= 4)
+                    {
+                        tracker--;
+                    }
+                }
+                else if (kb.dKey.wasPressedThisFrame || kb.rightArrowKey.wasPressedThisFrame || gp.leftStick.right.wasPressedThisFrame)
+                {
+                    if (tracker >= 2 && tracker < 4)
                     {
                         tracker++;
                     }

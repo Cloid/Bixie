@@ -153,7 +153,7 @@ public class Player2 : MonoBehaviour
             //Instantiate(projectile, tempPosition, Quaternion.identity) as GameObject;
             if (isFacingRight2)
             {
-                Debug.Log("Does this run in p2");
+                //Debug.Log("Does this run in p2");
                 Vector3 projectileScale = newProjectile.transform.localScale;
                 projectileScale.x *= -1;
                 newProjectile.transform.localScale = projectileScale;
@@ -195,7 +195,7 @@ public class Player2 : MonoBehaviour
         //Instantiate(projectile, tempPosition, Quaternion.identity) as GameObject;
         if (isFacingRight2)
         {
-            Debug.Log("Does this run in p2");
+            //Debug.Log("Does this run in p2");
             Vector3 projectileScale = newProjectile.transform.localScale;
             projectileScale.x *= -1;
             newProjectile.transform.localScale = projectileScale;
@@ -212,7 +212,7 @@ public class Player2 : MonoBehaviour
     }
 
     IEnumerator MoveProjectile(GameObject newProjectile, Projectile nProj) {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0f);
         // Flip direction and sprite orientation depending on where Mei Lien is facing
         if (!isFacingRight2)
         {
@@ -221,6 +221,7 @@ public class Player2 : MonoBehaviour
         }
         else
         {
+
             nProj.attackDir = -1f;
             newProjectile.GetComponent<Rigidbody>().AddForce(-200f, 0, 0);
         }

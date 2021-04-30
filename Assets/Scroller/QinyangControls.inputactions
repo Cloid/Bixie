@@ -78,6 +78,17 @@
                     "isPartOfComposite": false
                 },
                 {
+                    "name": "",
+                    "id": "7f48eb66-2c3e-48c8-ac2b-d2e67a86c0ad",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
                     "name": "2D Vector",
                     "id": "f133f6c5-7ffd-4d9b-a9e2-a4ed3751eaba",
                     "path": "2DVector",

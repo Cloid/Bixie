@@ -32,9 +32,8 @@ public class Offline_Networking : MonoBehaviourPunCallbacks
         //base.OnJoinedRoom();
         Debug.Log("Joined");
         Debug.Log("Test2: "+PhotonNetwork.OfflineMode);
-        pInput.SetActive(true);
-        
+        //pInput.SetActive(true); //this is line 36 for reference     
+        Instantiate(pInput, transform.position, transform.rotation); // Test is gameobject reference to playerinput prefab
+        Instantiate(pInput, transform.position, transform.rotation);
     }
-
-    
 }

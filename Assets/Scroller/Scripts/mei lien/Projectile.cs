@@ -16,8 +16,8 @@ public class Projectile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currAnim = GetComponent<Animator>();
-        currSprite = GetComponent<SpriteRenderer>();
+        //currAnim = GetComponent<Animator>();
+        //currSprite = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -35,6 +35,7 @@ public class Projectile : MonoBehaviour
         }
     }
 
+    /*
     // Helper function that determines animation and sprites of a projectile 
     public void projSprite(string tag)
     {
@@ -42,7 +43,6 @@ public class Projectile : MonoBehaviour
         {
             case "WaterWave":
                 currAnim.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>("Assets/Scroller/Animations/Mei Lien/WaterWave.controller");
-                currSprite.sprite = Resources.Load<Sprite>("");
                 break;
             case "IceBall":
                 currAnim.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>("Assets/Scroller/Animations/Mei Lien/IceBall.controller");
@@ -51,7 +51,7 @@ public class Projectile : MonoBehaviour
                 currAnim.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>("Assets/Scroller/Animations/Mei Lien/WaterWave.controller");
                 break;
         }
-    }
+    }*/
 
     // Collision check with enemy 
     private void OnTriggerEnter(Collider other)

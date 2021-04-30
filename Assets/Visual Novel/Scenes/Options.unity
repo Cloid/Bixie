@@ -176,6 +176,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -832,6 +833,22 @@ MonoBehaviour:
       m_Groups: 
       m_Action: Wasd
       m_Flags: 8
+    - m_Name: left
+      m_Id: c458296b-3a0e-4896-8ad3-824a53cf0997
+      m_Path: <Keyboard>/a
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Wasd
+      m_Flags: 8
+    - m_Name: right
+      m_Id: ff48067c-5ca4-48e0-9c01-ba5346593fdc
+      m_Path: <Keyboard>/d
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Wasd
+      m_Flags: 8
     - m_Name: 2D Vector
       m_Id: ac64864f-4205-4f06-8203-0bf319c9b559
       m_Path: 2DVector
@@ -851,6 +868,22 @@ MonoBehaviour:
     - m_Name: down
       m_Id: df112534-5edc-478f-a105-d68ab5da3e6e
       m_Path: <Gamepad>/leftStick/down
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Wasd
+      m_Flags: 8
+    - m_Name: left
+      m_Id: e5e5942d-0a79-4dcc-96d8-9ee4c50dcf53
+      m_Path: <Gamepad>/leftStick/left
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Wasd
+      m_Flags: 8
+    - m_Name: right
+      m_Id: 5df20281-6aca-4e68-bec5-87f185ea1023
+      m_Path: <Gamepad>/leftStick/right
       m_Interactions: 
       m_Processors: 
       m_Groups: 
@@ -1509,6 +1542,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -2150,7 +2184,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 68
     y: 70
-    width: 113.33333
+    width: 111
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2173,7 +2207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 0, y: 0}
+  scrollPos: {x: 228.5, y: 313}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
@@ -2512,6 +2546,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -3257,6 +3292,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
 --- !u!223 &1977272192
 Canvas:
   m_ObjectHideFlags: 0

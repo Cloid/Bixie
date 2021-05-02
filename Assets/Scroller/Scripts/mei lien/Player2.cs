@@ -62,7 +62,6 @@ public class Player2 : MonoBehaviour
         // Set onGround and animation bools
         onGround2 = Physics.Linecast(transform.position, groundCheck2.position, 1 << LayerMask.NameToLayer("Ground"));
         anim2.SetBool("OnGround", onGround2);
-        anim2.SetBool("Dead", isDead2);
     }
 
     public void SetInputVector(Vector2 direction)
@@ -312,6 +311,7 @@ public class Player2 : MonoBehaviour
     public void playerDying()
     {
         isDead2 = true;
+        anim2.SetTrigger("Dead");
         //FindObjectOfType<GameManager>().lives--;
         if (isFacingRight2)
         {

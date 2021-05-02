@@ -13,9 +13,9 @@ public class RockPush : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Boss1_body = GameObject.Find("Shanxiao_ACT1Boss").GetComponent<Rigidbody>();
-        // Boss1_script = GameObject.Find("Shanxiao_ACT1Boss").GetComponent<Shanxiao_BossACT1>();
-        // Boss1_anim = GameObject.Find("Shanxiao_ACT1Boss").GetComponent<Animator>();
+        Boss1_body = GameObject.Find("Shanxiao_ACT1Boss").GetComponent<Rigidbody>();
+        Boss1_script = GameObject.Find("Shanxiao_ACT1Boss").GetComponent<Shanxiao_BossACT1>();
+        Boss1_anim = GameObject.Find("Shanxiao_ACT1Boss").GetComponent<Animator>();
         
 
     }
@@ -73,21 +73,21 @@ public class RockPush : MonoBehaviour
  
     }
 
-    // IEnumerator stun()
-    // {
-    //     Debug.Log ("with rock boss");
-    //     // Shanxiao_BossACT1 moveScript = other.GetComponent<Shanxiao_BossACT1>();
-    //     Boss1_body.constraints = RigidbodyConstraints.FreezeAll;
-    //     Boss1_script.enabled = false;
-    //     Boss1_anim.enabled = false;
-    //     yield return new WaitForSeconds(stunTime);
+    IEnumerator stun()
+    {
+        Debug.Log ("with rock boss");
+        // Shanxiao_BossACT1 moveScript = other.GetComponent<Shanxiao_BossACT1>();
+        Boss1_body.constraints = RigidbodyConstraints.FreezeAll;
+        Boss1_script.enabled = false;
+        Boss1_anim.enabled = false;
+        yield return new WaitForSeconds(stunTime);
         
-    //     Boss1_body.constraints = RigidbodyConstraints.FreezeRotation;
-    //     Boss1_script.enabled = true;
-    //     Boss1_anim.enabled = true;
-    //     Destroy(gameObject);
+        Boss1_body.constraints = RigidbodyConstraints.FreezeRotation;
+        Boss1_script.enabled = true;
+        Boss1_anim.enabled = true;
+        Destroy(gameObject);
         
-    // }
+    }
 
     // IEnumerator returnattente ()
     // {

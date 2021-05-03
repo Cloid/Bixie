@@ -107,8 +107,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -613332221
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 3200612926842578245, guid: 042021d63ce5549a5925e342519cd6c3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -184,7 +184,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerIndex: 1
   maxSpeed: 4
-  jumpForce: 400
+  jumpForce: 200
   minHeight: -8.4
   maxHeight: 3
   interactObj: {fileID: 0}
@@ -194,7 +194,7 @@ MonoBehaviour:
   jumpSound: event:/Sounds/Hit
   damageSound: event:/Sounds/Damage
   currAudioSource: {fileID: 0}
-  projectile: {fileID: 3272319517615755612, guid: b64e15b717e212e48ac074f3659efb9c, type: 3}
+  projectile: {fileID: 6332634676093631941, guid: b64e15b717e212e48ac074f3659efb9c, type: 3}
   photonView: {fileID: 0}
   VNSayDialog: {fileID: 0}
   collisionSound2: {fileID: 0}
@@ -221,7 +221,7 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 340022212059022747}
   - {fileID: 4763456767366711884}
-  sceneViewId: 0
+  sceneViewId: 17
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!114 &340022212059022747
@@ -311,16 +311,20 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1424687336362686462, guid: 3a7f2ea71314443e0b12c8557eea2f9d, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1424687336362686462, guid: 3a7f2ea71314443e0b12c8557eea2f9d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.022842646
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1424687336362686462, guid: 3a7f2ea71314443e0b12c8557eea2f9d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.006390825
+      value: -0.0009999797
       objectReference: {fileID: 0}
     - target: {fileID: 1424687336362686462, guid: 3a7f2ea71314443e0b12c8557eea2f9d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.02593273
+      value: -0.84000003
       objectReference: {fileID: 0}
     - target: {fileID: 1424687336362686462, guid: 3a7f2ea71314443e0b12c8557eea2f9d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -328,15 +332,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1424687336362686462, guid: 3a7f2ea71314443e0b12c8557eea2f9d, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1424687336362686462, guid: 3a7f2ea71314443e0b12c8557eea2f9d, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1424687336362686462, guid: 3a7f2ea71314443e0b12c8557eea2f9d, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1424687336362686462, guid: 3a7f2ea71314443e0b12c8557eea2f9d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -354,6 +358,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: shadow
       objectReference: {fileID: 0}
+    - target: {fileID: 6310797391842958407, guid: 3a7f2ea71314443e0b12c8557eea2f9d, type: 3}
+      propertyPath: FollowBone
+      value: 
+      objectReference: {fileID: 2036134645522956224}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a7f2ea71314443e0b12c8557eea2f9d, type: 3}
 --- !u!4 &5815254409113737961 stripped

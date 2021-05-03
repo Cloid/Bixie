@@ -546,11 +546,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 201.30151, y: 355.6684}
+  scrollPos: {x: 365.1088, y: 157.31755}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 490.66666
-  zoom: 0.52000046
+  zoom: 1
   scrollViewRect:
     serializedVersion: 2
     x: -343
@@ -560,7 +560,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 364236867}
   selectedCommands:
-  - {fileID: 364236902}
+  - {fileID: 364236929}
   variables:
   - {fileID: 364236951}
   description: 
@@ -604,7 +604,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -50.461727
     y: 225.68245
-    width: 73.076904
+    width: 75
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1552,7 +1552,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &364236902
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -1612,7 +1612,7 @@ MonoBehaviour:
   storyText: "...I\u2019m sorry...is something wrong? If I said something, I was
     just trying to make friendl-"
   description: 
-  character: {fileID: 590869881}
+  character: {fileID: 422692043}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -1697,7 +1697,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -6.4564323
     y: -128.65373
-    width: 80.7692
+    width: 82
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1791,7 +1791,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 293.36816
     y: -191.75645
-    width: 112.82046
+    width: 117
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1821,7 +1821,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 105.47969
     y: 36.149155
-    width: 107.69226
+    width: 112
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2007,7 +2007,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 215.19464
     y: 419.37198
-    width: 117.94866
+    width: 122
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2036,7 +2036,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 220.07784
     y: 307.98514
-    width: 123.07686
+    width: 127
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2093,7 +2093,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 419.70624
     y: 298.3445
-    width: 91.025604
+    width: 94
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2183,7 +2183,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 424.435
     y: 367.75632
-    width: 91.025604
+    width: 95
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2284,7 +2284,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 419.729
     y: 425.4031
-    width: 92.307655
+    width: 96
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2504,7 +2504,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -277.48007
     y: 327.00592
-    width: 96.15381
+    width: 100
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2632,7 +2632,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -273.8735
     y: 445.03864
-    width: 110.25636
+    width: 114
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0

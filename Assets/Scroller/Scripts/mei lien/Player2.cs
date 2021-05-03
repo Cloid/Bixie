@@ -33,7 +33,7 @@ public class Player2 : MonoBehaviour
     private Vector2 inputVector;
     private TorchControllerSS torchControl;
     public AudioSource currAudioSource;
-    public GameObject projectile;
+    public Projectile projectile;
     public PhotonView photonView;
     public GameObject VNSayDialog;
 
@@ -62,7 +62,6 @@ public class Player2 : MonoBehaviour
         // Set onGround and animation bools
         onGround2 = Physics.Linecast(transform.position, groundCheck2.position, 1 << LayerMask.NameToLayer("Ground"));
         anim2.SetBool("OnGround", onGround2);
-        anim2.SetBool("Dead", isDead2);
     }
 
     public void SetInputVector(Vector2 direction)
@@ -148,8 +147,12 @@ public class Player2 : MonoBehaviour
                 Mathf.Clamp(transform.position.z, minHeight, maxHeight));
             }
 
-
-            GameObject newProjectile = Instantiate(projectile, tempPosition, Quaternion.identity) as GameObject;//PhotonNetwork.Instantiate("Projectile", tempPosition, Quaternion.identity) as GameObject;
+            Projectile newProjectile = Instantiate(projectile, tempPosition, Quaternion.identity) as Projectile;
+            newProjectile.GetComponent<Projectile>().projSprite("WaterWave");
+            /*GameObject newProjectile = Instantiate(projectile, tempPosition, Quaternion.identity) as GameObject;//PhotonNetwork.Instantiate("Projectile", tempPosition, Quaternion.identity) as GameObject;
+            Projectile nProj = newProjectile.GetComponent<Projectile>();
+            nProj.projTag = "WaterWave";
+            nProj.projSprite(nProj.projTag);*/
             //Instantiate(projectile, tempPosition, Quaternion.identity) as GameObject;
             if (isFacingRight2)
             {
@@ -158,9 +161,7 @@ public class Player2 : MonoBehaviour
                 projectileScale.x *= -1;
                 newProjectile.transform.localScale = projectileScale;
             }
-            Projectile nProj = newProjectile.GetComponent<Projectile>();
-            nProj.projTag = "WaterWave";
-            StartCoroutine(MoveProjectile(newProjectile, nProj));
+            StartCoroutine(MoveProjectile(newProjectile));
             
             // Spawn FMOD attack sound **maybe attach to the wave for better effect
             FMODUnity.RuntimeManager.PlayOneShot("event:/Sounds/M_Attack", newProjectile.GetComponent<Transform>().position);
@@ -190,8 +191,13 @@ public class Player2 : MonoBehaviour
             Mathf.Clamp(transform.position.z, minHeight, maxHeight));
         }
 
+        Projectile newProjectile = Instantiate(projectile, tempPosition, Quaternion.identity) as Projectile;
+        newProjectile.GetComponent<Projectile>().projSprite("IceBall");
+        /*
         GameObject newProjectile = Instantiate(projectile, tempPosition, Quaternion.identity) as GameObject;
-
+        Projectile nProj = newProjectile.GetComponent<Projectile>();
+        nProj.projTag = "IceBall";
+        nProj.projSprite(nProj.projTag);*/
         //Instantiate(projectile, tempPosition, Quaternion.identity) as GameObject;
         if (isFacingRight2)
         {
@@ -200,9 +206,7 @@ public class Player2 : MonoBehaviour
             projectileScale.x *= -1;
             newProjectile.transform.localScale = projectileScale;
         }
-        Projectile nProj = newProjectile.GetComponent<Projectile>();
-        nProj.projTag = "IceBall";
-        StartCoroutine(MoveProjectile(newProjectile, nProj));
+        StartCoroutine(MoveProjectile(newProjectile));
 
         // Spawn FMOD attack sound **maybe attach to the wave for better effect
         FMODUnity.RuntimeManager.PlayOneShot("event:/Sounds/M_Attack", newProjectile.GetComponent<Transform>().position);
@@ -211,18 +215,18 @@ public class Player2 : MonoBehaviour
         canAttack = false;
     }
 
-    IEnumerator MoveProjectile(GameObject newProjectile, Projectile nProj) {
+    IEnumerator MoveProjectile(Projectile newProjectile) {
         yield return new WaitForSeconds(0f);
         // Flip direction and sprite orientation depending on where Mei Lien is facing
         if (!isFacingRight2)
         {
             newProjectile.GetComponent<Rigidbody>().AddForce(200f, 0, 0);
-            nProj.attackDir = 1f;
+            newProjectile.attackDir = 1f;
         }
         else
         {
 
-            nProj.attackDir = -1f;
+            newProjectile.attackDir = -1f;
             newProjectile.GetComponent<Rigidbody>().AddForce(-200f, 0, 0);
         }
     }
@@ -307,6 +311,7 @@ public class Player2 : MonoBehaviour
     public void playerDying()
     {
         isDead2 = true;
+        anim2.SetTrigger("Dead");
         //FindObjectOfType<GameManager>().lives--;
         if (isFacingRight2)
         {

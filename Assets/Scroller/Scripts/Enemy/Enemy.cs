@@ -37,6 +37,7 @@ public class Enemy : MonoBehaviour {
 	private float damageTimer;
 	private float nextAttack;
 	private AudioSource audioS;
+	private SpriteRenderer currSprite;
 
 	//global event handler for enemies
 	public delegate void UnitEventHandler(GameObject Unit);
@@ -89,6 +90,7 @@ public class Enemy : MonoBehaviour {
 		//print(GameObject.FindGameObjectWithTag("Player2").transform);
 		currentHealth = maxHealth;
 		audioS = GetComponent<AudioSource>();
+		currSprite = GetComponent<SpriteRenderer>();
 		// Debug.Log("Current Health: " + currentHealth);
 	}
 	
@@ -283,8 +285,10 @@ public class Enemy : MonoBehaviour {
         if (effectType.Equals("IceBall"))
         {
 			rb.isKinematic = true;
+			currSprite.color = new Color(0, 134, 240);
 			yield return new WaitForSeconds(numSecs);
 			rb.isKinematic = false;
+			currSprite.color = new Color(255, 255, 255);
 		}
 	}
 

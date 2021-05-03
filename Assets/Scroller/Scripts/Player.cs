@@ -68,7 +68,6 @@ public class Player : MonoBehaviour
 
             onGround = Physics.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
             anim.SetBool("OnGround", onGround);
-            anim.SetBool("Dead", isDead);
         
         /*
         if (transform.position.y != 0)
@@ -298,6 +297,7 @@ public class Player : MonoBehaviour
     public void playerDying()
     {
         isDead = true;
+        anim.SetTrigger("Dead");
         FindObjectOfType<GameManager>().lives--;
         if (isFacingRight)
         {

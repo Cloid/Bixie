@@ -9,15 +9,14 @@ public class Projectile : MonoBehaviour
     public float attackDir;
     public string projTag;
     public Animator currAnim;
-    public SpriteRenderer currSprite;
 
     // Private Variables
 
-    // Start is called before the first frame update
-    void Start()
+    // Awake is called before the first frame
+    void Awake()
     {
-        //currAnim = GetComponent<Animator>();
-        //currSprite = GetComponent<SpriteRenderer>();
+        currAnim = GetComponent<Animator>();
+        projSprite(projTag);
     }
 
     // Update is called once per frame
@@ -35,23 +34,27 @@ public class Projectile : MonoBehaviour
         }
     }
 
-    /*
+    
     // Helper function that determines animation and sprites of a projectile 
     public void projSprite(string tag)
     {
+        print(tag);
         switch(tag)
         {
             case "WaterWave":
-                currAnim.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>("Assets/Scroller/Animations/Mei Lien/WaterWave.controller");
+                currAnim.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>("WaterWave");
+                projTag = "WaterWave";
                 break;
             case "IceBall":
-                currAnim.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>("Assets/Scroller/Animations/Mei Lien/IceBall.controller");
+                currAnim.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>("IceBall");
+                projTag = "IceBall";
                 break;
             default:
-                currAnim.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>("Assets/Scroller/Animations/Mei Lien/WaterWave.controller");
+                currAnim.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>("WaterWave");
+                projTag = "WaterWave";
                 break;
         }
-    }*/
+    }
 
     // Collision check with enemy 
     private void OnTriggerEnter(Collider other)
@@ -72,9 +75,9 @@ public class Projectile : MonoBehaviour
                 default:
                     enemy.TookDamage(0, "meiLienBasicAttack", projTag, attackDir);
                     break;
-              } 
+              }
             //Debug.Log(attackDir);
-            Destroy(gameObject);
+            Invoke("destroyObject",0.1f);
         } else if (other.gameObject.tag == "Statue"){
             StatueCollider statue = other.GetComponent<StatueCollider>();
             Debug.Log(attackDir);
@@ -82,4 +85,10 @@ public class Projectile : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    void destroyObject()
+    {
+        Destroy(gameObject);
+    }
 }
+

@@ -6086,6 +6086,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1997480273}
     m_Modifications:
+    - target: {fileID: 823662816, guid: e77769a74a59b4ccdad3c5fd4a87604a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 823662817, guid: e77769a74a59b4ccdad3c5fd4a87604a, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 326
@@ -11735,7 +11739,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df2af36da099eda43b60b394623407d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lives: 4
   characterIndex: 0
 --- !u!4 &1800222221
 Transform:
@@ -15825,7 +15828,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 113fdb9653d27b3479259a3dd6621571, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthUI: {fileID: 0}
+  healthUI: {fileID: 40973826}
   playerImage: {fileID: 0}
   playerName: {fileID: 0}
   livesText: {fileID: 823662819}

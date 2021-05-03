@@ -301,8 +301,8 @@ public class Player2 : MonoBehaviour
 
             if (player1.currentHealth <= 0)
             {
-                playerDying();
                 player1.playerDying();
+                playerDying();
             }
         }
     }
@@ -321,7 +321,7 @@ public class Player2 : MonoBehaviour
         {
             rb.AddForce(new Vector3(3, 5, 0), ForceMode.Impulse);
         }
-        Invoke("PlayerRespawn", 2f);
+        //Invoke("PlayerRespawn", 2f);
     }
 
     public void PlaySong(AudioClip clip)
@@ -349,9 +349,10 @@ public class Player2 : MonoBehaviour
         interactObj = other;
     }
 
-    // Player Respawn function
+    // Player Respawn function 
     void PlayerRespawn()
     {
+        /*
         if (FindObjectOfType<GameManager>().lives > 0)
         {
             isDead2 = false;
@@ -367,6 +368,6 @@ public class Player2 : MonoBehaviour
             FindObjectOfType<UIManager>().UpdateDisplayMessage("Game Over");
             Destroy(FindObjectOfType<GameManager>().gameObject);
             Invoke("LoadScene", 2f);
-        }
+        }*/
     }
 }

@@ -78,7 +78,7 @@ public class Projectile : MonoBehaviour
               }
             //Debug.Log(attackDir);
             Invoke("destroyObject",0.1f);
-        } else if (other.gameObject.tag == "Statue"){
+        } else if (other.gameObject.tag == "Statue" && this.currAnim.runtimeAnimatorController.name == "WaterWave"){
             StatueCollider statue = other.GetComponent<StatueCollider>();
             Debug.Log(attackDir);
             statue.PushingStatue(attackDir);

@@ -38,7 +38,7 @@ public void PushingStatue(float attackDir){
         Debug.Log("test2");
         GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionY | 
         RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
-        Vector3 work = new Vector3(30,0,0);
+        Vector3 work = new Vector3(30*attackDir,0,0);
         GetComponent<Rigidbody>().AddForce(work,ForceMode.Impulse);
         // Start playing the grinding sound
         //stone_sound = FMODUnity.RuntimeManager.CreateInstance("event:/Sounds/Stone_Grind");

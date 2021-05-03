@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 public class CageController : MonoBehaviour
 {
     public float minBoomerangTime, maxBoomerangTime;
@@ -71,7 +72,7 @@ public class CageController : MonoBehaviour
                 int gameObjectIndex = Random.Range( 0, 2 );
                 int spawnIndex = Random.Range(0, spawnPoints.Length);
                 // GameObject rock = Instantiate(rock_pieces[gameObjectIndex], spawnLoc, transform.rotation);
-                rock = Instantiate(rock_pieces[gameObjectIndex], spawnPoints[spawnIndex].position, Quaternion.identity);
+                rock =  PhotonNetwork.Instantiate(rock_pieces[i].gameObject.name,spawnPoints[i].position,transform.rotation); //Instantiate(rock_pieces[gameObjectIndex], spawnPoints[spawnIndex].position, Quaternion.identity);
             }
             
             Destroy(gameObject);

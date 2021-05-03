@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using Photon.Pun;
 public class Shanxiao_BossACT1 : Enemy
 {
     public GameObject cage;
@@ -42,7 +42,7 @@ public class Shanxiao_BossACT1 : Enemy
 		{
 			// justSpawned = true;
 			// anim_cage.SetTrigger("cage");
-			tempCage = Instantiate(cage, player2.transform.position, transform.rotation);
+			tempCage = PhotonNetwork.Instantiate(cage.gameObject.name,player2.transform.position, transform.rotation); //Instantiate(cage, player2.transform.position, transform.rotation);
 			anim_cage = tempCage.GetComponent<Animator>();
             anim_cage.SetBool("Cage", true);
             Mei.constraints = RigidbodyConstraints.FreezeAll;

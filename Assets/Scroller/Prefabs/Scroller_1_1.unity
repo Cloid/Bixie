@@ -3135,7 +3135,7 @@ MonoBehaviour:
   maxZ: -1.6
   minZ: -8.4
   enemy:
-  - {fileID: 6453405657549233681, guid: 25e5574a740d026499be7cfb8483411f, type: 3}
+  - {fileID: 6219169680498967512, guid: fd5c0beb4941b4670b65befa066467e9, type: 3}
   numberOfEnemies: 1
   spawnTime: 1.5
 --- !u!65 &353764972
@@ -3730,6 +3730,10 @@ PrefabInstance:
     - target: {fileID: 849759281890708583, guid: 0df32ede0c7f1ab42bd6260d1a3d95c1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695018599812040473, guid: 0df32ede0c7f1ab42bd6260d1a3d95c1, type: 3}
+      propertyPath: sceneViewId
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0df32ede0c7f1ab42bd6260d1a3d95c1, type: 3}
@@ -6121,7 +6125,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7753269862659246250, guid: e77769a74a59b4ccdad3c5fd4a87604a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -15
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 7753269862659246250, guid: e77769a74a59b4ccdad3c5fd4a87604a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -11308,6 +11312,10 @@ PrefabInstance:
       propertyPath: spawnPoints.Array.data[1]
       value: 
       objectReference: {fileID: 1480527349}
+    - target: {fileID: 5219851013443788325, guid: ff297912d2e104ca1846b910063f3111, type: 3}
+      propertyPath: sceneViewId
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff297912d2e104ca1846b910063f3111, type: 3}
 --- !u!1 &1731309781
@@ -17339,7 +17347,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7578509151722214320, guid: 55d70e1f825334497a603f64a87a3d48, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7578509151722214326, guid: 55d70e1f825334497a603f64a87a3d48, type: 3}
       propertyPath: m_RootOrder
@@ -17398,6 +17406,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1101093022534414333, guid: fd5c0beb4941b4670b65befa066467e9, type: 3}
+      propertyPath: sceneViewId
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6217874855245806973, guid: fd5c0beb4941b4670b65befa066467e9, type: 3}
       propertyPath: cage
       value: 

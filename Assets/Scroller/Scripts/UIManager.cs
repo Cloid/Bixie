@@ -34,7 +34,7 @@ public class UIManager : MonoBehaviour {
 		// healthUI.value = healthUI.maxValue;
 		// playerName.text = player.playerName;
 		// playerImage.sprite = player.playerImage;
-		UpdateLives();
+		//UpdateLives();
 
 	}
 	
@@ -82,10 +82,12 @@ public class UIManager : MonoBehaviour {
 		enemyUI.SetActive(true);
 	}
 
+	// Defunct function
+	/*
 	public void UpdateLives()
 	{
 		livesText.text = "X " + FindObjectOfType<GameManager>().lives.ToString();
-	}
+	}*/
 
 	public void UpdateDisplayMessage(string message)
 	{

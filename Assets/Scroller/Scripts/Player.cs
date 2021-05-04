@@ -185,6 +185,7 @@ public class Player : MonoBehaviour
     }
 
     // Player 1's HeavyAttack Function
+    [PunRPC]
     public void HeavyAttack()
     {
         if(photonView.IsMine){

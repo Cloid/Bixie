@@ -172,6 +172,7 @@ public class Player2 : MonoBehaviour
     }
 
     // Player 2's HeavyAttack Function - Ice Freeze Attack
+    [PunRPC]
     public void HeavyAttack()
     {
         Debug.Log("Player2 is doing a heavy attack!");

@@ -106,6 +106,7 @@ public class Enemy : MonoBehaviour {
 		//FindCheckpoint.G
 		if (!isDead)
 		{
+			facingRight = (realTarget.position.x < transform.position.x) ? false : true;
 			if (facingRight)
 			{
 				transform.eulerAngles = new Vector3(0, 180, 0);
@@ -185,7 +186,7 @@ public class Enemy : MonoBehaviour {
 		if (!isDead)
 		{
 			realTarget = target2;
-			facingRight = (realTarget.position.x < transform.position.x) ? false : true;
+			
 			curTime = Time.time;
 			
 			float timeDiff = curTime - newTime;
@@ -242,7 +243,7 @@ public class Enemy : MonoBehaviour {
 			currentHealth -= damage;
 			anim.SetTrigger("HitDamage");
 			// PlaySound(damageSound, "Damage", damage);
-			FindObjectOfType<UIManager>().UpdateEnemyUI(maxHealth, currentHealth, enemyName, enemyImage);
+			// FindObjectOfType<UIManager>().UpdateEnemyUI(maxHealth, currentHealth, enemyName, enemyImage);
 			// Enemies get an effect depending on attackTag and stateTag
 			switch(attackTag)
             {

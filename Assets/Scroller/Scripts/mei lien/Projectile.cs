@@ -70,7 +70,7 @@ public class Projectile : MonoBehaviour
                     enemy.TookDamage(0, "meiLienBasicAttack", projTag, attackDir);
                     break;
                 case "IceBall":
-                    enemy.TookDamage(1, "meiLienHeavyAttack", projTag, attackDir);
+                    enemy.TookDamage(0, "meiLienHeavyAttack", projTag, attackDir);
                     break;
                 default:
                     enemy.TookDamage(0, "meiLienBasicAttack", projTag, attackDir);

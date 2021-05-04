@@ -11620,7 +11620,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df2af36da099eda43b60b394623407d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lives: 4
   characterIndex: 0
 --- !u!4 &1800222221
 Transform:
@@ -17351,7 +17350,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7578509151722214320, guid: 55d70e1f825334497a603f64a87a3d48, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7578509151722214326, guid: 55d70e1f825334497a603f64a87a3d48, type: 3}
       propertyPath: m_RootOrder
@@ -17419,12 +17418,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2034082304}
     - target: {fileID: 6217874855245806973, guid: fd5c0beb4941b4670b65befa066467e9, type: 3}
+      propertyPath: maxHealth
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6217874855245806973, guid: fd5c0beb4941b4670b65befa066467e9, type: 3}
       propertyPath: maxBoomerangTime
-      value: 20
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 6217874855245806973, guid: fd5c0beb4941b4670b65befa066467e9, type: 3}
       propertyPath: minBoomerangTime
-      value: 15
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 6219169680498967512, guid: fd5c0beb4941b4670b65befa066467e9, type: 3}
       propertyPath: m_Name

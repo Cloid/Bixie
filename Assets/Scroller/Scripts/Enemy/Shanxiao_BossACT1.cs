@@ -42,6 +42,7 @@ public class Shanxiao_BossACT1 : Enemy
 		{
 			// justSpawned = true;
 			// anim_cage.SetTrigger("cage");
+			print("mei lien location: " + player2.transform.position);
 			tempCage = PhotonNetwork.Instantiate(cage.gameObject.name,player2.transform.position, transform.rotation); //Instantiate(cage, player2.transform.position, transform.rotation);
 			anim_cage = tempCage.GetComponent<Animator>();
             anim_cage.SetBool("Cage", true);

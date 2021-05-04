@@ -23,6 +23,7 @@ public class Player2 : MonoBehaviour
     private float currentSpeed;
     private float torchDistance;
     private float attackTime = 0f;
+    private float heavyAttackTime = 0f;
 
     // GameObjects
     private Player player1;
@@ -111,6 +112,16 @@ public class Player2 : MonoBehaviour
                 attackTime -= 1f;
             }
 
+            // Heavy Attack Cooldown
+            if (heavyAttackTime <= 0 && !canAttack)
+            {
+                canAttack = true;
+            }
+            else
+            {
+                heavyAttackTime -= 1f;
+            }
+
             float minWidth = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 10)).x;
 			float maxWidth = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0, 10)).x;
 			rb.position = new Vector3(Mathf.Clamp(rb.position.x, minWidth + 1, maxWidth - 1),
@@ -175,45 +186,48 @@ public class Player2 : MonoBehaviour
     [PunRPC]
     public void HeavyAttack()
     {
-        Debug.Log("Player2 is doing a heavy attack!");
-        anim2.SetTrigger("Attack");
-        // Spawn projectile and get properties
-        Vector3 tempPosition;
-        if (!isFacingRight2)
+        if (heavyAttackTime <= 0 && canAttack)
         {
-            tempPosition = new Vector3(transform.position.x + 2,
-            transform.position.y,
-            Mathf.Clamp(transform.position.z, minHeight, maxHeight));
-        }
-        else
-        {
-            tempPosition = new Vector3(transform.position.x - 2,
-            transform.position.y,
-            Mathf.Clamp(transform.position.z, minHeight, maxHeight));
-        }
+            Debug.Log("Player2 is doing a heavy attack!");
+            anim2.SetTrigger("Attack");
+            // Spawn projectile and get properties
+            Vector3 tempPosition;
+            if (!isFacingRight2)
+            {
+                tempPosition = new Vector3(transform.position.x + 2,
+                transform.position.y,
+                Mathf.Clamp(transform.position.z, minHeight, maxHeight));
+            }
+            else
+            {
+                tempPosition = new Vector3(transform.position.x - 2,
+                transform.position.y,
+                Mathf.Clamp(transform.position.z, minHeight, maxHeight));
+            }
 
-        Projectile newProjectile = Instantiate(projectile, tempPosition, Quaternion.identity) as Projectile;
-        newProjectile.GetComponent<Projectile>().projSprite("IceBall");
-        /*
-        GameObject newProjectile = Instantiate(projectile, tempPosition, Quaternion.identity) as GameObject;
-        Projectile nProj = newProjectile.GetComponent<Projectile>();
-        nProj.projTag = "IceBall";
-        nProj.projSprite(nProj.projTag);*/
-        //Instantiate(projectile, tempPosition, Quaternion.identity) as GameObject;
-        if (isFacingRight2)
-        {
-            //Debug.Log("Does this run in p2");
-            Vector3 projectileScale = newProjectile.transform.localScale;
-            projectileScale.x *= -1;
-            newProjectile.transform.localScale = projectileScale;
+            Projectile newProjectile = Instantiate(projectile, tempPosition, Quaternion.identity) as Projectile;
+            newProjectile.GetComponent<Projectile>().projSprite("IceBall");
+            /*
+            GameObject newProjectile = Instantiate(projectile, tempPosition, Quaternion.identity) as GameObject;
+            Projectile nProj = newProjectile.GetComponent<Projectile>();
+            nProj.projTag = "IceBall";
+            nProj.projSprite(nProj.projTag);*/
+            //Instantiate(projectile, tempPosition, Quaternion.identity) as GameObject;
+            if (isFacingRight2)
+            {
+                //Debug.Log("Does this run in p2");
+                Vector3 projectileScale = newProjectile.transform.localScale;
+                projectileScale.x *= -1;
+                newProjectile.transform.localScale = projectileScale;
+            }
+            StartCoroutine(MoveProjectile(newProjectile));
+
+            // Spawn FMOD attack sound **maybe attach to the wave for better effect
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Sounds/M_Attack", newProjectile.GetComponent<Transform>().position);
+
+            heavyAttackTime = 180f;
+            canAttack = false;
         }
-        StartCoroutine(MoveProjectile(newProjectile));
-
-        // Spawn FMOD attack sound **maybe attach to the wave for better effect
-        FMODUnity.RuntimeManager.PlayOneShot("event:/Sounds/M_Attack", newProjectile.GetComponent<Transform>().position);
-
-        attackTime = 180f;
-        canAttack = false;
     }
 
     IEnumerator MoveProjectile(Projectile newProjectile) {
@@ -302,8 +316,8 @@ public class Player2 : MonoBehaviour
 
             if (player1.currentHealth <= 0)
             {
-                playerDying();
                 player1.playerDying();
+                playerDying();
             }
         }
     }
@@ -322,7 +336,7 @@ public class Player2 : MonoBehaviour
         {
             rb.AddForce(new Vector3(3, 5, 0), ForceMode.Impulse);
         }
-        Invoke("PlayerRespawn", 2f);
+        //Invoke("PlayerRespawn", 2f);
     }
 
     public void PlaySong(AudioClip clip)
@@ -350,9 +364,10 @@ public class Player2 : MonoBehaviour
         interactObj = other;
     }
 
-    // Player Respawn function
+    // Player Respawn function 
     void PlayerRespawn()
     {
+        /*
         if (FindObjectOfType<GameManager>().lives > 0)
         {
             isDead2 = false;
@@ -368,6 +383,6 @@ public class Player2 : MonoBehaviour
             FindObjectOfType<UIManager>().UpdateDisplayMessage("Game Over");
             Destroy(FindObjectOfType<GameManager>().gameObject);
             Invoke("LoadScene", 2f);
-        }
+        }*/
     }
 }

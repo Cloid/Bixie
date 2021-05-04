@@ -31,7 +31,7 @@ public class RockPush : MonoBehaviour
         float force = .05f;
         if (other.gameObject.tag == "Boss1")
         {
-            // StartCoroutine(stun());
+            StartCoroutine(stun());
             // print("this should be called after wait");
             // Destroy(gameObject);
             // move.enabled=false;

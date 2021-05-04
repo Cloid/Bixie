@@ -25,6 +25,9 @@ public class CageController : MonoBehaviour
         currentHealth = maxHealth;
         Mei = GameObject.Find("Mei Lien").GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
+        spawnPoints = new Transform[2];
+        
+        
         //Debug.Log(anim); 
         //anim.SetTrigger("Cage");
     }
@@ -72,7 +75,12 @@ public class CageController : MonoBehaviour
                 int gameObjectIndex = Random.Range( 0, 2 );
                 int spawnIndex = Random.Range(0, spawnPoints.Length);
                 // GameObject rock = Instantiate(rock_pieces[gameObjectIndex], spawnLoc, transform.rotation);
-                rock =  PhotonNetwork.Instantiate(rock_pieces[i].gameObject.name,spawnPoints[i].position,transform.rotation); //Instantiate(rock_pieces[gameObjectIndex], spawnPoints[spawnIndex].position, Quaternion.identity);
+                var rock_copy = rock_pieces[gameObjectIndex].gameObject;
+                spawnPoints[0] = rock_copy.gameObject.transform;
+                spawnPoints[0].position = new Vector3(-4.4000001f,-0.74000001f,-3.1099999f);
+                spawnPoints[1] = rock_copy.gameObject.transform;
+                spawnPoints[1].position = new Vector3(-4.4000001f,-0.0299999993f,3.57999992f);
+                rock =  PhotonNetwork.Instantiate(rock_copy.name,spawnPoints[spawnIndex].position,transform.rotation); //Instantiate(rock_pieces[gameObjectIndex], spawnPoints[spawnIndex].position, Quaternion.identity);
             }
             
             Destroy(gameObject);

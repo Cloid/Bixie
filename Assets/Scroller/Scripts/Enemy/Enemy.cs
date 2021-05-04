@@ -186,6 +186,7 @@ public class Enemy : MonoBehaviour {
 		if (!isDead)
 		{
 			realTarget = target2;
+			
 			curTime = Time.time;
 			
 			float timeDiff = curTime - newTime;
@@ -242,7 +243,7 @@ public class Enemy : MonoBehaviour {
 			currentHealth -= damage;
 			anim.SetTrigger("HitDamage");
 			// PlaySound(damageSound, "Damage", damage);
-			FindObjectOfType<UIManager>().UpdateEnemyUI(maxHealth, currentHealth, enemyName, enemyImage);
+			// FindObjectOfType<UIManager>().UpdateEnemyUI(maxHealth, currentHealth, enemyName, enemyImage);
 			// Enemies get an effect depending on attackTag and stateTag
 			switch(attackTag)
             {

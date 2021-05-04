@@ -299,7 +299,7 @@ public class Player : MonoBehaviour
     {
         isDead = true;
         anim.SetTrigger("Dead");
-        FindObjectOfType<GameManager>().lives--;
+        //FindObjectOfType<GameManager>().lives--;
         if (isFacingRight)
         {
             rb.AddForce(new Vector3(-3, 5, 0), ForceMode.Impulse);
@@ -338,8 +338,10 @@ public class Player : MonoBehaviour
         interactObj = other;
     }
 
-    void PlayerRespawn()
+    public void PlayerRespawn()
     {
+        Invoke("LoadScene", 0.5f);
+        /*
         if (FindObjectOfType<GameManager>().lives > 0)
         {
             isDead = false;
@@ -355,7 +357,7 @@ public class Player : MonoBehaviour
             FindObjectOfType<UIManager>().UpdateDisplayMessage("Game Over");
             Destroy(FindObjectOfType<GameManager>().gameObject);
             Invoke("LoadScene", 2f);
-        }
+        }*/
 
     }
 

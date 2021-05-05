@@ -7,13 +7,16 @@ public class Projectile : MonoBehaviour
     // Public Variables
     public float lifespan;
     public float attackDir;
+    public string projTag;
+    public Animator currAnim;
 
     // Private Variables
 
-    // Start is called before the first frame update
-    void Start()
+    // Awake is called before the first frame
+    void Awake()
     {
-
+        currAnim = GetComponent<Animator>();
+        projSprite(projTag);
     }
 
     // Update is called once per frame
@@ -31,6 +34,28 @@ public class Projectile : MonoBehaviour
         }
     }
 
+    
+    // Helper function that determines animation and sprites of a projectile 
+    public void projSprite(string tag)
+    {
+        print(tag);
+        switch(tag)
+        {
+            case "WaterWave":
+                currAnim.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>("WaterWave");
+                projTag = "WaterWave";
+                break;
+            case "IceBall":
+                currAnim.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>("IceBall");
+                projTag = "IceBall";
+                break;
+            default:
+                currAnim.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>("WaterWave");
+                projTag = "WaterWave";
+                break;
+        }
+    }
+
     // Collision check with enemy 
     private void OnTriggerEnter(Collider other)
     {
@@ -39,10 +64,31 @@ public class Projectile : MonoBehaviour
         if(enemy != null)
         {
             Debug.Log("Projectile collided with enemy!");
-            enemy.TookDamage(0, "meiLienBasicAttack", attackDir);
+            switch (projTag)
+            {
+                case "WaterWave":
+                    enemy.TookDamage(0, "meiLienBasicAttack", projTag, attackDir);
+                    break;
+                case "IceBall":
+                    enemy.TookDamage(0, "meiLienHeavyAttack", projTag, attackDir);
+                    break;
+                default:
+                    enemy.TookDamage(0, "meiLienBasicAttack", projTag, attackDir);
+                    break;
+              }
+            //Debug.Log(attackDir);
+            Invoke("destroyObject",0.1f);
+        } else if (other.gameObject.tag == "Statue" && this.currAnim.runtimeAnimatorController.name == "WaterWave"){
+            StatueCollider statue = other.GetComponent<StatueCollider>();
             Debug.Log(attackDir);
+            statue.PushingStatue(attackDir);
             Destroy(gameObject);
         }
     }
 
+    void destroyObject()
+    {
+        Destroy(gameObject);
+    }
 }
+

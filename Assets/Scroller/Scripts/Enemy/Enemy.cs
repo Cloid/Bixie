@@ -18,6 +18,8 @@ public class Enemy : MonoBehaviour {
 	public string damageSound, deathSound;
 	public PhotonView photonView;
 
+	private float newTime = 0.0f;
+	private float curTime;
 	private int currentHealth;
 	private float currentSpeed;
 	private Rigidbody rb;
@@ -25,8 +27,9 @@ public class Enemy : MonoBehaviour {
 	private Transform groundCheck;
 	private bool onGround;
 	protected bool facingRight = false;
-	private Transform target;
+	private Transform target1;
 	private Transform target2;
+	private Transform realTarget;
 	protected bool isDead = false;
 	private float zForce;
 	private float walkTimer;
@@ -34,6 +37,7 @@ public class Enemy : MonoBehaviour {
 	private float damageTimer;
 	private float nextAttack;
 	private AudioSource audioS;
+	private SpriteRenderer currSprite;
 
 	//global event handler for enemies
 	public delegate void UnitEventHandler(GameObject Unit);
@@ -80,34 +84,33 @@ public class Enemy : MonoBehaviour {
 		anim = GetComponent<Animator>();
 		groundCheck = transform.Find("GroundCheck");
 		//target = GameObject.FindGameObjectWithTag("Player").transform;
-		// target = FindObjectOfType<Player>().transform;
-		//target2 = FindObjectOfType<Player2>().transform;
+		target1 = FindObjectOfType<Player>().transform;
+		target2 = FindObjectOfType<Player2>().transform;
 		//print(GameObject.FindGameObjectWithTag("Player").transform);
 		//print(GameObject.FindGameObjectWithTag("Player2").transform);
 		currentHealth = maxHealth;
 		audioS = GetComponent<AudioSource>();
-		Debug.Log("Current Health: " + currentHealth);
+		currSprite = GetComponent<SpriteRenderer>();
+		// Debug.Log("Current Health: " + currentHealth);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if(target2 == null){
-			target2 = FindObjectOfType<Player2>().transform; 
-		}
 
 		onGround = Physics.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
 		anim.SetBool("Grounded", onGround);
 		anim.SetBool("Dead", isDead);
 		SpriteRenderer Sprite = gameObject.GetComponent<SpriteRenderer>();
+		// Debug.Log("facingRight: "+ facingRight);
+		// Debug.Log("isDead: "+ isDead);
 		//FindCheckpoint.G
 		if (!isDead)
 		{
-			facingRight = (target2.position.x < transform.position.x) ? false : true;
-			Debug.Log("facingRight: "+ facingRight);
+			facingRight = (realTarget.position.x < transform.position.x) ? false : true;
 			if (facingRight)
 			{
-				//transform.eulerAngles = new Vector3(0, 180, 0);
-				Sprite.flipX = true;
+				transform.eulerAngles = new Vector3(0, 180, 0);
+				// Sprite.flipX = true;
 				//sprite.flipX;
 				//var shadow = gameObject.transform.Find("shadow").gameObject;
 				//shadow.transform.eulerAngles = new Vector3(0, 180, 0);
@@ -116,8 +119,8 @@ public class Enemy : MonoBehaviour {
 			}
 			else
 			{
-				Sprite.flipX = false;
-				//transform.eulerAngles = new Vector3(0, 0, 0);
+				// Sprite.flipX = false;
+				transform.eulerAngles = new Vector3(0, 0, 0);
 				//var shadow = gameObject.transform.Find("shadow").gameObject;
 				//shadow.transform.eulerAngles = new Vector3(0, 0, 0);
 			}
@@ -182,7 +185,19 @@ public class Enemy : MonoBehaviour {
 
 		if (!isDead)
 		{
-			Vector3 targetDitance = target2.position - transform.position;
+			realTarget = target2;
+			
+			curTime = Time.time;
+			
+			float timeDiff = curTime - newTime;
+			// print("curTime: " + curTime);
+			// print("newTime: " + newTime);
+			// print("timeDiff: " + timeDiff);
+			if(timeDiff < 3.0f){
+				realTarget = target1;
+			}
+			// print("realTarget: " + realTarget);
+			Vector3 targetDitance = realTarget.position - transform.position;
 			float hForce = targetDitance.x / Mathf.Abs(targetDitance.x);
 
 			if(walkTimer >= Random.Range(1f, 2f))
@@ -218,29 +233,35 @@ public class Enemy : MonoBehaviour {
 	}
 
 	[PunRPC]
-	public void TookDamage(int damage, string stateTag, float attackDir)
+	public void TookDamage(int damage, string attackTag, string stateTag, float attackDir)
 	{
-		Debug.Log("Current Health: " + currentHealth);
-		Debug.Log("State Tag: "+ stateTag);
+		// Debug.Log("Current Health: " + currentHealth);
+		// Debug.Log("Attack Tag: "+ attackTag);
 		if (!isDead)
 		{
 			damaged = true;
 			currentHealth -= damage;
 			anim.SetTrigger("HitDamage");
-			PlaySound(damageSound, "Damage", damage);
-			FindObjectOfType<UIManager>().UpdateEnemyUI(maxHealth, currentHealth, enemyName, enemyImage);
-			// Enemies get an effect depending on stateTag
-			switch(stateTag)
+			// PlaySound(damageSound, "Damage", damage);
+			// FindObjectOfType<UIManager>().UpdateEnemyUI(maxHealth, currentHealth, enemyName, enemyImage);
+			// Enemies get an effect depending on attackTag and stateTag
+			switch(attackTag)
             {
 				case "qinyangBasicAttack":
+					newTime = Time.time;
 					break;
 				case "qinyangHeavyAttack":
+					newTime = Time.time;
 					rb.AddForce(new Vector3(attackDir * 10, 0, 0), ForceMode.Impulse);
 					break;
 				case "meiLienBasicAttack":
-					rb.AddForce(new Vector3(attackDir * 10, 0, 0), ForceMode.Impulse);
+					if (stateTag.Equals("WaterWave")) rb.AddForce(new Vector3(attackDir * 10, 0, 0), ForceMode.Impulse);
 					break;
 				case "meiLienHeavyAttack":
+					if (stateTag.Equals("IceBall"))
+					{
+						StartCoroutine(EffectTime(5, stateTag));
+					}
 					break;
 				default:
 					Debug.Log("Unregistered enemy state tag");
@@ -255,6 +276,20 @@ public class Enemy : MonoBehaviour {
 				//Destroy(gameObject);
 				photonView.RPC("DestroyEnemy", RpcTarget.AllBuffered);
 			}
+		}
+	}
+
+	// Helper function to determine long-standing enemy effects (freeze, burn, etc.)
+	IEnumerator EffectTime(float numSecs, string effectType)
+    {
+		// Implementation of freeze effect
+        if (effectType.Equals("IceBall"))
+        {
+			rb.isKinematic = true;
+			currSprite.color = new Color(0, 134, 240);
+			yield return new WaitForSeconds(numSecs);
+			rb.isKinematic = false;
+			currSprite.color = new Color(255, 255, 255);
 		}
 	}
 

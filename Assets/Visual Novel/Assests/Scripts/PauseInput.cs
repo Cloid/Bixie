@@ -116,7 +116,7 @@ public class PauseInput : MonoBehaviour
     }
 
     public void GetPhotonProxy(){
-            PhotonGet = GameObject.Find("1");
+            PhotonGet = GameObject.Find("findme");
             Debug.Log(PhotonGet);
             photonProxy = PhotonGet.GetComponent<PhotonProxy>();
 

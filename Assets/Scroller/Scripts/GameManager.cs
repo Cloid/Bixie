@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour {
 	 * Both player scripts should access these game objects
 	*/
 	// Attributes
-	public int lives;
+	//public int lives;
 	public int characterIndex;
 	
 	// GameObjects

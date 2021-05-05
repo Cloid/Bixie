@@ -194,7 +194,7 @@ MonoBehaviour:
   jumpSound: event:/Sounds/Hit
   damageSound: event:/Sounds/Damage
   currAudioSource: {fileID: 0}
-  projectile: {fileID: 3272319517615755612, guid: b64e15b717e212e48ac074f3659efb9c, type: 3}
+  projectile: {fileID: 6332634676093631941, guid: b64e15b717e212e48ac074f3659efb9c, type: 3}
   photonView: {fileID: 0}
   VNSayDialog: {fileID: 0}
   collisionSound2: {fileID: 0}

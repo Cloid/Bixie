@@ -9,6 +9,7 @@ public class StatueCollider : MonoBehaviour
 
     // event insttance variable for fmod
     private static FMOD.Studio.EventInstance stone_sound;
+    private Vector3 xPush;
     
     /*
     // Start is called before the first frame update
@@ -24,11 +25,29 @@ public class StatueCollider : MonoBehaviour
     }*/
 private void Start() {
     photonView = GetComponent<PhotonView>();
+    //xPush = new Vector3(4,2,-2);
     //Invoke("fuckMe", 5.0f);
     //photonView.TransferOwnership(PhotonNetwork.CurrentRoom.GetPlayer(2));
     //StartCoroutine(test());
     //Debug.Log("TEST");
 }
+
+
+public void PushingStatue(float attackDir){
+        //GetComponent<Rigidbody>().AddForce(transform.forward,ForceMode.VelocityChange);
+        Debug.Log("test2");
+        GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionY | 
+        RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
+        Vector3 work = new Vector3(30*attackDir,0,0);
+        GetComponent<Rigidbody>().AddForce(work,ForceMode.Impulse);
+        // Start playing the grinding sound
+        //stone_sound = FMODUnity.RuntimeManager.CreateInstance("event:/Sounds/Stone_Grind");
+        //FMODUnity.RuntimeManager.AttachInstanceToGameObject(stone_sound, GetComponent<Transform>(), GetComponent<Rigidbody>());
+        //stone_sound.start();
+        //stone_sound.release();
+
+}
+
 
 void OnCollisionEnter(Collision hit)
  {
@@ -39,13 +58,14 @@ void OnCollisionEnter(Collision hit)
      float force = .05f;
      Rigidbody hitRigidbody = hit.collider.attachedRigidbody;
 
-     if (hit.gameObject.tag == "Player" || hit.gameObject.tag == "Enemy")
+     if (hit.gameObject.tag == "Player" || hit.gameObject.tag == "Player2" || hit.gameObject.tag == "Enemy")
      {
         GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX |RigidbodyConstraints.FreezePositionY | 
         RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
      }
      
     // If the object we hit is Mei Lien
+    /*
      if (hit.gameObject.tag == "Player2")
      {
          GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionY | 
@@ -64,7 +84,7 @@ void OnCollisionEnter(Collision hit)
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(stone_sound, GetComponent<Transform>(), GetComponent<Rigidbody>());
         stone_sound.start();
         stone_sound.release();
-     }
+     }*/
 
      if(hit.gameObject.tag == "StatueWall"){
             Debug.Log("Hello!!!!");

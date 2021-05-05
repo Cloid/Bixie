@@ -17,27 +17,30 @@ public class Attack : MonoBehaviour {
 		Player player = other.GetComponent<Player>();
 		Player2 player2 = other.GetComponent<Player2>();
 		CageController cage = other.GetComponent<CageController>();
+		RockSmashController rock = other.GetComponent<RockSmashController>();
 		// Projectile playerProjectile = other.GetComponent<Projectile>();
 		if(enemy != null)
 		{
-			//enemy.TookDamage(damage, attackState, attackDirection);
-			enemy.photonView.RPC("TookDamage",RpcTarget.AllBuffered,damage,attackState,attackDirection);
+			enemy.photonView.RPC("TookDamage",RpcTarget.AllBuffered,damage,attackState,"",attackDirection);
 		}
 
 		if (player != null)
 		{
-			//player.TookDamage(damage);
 			player.photonView.RPC("TookDamage", RpcTarget.AllBuffered,damage);
 		}
 
 		if (player2 != null)
 		{
-			//player2.TookDamage(damage);
 			player2.photonView.RPC("TookDamage", RpcTarget.AllBuffered,damage);
 		}
 
 		if(cage != null){
 			cage.TookDamage(damage);
+		}
+
+		if(rock != null){
+			Debug.Log("ROCK HIT");
+			rock.photonView.RPC("DestroyRock",RpcTarget.All);
 		}
 
 	}

@@ -2,80 +2,70 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using Photon.Pun;
 public class Shanxiao_BossACT1 : Enemy
 {
-
     public GameObject cage;
-    public float minBoomerangTime, maxBoomerangTime;
+	public float minBoomerangTime, maxBoomerangTime;
 
-    private MusicController music;
+	private MusicController music;
     private Player player1;
     private Player2 player2;
     private Rigidbody Mei;
-    //private bool isDead = false;
     private Animator anim_cage;
     private GameObject tempCage;
-    //public int maxHealth = 10;
+	// private bool justSpawned = false;
 
-    // Use this for initialization
-    void Awake()
-    {
+	// Use this for initialization
+	void Awake () {
         player1 = FindObjectOfType<Player>();
         player2 = FindObjectOfType<Player2>();
         Mei = GameObject.Find("Mei Lien").GetComponent<Rigidbody>();
-        Invoke("SpawnCage", Random.Range(minBoomerangTime, maxBoomerangTime));
-        music = FindObjectOfType<MusicController>();
-        music.PlaySong(music.bossSong);
-        //currentHealth = maxHealth;
-    }
+		Invoke("SpawnCage", Random.Range(minBoomerangTime, maxBoomerangTime));
+		music = FindObjectOfType<MusicController>();
+		music.PlaySong(music.bossSong);
+	}
+	
+	// void Update()
+    // {
+	// 	// Mei = GameObject.Find("Mei Lien")
+	// 	Debug.Log("tempCage non-exist: " + (tempCage == null));
+    //     // if(tempCage == null && tempCage.activeSelf == false) {
+	// 	if(tempCage == null && justSpawned) {
+	// 		Invoke("SpawnCage", Random.Range(minBoomerangTime, maxBoomerangTime));
+	// 	}
+    // }
 
-    private void Update()
-    {
-        if (tempCage != null && tempCage.activeSelf == false)
-        {
-			Invoke("SpawnCage", Random.Range(minBoomerangTime, maxBoomerangTime));
-        }
-    }
-    void SpawnCage()
-    {
-        if (!isDead)
-        {
-            tempCage = Instantiate(cage, player2.transform.position, transform.rotation);
+	void SpawnCage()
+	{
+		if (!isDead)
+		{
+			// justSpawned = true;
+			// anim_cage.SetTrigger("cage");
+			print("mei lien location: " + player2.transform.position);
+			tempCage = PhotonNetwork.Instantiate(cage.gameObject.name,player2.transform.position, transform.rotation); //Instantiate(cage, player2.transform.position, transform.rotation);
 			anim_cage = tempCage.GetComponent<Animator>();
-			anim_cage.SetBool("Cage",true);
+            anim_cage.SetBool("Cage", true);
             Mei.constraints = RigidbodyConstraints.FreezeAll;
-			
-            //use the code below to bring mei lien back to full control;
-            //Mei.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
+			Invoke("SpawnCage", Random.Range(minBoomerangTime, maxBoomerangTime));
+		}
+	}
 
-            //if (facingRight)
-            //{
-            //	tempCage.GetComponent<Boomerang>().direction = 1;
-            //}
-            //else
-            //{
-            //	tempCage.GetComponent<Boomerang>().direction = -1;
-            //}
-            //Invoke("SpawnCage", Random.Range(minBoomerangTime, maxBoomerangTime));
-        }
-    }
-    void BossDefeated()
-    {
-        music.PlaySong(music.levelClearSong);
-        FindObjectOfType<UIManager>().UpdateDisplayMessage("Level Clear");
-        //FindObjectOfType<ResetCameraScript>().Activate();
-        //Invoke("Playtemp", 8f);
-        // Invoke("LoadScene", 8f);
-    }
+	void BossDefeated()
+	{
+		music.PlaySong(music.levelClearSong);
+		FindObjectOfType<UIManager>().UpdateDisplayMessage("Level Clear");
+		// FindObjectOfType<ResetCameraScript>().Activate();
+		// Invoke("Playtemp", 8f);
+		// Invoke("LoadScene", 8f);
+	}
 
-    void LoadScene()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    }
+	void LoadScene()
+	{
+		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+	}
 
-    void Playtemp()
-    {
-        music.PlaySong(music.levelSong);
-    }
+	void Playtemp(){
+		music.PlaySong(music.levelSong);
+	}
 }

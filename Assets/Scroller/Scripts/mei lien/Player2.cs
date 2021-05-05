@@ -23,6 +23,7 @@ public class Player2 : MonoBehaviour
     private float currentSpeed;
     private float torchDistance;
     private float attackTime = 0f;
+    private float heavyAttackTime = 0f;
 
     // GameObjects
     private Player player1;
@@ -33,7 +34,7 @@ public class Player2 : MonoBehaviour
     private Vector2 inputVector;
     private TorchControllerSS torchControl;
     public AudioSource currAudioSource;
-    public GameObject projectile;
+    public Projectile projectile;
     public PhotonView photonView;
     public GameObject VNSayDialog;
 
@@ -62,7 +63,6 @@ public class Player2 : MonoBehaviour
         // Set onGround and animation bools
         onGround2 = Physics.Linecast(transform.position, groundCheck2.position, 1 << LayerMask.NameToLayer("Ground"));
         anim2.SetBool("OnGround", onGround2);
-        anim2.SetBool("Dead", isDead2);
     }
 
     public void SetInputVector(Vector2 direction)
@@ -112,6 +112,16 @@ public class Player2 : MonoBehaviour
                 attackTime -= 1f;
             }
 
+            // Heavy Attack Cooldown
+            if (heavyAttackTime <= 0 && !canAttack)
+            {
+                canAttack = true;
+            }
+            else
+            {
+                heavyAttackTime -= 1f;
+            }
+
             float minWidth = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 10)).x;
 			float maxWidth = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0, 10)).x;
 			rb.position = new Vector3(Mathf.Clamp(rb.position.x, minWidth + 1, maxWidth - 1),
@@ -119,13 +129,13 @@ public class Player2 : MonoBehaviour
 				Mathf.Clamp(rb.position.z, minHeight, maxHeight));
 
             // Torch Interaction
-            Vector3 torchPosition = torch.transform.position - transform.position;
-            torchDistance = torchPosition.x;
-            torchControl = torch.GetComponent<TorchControllerSS>();
+            //Vector3 torchPosition = torch.transform.position - transform.position;
+           // torchDistance = torchPosition.x;
+           // torchControl = torch.GetComponent<TorchControllerSS>();
         }
     }
 
-    // Player 2's Attack Function
+    // Player 2's Attack Function - Knockback Wave
     [PunRPC] 
     public void Attack()
     {
@@ -134,8 +144,6 @@ public class Player2 : MonoBehaviour
             Debug.Log("Player2 is doing an attack!");
             anim2.SetTrigger("Attack");
             // Spawn projectile and get properties
-            //Vector3 projectileScale;
-            //Vector3 tempPosition = transform.position;
             Vector3 tempPosition;
             if (!isFacingRight2)
             {
@@ -150,18 +158,21 @@ public class Player2 : MonoBehaviour
                 Mathf.Clamp(transform.position.z, minHeight, maxHeight));
             }
 
-
-            GameObject newProjectile = Instantiate(projectile, tempPosition, Quaternion.identity) as GameObject;//PhotonNetwork.Instantiate("Projectile", tempPosition, Quaternion.identity) as GameObject;
+            Projectile newProjectile = Instantiate(projectile, tempPosition, Quaternion.identity) as Projectile;
+            newProjectile.GetComponent<Projectile>().projSprite("WaterWave");
+            /*GameObject newProjectile = Instantiate(projectile, tempPosition, Quaternion.identity) as GameObject;//PhotonNetwork.Instantiate("Projectile", tempPosition, Quaternion.identity) as GameObject;
+            Projectile nProj = newProjectile.GetComponent<Projectile>();
+            nProj.projTag = "WaterWave";
+            nProj.projSprite(nProj.projTag);*/
             //Instantiate(projectile, tempPosition, Quaternion.identity) as GameObject;
             if (isFacingRight2)
             {
-                Debug.Log("Does this run in p1");
+                //Debug.Log("Does this run in p2");
                 Vector3 projectileScale = newProjectile.transform.localScale;
                 projectileScale.x *= -1;
                 newProjectile.transform.localScale = projectileScale;
             }
-            Projectile nProj = newProjectile.GetComponent<Projectile>();
-            StartCoroutine(MoveWaterwave(newProjectile, nProj));
+            StartCoroutine(MoveProjectile(newProjectile));
             
             // Spawn FMOD attack sound **maybe attach to the wave for better effect
             FMODUnity.RuntimeManager.PlayOneShot("event:/Sounds/M_Attack", newProjectile.GetComponent<Transform>().position);
@@ -171,25 +182,68 @@ public class Player2 : MonoBehaviour
         }
     }
 
-    IEnumerator MoveWaterwave(GameObject newProjectile, Projectile nProj) {
-        yield return new WaitForSeconds(0.5f);
+    // Player 2's HeavyAttack Function - Ice Freeze Attack
+    [PunRPC]
+    public void HeavyAttack()
+    {
+        if (heavyAttackTime <= 0 && canAttack)
+        {
+            Debug.Log("Player2 is doing a heavy attack!");
+            anim2.SetTrigger("Attack");
+            // Spawn projectile and get properties
+            Vector3 tempPosition;
+            if (!isFacingRight2)
+            {
+                tempPosition = new Vector3(transform.position.x + 2,
+                transform.position.y,
+                Mathf.Clamp(transform.position.z, minHeight, maxHeight));
+            }
+            else
+            {
+                tempPosition = new Vector3(transform.position.x - 2,
+                transform.position.y,
+                Mathf.Clamp(transform.position.z, minHeight, maxHeight));
+            }
+
+            Projectile newProjectile = Instantiate(projectile, tempPosition, Quaternion.identity) as Projectile;
+            newProjectile.GetComponent<Projectile>().projSprite("IceBall");
+            /*
+            GameObject newProjectile = Instantiate(projectile, tempPosition, Quaternion.identity) as GameObject;
+            Projectile nProj = newProjectile.GetComponent<Projectile>();
+            nProj.projTag = "IceBall";
+            nProj.projSprite(nProj.projTag);*/
+            //Instantiate(projectile, tempPosition, Quaternion.identity) as GameObject;
+            if (isFacingRight2)
+            {
+                //Debug.Log("Does this run in p2");
+                Vector3 projectileScale = newProjectile.transform.localScale;
+                projectileScale.x *= -1;
+                newProjectile.transform.localScale = projectileScale;
+            }
+            StartCoroutine(MoveProjectile(newProjectile));
+
+            // Spawn FMOD attack sound **maybe attach to the wave for better effect
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Sounds/M_Attack", newProjectile.GetComponent<Transform>().position);
+
+            heavyAttackTime = 180f;
+            canAttack = false;
+        }
+    }
+
+    IEnumerator MoveProjectile(Projectile newProjectile) {
+        yield return new WaitForSeconds(0f);
         // Flip direction and sprite orientation depending on where Mei Lien is facing
         if (!isFacingRight2)
         {
             newProjectile.GetComponent<Rigidbody>().AddForce(200f, 0, 0);
-            nProj.attackDir = 1f;
+            newProjectile.attackDir = 1f;
         }
         else
         {
-            nProj.attackDir = -1f;
+
+            newProjectile.attackDir = -1f;
             newProjectile.GetComponent<Rigidbody>().AddForce(-200f, 0, 0);
         }
-    }
-
-    // Player 1's HeavyAttack Function
-    public void HeavyAttack()
-    {
-        Debug.Log("Player2 is doing a heavy attack!");
     }
 
     // Player 2's Special Function
@@ -262,8 +316,8 @@ public class Player2 : MonoBehaviour
 
             if (player1.currentHealth <= 0)
             {
-                playerDying();
                 player1.playerDying();
+                playerDying();
             }
         }
     }
@@ -272,6 +326,7 @@ public class Player2 : MonoBehaviour
     public void playerDying()
     {
         isDead2 = true;
+        anim2.SetTrigger("Dead");
         //FindObjectOfType<GameManager>().lives--;
         if (isFacingRight2)
         {
@@ -281,7 +336,7 @@ public class Player2 : MonoBehaviour
         {
             rb.AddForce(new Vector3(3, 5, 0), ForceMode.Impulse);
         }
-        Invoke("PlayerRespawn", 2f);
+        //Invoke("PlayerRespawn", 2f);
     }
 
     public void PlaySong(AudioClip clip)
@@ -309,9 +364,10 @@ public class Player2 : MonoBehaviour
         interactObj = other;
     }
 
-    // Player Respawn function
+    // Player Respawn function 
     void PlayerRespawn()
     {
+        /*
         if (FindObjectOfType<GameManager>().lives > 0)
         {
             isDead2 = false;
@@ -327,6 +383,6 @@ public class Player2 : MonoBehaviour
             FindObjectOfType<UIManager>().UpdateDisplayMessage("Game Over");
             Destroy(FindObjectOfType<GameManager>().gameObject);
             Invoke("LoadScene", 2f);
-        }
+        }*/
     }
 }

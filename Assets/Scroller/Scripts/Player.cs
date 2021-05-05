@@ -68,7 +68,6 @@ public class Player : MonoBehaviour
 
             onGround = Physics.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
             anim.SetBool("OnGround", onGround);
-            anim.SetBool("Dead", isDead);
         
         /*
         if (transform.position.y != 0)
@@ -114,7 +113,7 @@ public class Player : MonoBehaviour
                     }
                 }
 
-                //Debug.Log(isAttack);
+                // Debug.Log(isAttack);
 
                 // Player dash functionality 
                 if (!isDash && dashTime <= 0f)
@@ -135,17 +134,6 @@ public class Player : MonoBehaviour
                     anim.SetBool("IsDashing", false);
                     isDash = false;
                 }
-            // Player dash functionality 
-            if (!isDash && dashTime <= 0f)
-            {
-                dashTime = startDashTime;
-                rb.velocity = Vector3.zero;
-            } else if(!isAttack && isDash)
-            {
-                dashTime -= Time.deltaTime;
-                rb.velocity = dashVector * dashForce;
-                StartCoroutine(setDashAnim());
-            }
 
                 // Player heavy attack cooldown counter
                 if (heavyAttackTime <= 0f && !heavyAttack)
@@ -169,7 +157,7 @@ public class Player : MonoBehaviour
     [PunRPC]
     public void Attack()
     {
-            if(photonView.IsMine){
+            if(photonView.IsMine && !isDash){
             Debug.Log("Player1 is doing an attack!");
             curAttack.damage = 1;
             isAttack = true;
@@ -197,6 +185,7 @@ public class Player : MonoBehaviour
     }
 
     // Player 1's HeavyAttack Function
+    [PunRPC]
     public void HeavyAttack()
     {
         if(photonView.IsMine){
@@ -234,7 +223,7 @@ public class Player : MonoBehaviour
     public void Dash()
     {
         // If VN SayDialog is not active, then she can jump
-        if (!(VNSayDialog.activeSelf))
+        if (!(VNSayDialog.activeSelf) && !isAttack)
         {
             anim.SetBool("IsDashing", true);
             Debug.Log("Player1 is doing a dash!");
@@ -309,7 +298,8 @@ public class Player : MonoBehaviour
     public void playerDying()
     {
         isDead = true;
-        FindObjectOfType<GameManager>().lives--;
+        anim.SetTrigger("Dead");
+        //FindObjectOfType<GameManager>().lives--;
         if (isFacingRight)
         {
             rb.AddForce(new Vector3(-3, 5, 0), ForceMode.Impulse);
@@ -348,8 +338,10 @@ public class Player : MonoBehaviour
         interactObj = other;
     }
 
-    void PlayerRespawn()
+    public void PlayerRespawn()
     {
+        Invoke("LoadScene", 0.5f);
+        /*
         if (FindObjectOfType<GameManager>().lives > 0)
         {
             isDead = false;
@@ -365,13 +357,13 @@ public class Player : MonoBehaviour
             FindObjectOfType<UIManager>().UpdateDisplayMessage("Game Over");
             Destroy(FindObjectOfType<GameManager>().gameObject);
             Invoke("LoadScene", 2f);
-        }
+        }*/
 
     }
 
     void LoadScene()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public int curHealth()

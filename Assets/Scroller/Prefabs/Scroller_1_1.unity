@@ -12770,7 +12770,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 1948301765}
   selectedCommands:
-  - {fileID: 1948301796}
+  - {fileID: 1948301806}
   variables: []
   description: 
   stepPause: 0
@@ -15418,7 +15418,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 125
   indentLevel: 0
-  storyText: terdsfdsf
+  storyText: terdsfdsfghgfhgfjhhgjhgjhgfjfghjfhgjgfhjfghjgfhjgfhj
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -15673,7 +15673,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 127
   indentLevel: 0
-  storyText: fgfdgdf
+  storyText: terdsfdsfghgfhgfjhhgjhgjhgfjfghjfhgjgfhjfghjgfhjgfhj
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -17110,6 +17110,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 166447693148612616, guid: fde5566248cf4df41a351f8df916dac5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 166447693148612623, guid: fde5566248cf4df41a351f8df916dac5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e52b3e93292423b43a112fc9e5fd31bf, type: 3}
+    - target: {fileID: 166447693148612623, guid: fde5566248cf4df41a351f8df916dac5, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 166447693964536615, guid: fde5566248cf4df41a351f8df916dac5, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -17198,6 +17210,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: MeiSmallWhite_Say
       objectReference: {fileID: 0}
+    - target: {fileID: 166447693964536617, guid: fde5566248cf4df41a351f8df916dac5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 166447694361447031, guid: fde5566248cf4df41a351f8df916dac5, type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 69
+      objectReference: {fileID: 0}
+    - target: {fileID: 166447694361447031, guid: fde5566248cf4df41a351f8df916dac5, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 166447694361447031, guid: fde5566248cf4df41a351f8df916dac5, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 55
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fde5566248cf4df41a351f8df916dac5, type: 3}
 --- !u!1001 &410315717374532452
@@ -17207,9 +17235,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 410315717109312913, guid: 27920a0b27fe20f48833852b454ae47b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e52b3e93292423b43a112fc9e5fd31bf, type: 3}
+    - target: {fileID: 410315717109312913, guid: 27920a0b27fe20f48833852b454ae47b, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 410315717109312918, guid: 27920a0b27fe20f48833852b454ae47b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 410315718836274050, guid: 27920a0b27fe20f48833852b454ae47b, type: 3}
       propertyPath: m_Name
       value: QinBlack_Say
+      objectReference: {fileID: 0}
+    - target: {fileID: 410315718836274050, guid: 27920a0b27fe20f48833852b454ae47b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 410315718836274068, guid: 27920a0b27fe20f48833852b454ae47b, type: 3}
       propertyPath: m_Pivot.x
@@ -17439,9 +17483,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1614923604731220584, guid: 47aaa7f4822f90749a604c38d0e5ee6f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1614923604731220589, guid: 47aaa7f4822f90749a604c38d0e5ee6f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e52b3e93292423b43a112fc9e5fd31bf, type: 3}
+    - target: {fileID: 1614923604731220589, guid: 47aaa7f4822f90749a604c38d0e5ee6f, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1614923605100398497, guid: 47aaa7f4822f90749a604c38d0e5ee6f, type: 3}
       propertyPath: m_Name
       value: MeiWhite_Say
+      objectReference: {fileID: 0}
+    - target: {fileID: 1614923605100398497, guid: 47aaa7f4822f90749a604c38d0e5ee6f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1614923605100398527, guid: 47aaa7f4822f90749a604c38d0e5ee6f, type: 3}
       propertyPath: m_Pivot.x
@@ -18149,6 +18209,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: QinSmallBlack_Say
       objectReference: {fileID: 0}
+    - target: {fileID: 6685725880649620482, guid: 7116a262d1f8b1f41b06533b3d727d7c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6685725880649620508, guid: 7116a262d1f8b1f41b06533b3d727d7c, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -18232,6 +18296,18 @@ PrefabInstance:
     - target: {fileID: 6685725880649620508, guid: 7116a262d1f8b1f41b06533b3d727d7c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6685725882388432838, guid: 7116a262d1f8b1f41b06533b3d727d7c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6685725882388432857, guid: 7116a262d1f8b1f41b06533b3d727d7c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e52b3e93292423b43a112fc9e5fd31bf, type: 3}
+    - target: {fileID: 6685725882388432857, guid: 7116a262d1f8b1f41b06533b3d727d7c, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7116a262d1f8b1f41b06533b3d727d7c, type: 3}

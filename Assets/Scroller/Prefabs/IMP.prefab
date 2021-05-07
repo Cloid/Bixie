@@ -109,6 +109,7 @@ MonoBehaviour:
   collisionSound: {fileID: 0}
   damageSound: 
   deathSound: 
+  photonView: {fileID: 0}
 --- !u!95 &337371638
 Animator:
   serializedVersion: 3

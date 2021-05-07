@@ -258,6 +258,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -1949,6 +1950,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
 --- !u!223 &403434326
 Canvas:
   m_ObjectHideFlags: 0
@@ -2630,6 +2632,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &673776326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3041,6 +3044,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5712908757793856282, guid: d00d46a330cf34de8956be298c6b33f8, type: 3}
+      propertyPath: sceneViewId
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d00d46a330cf34de8956be298c6b33f8, type: 3}
 --- !u!1 &950546097
@@ -3320,6 +3327,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -5320,6 +5328,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -7285,7 +7294,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df2af36da099eda43b60b394623407d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lives: 4
   characterIndex: 0
 --- !u!4 &1800222221
 Transform:
@@ -10705,6 +10713,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
 --- !u!223 &1997480272
 Canvas:
   m_ObjectHideFlags: 0
@@ -10774,6 +10783,7 @@ MonoBehaviour:
   enemyName: {fileID: 0}
   enemyImage: {fileID: 1410012682}
   enemyUITime: 4
+  photonView: {fileID: 0}
 --- !u!1 &2021729917
 GameObject:
   m_ObjectHideFlags: 0

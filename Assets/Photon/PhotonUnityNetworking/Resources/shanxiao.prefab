@@ -110,7 +110,7 @@ MonoBehaviour:
   minHeight: -8.4
   maxHeight: 3
   damageTime: 0.5
-  maxHealth: 5
+  maxHealth: 2
   attackRate: 4
   enemyName: OXhead
   enemyImage: {fileID: -6132581351020953739, guid: fcf6b5b151e6976418be64f140c447c3, type: 3}

@@ -1161,7 +1161,7 @@ MonoBehaviour:
   enemy:
   - {fileID: 7578509151722214320, guid: 55d70e1f825334497a603f64a87a3d48, type: 3}
   numberOfEnemies: 100
-  spawnTime: 16
+  spawnTime: 6
 --- !u!65 &178280468
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1511,7 +1511,7 @@ PrefabInstance:
       objectReference: {fileID: 1615230855}
     - target: {fileID: 2236598048264935513, guid: b7a17519752afcd40be96ffa76da1c15, type: 3}
       propertyPath: m_Center.x
-      value: 0.38
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 2236598048264935514, guid: b7a17519752afcd40be96ffa76da1c15, type: 3}
       propertyPath: m_RootOrder
@@ -6612,7 +6612,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2236598048264935513, guid: b7a17519752afcd40be96ffa76da1c15, type: 3}
       propertyPath: m_Center.x
-      value: 0.38
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 2236598048264935514, guid: b7a17519752afcd40be96ffa76da1c15, type: 3}
       propertyPath: m_RootOrder
@@ -7537,7 +7537,7 @@ MonoBehaviour:
   minZ: -8.4
   enemy:
   - {fileID: 7578509151722214320, guid: 55d70e1f825334497a603f64a87a3d48, type: 3}
-  numberOfEnemies: 3
+  numberOfEnemies: 6
   spawnTime: 1
 --- !u!65 &1165588905
 BoxCollider:
@@ -7684,7 +7684,7 @@ MonoBehaviour:
   enemy:
   - {fileID: 7578509151722214320, guid: 55d70e1f825334497a603f64a87a3d48, type: 3}
   numberOfEnemies: 100
-  spawnTime: 18
+  spawnTime: 5
 --- !u!65 &1177635046
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10619,7 +10619,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3837355626840070448, guid: 16d65377b8d5cb8469a17d3e531edd6c, type: 3}
       propertyPath: m_Center.x
-      value: -0.38
+      value: -0.2
       objectReference: {fileID: 0}
     - target: {fileID: 3837355626840070449, guid: 16d65377b8d5cb8469a17d3e531edd6c, type: 3}
       propertyPath: rb
@@ -15720,8 +15720,8 @@ MonoBehaviour:
   minZ: -8.4
   enemy:
   - {fileID: 7578509151722214320, guid: 55d70e1f825334497a603f64a87a3d48, type: 3}
-  numberOfEnemies: 5
-  spawnTime: 3
+  numberOfEnemies: 10
+  spawnTime: 2
 --- !u!65 &1975907525
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16304,7 +16304,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3837355626840070448, guid: 16d65377b8d5cb8469a17d3e531edd6c, type: 3}
       propertyPath: m_Center.x
-      value: -0.38
+      value: -0.2
       objectReference: {fileID: 0}
     - target: {fileID: 3837355626840070449, guid: 16d65377b8d5cb8469a17d3e531edd6c, type: 3}
       propertyPath: rb
@@ -16453,7 +16453,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3837355626840070448, guid: 16d65377b8d5cb8469a17d3e531edd6c, type: 3}
       propertyPath: m_Center.x
-      value: -0.38
+      value: -0.2
       objectReference: {fileID: 0}
     - target: {fileID: 3837355626840070449, guid: 16d65377b8d5cb8469a17d3e531edd6c, type: 3}
       propertyPath: rb
@@ -16585,7 +16585,7 @@ PrefabInstance:
       objectReference: {fileID: 2141669736}
     - target: {fileID: 2236598048264935513, guid: b7a17519752afcd40be96ffa76da1c15, type: 3}
       propertyPath: m_Center.x
-      value: 0.38
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 2236598048264935514, guid: b7a17519752afcd40be96ffa76da1c15, type: 3}
       propertyPath: m_RootOrder

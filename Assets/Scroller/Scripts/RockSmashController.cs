@@ -5,10 +5,15 @@ using Photon.Pun;
 public class RockSmashController : MonoBehaviour
 {
     public PhotonView photonView;
+    public int health = 3;
+    private SpriteRenderer currSprite;
+
     // Start is called before the first frame update
     void Start()
     {
         photonView = GetComponent<PhotonView>();
+        currSprite = GetComponent<SpriteRenderer>();
+
     }
 
     // Update is called once per frame
@@ -19,6 +24,16 @@ public class RockSmashController : MonoBehaviour
     
     [PunRPC]
     void DestroyRock(){
-        Destroy(gameObject);
+        health-=1;
+        currSprite.color = Color.red;
+        StartCoroutine(whitecolor());
+		//yield return new WaitForSeconds(1);
+        if(health==0){
+            Destroy(gameObject);
+        }
+    }
+    IEnumerator whitecolor() {
+        yield return new WaitForSeconds(0.3f);
+        GetComponent<SpriteRenderer> ().color = Color.white;
     }
 }

@@ -13,6 +13,6 @@ public class StatueCollider_3_1 : StatueCollider
     // Update is called once per frame
     void Update()
     {
-        
+           
     }
 }

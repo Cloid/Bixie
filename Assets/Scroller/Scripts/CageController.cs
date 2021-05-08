@@ -34,12 +34,12 @@ public class CageController : MonoBehaviour
 
     // Update is called once per fram
 
-    public void TookDamage(int damage)
+    public void TookDamage(float damage)
 	{
 		if (!isDead)
 		{
             Debug.Log("Current Health: " + currentHealth);
-			currentHealth -= damage;
+			currentHealth -= (int)damage;
 			// TODO: Make anim + sound
             // anim.SetBool("Cage", false);
 			anim.SetTrigger("Hitdamage");

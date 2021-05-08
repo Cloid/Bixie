@@ -13,13 +13,13 @@ public class Player : MonoBehaviour
     public float maxSpeed;
     public float dashForce;
     public float minHeight, maxHeight;
-    public int maxHealth;
+    public float maxHealth;
     public string playerName;
     public Sprite playerImage;
     public Rigidbody rb;
     public AudioClip punchSound, collisionSound, jumpSound, healthItem;
     public string hitSound, damageSound;
-    public int currentHealth;
+    public float currentHealth;
     public Collider interactObj;
     public GameObject VNSayDialog;
 
@@ -277,14 +277,14 @@ public class Player : MonoBehaviour
 
     // Hit Damage function
     [PunRPC]
-    public void TookDamage(int damage)
+    public void TookDamage(float damage)
     {
         if (!isDead)
         {
             currentHealth -= damage;
             anim.SetTrigger("HitDamage");
 
-            PlaySound(damageSound, "Damage", damage);
+            PlaySound(damageSound, "Damage", (int)damage);
 
             if (currentHealth <= 0)
             {
@@ -366,7 +366,7 @@ public class Player : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    public int curHealth()
+    public float curHealth()
     {
         return currentHealth;
     }

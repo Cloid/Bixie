@@ -305,14 +305,14 @@ public class Player2 : MonoBehaviour
 
     // Hit Damage function
     [PunRPC]
-    public void TookDamage(int damage) 
+    public void TookDamage(float damage) 
     {
         if (!isDead2 && onGround2)
         {
             player1.currentHealth-= damage;
             anim2.SetTrigger("HitDamage");
 
-            PlaySound(damageSound, "Damage", damage);
+            PlaySound(damageSound, "Damage", (int)damage);
 
             if (player1.currentHealth <= 0)
             {

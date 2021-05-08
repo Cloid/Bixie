@@ -5,14 +5,20 @@ using Photon.Pun;
 
 public class Attack : MonoBehaviour {
 
-	public int damage;
+	public float damage;
 	public string attackState;
 	public float attackDirection;
+	public PhotonView photonView;
 
 	// Use this for initialization
 
+	private void Start() {
+		photonView = GetComponent<PhotonView>();
+	}
+	
 	private void OnTriggerEnter(Collider other)
 	{
+		if(photonView.IsMine){
 		Enemy enemy = other.GetComponent<Enemy>();
 		Player player = other.GetComponent<Player>();
 		Player2 player2 = other.GetComponent<Player2>();
@@ -41,6 +47,7 @@ public class Attack : MonoBehaviour {
 		if(rock != null){
 			Debug.Log("ROCK HIT");
 			rock.photonView.RPC("DestroyRock",RpcTarget.All);
+		}
 		}
 
 	}

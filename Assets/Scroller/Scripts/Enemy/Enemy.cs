@@ -20,7 +20,7 @@ public class Enemy : MonoBehaviour {
 
 	private float newTime = 0.0f;
 	private float curTime;
-	private int currentHealth;
+	private float currentHealth;
 	private float currentSpeed;
 	private Rigidbody rb;
 	protected Animator anim;
@@ -233,7 +233,7 @@ public class Enemy : MonoBehaviour {
 	}
 
 	[PunRPC]
-	public void TookDamage(int damage, string attackTag, string stateTag, float attackDir)
+	public void TookDamage(float damage, string attackTag, string stateTag, float attackDir)
 	{
 		// Debug.Log("Current Health: " + currentHealth);
 		// Debug.Log("Attack Tag: "+ attackTag);
@@ -271,7 +271,7 @@ public class Enemy : MonoBehaviour {
 			{
 				isDead = true;
 				rb.AddRelativeForce(new Vector3(3, 5, 0), ForceMode.Impulse);
-				PlaySound(deathSound, "Damage", damage);
+				PlaySound(deathSound, "Damage", (int)damage);
 				DisableEnemy();
 				//Destroy(gameObject);
 				photonView.RPC("DestroyEnemy", RpcTarget.AllBuffered);

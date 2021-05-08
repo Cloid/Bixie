@@ -1778,7 +1778,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &403434318
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5421,6 +5421,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NarratorDialog
       objectReference: {fileID: 0}
+    - target: {fileID: 1392887016546948626, guid: 5b8755d691e4e054788a1a9136718635, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1392887016546948644, guid: 5b8755d691e4e054788a1a9136718635, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -5727,6 +5731,10 @@ PrefabInstance:
     - target: {fileID: 8020187326238795972, guid: e7e49aab1d8a2ac4cb67a5049086ecb5, type: 3}
       propertyPath: m_Name
       value: SayDialog
+      objectReference: {fileID: 0}
+    - target: {fileID: 8020187326238795972, guid: e7e49aab1d8a2ac4cb67a5049086ecb5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8020187326238795998, guid: e7e49aab1d8a2ac4cb67a5049086ecb5, type: 3}
       propertyPath: m_Pivot.x
@@ -7779,7 +7787,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df2af36da099eda43b60b394623407d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lives: 4
   characterIndex: 0
 --- !u!4 &1800222221
 Transform:

@@ -260,7 +260,11 @@ public class Player2 : MonoBehaviour
         {
             Debug.Log("Player2 is doing a jump!");
             anim2.SetTrigger("Jumping");
-            rb.AddForce(Vector3.up * jumpForce);
+            if(transform.position.y > 2){
+                rb.AddForce(Vector3.up * jumpForce/2);
+            } else {
+                rb.AddForce(Vector3.up * jumpForce);
+            }
         }
     }
 

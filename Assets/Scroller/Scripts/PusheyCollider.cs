@@ -28,7 +28,9 @@ public class PusheyCollider : MonoBehaviour
             rb.isKinematic = true;
             if(rb.isKinematic == true){
                 other.GetComponent<SpriteRenderer>().color = Color.green;
-                Torch.SetActive(true);
+                if(Torch != null){
+                    Torch.SetActive(true);
+                }
                 if(Wall != null){
                     Color tmp = Wall.GetComponent<SpriteRenderer>().color;
                     tmp.a = tmp.a * 0.9f;

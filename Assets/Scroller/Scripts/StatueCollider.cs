@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
-
+using UnityEngine.SceneManagement;
 public class StatueCollider : MonoBehaviour
 {
     private PhotonView photonView;
@@ -70,6 +70,11 @@ void OnCollisionEnter(Collision hit)
         GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX |RigidbodyConstraints.FreezePositionY | 
         RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
      }
+
+     if(SceneManager.GetActiveScene().buildIndex == 5 && hit.gameObject.tag == "Player"){
+         GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
+     }
+     
      
     // If the object we hit is Mei Lien
     /*

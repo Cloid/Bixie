@@ -208,33 +208,35 @@ public class OptionsInput : MonoBehaviour
             }
 
 
+            Color colDeselected = new Color(0.270588f, 0.454902f, 0.525490f, 1.0f);
+            Color colSelected   = new Color(1.0f, 0.109804f, 0.0f, 1.0f);
 
             if (tracker == 0)
             {
-                Music.GetComponent<Text>().color = Color.red;
-                Sound.GetComponent<Text>().color = Color.black;
-                Credits.GetComponent<Text>().color = Color.black;
-                Txt.GetComponent<Text>().color = Color.black;
-                controls_txt.GetComponent<Text>().color = Color.black;
+                Music.GetComponent<Text>().color = colSelected;
+                Sound.GetComponent<Text>().color = colDeselected;
+                Credits.GetComponent<Text>().color = colDeselected;
+                Txt.GetComponent<Text>().color = colDeselected;
+                controls_txt.GetComponent<Text>().color = colDeselected;
                 //EventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(Music_Slider);
                 Music_Slider.Select();
             }
             else if (tracker == 1)
             {
-                Music.GetComponent<Text>().color = Color.black;
-                Sound.GetComponent<Text>().color = Color.red;
-                Credits.GetComponent<Text>().color = Color.black;
-                Txt.GetComponent<Text>().color = Color.black;
-                controls_txt.GetComponent<Text>().color = Color.black;
+                Music.GetComponent<Text>().color = colDeselected;
+                Sound.GetComponent<Text>().color = colSelected;
+                Credits.GetComponent<Text>().color = colDeselected;
+                Txt.GetComponent<Text>().color = colDeselected;
+                controls_txt.GetComponent<Text>().color = colDeselected;
                 Sound_Slider.Select();
             }
             else if (tracker == 2)
             {
-                Music.GetComponent<Text>().color = Color.black;
-                Sound.GetComponent<Text>().color = Color.black;
-                Txt.GetComponent<Text>().color = Color.red;
-                Credits.GetComponent<Text>().color = Color.black;
-                controls_txt.GetComponent<Text>().color = Color.black;
+                Music.GetComponent<Text>().color = colDeselected;
+                Sound.GetComponent<Text>().color = colDeselected;
+                Txt.GetComponent<Text>().color = colSelected;
+                Credits.GetComponent<Text>().color = colDeselected;
+                controls_txt.GetComponent<Text>().color = colDeselected;
                 //EventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(null);
                 tmpNull.Select();
 
@@ -276,11 +278,11 @@ public class OptionsInput : MonoBehaviour
             }
             else if (tracker == 3)
             {
-                Music.GetComponent<Text>().color = Color.black;
-                Sound.GetComponent<Text>().color = Color.black;
-                Credits.GetComponent<Text>().color = Color.red;
-                Txt.GetComponent<Text>().color = Color.black;
-                controls_txt.GetComponent<Text>().color = Color.black;
+                Music.GetComponent<Text>().color = colDeselected;
+                Sound.GetComponent<Text>().color = colDeselected;
+                Credits.GetComponent<Text>().color = colSelected;
+                Txt.GetComponent<Text>().color = colDeselected;
+                controls_txt.GetComponent<Text>().color = colDeselected;
                 //EventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(null);
                 tmpNull.Select();
                 if (gp == null)
@@ -307,11 +309,11 @@ public class OptionsInput : MonoBehaviour
             }
             else if (tracker == 4)
             {
-                Music.GetComponent<Text>().color = Color.black;
-                Sound.GetComponent<Text>().color = Color.black;
-                Credits.GetComponent<Text>().color = Color.black;
-                Txt.GetComponent<Text>().color = Color.black;
-                controls_txt.GetComponent<Text>().color = Color.red;
+                Music.GetComponent<Text>().color = colDeselected;
+                Sound.GetComponent<Text>().color = colDeselected;
+                Credits.GetComponent<Text>().color = colDeselected;
+                Txt.GetComponent<Text>().color = colDeselected;
+                controls_txt.GetComponent<Text>().color = colSelected;
                 tmpNull.Select();
 
                 if (gp == null)

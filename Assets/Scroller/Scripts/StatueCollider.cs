@@ -10,6 +10,8 @@ public class StatueCollider : MonoBehaviour
     // event insttance variable for fmod
     private static FMOD.Studio.EventInstance stone_sound;
     private Vector3 xPush;
+    private SpriteRenderer currSprite;
+
     
     /*
     // Start is called before the first frame update
@@ -25,6 +27,9 @@ public class StatueCollider : MonoBehaviour
     }*/
 private void Start() {
     photonView = GetComponent<PhotonView>();
+    currSprite = GetComponent<SpriteRenderer>();
+
+    //currSprite.color = Color.green;
     //xPush = new Vector3(4,2,-2);
     //Invoke("fuckMe", 5.0f);
     //photonView.TransferOwnership(PhotonNetwork.CurrentRoom.GetPlayer(2));
@@ -89,8 +94,13 @@ void OnCollisionEnter(Collision hit)
      }*/
 
      if(hit.gameObject.tag == "StatueWall"){
-            Debug.Log("Hello!!!!");
+            //Debug.Log("Hello!!!!");
+            //GetComponent<Renderer>().material.color = Color.green;
+
+                        //Debug.Log("I ran");
+
             GetComponent<Rigidbody>().isKinematic  = true;
+            //GetComponent<SpriteRenderer>().color = Color.black;
         }
 
  }

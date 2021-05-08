@@ -17,6 +17,12 @@ public class PusheyCollider : MonoBehaviour
             FMODUnity.RuntimeManager.PlayOneShot("event:/Sounds/Stone_Pushed", GetComponent<Transform>().position);
 
             rb = other.gameObject.GetComponent<Rigidbody>();
+
+            // snap statue onto base
+            var statuePos = other.gameObject.GetComponent<Transform>().position;
+            statuePos.x = transform.position.x;
+            other.gameObject.GetComponent<Transform>().position = statuePos;
+
             rb.isKinematic = true;
             if(rb.isKinematic == true){
                 Debug.Log("its works");

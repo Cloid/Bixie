@@ -5,6 +5,7 @@ using UnityEngine;
 public class JumpFix : MonoBehaviour
 {
     public GameObject GroundCheck;
+    public MeshRenderer MeiShadow;
     public Vector3 ogPos;
     // Start is called before the first frame update
     void Start()
@@ -17,6 +18,7 @@ public class JumpFix : MonoBehaviour
         if(other.gameObject.name == "Mei Lien"){
             Debug.Log("Test");
             GroundCheck.transform.position = ogPos;
+            MeiShadow.enabled = true;
         }
     }
 }

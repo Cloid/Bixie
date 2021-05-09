@@ -41,8 +41,11 @@ public class TorchControllerSS : MonoBehaviour
     {
         if (isLit == false) {
             print("Lantern lit!");
+            if(Test!=null){
             Test.StopAllBlocks();
             Test.ExecuteBlock("blah");
+            }
+
             sprite.sprite = litSprite;
             isLit = true;
 

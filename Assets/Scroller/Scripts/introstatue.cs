@@ -15,4 +15,10 @@ public class introstatue : MonoBehaviour
             FMODUnity.RuntimeManager.PlayOneShot("event:/Sounds/Lantern_Spawn", GetComponent<Transform>().position);
         }   
     }
+
+    private void OnCollisionEnter(Collision other) {
+        if(other.gameObject.tag == "Enemy"){
+            Physics.IgnoreCollision(GetComponent<Collider>(), other.collider);
+        }
+    }
 }

@@ -16,9 +16,4 @@ public class introstatue : MonoBehaviour
         }   
     }
 
-    private void OnCollisionEnter(Collision other) {
-        if(other.gameObject.tag == "Enemy"){
-            Physics.IgnoreCollision(GetComponent<Collider>(), other.collider);
-        }
-    }
 }

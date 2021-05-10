@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Fungus;
 
 public class TorchControllerSS : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class TorchControllerSS : MonoBehaviour
     public Sprite litSprite;
     public bool isLit;
     public GameObject EnemySpawn;
+
+    public Flowchart Test;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +41,11 @@ public class TorchControllerSS : MonoBehaviour
     {
         if (isLit == false) {
             print("Lantern lit!");
+            if(Test!=null){
+            Test.StopAllBlocks();
+            Test.ExecuteBlock("blah");
+            }
+
             sprite.sprite = litSprite;
             isLit = true;
 

@@ -6,6 +6,7 @@ public class PlatformCollider : MonoBehaviour
 {
     public GameObject Mei;
     public GameObject GroundCheck;
+    public MeshRenderer MeiShadow;
     private BoxCollider collider;
     private Vector3 ogPos;
     private bool platHeight;
@@ -35,12 +36,23 @@ public class PlatformCollider : MonoBehaviour
 
         // }
     }
+    
+    private void OnCollisionEnter(Collision other) {
+        if(other.gameObject.tag == "Player2"){
+            //GroundCheck.GetComponent<SpriteRenderer>().color = new Color(1f,1f,1f,0f);
+            MeiShadow.enabled = false;
+        }
+    }
 
     private void OnCollisionStay(Collision other) {
         //Debug.Log("Tdfgdf");
+        if(other.gameObject.tag == "Player2"){
+        MeiShadow.enabled = false;
+        //GroundCheck.GetComponent<SpriteRenderer>().color = new Color(1f,1f,1f,0f);
         Vector3 pos = GroundCheck.transform.position;
         pos.y = -4;
         GroundCheck.transform.position = pos;
+        }
     }
 
     private void OnCollisionExit(Collision other) {

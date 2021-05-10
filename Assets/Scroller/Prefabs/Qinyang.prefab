@@ -461,6 +461,7 @@ MonoBehaviour:
   damage: 1
   attackState: 
   attackDirection: 0
+  photonView: {fileID: 0}
 --- !u!1001 &7563454168485710746
 PrefabInstance:
   m_ObjectHideFlags: 0

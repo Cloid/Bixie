@@ -15,4 +15,5 @@ public class introstatue : MonoBehaviour
             FMODUnity.RuntimeManager.PlayOneShot("event:/Sounds/Lantern_Spawn", GetComponent<Transform>().position);
         }   
     }
+
 }

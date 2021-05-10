@@ -18,7 +18,6 @@ public class Attack : MonoBehaviour {
 	
 	private void OnTriggerEnter(Collider other)
 	{
-		if(photonView.IsMine){
 		Enemy enemy = other.GetComponent<Enemy>();
 		Player player = other.GetComponent<Player>();
 		Player2 player2 = other.GetComponent<Player2>();
@@ -50,5 +49,5 @@ public class Attack : MonoBehaviour {
 		}
 		}
 
-	}
+	
 }

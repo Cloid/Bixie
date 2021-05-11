@@ -70,12 +70,7 @@ void OnCollisionEnter(Collision hit)
         GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX |RigidbodyConstraints.FreezePositionY | 
         RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
      }
-
-     if(SceneManager.GetActiveScene().buildIndex == 5 && hit.gameObject.tag == "Player"){
-         GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
-     }
-     
-     
+          
     // If the object we hit is Mei Lien
     /*
      if (hit.gameObject.tag == "Player2")

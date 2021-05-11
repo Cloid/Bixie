@@ -277,6 +277,7 @@ MonoBehaviour:
   litSprite: {fileID: 21300000, guid: 13659db861d6d2677b996192279abced, type: 3}
   isLit: 0
   EnemySpawn: {fileID: 178280465}
+  Test: {fileID: 0}
 --- !u!212 &65357628
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -896,6 +897,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3416ef8d35040fe46960d79252dbcd7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Pushey: {fileID: 1107303153}
+  Statue: {fileID: 101386397}
 --- !u!1 &164648966
 GameObject:
   m_ObjectHideFlags: 0
@@ -1691,6 +1694,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3416ef8d35040fe46960d79252dbcd7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Pushey: {fileID: 0}
+  Statue: {fileID: 0}
 --- !u!65 &333047979
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4787,6 +4792,7 @@ MonoBehaviour:
   litSprite: {fileID: 21300000, guid: 13659db861d6d2677b996192279abced, type: 3}
   isLit: 0
   EnemySpawn: {fileID: 0}
+  Test: {fileID: 0}
 --- !u!1 &1224293509
 GameObject:
   m_ObjectHideFlags: 0
@@ -11740,6 +11746,7 @@ MonoBehaviour:
   litSprite: {fileID: 21300000, guid: 13659db861d6d2677b996192279abced, type: 3}
   isLit: 0
   EnemySpawn: {fileID: 1177635044}
+  Test: {fileID: 0}
 --- !u!212 &2121744998
 SpriteRenderer:
   m_ObjectHideFlags: 0

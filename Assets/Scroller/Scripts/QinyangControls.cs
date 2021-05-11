@@ -280,7 +280,7 @@ public class @QinyangControls : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""1c4d3e98-339c-4d84-8423-ec6b798e9d64"",
-                    ""path"": ""<Keyboard>/j"",
+                    ""path"": ""<Keyboard>/i"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -291,7 +291,7 @@ public class @QinyangControls : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""98e6b3c8-5453-4152-aa98-4e3ca9a32914"",
-                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

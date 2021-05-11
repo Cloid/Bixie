@@ -230,30 +230,30 @@ public class PlayerInputHandler : MonoBehaviour
 
     // onJump function 
     // Allows players to call their interact function through callback context from input device
-    public void onInteract(CallbackContext context)
-    {
-        if (PhotonNetwork.OfflineMode || photonView.IsMine)
-        {
-            if (player1 != null && player2 != null)
-            {
-                if (index == 0)
-                {
-                    if (player1.interactObj != null)
-                    {
-                        player1.Interact(player1.interactObj);
-                    }
+    // public void onInteract(CallbackContext context)
+    // {
+    //     if (PhotonNetwork.OfflineMode || photonView.IsMine)
+    //     {
+    //         if (player1 != null && player2 != null)
+    //         {
+    //             if (index == 0)
+    //             {
+    //                 if (player1.interactObj != null)
+    //                 {
+    //                     player1.Interact(player1.interactObj);
+    //                 }
 
-                }
-                else
-                {
+    //             }
+    //             else
+    //             {
 
-                    if (player2.interactObj != null)
-                    {
-                        player2.Interact(player2.interactObj);
-                    }
-                }
-            }
-        }
-    }
+    //                 if (player2.interactObj != null)
+    //                 {
+    //                     player2.Interact(player2.interactObj);
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
 
 }

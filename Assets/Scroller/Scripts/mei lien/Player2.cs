@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using Photon.Pun;
 public class Player2 : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class Player2 : MonoBehaviour
     public Collider interactObj;
     public AudioClip punchSound, collisionSound, healthItem;
     public string jumpSound, damageSound;
+    public bool isHit = false;
 
     // Private variables
     private bool onGround2;
@@ -24,6 +26,7 @@ public class Player2 : MonoBehaviour
     private float torchDistance;
     private float attackTime = 0f;
     private float heavyAttackTime = 0f;
+    private QinyangControls controls;
 
     // GameObjects
     private Player player1;
@@ -49,6 +52,9 @@ public class Player2 : MonoBehaviour
         anim2 = GetComponent<Animator>();
         torch = GameObject.FindGameObjectWithTag("Torch");
         currAudioSource = GetComponent<AudioSource>();
+
+        // controls = new QinyangControls();
+        // controls.Gameplay.Interact.performed += 
     }
     // Start is called before the first frame update
     void Start()
@@ -129,9 +135,9 @@ public class Player2 : MonoBehaviour
 				Mathf.Clamp(rb.position.z, minHeight, maxHeight));
 
             // Torch Interaction
-            //Vector3 torchPosition = torch.transform.position - transform.position;
-           // torchDistance = torchPosition.x;
-           // torchControl = torch.GetComponent<TorchControllerSS>();
+            // Vector3 torchPosition = torch.transform.position - transform.position;
+            // torchDistance = torchPosition.x;
+            // torchControl = torch.GetComponent<TorchControllerSS>();
         }
     }
 
@@ -269,33 +275,32 @@ public class Player2 : MonoBehaviour
     }
 
     // Player 2's Interact Function
-    public void Interact(Collider other)
-    {
-        if (other.CompareTag("Health Item"))
-        {
-            Destroy(other.gameObject);
-            interactObj = null;
-            anim2.SetTrigger("Catching");
-            PlaySong(healthItem);
-            player1.currentHealth = player1.maxHealth;
-        }
+    // public void Interact(Collider other)
+    // {
+    //     if (other.CompareTag("Health Item"))
+    //     {
+    //         Destroy(other.gameObject);
+    //         interactObj = null;
+    //         anim2.SetTrigger("Catching");
+    //         PlaySong(healthItem);
+    //         player1.currentHealth = player1.maxHealth;
+    //     }
 
-        // BUGGED CODE meilien's interaction with the lantern.
-        /*
-        if (other.CompareTag("Torch"))
-            print("here");
-        {
-            if (torchDistance <= 1.5f && !torchControl.isLit)
-            {
-                print("Lighting lantern!");
-                torchControl.lightLantern();
-            }
-            else if (torchDistance <= 1.5f && torchControl.isLit)
-            {
-                torchControl.darkLantern();
-            }
-        } */
-    }
+        
+        
+    //     if (other.CompareTag("Torch"))
+    //     {
+    //         if (torchDistance <= 1.5f && !torchControl.isLit)
+    //         {
+    //             print("Lighting lantern!");
+    //             torchControl.lightLantern();
+    //         }
+    //         else if (torchDistance <= 1.5f && torchControl.isLit)
+    //         {
+    //             torchControl.darkLantern();
+    //         }
+    //     }
+    // }
 
     // Flip function for flipping sprite when facing in a direction
     [PunRPC]
@@ -313,10 +318,12 @@ public class Player2 : MonoBehaviour
     {
         if (!isDead2 && onGround2)
         {
+            isHit = true;
             player1.currentHealth-= damage;
             anim2.SetTrigger("HitDamage");
 
             PlaySound(damageSound, "Damage", (int)damage);
+            StartCoroutine(setHit());
 
             if (player1.currentHealth <= 0)
             {
@@ -324,6 +331,12 @@ public class Player2 : MonoBehaviour
                 playerDying();
             }
         }
+    }
+
+    IEnumerator setHit()
+    {
+        yield return new WaitForSeconds(0.5f);
+        isHit = false;
     }
 
     // Helper function -> player dies and respawns if they reach 0 health

@@ -12897,10 +12897,10 @@ GameObject:
   - component: {fileID: 1948301808}
   - component: {fileID: 1948301807}
   - component: {fileID: 1948301806}
-  - component: {fileID: 1948301767}
   - component: {fileID: 1948301794}
   - component: {fileID: 1948301793}
   - component: {fileID: 1948301792}
+  - component: {fileID: 1948301767}
   m_Layer: 0
   m_Name: VN Controller
   m_TagString: Untagged
@@ -14833,7 +14833,6 @@ MonoBehaviour:
   - {fileID: 1948301808}
   - {fileID: 1948301807}
   - {fileID: 1948301806}
-  - {fileID: 1948301767}
   suppressAllAutoSelections: 0
 --- !u!114 &1948301763
 MonoBehaviour:
@@ -14919,11 +14918,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 130
+  itemId: 134
   indentLevel: 0
-  storyText: Nevermind. {w=2}
+  storyText: I am protecting you. {w=2}
   description: 
-  character: {fileID: 164648967}
+  character: {fileID: 1847023012}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -15041,8 +15040,8 @@ MonoBehaviour:
   eventHandler: {fileID: 0}
   commandList:
   - {fileID: 1948301774}
-  - {fileID: 1948301775}
   - {fileID: 1948301776}
+  - {fileID: 1948301775}
   suppressAllAutoSelections: 0
 --- !u!114 &1948301774
 MonoBehaviour:
@@ -15073,10 +15072,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 82
   indentLevel: 0
-  storyText: Light the torch so the monsters stop! {w=2}
+  storyText: Understood, I will clear a path. {w=2}
   description: 
   character: {fileID: 1847023012}
-  portrait: {fileID: 21300000, guid: 5edcb3d181c1e4a46b3d084f241b22c3, type: 3}
+  portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -15100,10 +15099,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 81
   indentLevel: 0
-  storyText: Trying to! Protect me! {w=2}
+  storyText: I need to reach the lanter in order to stop the monsters! {w=2}
   description: 
   character: {fileID: 164648967}
-  portrait: {fileID: 21300000, guid: f9addab4ffd8e5c438a925a6b1bfe1b4, type: 3}
+  portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -15531,7 +15530,7 @@ MonoBehaviour:
   showCount: 1
   extendPrevious: 0
   fadeWhenDone: 1
-  waitForClick: 1
+  waitForClick: 0
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
@@ -15558,7 +15557,7 @@ MonoBehaviour:
   showCount: 1
   extendPrevious: 0
   fadeWhenDone: 1
-  waitForClick: 1
+  waitForClick: 0
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
@@ -15585,7 +15584,7 @@ MonoBehaviour:
   showCount: 1
   extendPrevious: 0
   fadeWhenDone: 1
-  waitForClick: 1
+  waitForClick: 0
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
@@ -15612,7 +15611,7 @@ MonoBehaviour:
   showCount: 1
   extendPrevious: 0
   fadeWhenDone: 1
-  waitForClick: 1
+  waitForClick: 0
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
@@ -15686,8 +15685,9 @@ MonoBehaviour:
   eventHandler: {fileID: 0}
   commandList:
   - {fileID: 1948301799}
-  - {fileID: 1948301800}
   - {fileID: 1948301801}
+  - {fileID: 1948301767}
+  - {fileID: 1948301800}
   suppressAllAutoSelections: 0
 --- !u!114 &1948301799
 MonoBehaviour:
@@ -15718,7 +15718,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 109
   indentLevel: 0
-  storyText: "I\u2019ll handle the statues, don\u2019t worry about it! {w=2}"
+  storyText: "Ok, I\u2019m counting on you! {w=2}"
   description: 
   character: {fileID: 164648967}
   portrait: {fileID: 0}
@@ -15745,10 +15745,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 110
   indentLevel: 0
-  storyText: ...Ok? {w=2}
+  storyText: Do not be frightened, {w=1}
   description: 
   character: {fileID: 1847023012}
-  portrait: {fileID: 21300000, guid: 5edcb3d181c1e4a46b3d084f241b22c3, type: 3}
+  portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -15787,7 +15787,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 115
   indentLevel: 0
-  storyText: Stand back, Princess. I will handle this. {w=2}
+  storyText: Monsters. Stand back, Princess. I will handle this. {w=2}
   description: 
   character: {fileID: 1847023012}
   portrait: {fileID: 0}
@@ -15871,7 +15871,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 129
   indentLevel: 0
-  storyText: "I know, it\u2019s just I- {w=2}"
+  storyText: "Yes...but I\u2019ve never actually had to do it before. {w=2}"
   description: 
   character: {fileID: 164648967}
   portrait: {fileID: 0}
@@ -15898,7 +15898,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 128
   indentLevel: 0
-  storyText: Yes, it is light and they are shadow. {w=2}
+  storyText: "Isn\u2019t clearing away the shadow your duty? {w=2}"
   description: 
   character: {fileID: 1847023012}
   portrait: {fileID: 0}
@@ -15952,7 +15952,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 126
   indentLevel: 0
-  storyText: Wow... {w=2}
+  storyText: Wow... {w=1}
   description: 
   character: {fileID: 164648967}
   portrait: {fileID: 0}

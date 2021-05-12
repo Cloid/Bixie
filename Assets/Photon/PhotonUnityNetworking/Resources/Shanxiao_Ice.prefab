@@ -112,7 +112,7 @@ MonoBehaviour:
   damageTime: 0.5
   maxHealth: 2
   attackRate: 4
-  enemyName: OXHead
+  enemyName: IceShanxiao
   enemyImage: {fileID: -2089972969577747650, guid: 7a66e9a708a22d24081204ae4e7b2831, type: 3}
   collisionSound: {fileID: 8300000, guid: bd57b795d021da74ba15f266af9cf7e9, type: 3}
   damageSound: event:/Sounds/Monster_Damage

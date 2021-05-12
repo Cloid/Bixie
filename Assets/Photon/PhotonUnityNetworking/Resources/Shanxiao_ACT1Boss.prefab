@@ -347,7 +347,7 @@ MonoBehaviour:
   damageTime: 0.2
   maxHealth: 25
   attackRate: 5
-  enemyName: 
+  enemyName: ACT1Boss
   enemyImage: {fileID: 0}
   collisionSound: {fileID: 0}
   damageSound: 

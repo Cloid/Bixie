@@ -18042,6 +18042,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2034082304}
     - target: {fileID: 6217874855245806973, guid: fd5c0beb4941b4670b65befa066467e9, type: 3}
+      propertyPath: enemyName
+      value: ACT1Boss
+      objectReference: {fileID: 0}
+    - target: {fileID: 6217874855245806973, guid: fd5c0beb4941b4670b65befa066467e9, type: 3}
       propertyPath: maxBoomerangTime
       value: 20
       objectReference: {fileID: 0}

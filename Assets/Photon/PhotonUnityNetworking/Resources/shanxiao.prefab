@@ -112,7 +112,7 @@ MonoBehaviour:
   damageTime: 0.5
   maxHealth: 2
   attackRate: 4
-  enemyName: OXhead
+  enemyName: NormalShanxiao
   enemyImage: {fileID: -6132581351020953739, guid: fcf6b5b151e6976418be64f140c447c3, type: 3}
   collisionSound: {fileID: 8300000, guid: bd57b795d021da74ba15f266af9cf7e9, type: 3}
   damageSound: event:/Sounds/Monster_Damage

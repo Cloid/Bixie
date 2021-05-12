@@ -216,6 +216,7 @@ public class Enemy : MonoBehaviour {
 			rb.velocity = new Vector3(hForce * currentSpeed, 0, zForce * currentSpeed);
 
 			anim.SetFloat("Speed", Mathf.Abs(currentSpeed));
+			print(currentSpeed);
 
 			if(Mathf.Abs(targetDitance.x) < 1.5f && Mathf.Abs(targetDitance.z) < 1.5f && Time.time > nextAttack)
 			{
@@ -239,9 +240,12 @@ public class Enemy : MonoBehaviour {
 		// Debug.Log("Attack Tag: "+ attackTag);
 		if (!isDead)
 		{
-			damaged = true;
-			currentHealth -= damage;
-			anim.SetTrigger("HitDamage");
+			if (!(enemyName.Equals("IceShanxiao")) || (enemyName.Equals("IceShanxiao") && rb.isKinematic))
+			{
+				damaged = true;
+				currentHealth -= damage;
+				anim.SetTrigger("HitDamage");
+			}
 			// PlaySound(damageSound, "Damage", damage);
 			// FindObjectOfType<UIManager>().UpdateEnemyUI(maxHealth, currentHealth, enemyName, enemyImage);
 			// Enemies get an effect depending on attackTag and stateTag

@@ -287,7 +287,7 @@ public class Enemy : MonoBehaviour {
 	IEnumerator EffectTime(float numSecs, string effectType)
     {
 		// Implementation of freeze effect
-        if (effectType.Equals("IceBall"))
+        if (effectType.Equals("IceBall") && !(enemyName.Equals("ACT1Boss")))
         {
 			rb.isKinematic = true;
 			currSprite.color = new Color(0, 134, 240);

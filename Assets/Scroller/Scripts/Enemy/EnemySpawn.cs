@@ -48,7 +48,7 @@ public class EnemySpawn : MonoBehaviour {
 		// randomly gen enemy types
 		//Instantiate(enemy[Random.Range(0, enemy.Length)], spawnPosition, Quaternion.identity);
 		if(PhotonNetwork.IsMasterClient){
-			PhotonNetwork.Instantiate(enemy[0].gameObject.name, spawnPosition, Quaternion.identity);
+				PhotonNetwork.Instantiate(enemy[Random.Range(0,enemy.Length)].gameObject.name, spawnPosition, Quaternion.identity);
 		}
 		currentEnemies++;
 		if(currentEnemies < numberOfEnemies)

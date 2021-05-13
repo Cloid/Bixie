@@ -22,7 +22,13 @@ public class GravityWall : MonoBehaviour
         var statuePos = other.gameObject.GetComponent<Transform>().position;  
         statuePos.y = Pushey.gameObject.transform.position.y;
         statuePos.z = Pushey.gameObject.transform.position.z;
-        statuePos.x = Pushey.gameObject.transform.position.x-5;
+        if(Pushey.gameObject.name == "RoofWall"){
+            statuePos.x = Pushey.gameObject.transform.position.x-1;
+        } else if(Pushey.gameObject.name == "RoofWall2"){
+        statuePos.x = Pushey.gameObject.transform.position.x+1;
+        }else{
+         statuePos.x = Pushey.gameObject.transform.position.x-5;
+        }
         other.gameObject.GetComponent<Transform>().position = statuePos;                    
         Rigidbody rb = other.GetComponent<Rigidbody>();
         rb.constraints = RigidbodyConstraints.FreezePositionX | 

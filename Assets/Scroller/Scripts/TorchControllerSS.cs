@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Fungus;
+using Photon.Pun;
 
 public class TorchControllerSS : MonoBehaviour
 {
@@ -27,12 +28,14 @@ public class TorchControllerSS : MonoBehaviour
     private GameObject mei;
     private Player2 meiControl;
     private bool isHit;
+    private PhotonView photonView;
     // Start is called before the first frame update
 
     void Awake() {
+        photonView = GetComponent<PhotonView>();
         controls = new QinyangControls();
-        controls.Gameplay.Interact.performed += ctx => lantern();
-        controls.Gameplay.Interact.canceled += ctx => disableLantren();
+        controls.Gameplay.Interact.performed += ctx => photonView.RPC("lantern",RpcTarget.All);//lantern();
+        controls.Gameplay.Interact.canceled += ctx => photonView.RPC("disableLantren",RpcTarget.All);//disableLantren();
         
         // controls.Gameplay.Interact.performed += ctx => holding = true;
         // controls.Gameplay.Interact.canceled += ctx => holding = false;
@@ -75,12 +78,14 @@ public class TorchControllerSS : MonoBehaviour
     // }
 
     // Lights lantern
+    [PunRPC]
     void lantern()
     {
         print("started ritual");
         lastRoutine = StartCoroutine(lightLantern());
     }
 
+    [PunRPC]
     void disableLantren()
     {
         print("canceled ritual");

@@ -280,7 +280,7 @@ public class @QinyangControls : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""1c4d3e98-339c-4d84-8423-ec6b798e9d64"",
-                    ""path"": ""<Keyboard>/i"",
+                    ""path"": ""<Keyboard>/l"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -291,7 +291,7 @@ public class @QinyangControls : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""98e6b3c8-5453-4152-aa98-4e3ca9a32914"",
-                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -302,7 +302,7 @@ public class @QinyangControls : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""cd9aaacb-73a2-410b-bde9-d152960920c2"",
-                    ""path"": ""<Keyboard>/l"",
+                    ""path"": ""<Keyboard>/p"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -313,7 +313,7 @@ public class @QinyangControls : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""151f4133-6432-47cf-b5b2-a66ffcd4283a"",
-                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

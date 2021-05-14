@@ -216,7 +216,6 @@ public class Enemy : MonoBehaviour {
 			rb.velocity = new Vector3(hForce * currentSpeed, 0, zForce * currentSpeed);
 
 			anim.SetFloat("Speed", Mathf.Abs(currentSpeed));
-			print(currentSpeed);
 
 			if(Mathf.Abs(targetDitance.x) < 1.5f && Mathf.Abs(targetDitance.z) < 1.5f && Time.time > nextAttack)
 			{

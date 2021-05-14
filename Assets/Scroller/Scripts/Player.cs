@@ -40,6 +40,7 @@ public class Player : MonoBehaviour
     private bool heavyAttack = false;
     private float dashTime;
     private float startDashTime = 0.1f;
+    private float dashCooldown = 0f;
     private float heavyAttackTime = 0f;
     private AudioSource audioS;
     private Vector2 inputVector;
@@ -135,6 +136,13 @@ public class Player : MonoBehaviour
                     isDash = false;
                 }
 
+                // Player dash cooldown
+                if(dashCooldown > 0f)
+                {
+                    dashCooldown -= Time.deltaTime;
+                    //print(dashCooldown);
+                }
+
                 // Player heavy attack cooldown counter
                 if (heavyAttackTime <= 0f && !heavyAttack)
                 {
@@ -223,7 +231,7 @@ public class Player : MonoBehaviour
     public void Dash()
     {
         // If VN SayDialog is not active, then she can jump
-        if (!(VNSayDialog.activeSelf) && !isAttack)
+        if (!(VNSayDialog.activeSelf) && !isAttack && dashCooldown <= 0f)
         {
             anim.SetBool("IsDashing", true);
             Debug.Log("Player1 is doing a dash!");
@@ -236,6 +244,7 @@ public class Player : MonoBehaviour
             {
                 dashVector = Vector3.left;
             }
+            dashCooldown = 0.5f;
         }
     }
 

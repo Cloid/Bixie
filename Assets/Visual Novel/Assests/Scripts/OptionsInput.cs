@@ -77,7 +77,7 @@ public class OptionsInput : MonoBehaviour
                 }
                 else
                 {
-                    if (kb.enterKey.wasPressedThisFrame || gp.aButton.wasPressedThisFrame)
+                    if (kb.enterKey.wasPressedThisFrame || gp.aButton.wasPressedThisFrame || gp.buttonEast.wasPressedThisFrame)
                     {
                         Credits_1.SetActive(false);
                         Credits_2.SetActive(false);
@@ -98,7 +98,7 @@ public class OptionsInput : MonoBehaviour
                 }
                 else
                 {
-                    if (kb.enterKey.wasPressedThisFrame || gp.aButton.wasPressedThisFrame)
+                    if (kb.enterKey.wasPressedThisFrame || gp.aButton.wasPressedThisFrame || gp.buttonEast.wasPressedThisFrame)
                     {
                         Credits_1.SetActive(false);
                         Credits_2.SetActive(true);
@@ -122,7 +122,7 @@ public class OptionsInput : MonoBehaviour
             }
             else
             {
-                if (kb.enterKey.wasPressedThisFrame || gp.aButton.wasPressedThisFrame)
+                if (kb.enterKey.wasPressedThisFrame || gp.aButton.wasPressedThisFrame || gp.buttonEast.wasPressedThisFrame)
                 {
                     controls.SetActive(false);
                     OptionsUI.SetActive(true);
@@ -257,7 +257,7 @@ public class OptionsInput : MonoBehaviour
                 }
                 else
                 {
-                    if (kb.enterKey.wasPressedThisFrame || gp.aButton.wasPressedThisFrame)
+                    if (kb.enterKey.wasPressedThisFrame || gp.aButton.wasPressedThisFrame || gp.buttonEast.wasPressedThisFrame)
                     {
                         // if (sceneNum == 0)
                         // {
@@ -296,7 +296,7 @@ public class OptionsInput : MonoBehaviour
                 }
                 else
                 {
-                    if (kb.enterKey.wasPressedThisFrame || gp.aButton.wasPressedThisFrame)
+                    if (kb.enterKey.wasPressedThisFrame || gp.aButton.wasPressedThisFrame || gp.buttonEast.wasPressedThisFrame)
                     {
                         OptionsUI.SetActive(false);
                         Credits_1.SetActive(true);
@@ -327,7 +327,7 @@ public class OptionsInput : MonoBehaviour
                 }
                 else
                 {
-                    if (kb.enterKey.wasPressedThisFrame || gp.aButton.wasPressedThisFrame)
+                    if (kb.enterKey.wasPressedThisFrame || gp.aButton.wasPressedThisFrame || gp.buttonEast.wasPressedThisFrame)
                     {
                         OptionsUI.SetActive(false);
                         controls.SetActive(true);

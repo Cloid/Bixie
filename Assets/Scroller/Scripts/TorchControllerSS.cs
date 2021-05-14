@@ -31,12 +31,14 @@ public class TorchControllerSS : MonoBehaviour
     private PhotonView photonView;
     // Start is called before the first frame update
 
-    void Awake() {
+    void Awake()
+    {
         photonView = GetComponent<PhotonView>();
+        /*
         controls = new QinyangControls();
         controls.Gameplay.Interact.performed += ctx => photonView.RPC("lantern",RpcTarget.All);//lantern();
         controls.Gameplay.Interact.canceled += ctx => photonView.RPC("disableLantren",RpcTarget.All);//disableLantren();
-        
+        */
         // controls.Gameplay.Interact.performed += ctx => holding = true;
         // controls.Gameplay.Interact.canceled += ctx => holding = false;
         mei = GameObject.FindGameObjectWithTag("Player2");
@@ -62,13 +64,14 @@ public class TorchControllerSS : MonoBehaviour
         // print("actually lit: " + isLit);
         Vector3 torchPosition = transform.position - mei.transform.position;
         torchDistance = torchPosition.x;
-        
+
         isHit = meiControl.isHit;
         print("isHit: " + isHit);
-        if(isHit){
+        if (isHit)
+        {
             disableLantren();
         }
-        
+
     }
 
     // private void OnTriggerEnter(Collider other) {
@@ -98,17 +101,17 @@ public class TorchControllerSS : MonoBehaviour
     {
         // Offset position above object bbox (in world space)
         // float offsetPosY = transform.position.y + 1.5f;
-        
+
         // // Final position of marker above GO in world space
         // Vector3 offsetPos = new Vector3(transform.position.x, offsetPosY, transform.position.z);
-        
+
         // // Calculate *screen* position (note, not a canvas/recttransform position)
         // Vector2 canvasPos;
         // Vector2 screenPoint = Camera.main.WorldToScreenPoint(offsetPos);
-        
+
         // // Convert screen position to Canvas / RectTransform space <- leave camera null if Screen Space Overlay
         // RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRect, screenPoint, null, out canvasPos);
-        
+
         // Set
         // markerR.localPosition = canvasPos;
 
@@ -116,8 +119,9 @@ public class TorchControllerSS : MonoBehaviour
         // var pos = new Vector3(transform.position.x, transform.position.y+96f,transform.position.z);
         // // var pos = RectTransformUtility.WorldToScreenPoint(Camera.main, litBar.transform.position);
         // tempBar = Instantiate(litBar, pos, transform.rotation);
-        
-        if (isLit == false) {
+
+        if (isLit == false)
+        {
             if (Mathf.Abs(torchDistance) <= 1.5f)
             {
                 print("within the DIS");
@@ -131,9 +135,10 @@ public class TorchControllerSS : MonoBehaviour
                 yield return new WaitForSeconds(ritualTime);
                 litBar.SetActive(false);
                 print("Lantern lit!");
-                if(Test!=null){
-                Test.StopAllBlocks();
-                Test.ExecuteBlock("blah");
+                if (Test != null)
+                {
+                    Test.StopAllBlocks();
+                    Test.ExecuteBlock("blah");
                 }
 
                 sprite.sprite = litSprite;
@@ -143,27 +148,59 @@ public class TorchControllerSS : MonoBehaviour
                 FMODUnity.RuntimeManager.PlayOneShot("event:/Sounds/Lantern_Ignite", GetComponent<Transform>().position);
 
                 Destroy(bamboo);
-                if(EnemySpawn != null){
+                if (EnemySpawn != null)
+                {
                     Destroy(EnemySpawn);
                 }
             }
 
-            
+
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player2")
+        {
+            if (Test != null)
+            {
+                Test.StopAllBlocks();
+                Test.ExecuteBlock("blah");
+            }
+            sprite.sprite = litSprite;
+            isLit = true;
+
+            // Play FMOD lit lantern sound
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Sounds/Lantern_Ignite", GetComponent<Transform>().position);
+
+            Destroy(bamboo);
+            if (EnemySpawn != null)
+            {
+                Destroy(EnemySpawn);
+            }
+        }
+
+
+
+    }
+
+
     public void darkLantern()
     {
         print("Lantern dark!");
         sprite.sprite = darkSprite;
         isLit = false;
-        
+
     }
 
-    void OnEnable() {
+/*
+    void OnEnable()
+    {
         controls.Gameplay.Enable();
     }
 
-    void OnDisable() {
+    void OnDisable()
+    {
         controls.Gameplay.Disable();
-    }
+    }*/
 }

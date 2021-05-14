@@ -399,7 +399,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &65357625
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13087,20 +13087,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 715.26154, y: 461.9387}
+  scrollPos: {x: 450.78665, y: 226.6525}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
-  zoom: 0.52000046
+  zoom: 0.9100001
   scrollViewRect:
     serializedVersion: 2
     x: 0
     y: 0
     width: 0
     height: 0
-  selectedBlocks: []
-  selectedCommands:
-  - {fileID: 1948301809}
+  selectedBlocks:
+  - {fileID: 1948301810}
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
@@ -13128,7 +13128,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 71.65214
     y: 305.97626
-    width: 163.84605
+    width: 156.5934
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -13247,7 +13247,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 74.90173
     y: 509.73657
-    width: 114.615326
+    width: 109.34065
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -14379,7 +14379,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 127.44378
     y: 735.3126
-    width: 113.076866
+    width: 107.14285
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -14412,7 +14412,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 130.1879
     y: 894.3289
-    width: 139.23068
+    width: 130.21977
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -14846,7 +14846,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -235.51447
     y: -8.674149
-    width: 151.53838
+    width: 142.30768
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -15038,7 +15038,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -232.85446
     y: -51.555416
-    width: 77.69228
+    width: 75.27472
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -15198,7 +15198,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -223.08516
     y: 219.26494
-    width: 126.92301
+    width: 119.23077
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -15650,7 +15650,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -226.63388
     y: 117.85856
-    width: 105.38457
+    width: 100.549446
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -15864,7 +15864,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -226.7692
     y: 162.8648
-    width: 131.53839
+    width: 122.527466
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -16037,7 +16037,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -228.5116
     y: 76.903625
-    width: 143.84607
+    width: 135.71428
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -16187,7 +16187,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -230.30983
     y: 34.641235
-    width: 76.153824
+    width: 73.07692
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -19487,7 +19487,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1641553602763923511, guid: f8b3845adffa74442bc3229e1ea4c0c9, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8b3845adffa74442bc3229e1ea4c0c9, type: 3}

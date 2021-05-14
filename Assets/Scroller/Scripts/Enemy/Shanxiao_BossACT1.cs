@@ -14,6 +14,8 @@ public class Shanxiao_BossACT1 : Enemy
     private Rigidbody Mei;
     private Animator anim_cage;
     private GameObject tempCage;
+
+	private bool runOnce = false;
 	// private bool justSpawned = false;
 
 	// Use this for initialization
@@ -35,6 +37,15 @@ public class Shanxiao_BossACT1 : Enemy
 	// 		Invoke("SpawnCage", Random.Range(minBoomerangTime, maxBoomerangTime));
 	// 	}
     // }
+	private void Update() {
+		if(PhotonNetwork.IsMasterClient && isDead && runOnce==false){
+			runOnce = true;
+			Debug.Log("Defeated");
+			music.PlaySong(music.levelClearSong);
+			FindObjectOfType<UIManager>().UpdateDisplayMessage("Level Clear");
+			BossDefeated();
+		}
+	}
 
 	void SpawnCage()
 	{
@@ -53,16 +64,15 @@ public class Shanxiao_BossACT1 : Enemy
 
 	void BossDefeated()
 	{
-		music.PlaySong(music.levelClearSong);
-		FindObjectOfType<UIManager>().UpdateDisplayMessage("Level Clear");
 		// FindObjectOfType<ResetCameraScript>().Activate();
 		// Invoke("Playtemp", 8f);
-		// Invoke("LoadScene", 8f);
+		 Invoke("LoadScene", 6f);
 	}
 
 	void LoadScene()
 	{
-		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+		PhotonNetwork.LoadLevel("Scroller_3_1");
+		//SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 	}
 
 	void Playtemp(){

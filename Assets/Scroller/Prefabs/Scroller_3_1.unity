@@ -1339,6 +1339,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4439477707446327037, guid: 421a69a5ec6bc6543a4666e26c27e206, type: 3}
+      propertyPath: sceneViewId
+      value: 18
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 421a69a5ec6bc6543a4666e26c27e206, type: 3}
 --- !u!1 &377233994 stripped
@@ -2588,6 +2592,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Offline Input Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 1641553602763923511, guid: f8b3845adffa74442bc3229e1ea4c0c9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8b3845adffa74442bc3229e1ea4c0c9, type: 3}
 --- !u!1 &1021850081
@@ -3514,6 +3522,53 @@ MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 560290902629324803, guid: 6ff773ca803e7814aa388c661e7cfd9d, type: 3}
   m_PrefabInstance: {fileID: 2036134646669119880}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1287684787
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1287684789}
+  - component: {fileID: 1287684788}
+  m_Layer: 0
+  m_Name: StatueController1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1287684788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1287684787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86a8ff144e764e943bf9f424c7c57057, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb1: {fileID: 1343020709}
+  rb2: {fileID: 2004709747}
+  Torch: {fileID: 1606595250}
+  Lua: {fileID: 0}
+--- !u!4 &1287684789
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1287684787}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 68.50363, y: -0.034295414, z: -1.4238499}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 53
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1305574904
 GameObject:
   m_ObjectHideFlags: 0
@@ -3916,9 +3971,10 @@ GameObject:
   - component: {fileID: 1343020707}
   - component: {fileID: 1343020709}
   - component: {fileID: 1343020710}
+  - component: {fileID: 1343020711}
   m_Layer: 0
   m_Name: statue (1)
-  m_TagString: Untagged
+  m_TagString: Statue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4017,6 +4073,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.64, y: 0.64, z: 1.9940743}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1343020711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1343020706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3aeed2d242d85b2448c72104b7af5cb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1365100439
 GameObject:
   m_ObjectHideFlags: 0
@@ -5348,6 +5416,10 @@ PrefabInstance:
     - target: {fileID: 533236225706509959, guid: 421a69a5ec6bc6543a4666e26c27e206, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4439477707446327037, guid: 421a69a5ec6bc6543a4666e26c27e206, type: 3}
+      propertyPath: sceneViewId
+      value: 17
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 421a69a5ec6bc6543a4666e26c27e206, type: 3}
@@ -6725,9 +6797,10 @@ GameObject:
   - component: {fileID: 2004709745}
   - component: {fileID: 2004709747}
   - component: {fileID: 2004709748}
+  - component: {fileID: 2004709749}
   m_Layer: 0
   m_Name: statue (2)
-  m_TagString: Untagged
+  m_TagString: Statue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6826,6 +6899,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.64, y: 0.64, z: 1.9940743}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2004709749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2004709744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3aeed2d242d85b2448c72104b7af5cb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2014592034
 GameObject:
   m_ObjectHideFlags: 0

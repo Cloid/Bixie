@@ -22,6 +22,7 @@ public class Player2 : MonoBehaviour
     private bool isDead2 = false;
     private bool isFacingRight2 = false;
     private bool canAttack = false;
+    private bool canHeavyAttack = false;
     private float currentSpeed;
     private float torchDistance;
     private float attackTime = 0f;
@@ -119,9 +120,9 @@ public class Player2 : MonoBehaviour
             }
 
             // Heavy Attack Cooldown
-            if (heavyAttackTime <= 0 && !canAttack)
+            if (heavyAttackTime <= 0 && !canHeavyAttack)
             {
-                canAttack = true;
+                canHeavyAttack = true;
             }
             else
             {
@@ -166,11 +167,6 @@ public class Player2 : MonoBehaviour
 
             Projectile newProjectile = Instantiate(projectile, tempPosition, Quaternion.identity) as Projectile;
             newProjectile.GetComponent<Projectile>().projSprite("WaterWave");
-            /*GameObject newProjectile = Instantiate(projectile, tempPosition, Quaternion.identity) as GameObject;//PhotonNetwork.Instantiate("Projectile", tempPosition, Quaternion.identity) as GameObject;
-            Projectile nProj = newProjectile.GetComponent<Projectile>();
-            nProj.projTag = "WaterWave";
-            nProj.projSprite(nProj.projTag);*/
-            //Instantiate(projectile, tempPosition, Quaternion.identity) as GameObject;
             if (isFacingRight2)
             {
                 //Debug.Log("Does this run in p2");
@@ -213,12 +209,6 @@ public class Player2 : MonoBehaviour
 
             Projectile newProjectile = Instantiate(projectile, tempPosition, Quaternion.identity) as Projectile;
             newProjectile.GetComponent<Projectile>().projSprite("IceBall");
-            /*
-            GameObject newProjectile = Instantiate(projectile, tempPosition, Quaternion.identity) as GameObject;
-            Projectile nProj = newProjectile.GetComponent<Projectile>();
-            nProj.projTag = "IceBall";
-            nProj.projSprite(nProj.projTag);*/
-            //Instantiate(projectile, tempPosition, Quaternion.identity) as GameObject;
             if (isFacingRight2)
             {
                 //Debug.Log("Does this run in p2");
@@ -232,7 +222,7 @@ public class Player2 : MonoBehaviour
             FMODUnity.RuntimeManager.PlayOneShot("event:/Sounds/M_Attack", newProjectile.GetComponent<Transform>().position);
 
             heavyAttackTime = 180f;
-            canAttack = false;
+            canHeavyAttack = false;
         }
     }
 

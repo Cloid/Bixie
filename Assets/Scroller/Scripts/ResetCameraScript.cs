@@ -6,6 +6,7 @@ public class ResetCameraScript : MonoBehaviour {
 
 	public void Activate()
 	{
+		
 		GetComponent<Animator>().SetTrigger("Go");
 
 		// Go Frog Sound

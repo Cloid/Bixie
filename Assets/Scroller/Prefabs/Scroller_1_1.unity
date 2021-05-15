@@ -11079,10 +11079,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1686383465}
   - component: {fileID: 1686383470}
-  - component: {fileID: 1686383469}
   - component: {fileID: 1686383468}
   - component: {fileID: 1686383467}
   - component: {fileID: 1686383466}
+  - component: {fileID: 1686383469}
   m_Layer: 5
   m_Name: Go
   m_TagString: Untagged
@@ -11243,7 +11243,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1686383464}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -11256,7 +11256,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: cd767ec67e4fb3b4aa0a42f013fa54b9, type: 3}
+  m_Sprite: {fileID: 2810204842025339787, guid: 9f7134572219c43e1a841dff6fefd476, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -19487,7 +19487,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1641553602763923511, guid: f8b3845adffa74442bc3229e1ea4c0c9, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8b3845adffa74442bc3229e1ea4c0c9, type: 3}

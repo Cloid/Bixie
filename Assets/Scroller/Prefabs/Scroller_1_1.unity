@@ -439,11 +439,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   torch: {fileID: 65357624}
+  ritualTime: 0
   bamboo: {fileID: 1120242542}
   darkSprite: {fileID: 21300000, guid: f549a46bf7bd2db6abe4515f83fd3d96, type: 3}
   litSprite: {fileID: 21300000, guid: 13659db861d6d2677b996192279abced, type: 3}
   isLit: 0
   EnemySpawn: {fileID: 178280465}
+  litBar: {fileID: 0}
   Test: {fileID: 0}
 --- !u!212 &65357628
 SpriteRenderer:
@@ -15961,11 +15963,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   torch: {fileID: 1978935640}
+  ritualTime: 0
   bamboo: {fileID: 1005186383}
   darkSprite: {fileID: 21300000, guid: f549a46bf7bd2db6abe4515f83fd3d96, type: 3}
   litSprite: {fileID: 21300000, guid: 13659db861d6d2677b996192279abced, type: 3}
   isLit: 0
   EnemySpawn: {fileID: 0}
+  litBar: {fileID: 0}
   Test: {fileID: 1948301703}
 --- !u!212 &1978935642
 SpriteRenderer:
@@ -16881,11 +16885,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   torch: {fileID: 2121744994}
+  ritualTime: 0
   bamboo: {fileID: 1553518868}
   darkSprite: {fileID: 21300000, guid: f549a46bf7bd2db6abe4515f83fd3d96, type: 3}
   litSprite: {fileID: 21300000, guid: 13659db861d6d2677b996192279abced, type: 3}
   isLit: 0
   EnemySpawn: {fileID: 1177635044}
+  litBar: {fileID: 0}
   Test: {fileID: 0}
 --- !u!212 &2121744998
 SpriteRenderer:
@@ -17607,21 +17613,33 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1254500031976911985, guid: 96f19e68941834e37b5e48cdbad158a0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.89
+      objectReference: {fileID: 0}
+    - target: {fileID: 1554506938580083018, guid: 96f19e68941834e37b5e48cdbad158a0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1554506938580083018, guid: 96f19e68941834e37b5e48cdbad158a0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.24
+      objectReference: {fileID: 0}
     - target: {fileID: 1554506938738924640, guid: 96f19e68941834e37b5e48cdbad158a0, type: 3}
       propertyPath: m_RootOrder
       value: 44
       objectReference: {fileID: 0}
     - target: {fileID: 1554506938738924640, guid: 96f19e68941834e37b5e48cdbad158a0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.6249223
+      value: 0.54
       objectReference: {fileID: 0}
     - target: {fileID: 1554506938738924640, guid: 96f19e68941834e37b5e48cdbad158a0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.507719
+      value: -3.01
       objectReference: {fileID: 0}
     - target: {fileID: 1554506938738924640, guid: 96f19e68941834e37b5e48cdbad158a0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.1912427
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1554506938738924640, guid: 96f19e68941834e37b5e48cdbad158a0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -17654,6 +17672,14 @@ PrefabInstance:
     - target: {fileID: 1554506938738924641, guid: 96f19e68941834e37b5e48cdbad158a0, type: 3}
       propertyPath: m_Name
       value: RockSpawnPoints
+      objectReference: {fileID: 0}
+    - target: {fileID: 1554506939820355641, guid: 96f19e68941834e37b5e48cdbad158a0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 1554506939820355641, guid: 96f19e68941834e37b5e48cdbad158a0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96f19e68941834e37b5e48cdbad158a0, type: 3}
@@ -17839,7 +17865,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1641553602763923511, guid: f8b3845adffa74442bc3229e1ea4c0c9, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8b3845adffa74442bc3229e1ea4c0c9, type: 3}

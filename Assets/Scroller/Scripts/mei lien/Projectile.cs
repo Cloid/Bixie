@@ -82,13 +82,13 @@ public class Projectile : MonoBehaviour
             StatueCollider statue = other.GetComponent<StatueCollider>();
             Debug.Log(attackDir);
             statue.PushingStatue(attackDir);
-            Destroy(gameObject, 0.5f);
+            Destroy(gameObject);
         }
     }
 
     void destroyObject()
     {
-        Destroy(gameObject, 0.5f);
+        Destroy(gameObject);
     }
 }
 

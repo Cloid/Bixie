@@ -237,15 +237,12 @@ public class Enemy : MonoBehaviour {
 	{
 		// Debug.Log("Current Health: " + currentHealth);
 		// Debug.Log("Attack Tag: "+ attackTag);
-		damaged = true;
-		currentHealth -= damage;
-		anim.SetTrigger("HitDamage");
-		/*if (!(enemyName.Equals("IceShanxiao")) || (enemyName.Equals("IceShanxiao") && rb.isKinematic))
+		if (!(enemyName.Equals("IceShanxiao")) || (enemyName.Equals("IceShanxiao") && rb.isKinematic))
 		{
 			damaged = true;
 			currentHealth -= damage;
 			anim.SetTrigger("HitDamage");
-		}*/
+		}
 		// PlaySound(damageSound, "Damage", damage);
 		// FindObjectOfType<UIManager>().UpdateEnemyUI(maxHealth, currentHealth, enemyName, enemyImage);
 		// Enemies get an effect depending on attackTag and stateTag

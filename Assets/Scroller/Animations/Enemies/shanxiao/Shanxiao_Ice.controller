@@ -559,7 +559,10 @@ AnimatorStateTransition:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 
-  m_Conditions: []
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: Knockback
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 6607566154335699757}
   m_Solo: 0
@@ -1025,9 +1028,9 @@ AnimatorStateMachine:
   m_AnyStateTransitions:
   - {fileID: 8293289001385613791}
   - {fileID: -5300791644035436986}
+  - {fileID: -4926358144325709102}
   - {fileID: 8320732973556620182}
   - {fileID: 7728714817029842483}
-  - {fileID: -4926358144325709102}
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []

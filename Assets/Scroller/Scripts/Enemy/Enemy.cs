@@ -237,18 +237,19 @@ public class Enemy : MonoBehaviour {
 	{
 		// Debug.Log("Current Health: " + currentHealth);
 		// Debug.Log("Attack Tag: "+ attackTag);
-		if (!isDead)
+		damaged = true;
+		currentHealth -= damage;
+		anim.SetTrigger("HitDamage");
+		/*if (!(enemyName.Equals("IceShanxiao")) || (enemyName.Equals("IceShanxiao") && rb.isKinematic))
 		{
-			if (!(enemyName.Equals("IceShanxiao")) || (enemyName.Equals("IceShanxiao") && rb.isKinematic))
-			{
-				damaged = true;
-				currentHealth -= damage;
-				anim.SetTrigger("HitDamage");
-			}
-			// PlaySound(damageSound, "Damage", damage);
-			// FindObjectOfType<UIManager>().UpdateEnemyUI(maxHealth, currentHealth, enemyName, enemyImage);
-			// Enemies get an effect depending on attackTag and stateTag
-			switch(attackTag)
+			damaged = true;
+			currentHealth -= damage;
+			anim.SetTrigger("HitDamage");
+		}*/
+		// PlaySound(damageSound, "Damage", damage);
+		// FindObjectOfType<UIManager>().UpdateEnemyUI(maxHealth, currentHealth, enemyName, enemyImage);
+		// Enemies get an effect depending on attackTag and stateTag
+		switch (attackTag)
             {
 				case "qinyangBasicAttack":
 					newTime = Time.time;
@@ -258,12 +259,16 @@ public class Enemy : MonoBehaviour {
 					rb.AddForce(new Vector3(attackDir * 10, 0, 0), ForceMode.Impulse);
 					break;
 				case "meiLienBasicAttack":
-					if (stateTag.Equals("WaterWave")) rb.AddForce(new Vector3(attackDir * 10, 0, 0), ForceMode.Impulse);
+					if (stateTag.Equals("WaterWave"))
+					{
+						rb.AddForce(new Vector3(attackDir * 10, 0, 0), ForceMode.Impulse);
+						anim.SetTrigger("Knockback");
+					}
 					break;
 				case "meiLienHeavyAttack":
 					if (stateTag.Equals("IceBall"))
 					{
-						StartCoroutine(EffectTime(5, stateTag));
+						StartCoroutine(EffectTime(7, stateTag));
 					}
 					break;
 				default:
@@ -275,11 +280,9 @@ public class Enemy : MonoBehaviour {
 				isDead = true;
 				rb.AddRelativeForce(new Vector3(3, 5, 0), ForceMode.Impulse);
 				PlaySound(deathSound, "Damage", (int)damage);
-				DisableEnemy();
 				//Destroy(gameObject);
-				photonView.RPC("DestroyEnemy", RpcTarget.AllBuffered);
+				StartCoroutine(DestroyEnemy(0.5f));
 			}
-		}
 	}
 
 	// Helper function to determine long-standing enemy effects (freeze, burn, etc.)
@@ -289,11 +292,21 @@ public class Enemy : MonoBehaviour {
         if (effectType.Equals("IceBall") && !(enemyName.Equals("ACT1Boss")))
         {
 			rb.isKinematic = true;
-			currSprite.color = new Color(0, 134, 240);
+			//currSprite.color = new Color(0, 134, 240);
+			anim.SetBool("Frozen", true);
 			yield return new WaitForSeconds(numSecs);
 			rb.isKinematic = false;
-			currSprite.color = new Color(255, 255, 255);
+			//currSprite.color = new Color(255, 255, 255);
+			anim.SetBool("Frozen", false);
 		}
+	}
+
+	// Helper function to destroy enemy after animation runs through
+	IEnumerator DestroyEnemy(float numSecs)
+    {
+		yield return new WaitForSeconds(numSecs);
+		DisableEnemy();
+		photonView.RPC("DestroyEnemy", RpcTarget.AllBuffered);
 	}
 
 	[PunRPC]

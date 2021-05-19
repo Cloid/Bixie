@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: shanxiao Hit Damage
+  m_Name: Shanxiao Ice Death
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,13 +20,17 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 3701805000619724757, guid: fcf6b5b151e6976418be64f140c447c3, type: 3}
+      value: {fileID: 5930343131021744081, guid: 60fc1cf7bea98584a91a9b75e8a7bf10, type: 3}
+    - time: 0.083333336
+      value: {fileID: 1260929813457054058, guid: 60fc1cf7bea98584a91a9b75e8a7bf10, type: 3}
     - time: 0.16666667
-      value: {fileID: -1031307229519528589, guid: fcf6b5b151e6976418be64f140c447c3, type: 3}
+      value: {fileID: 6157396072198984085, guid: 60fc1cf7bea98584a91a9b75e8a7bf10, type: 3}
     - time: 0.25
-      value: {fileID: 134058366526631433, guid: fcf6b5b151e6976418be64f140c447c3, type: 3}
+      value: {fileID: -271065043630866535, guid: 60fc1cf7bea98584a91a9b75e8a7bf10, type: 3}
+    - time: 0.33333334
+      value: {fileID: 6314358947630237114, guid: 60fc1cf7bea98584a91a9b75e8a7bf10, type: 3}
     - time: 0.41666666
-      value: {fileID: -4067087093559110950, guid: fcf6b5b151e6976418be64f140c447c3, type: 3}
+      value: {fileID: 6654518220311819487, guid: 60fc1cf7bea98584a91a9b75e8a7bf10, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -46,10 +50,12 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 3701805000619724757, guid: fcf6b5b151e6976418be64f140c447c3, type: 3}
-    - {fileID: -1031307229519528589, guid: fcf6b5b151e6976418be64f140c447c3, type: 3}
-    - {fileID: 134058366526631433, guid: fcf6b5b151e6976418be64f140c447c3, type: 3}
-    - {fileID: -4067087093559110950, guid: fcf6b5b151e6976418be64f140c447c3, type: 3}
+    - {fileID: 5930343131021744081, guid: 60fc1cf7bea98584a91a9b75e8a7bf10, type: 3}
+    - {fileID: 1260929813457054058, guid: 60fc1cf7bea98584a91a9b75e8a7bf10, type: 3}
+    - {fileID: 6157396072198984085, guid: 60fc1cf7bea98584a91a9b75e8a7bf10, type: 3}
+    - {fileID: -271065043630866535, guid: 60fc1cf7bea98584a91a9b75e8a7bf10, type: 3}
+    - {fileID: 6314358947630237114, guid: 60fc1cf7bea98584a91a9b75e8a7bf10, type: 3}
+    - {fileID: 6654518220311819487, guid: 60fc1cf7bea98584a91a9b75e8a7bf10, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

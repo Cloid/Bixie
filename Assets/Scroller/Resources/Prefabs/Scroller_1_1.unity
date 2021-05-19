@@ -439,11 +439,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   torch: {fileID: 65357624}
+  ritualTime: 0
   bamboo: {fileID: 1120242542}
   darkSprite: {fileID: 21300000, guid: f549a46bf7bd2db6abe4515f83fd3d96, type: 3}
   litSprite: {fileID: 21300000, guid: 13659db861d6d2677b996192279abced, type: 3}
   isLit: 0
   EnemySpawn: {fileID: 178280465}
+  litBar: {fileID: 0}
   Test: {fileID: 0}
 --- !u!212 &65357628
 SpriteRenderer:
@@ -8888,14 +8890,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2701037823483506924, guid: 72f1dd2669fcf514580ef459adff4bb6, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2701037823483506924, guid: 72f1dd2669fcf514580ef459adff4bb6, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 1f1b004016d6e5d42abe690b326c7fb2, type: 2}
     - target: {fileID: 3280954224637263398, guid: 72f1dd2669fcf514580ef459adff4bb6, type: 3}
       propertyPath: m_Name
       value: Shanxiao_Ice
@@ -8904,18 +8898,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5503958009028015812, guid: 72f1dd2669fcf514580ef459adff4bb6, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6203450281519088653, guid: 72f1dd2669fcf514580ef459adff4bb6, type: 3}
-      propertyPath: enemyName
-      value: IceShanxiao
-      objectReference: {fileID: 0}
-    - target: {fileID: 6203450281519088653, guid: 72f1dd2669fcf514580ef459adff4bb6, type: 3}
-      propertyPath: enemyImage
-      value: 
-      objectReference: {fileID: -2089972969577747650, guid: 7a66e9a708a22d24081204ae4e7b2831, type: 3}
     - target: {fileID: 8767105091760730145, guid: 72f1dd2669fcf514580ef459adff4bb6, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -16157,11 +16139,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   torch: {fileID: 1978935640}
+  ritualTime: 0
   bamboo: {fileID: 1005186383}
   darkSprite: {fileID: 21300000, guid: f549a46bf7bd2db6abe4515f83fd3d96, type: 3}
   litSprite: {fileID: 21300000, guid: 13659db861d6d2677b996192279abced, type: 3}
   isLit: 0
   EnemySpawn: {fileID: 0}
+  litBar: {fileID: 0}
   Test: {fileID: 0}
 --- !u!212 &1978935642
 SpriteRenderer:
@@ -17058,11 +17042,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   torch: {fileID: 2121744994}
+  ritualTime: 0
   bamboo: {fileID: 1553518868}
   darkSprite: {fileID: 21300000, guid: f549a46bf7bd2db6abe4515f83fd3d96, type: 3}
   litSprite: {fileID: 21300000, guid: 13659db861d6d2677b996192279abced, type: 3}
   isLit: 0
   EnemySpawn: {fileID: 1177635044}
+  litBar: {fileID: 0}
   Test: {fileID: 0}
 --- !u!212 &2121744998
 SpriteRenderer:

@@ -568,6 +568,18 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: -933.8264
       objectReference: {fileID: 0}
+    - target: {fileID: 7393806713531143296, guid: 01f764bc8bee9d24d959eb9723e700cc, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7393806713531143296, guid: 01f764bc8bee9d24d959eb9723e700cc, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7393806713531143296, guid: 01f764bc8bee9d24d959eb9723e700cc, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7393806713676374160, guid: 01f764bc8bee9d24d959eb9723e700cc, type: 3}
       propertyPath: m_FontData.m_Font
       value: 

@@ -34,11 +34,13 @@ public class TorchControllerSS : MonoBehaviour
     void Awake()
     {
         photonView = GetComponent<PhotonView>();
-        /*
+        
         controls = new QinyangControls();
         controls.Gameplay.Interact.performed += ctx => photonView.RPC("lantern",RpcTarget.All);//lantern();
         controls.Gameplay.Interact.canceled += ctx => photonView.RPC("disableLantren",RpcTarget.All);//disableLantren();
-        */
+        // controls.Gameplay.Interact.performed += ctx => lantern();
+        // controls.Gameplay.Interact.canceled += ctx => disableLantren();
+        
         // controls.Gameplay.Interact.performed += ctx => holding = true;
         // controls.Gameplay.Interact.canceled += ctx => holding = false;
         mei = GameObject.FindGameObjectWithTag("Player2");
@@ -158,31 +160,31 @@ public class TorchControllerSS : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Player2")
-        {
-            if (Test != null)
-            {
-                Test.StopAllBlocks();
-                Test.ExecuteBlock("blah");
-            }
-            sprite.sprite = litSprite;
-            isLit = true;
+    // private void OnTriggerEnter(Collider other)
+    // {
+    //     if (other.tag == "Player2")
+    //     {
+    //         if (Test != null)
+    //         {
+    //             Test.StopAllBlocks();
+    //             Test.ExecuteBlock("blah");
+    //         }
+    //         sprite.sprite = litSprite;
+    //         isLit = true;
 
-            // Play FMOD lit lantern sound
-            FMODUnity.RuntimeManager.PlayOneShot("event:/Sounds/Lantern_Ignite", GetComponent<Transform>().position);
+    //         // Play FMOD lit lantern sound
+    //         FMODUnity.RuntimeManager.PlayOneShot("event:/Sounds/Lantern_Ignite", GetComponent<Transform>().position);
 
-            Destroy(bamboo);
-            if (EnemySpawn != null)
-            {
-                Destroy(EnemySpawn);
-            }
-        }
+    //         Destroy(bamboo);
+    //         if (EnemySpawn != null)
+    //         {
+    //             Destroy(EnemySpawn);
+    //         }
+    //     }
 
 
 
-    }
+    // }
 
 
     public void darkLantern()
@@ -193,7 +195,7 @@ public class TorchControllerSS : MonoBehaviour
 
     }
 
-/*
+
     void OnEnable()
     {
         controls.Gameplay.Enable();
@@ -202,5 +204,5 @@ public class TorchControllerSS : MonoBehaviour
     void OnDisable()
     {
         controls.Gameplay.Disable();
-    }*/
+    }
 }

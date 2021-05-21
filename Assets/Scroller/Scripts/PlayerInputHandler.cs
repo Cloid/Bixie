@@ -109,6 +109,7 @@ public class PlayerInputHandler : MonoBehaviour
     // Allows players to move through callback context from input device
     public void OnMove(CallbackContext context)
     {
+        //Debug.Log("Vector: " + context.ReadValue<Vector2>());
         if (PhotonNetwork.OfflineMode ||photonView.IsMine)
         {
             if (player1 != null && player2 != null)
@@ -127,6 +128,8 @@ public class PlayerInputHandler : MonoBehaviour
             {
                 cs_photonView.RPC("moveMe",RpcTarget.AllBuffered,context.ReadValue<Vector2>());
                 //cs.moveMe(context.ReadValue<Vector2>());
+            } else if(SceneManager.GetActiveScene().buildIndex == 3 && cs != null && index == 1){
+                cs_photonView.RPC("moveMe2",RpcTarget.AllBuffered,context.ReadValue<Vector2>());
             }
         }
 

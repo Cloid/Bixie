@@ -28,7 +28,9 @@ public class TorchControllerSS : MonoBehaviour
     private GameObject mei;
     private Player2 meiControl;
     private bool isHit;
+    private bool isCharging = false;
     private PhotonView photonView;
+    private Animator anim;
     // Start is called before the first frame update
 
     void Awake()
@@ -46,6 +48,9 @@ public class TorchControllerSS : MonoBehaviour
         mei = GameObject.FindGameObjectWithTag("Player2");
         meiControl = FindObjectOfType<Player2>();
         isHit = meiControl.isHit;
+
+        anim = GetComponent<Animator>();
+        
     }
     void Start()
     {
@@ -73,6 +78,7 @@ public class TorchControllerSS : MonoBehaviour
         {
             disableLantren();
         }
+        anim.SetBool("isCharging", isCharging);
 
     }
 
@@ -86,6 +92,7 @@ public class TorchControllerSS : MonoBehaviour
     [PunRPC]
     void lantern()
     {
+        
         print("started ritual");
         lastRoutine = StartCoroutine(lightLantern());
     }
@@ -93,6 +100,7 @@ public class TorchControllerSS : MonoBehaviour
     [PunRPC]
     void disableLantren()
     {
+        isCharging = false;
         print("canceled ritual");
         litBar.SetActive(false);
         // StopCoroutine(lightLantern());
@@ -127,6 +135,7 @@ public class TorchControllerSS : MonoBehaviour
             if (Mathf.Abs(torchDistance) <= 1.5f)
             {
                 print("within the DIS");
+                isCharging = true;
                 litBar.SetActive(true);
                 litBar.transform.position = new Vector3(
                         Camera.main.WorldToScreenPoint(transform.position).x,
@@ -145,6 +154,7 @@ public class TorchControllerSS : MonoBehaviour
 
                 sprite.sprite = litSprite;
                 isLit = true;
+                anim.SetTrigger("isActivated");
 
                 // Play FMOD lit lantern sound
                 FMODUnity.RuntimeManager.PlayOneShot("event:/Sounds/Lantern_Ignite", GetComponent<Transform>().position);

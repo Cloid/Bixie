@@ -47,10 +47,14 @@ MonoBehaviour:
   nameColor: {r: 0.41568628, g: 0.7529412, b: 0.6509804, a: 1}
   soundEffect: {fileID: 0}
   portraits:
-  - {fileID: 21300000, guid: 830d46ea2e8e7d3479a8053a3cd9e3da, type: 3}
+  - {fileID: 21300000, guid: f2821f8707bd20547b9c078fd9058463, type: 3}
+  - {fileID: 21300000, guid: 44317d2539c220444be1efd4e533cc02, type: 3}
+  - {fileID: 21300000, guid: 61f924eb78d32004899e18ca83003f74, type: 3}
+  - {fileID: 21300000, guid: aa8751c7f80f5d9498ec81ce409c53e6, type: 3}
+  - {fileID: 21300000, guid: cecdf6c013ade694691d14a6950aa1c6, type: 3}
   - {fileID: 21300000, guid: ce9723a00f5a19e4c88efab7e2e42dd9, type: 3}
-  - {fileID: 21300000, guid: 5816cf9e3e7578741b8983572b5add31, type: 3}
-  - {fileID: 21300000, guid: 29e14828fadfcc143bcdb811b587091b, type: 3}
+  - {fileID: 21300000, guid: 64c4cc73d23d96b408b41b3c5c86b0b1, type: 3}
+  - {fileID: 21300000, guid: ce86c4d2aebaf2944a02399454d0fc47, type: 3}
   portraitsFace: 0
   setSayDialog: {fileID: 0}
   description: Princess of Kingdom

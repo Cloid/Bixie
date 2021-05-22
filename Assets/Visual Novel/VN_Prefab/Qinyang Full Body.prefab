@@ -47,10 +47,15 @@ MonoBehaviour:
   nameColor: {r: 0.8039216, g: 0.043137256, b: 0.09411765, a: 1}
   soundEffect: {fileID: 0}
   portraits:
-  - {fileID: 21300000, guid: 5d623866a23c27549832d126e1e20ac6, type: 3}
+  - {fileID: 21300000, guid: 03c154f89d70b614c8a73faa00008adf, type: 3}
+  - {fileID: 21300000, guid: 243d99fedaa5d1d49b925a1ebdb87b4f, type: 3}
+  - {fileID: 21300000, guid: 56da1fcaca64f2940a10092c75e910ce, type: 3}
+  - {fileID: 21300000, guid: 0d10baf9e09c5d5429643331d110a2be, type: 3}
+  - {fileID: 21300000, guid: 59f10aaf449785e4ea29b87018a168ef, type: 3}
   - {fileID: 21300000, guid: ee8567dc41de5384c9b0879d4e536c06, type: 3}
-  - {fileID: 21300000, guid: 2b0f4e487f230214e8ff831d58cf7e04, type: 3}
-  - {fileID: 21300000, guid: 33c776b293cd7984daac5ff8804778d1, type: 3}
+  - {fileID: 21300000, guid: 40491ef182e11f44cae3a657e8f827fb, type: 3}
+  - {fileID: 21300000, guid: 552139aebd6afce499d72a47854971f7, type: 3}
+  - {fileID: 21300000, guid: 4dd7a3f62382485458e57a204d686b92, type: 3}
   portraitsFace: 0
   setSayDialog: {fileID: 0}
   description: Knight for Mei Lien

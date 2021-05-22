@@ -10,15 +10,8 @@ public class LoadSceneProxy : MonoBehaviour
     void Start()
     {
         cs_Script = cc_Show.GetComponent<ControlsShow>();
-        if(PhotonNetwork.IsMasterClient && cs_Script != null && cs_Script.loadVar == true){
-            Debug.Log("What now");
+        if(PhotonNetwork.IsMasterClient){
             PhotonNetwork.LoadLevel("Scroller_1_1");
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

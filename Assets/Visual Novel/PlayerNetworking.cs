@@ -58,7 +58,6 @@ public class PlayerNetworking : MonoBehaviourPunCallbacks
         Debug.Log("Test2: "+PhotonNetwork.OfflineMode);
         //Debug.Log(PhotonNetwork.CurrentRoom.GetPlayer(2));
         if(PhotonNetwork.OfflineMode == true){
-            Debug.Log("IN HERE");
             //PhotonNetwork.Instantiate("Player Input Manager", new Vector3(0,0,0), Quaternion.identity);
             PManager.SetActive(true);
             //PhotonNetwork.Instantiate("PlayerInput", new Vector3(0,0,0), Quaternion.identity);
@@ -66,11 +65,6 @@ public class PlayerNetworking : MonoBehaviourPunCallbacks
             //PhotonNetwork.Instantiate("Mei Lien", new Vector3(0,0,0), Quaternion.identity);
         }else{
         PhotonNetwork.Instantiate("PlayerInput", new Vector3(0,0,0), Quaternion.identity);
-            if(PhotonNetwork.PlayerList.Length == 2){
-                photon_p2.SetActive(true);
-            } else{
-                photon_p1.SetActive(true);
-            }
         }
         
         //if conditional for offline

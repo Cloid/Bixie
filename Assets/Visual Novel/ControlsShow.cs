@@ -28,41 +28,42 @@ public class ControlsShow : MonoBehaviour
     {
         wasd.Disable();
     }
+
+    [PunRPC]
+    public void startOnline(){
+        Debug.Log("Am here");
+        if (PhotonNetwork.IsMasterClient)
+        {
+            Debug.Log("Work?");
+            loadObject.SetActive(true);
+        }
+    }
     private void Update()
     {
         Keyboard kb = InputSystem.GetDevice<Keyboard>();
         Gamepad gp = InputSystem.GetDevice<Gamepad>();
 
-        if (gp != null && PhotonNetwork.IsMasterClient)
+        if (gp == null)
         {
 
             if (kb.enterKey.wasPressedThisFrame || kb.spaceKey.wasPressedThisFrame)
             {
-                Debug.Log("Worked");
-                loadVar = true;
+                Debug.Log("work");
+                photonView.RPC("startOnline", RpcTarget.AllBuffered);
             }
 
         }
         else
         {
-            if (PhotonNetwork.IsMasterClient && kb.enterKey.wasPressedThisFrame ||
+            if (kb.enterKey.wasPressedThisFrame ||
             kb.spaceKey.wasPressedThisFrame || gp.aButton.wasPressedThisFrame || gp.buttonEast.wasPressedThisFrame)
             {
-                                Debug.Log("Worked!!");
-
-                loadVar = true;
+                Debug.Log("work2");
+                photonView.RPC("startOnline", RpcTarget.AllBuffered);
             }
 
 
         }
-
-        if (PhotonNetwork.IsMasterClient && loadVar)
-        {
-                            Debug.Log("Worked!!!");
-
-            loadObject.SetActive(true);
-        }
-
     }
 
 }

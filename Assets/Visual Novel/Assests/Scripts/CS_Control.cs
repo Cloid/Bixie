@@ -42,7 +42,9 @@ public class CS_Control : MonoBehaviour
     public GameObject p2_ML;
     public GameObject p2_Q;
     public GameObject controlShow;
+    public GameObject continueIcon;
     private bool controlbool = false;
+    private bool lockedIn = false;
 
 
     // Start is called before the first frame update
@@ -78,8 +80,9 @@ public class CS_Control : MonoBehaviour
             //Invoke("changeText", 2f);
         }
 
-        
-        if(controlbool == true){
+
+        if (controlbool == true)
+        {
             controlShow.SetActive(true);
         }
 
@@ -88,25 +91,34 @@ public class CS_Control : MonoBehaviour
     [PunRPC]
     public void moveMe(Vector2 vector)
     {
+
+        if (controlbool == true)
+        {
+            return;
+        }
+
         //Debug.Log("before: " + p1index);
         if (vector.x < 0 && vector.x >= -1)
         {
-            if(p1index > 0){
+            if (p1index > 0)
+            {
                 p1index -= .5f;
             }
 
         }
         else if (vector.x <= 1 && vector.x > 0)
         {
-            if(p1index < 2){
+            if (p1index < 2)
+            {
                 p1index += .5f;
             }
 
         }
 
-       //Debug.Log("after: " + p1index);
+        //Debug.Log("after: " + p1index);
 
-        if(p1index == 0){
+        if (p1index == 0)
+        {
 
             p1_none.SetActive(false);
             p1_Q.SetActive(false);
@@ -114,27 +126,42 @@ public class CS_Control : MonoBehaviour
             ml_sel.SetActive(true);
             ml_on = true;
             p1_ML.SetActive(true);
-            
-        } else if(p1index == 1){
+            if (p2index == 2)
+            {
+                continueIcon.SetActive(true);
+            }
 
+        }
+        else if (p1index == 1)
+        {
+            continueIcon.SetActive(false);
             ml_sel.SetActive(false);
             q_sel.SetActive(false);
             p1_ML.SetActive(false);
             p1_Q.SetActive(false);
 
-            if(p2index==0){
-                q_on = false;  
-            } else if(p2index==1){
+            if (p2index == 0)
+            {
+                ml_sel.SetActive(true);
+                q_on = false;
+            }
+            else if (p2index == 1)
+            {
                 ml_on = false;
                 q_on = false;
-            } else if(p2index==2){
+            }
+            else if (p2index == 2)
+            {
+                q_sel.SetActive(true);
                 ml_on = false;
             }
 
 
             p1_none.SetActive(true);
 
-        } else if(p1index  == 2){
+        }
+        else if (p1index == 2)
+        {
 
             p1_none.SetActive(false);
             p1_ML.SetActive(false);
@@ -142,24 +169,37 @@ public class CS_Control : MonoBehaviour
             q_sel.SetActive(true);
             q_on = true;
             p1_Q.SetActive(true);
+
+                if (p2index == 0)
+            {
+                continueIcon.SetActive(true);
+            }
         }
 
     }
 
     [PunRPC]
-     public void moveMe2(Vector2 vector)
+    public void moveMe2(Vector2 vector)
     {
-       //Debug.Log("before: " + p2index);
+
+        if (controlbool == true)
+        {
+            return;
+        }
+
+        //Debug.Log("before: " + p2index);
         if (vector.x < 0 && vector.x >= -1)
         {
-            if(p2index > 0){
+            if (p2index > 0)
+            {
                 p2index -= .5f;
             }
 
         }
         else if (vector.x <= 1 && vector.x > 0)
         {
-            if(p2index < 2){
+            if (p2index < 2)
+            {
                 p2index += .5f;
             }
 
@@ -167,28 +207,41 @@ public class CS_Control : MonoBehaviour
 
         //Debug.Log("after: " + p2index);
 
-        if(p2index == 0){
-
+        if (p2index == 0)
+        {
+                if (p1index == 2)
+                {
+                    continueIcon.SetActive(true);
+                }
             p2_none.SetActive(false);
             p2_Q.SetActive(false);
 
             ml_sel.SetActive(true);
             ml_on = true;
             p2_ML.SetActive(true);
-            
-        } else if(p2index == 1){
 
+        }
+        else if (p2index == 1)
+        {
+            continueIcon.SetActive(false);
             ml_sel.SetActive(false);
             q_sel.SetActive(false);
             p2_ML.SetActive(false);
             p2_Q.SetActive(false);
 
-            if(p1index==0){
-                q_on = false;  
-            } else if(p1index==1){
+            if (p1index == 0)
+            {
+                ml_sel.SetActive(true);
+                q_on = false;
+            }
+            else if (p1index == 1)
+            {
                 ml_on = false;
                 q_on = false;
-            } else if(p1index==2){
+            }
+            else if (p1index == 2)
+            {
+                q_sel.SetActive(true);
                 ml_on = false;
             }
 
@@ -197,7 +250,9 @@ public class CS_Control : MonoBehaviour
 
             p2_none.SetActive(true);
 
-        } else if(p2index  == 2){
+        }
+        else if (p2index == 2)
+        {
 
             p2_none.SetActive(false);
             p2_ML.SetActive(false);
@@ -205,6 +260,11 @@ public class CS_Control : MonoBehaviour
             q_sel.SetActive(true);
             q_on = true;
             p2_Q.SetActive(true);
+
+            if (p1index == 0)
+            {
+                continueIcon.SetActive(true);
+            }
         }
 
     }
@@ -216,11 +276,13 @@ public class CS_Control : MonoBehaviour
 
 
 
-        if(ml_on && q_on){
-            //controls.SetActive(true);
+        if (ml_on && q_on)
+        {
             controlbool = true;
             Debug.Log("Success");
-        } else {
+        }
+        else
+        {
             //Error Seound
 
         }

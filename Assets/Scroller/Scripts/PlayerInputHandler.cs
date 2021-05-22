@@ -214,16 +214,9 @@ public class PlayerInputHandler : MonoBehaviour
                 }
             }
 
-            if (cs != null && (!cs.p1_selected) && SceneManager.GetActiveScene().buildIndex == 3
-                    && index == 0)
+            if (cs != null && SceneManager.GetActiveScene().buildIndex == 3)
             {
                 cs_photonView.RPC("charSelect",RpcTarget.AllBuffered);
-                cs.charSelect();
-            }
-            else if (cs != null && cs.controls.activeSelf)
-            {
-                cs_photonView.RPC("charSelect",RpcTarget.AllBuffered);
-                cs.charSelect();
             }
         }
 

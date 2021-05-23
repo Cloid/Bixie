@@ -37,6 +37,7 @@ public class Player2 : MonoBehaviour
     private Transform groundCheck2;
     private Vector2 inputVector;
     private TorchControllerSS torchControl;
+    private List<GameObject> healthItems;
     public AudioSource currAudioSource;
     public Projectile projectile;
     public PhotonView photonView;
@@ -62,6 +63,8 @@ public class Player2 : MonoBehaviour
     {
         groundCheck2 = gameObject.transform.Find("GroundCheck2");
         currentSpeed = maxSpeed;
+        healthItems = new List<GameObject>();
+        healthItems.AddRange(GameObject.FindGameObjectsWithTag("Health Item"));
     }
 
     // Update is called once per frame
@@ -264,6 +267,19 @@ public class Player2 : MonoBehaviour
         }
     }
 
+    // Player 2 collision function
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Health Item"))
+        {
+            healthItems.Remove(other.gameObject);
+            Destroy(other.gameObject);
+            //anim.SetTrigger("Catching");
+            //PlaySong(healthItem);
+            player1.currentHealth = player1.maxHealth;
+        }
+    }
+
     // Player 2's Interact Function
     // public void Interact(Collider other)
     // {
@@ -276,8 +292,8 @@ public class Player2 : MonoBehaviour
     //         player1.currentHealth = player1.maxHealth;
     //     }
 
-        
-        
+
+
     //     if (other.CompareTag("Torch"))
     //     {
     //         if (torchDistance <= 1.5f && !torchControl.isLit)

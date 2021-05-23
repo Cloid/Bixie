@@ -20,7 +20,6 @@ public class Player : MonoBehaviour
     public AudioClip punchSound, collisionSound, jumpSound, healthItem;
     public string hitSound, damageSound;
     public float currentHealth;
-    public Collider interactObj;
     public GameObject VNSayDialog;
 
     // Protected variables
@@ -45,6 +44,7 @@ public class Player : MonoBehaviour
     private AudioSource audioS;
     private Vector2 inputVector;
     private Player2 player2;
+    private List<GameObject> healthItems;
     public PhotonView photonView;
 
     // Use this for initialization
@@ -61,6 +61,8 @@ public class Player : MonoBehaviour
             playerAttack = gameObject.transform.Find("Attack").gameObject;
             curAttack = playerAttack.GetComponent<Attack>();
             dashTime = startDashTime;
+            healthItems = new List<GameObject>();
+            healthItems.AddRange(GameObject.FindGameObjectsWithTag("Health Item"));
     }
 
     // Update is called once per frame
@@ -165,15 +167,14 @@ public class Player : MonoBehaviour
     [PunRPC]
     public void Attack()
     {
-            if(photonView.IsMine && !isDash){
+        if(photonView.IsMine && !isDash){
             Debug.Log("Player1 is doing an attack!");
             curAttack.damage = 1;
             isAttack = true;
             curAttack.attackState = "qinyangBasicAttack";
             anim.SetTrigger("Attack");
-            //setAttack();
             Invoke("setAttack", 1);
-            }
+        } 
     }
 
     // Helper function for Player1's attack which reverses the isAttack value 
@@ -231,7 +232,8 @@ public class Player : MonoBehaviour
     public void Dash()
     {
         // If VN SayDialog is not active, then she can jump
-        if (!(VNSayDialog.activeSelf) && !isAttack && dashCooldown <= 0f)
+        print(isAttack);
+        if (!isAttack && !(VNSayDialog.activeSelf) && dashCooldown <= 0f)
         {
             anim.SetBool("IsDashing", true);
             Debug.Log("Player1 is doing a dash!");
@@ -248,7 +250,21 @@ public class Player : MonoBehaviour
         }
     }
 
-    // Player 1's Interact Function
+    // Player collision function
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Health Item"))
+        {
+            healthItems.Remove(other.gameObject);
+            Destroy(other.gameObject);
+            //anim.SetTrigger("Catching");
+            //PlaySong(healthItem);
+            currentHealth = maxHealth;
+        }
+    }
+
+
+    /*// Player 1's Interact Function
     public void Interact(Collider other)
     {
         
@@ -260,9 +276,7 @@ public class Player : MonoBehaviour
                 PlaySong(healthItem);
                 currentHealth = maxHealth;
             }
-        
-
-    }
+    }*/
 
     // Player 1's flip function
 [PunRPC]
@@ -342,10 +356,11 @@ public class Player : MonoBehaviour
         FMODUnity.RuntimeManager.PlayOneShot(path, GetComponent<Transform>().position);
     }
 
+    /*
     private void OnTriggerStay(Collider other)
     {
         interactObj = other;
-    }
+    }*/
 
     public void PlayerRespawn()
     {

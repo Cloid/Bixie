@@ -7088,7 +7088,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   songEvent: event:/Music/Forest
-  intensity: 0
   delay_time: 3
 --- !u!114 &1087027504 stripped
 MonoBehaviour:

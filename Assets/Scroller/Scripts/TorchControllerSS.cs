@@ -139,7 +139,7 @@ public class TorchControllerSS : MonoBehaviour
                 litBar.SetActive(true);
                 litBar.transform.position = new Vector3(
                         Camera.main.WorldToScreenPoint(transform.position).x,
-                        Camera.main.WorldToScreenPoint(transform.position).y + 60f,
+                        Camera.main.WorldToScreenPoint(transform.position).y + 116f,
                         litBar.transform.position.z
                         );
                 barControl.mask.fillAmount = 1;

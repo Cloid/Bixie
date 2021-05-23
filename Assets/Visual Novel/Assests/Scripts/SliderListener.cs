@@ -50,6 +50,8 @@ public class SliderListener : MonoBehaviour
 		} else {
 			text.text = Mathf.Ceil((musicSlider.value *100)).ToString();
 		}*/
+
+		
         
 	}
 
@@ -67,6 +69,9 @@ public class SliderListener : MonoBehaviour
 		} else {
 			text.text = Mathf.Ceil((musicSlider.value *100)).ToString();
 		}*/
+
+		// Play a test sound (funky frog)
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Sounds/Go");
         
 	}
 }

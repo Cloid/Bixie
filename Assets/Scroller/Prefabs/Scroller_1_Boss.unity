@@ -7005,7 +7005,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   songEvent: event:/Music/Forest
-  intensity: 1
+  delay_time: 3
 --- !u!114 &1087027504 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1392887016546948655, guid: 5b8755d691e4e054788a1a9136718635, type: 3}

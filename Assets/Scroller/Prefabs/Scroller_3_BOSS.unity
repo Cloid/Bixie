@@ -1886,8 +1886,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7093d9805c6571149ad8dd9e0a7b6cd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  songEvent: event:/Music/Forest
-  intensity: 1
+  songEvent: event:/Music/City
+  delay_time: 3
 --- !u!1 &1165588903
 GameObject:
   m_ObjectHideFlags: 0

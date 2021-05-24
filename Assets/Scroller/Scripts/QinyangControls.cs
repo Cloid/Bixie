@@ -102,17 +102,6 @@ public class @QinyangControls : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": """",
-                    ""id"": ""49cec677-3597-4fb1-95a7-7b6677be055e"",
-                    ""path"": ""<Mouse>/leftButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Attack"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
                     ""name"": ""2D Vector"",
                     ""id"": ""f133f6c5-7ffd-4d9b-a9e2-a4ed3751eaba"",
                     ""path"": ""2DVector"",

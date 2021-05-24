@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scroller/Prefabs/Scroller_1_1.unity
     guid: 7bf376cd068c1dfee817bddb4f1e272f
   - enabled: 1
+    path: Assets/Scroller/Prefabs/Scroller_1_Boss.unity
+    guid: 229c3bd9a8ee545b1b1f9f2b75dded6c
+  - enabled: 1
     path: Assets/Scroller/Prefabs/Scroller_3_1.unity
     guid: d53b844d870192b4895926894c0c08cc
   m_configObjects:

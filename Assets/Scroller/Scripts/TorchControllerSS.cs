@@ -158,8 +158,14 @@ public class TorchControllerSS : MonoBehaviour
 
                 // Play FMOD lit lantern sound
                 FMODUnity.RuntimeManager.PlayOneShot("event:/Sounds/Lantern_Ignite", GetComponent<Transform>().position);
-
-                Destroy(bamboo);
+                if(gameObject.name == "TorchBB_TP"){
+                    Debug.Log("TP Time");
+                    if(PhotonNetwork.IsMasterClient){
+                        PhotonNetwork.LoadLevel(5);
+                    }
+                } else {
+                    Destroy(bamboo);
+                }
                 if (EnemySpawn != null)
                 {
                     Destroy(EnemySpawn);

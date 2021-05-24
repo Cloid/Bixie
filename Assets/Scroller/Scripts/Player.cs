@@ -306,7 +306,9 @@ public class Player : MonoBehaviour
     {
         if (!isDead)
         {
-            VN_Controller.ExecuteBlock("Q_Hit");
+            if(VN_Controller!=null){
+              VN_Controller.ExecuteBlock("Q_Hit");
+            }
             currentHealth -= damage;
             anim.SetTrigger("HitDamage");
 

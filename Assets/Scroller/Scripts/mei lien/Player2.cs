@@ -327,7 +327,10 @@ public class Player2 : MonoBehaviour
     {
         if (!isDead2 && onGround2)
         {
-            VN_Controller.ExecuteBlock("ML_Hit");
+            if(VN_Controller!=null){
+                VN_Controller.ExecuteBlock("ML_Hit");
+            }
+            
             isHit = true;
             player1.currentHealth-= damage;
             anim2.SetTrigger("HitDamage");

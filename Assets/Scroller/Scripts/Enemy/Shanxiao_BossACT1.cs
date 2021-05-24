@@ -81,12 +81,14 @@ public class Shanxiao_BossACT1 : Enemy
 
 		walkTimer += Time.deltaTime;
 
-		if(PhotonNetwork.IsMasterClient && isDead && runOnce==false){
+		if(isDead && runOnce==false){
 			runOnce = true;
 			Debug.Log("Defeated");
 			music.PlaySong(music.levelClearSong);
 			FindObjectOfType<UIManager>().UpdateDisplayMessage("Level Clear");
-			BossDefeated();
+			if(PhotonNetwork.IsMasterClient){
+				BossDefeated();
+			}
 		}
 	}
 

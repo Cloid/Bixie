@@ -25,7 +25,7 @@ public class CageController : MonoBehaviour
         currentHealth = maxHealth;
         Mei = GameObject.Find("Mei Lien").GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
-        spawnPoints = new Transform[2];
+        spawnPoints = new Transform[6];
         
         
         //Debug.Log(anim); 
@@ -77,9 +77,17 @@ public class CageController : MonoBehaviour
                 // GameObject rock = Instantiate(rock_pieces[gameObjectIndex], spawnLoc, transform.rotation);
                 var rock_copy = rock_pieces[gameObjectIndex].gameObject;
                 spawnPoints[0] = rock_copy.gameObject.transform;
-                spawnPoints[0].position = new Vector3(-4.4000001f,-0.74000001f,-3.1099999f);
+                spawnPoints[0].position = new Vector3(-3.4000001f,-0.74000001f,-1.5099999f);
                 spawnPoints[1] = rock_copy.gameObject.transform;
-                spawnPoints[1].position = new Vector3(-4.4000001f,-0.0299999993f,3.57999992f);
+                spawnPoints[1].position = new Vector3(-6.4000001f,-0.0299999993f,-3.57999992f);
+                spawnPoints[2] = rock_copy.gameObject.transform;
+                spawnPoints[2].position = new Vector3(-3.4000001f,-0.0299999993f,-5.57999992f);
+                spawnPoints[3] = rock_copy.gameObject.transform;
+                spawnPoints[3].position = new Vector3(3.4000001f,-0.0299999993f,-5.57999992f);
+                spawnPoints[4] = rock_copy.gameObject.transform;
+                spawnPoints[4].position = new Vector3(6.4000001f,-0.0299999993f,-3.57999992f);
+                spawnPoints[5] = rock_copy.gameObject.transform;
+                spawnPoints[5].position = new Vector3(3.4000001f,-0.0299999993f,-1.57999992f);
                 rock =  PhotonNetwork.Instantiate(rock_copy.name,spawnPoints[spawnIndex].position,transform.rotation); //Instantiate(rock_pieces[gameObjectIndex], spawnPoints[spawnIndex].position, Quaternion.identity);
             }
             

@@ -4058,7 +4058,7 @@ MonoBehaviour:
   ySmooth: 8
   posY: 0
   smoothTime: 0.3
-  maxXAndY: {x: 205, y: 0}
+  maxXAndY: {x: 30, y: 0}
   minXAndY: {x: -0.77, y: 0}
   alwaysY: 11.3
 --- !u!114 &523248706
@@ -5331,7 +5331,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents: []
-  sceneViewId: 2
+  sceneViewId: 43
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!1001 &780744566
@@ -11654,7 +11654,7 @@ PrefabInstance:
       objectReference: {fileID: 1480527349}
     - target: {fileID: 5219851013443788325, guid: ff297912d2e104ca1846b910063f3111, type: 3}
       propertyPath: sceneViewId
-      value: 3
+      value: 42
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff297912d2e104ca1846b910063f3111, type: 3}
@@ -19128,7 +19128,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 500448453302365738, guid: 0a8e8e98c320c45afbbcb279a3c432be, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.29
+      value: 26.6
       objectReference: {fileID: 0}
     - target: {fileID: 500448453302365738, guid: 0a8e8e98c320c45afbbcb279a3c432be, type: 3}
       propertyPath: m_LocalPosition.y
@@ -19219,6 +19219,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1554506938738924641, guid: 96f19e68941834e37b5e48cdbad158a0, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 1554506938738924641, guid: 96f19e68941834e37b5e48cdbad158a0, type: 3}
       propertyPath: m_Name
       value: RockSpawnPoints

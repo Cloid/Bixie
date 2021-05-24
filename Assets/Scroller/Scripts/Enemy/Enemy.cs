@@ -24,17 +24,17 @@ public class Enemy : MonoBehaviour {
 	private float currentSpeed;
 	private Rigidbody rb;
 	protected Animator anim;
-	private Transform groundCheck;
-	private bool onGround;
+	protected Transform groundCheck;
+	protected bool onGround;
 	protected bool facingRight = false;
 	private Transform target1;
 	private Transform target2;
-	private Transform realTarget;
+	protected Transform realTarget;
 	protected bool isDead = false;
 	private float zForce;
-	private float walkTimer;
-	private bool damaged = false;
-	private float damageTimer;
+	protected float walkTimer;
+	protected bool damaged = false;
+	protected float damageTimer;
 	private float nextAttack;
 	private AudioSource audioS;
 	private SpriteRenderer currSprite;
@@ -101,12 +101,13 @@ public class Enemy : MonoBehaviour {
 		anim.SetBool("Grounded", onGround);
 		anim.SetBool("Dead", isDead);
 		SpriteRenderer Sprite = gameObject.GetComponent<SpriteRenderer>();
-		// Debug.Log("facingRight: "+ facingRight);
-		// Debug.Log("isDead: "+ isDead);
+		
+		Debug.Log("isDead: "+ isDead);
 		//FindCheckpoint.G
 		if (!isDead)
 		{
 			facingRight = (realTarget.position.x < transform.position.x) ? false : true;
+			Debug.Log("facingRight: "+ facingRight);
 			if (facingRight)
 			{
 				transform.eulerAngles = new Vector3(0, 180, 0);

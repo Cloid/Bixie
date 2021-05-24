@@ -148,7 +148,7 @@ public class TorchControllerSS : MonoBehaviour
                 print("Lantern lit!");
                 if (Test != null)
                 {
-                    Test.StopAllBlocks();
+                    //Test.StopAllBlocks();
                     Test.ExecuteBlock("blah");
                 }
 

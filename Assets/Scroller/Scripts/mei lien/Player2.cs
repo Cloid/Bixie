@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Photon.Pun;
+using Fungus;
+
 public class Player2 : MonoBehaviour
 {
     // Player attributes
@@ -16,6 +18,7 @@ public class Player2 : MonoBehaviour
     public AudioClip punchSound, collisionSound, healthItem;
     public string jumpSound, damageSound;
     public bool isHit = false;
+    public Flowchart VN_Controller;
 
     // Private variables
     private bool onGround2;
@@ -324,6 +327,7 @@ public class Player2 : MonoBehaviour
     {
         if (!isDead2 && onGround2)
         {
+            VN_Controller.ExecuteBlock("ML_Hit");
             isHit = true;
             player1.currentHealth-= damage;
             anim2.SetTrigger("HitDamage");

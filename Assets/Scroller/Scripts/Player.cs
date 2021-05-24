@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Photon.Pun;
+using Fungus;
 
 public class Player : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class Player : MonoBehaviour
     public string hitSound, damageSound;
     public float currentHealth;
     public GameObject VNSayDialog;
+    public Flowchart VN_Controller;
 
     // Protected variables
     protected float currentSpeed;
@@ -304,6 +306,7 @@ public class Player : MonoBehaviour
     {
         if (!isDead)
         {
+            VN_Controller.ExecuteBlock("Q_Hit");
             currentHealth -= damage;
             anim.SetTrigger("HitDamage");
 

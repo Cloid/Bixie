@@ -13,6 +13,7 @@ public class UIManager : MonoBehaviour {
 
 
 	public GameObject heartContainer;
+	public GameObject heartContainer2;
     private float fillValue;
     private float oldValue;
 	public GameObject enemyUI;
@@ -67,7 +68,8 @@ public class UIManager : MonoBehaviour {
 		
 		oldValue = heartContainer.GetComponent<Image>().fillAmount;
 		
-        heartContainer.GetComponent<Image>().fillAmount = Mathf.Lerp(oldValue,fillValue, Time.deltaTime);
+        heartContainer.GetComponent<Image>().fillAmount = Mathf.Lerp(oldValue,fillValue, Time.deltaTime * 2);
+		heartContainer2.GetComponent<Image>().fillAmount = Mathf.Lerp(oldValue,fillValue, Time.deltaTime * 2);
 		// heartContainer.GetComponent<Image>().fillAmount = fillValue;
 		// print(heartContainer.GetComponent<Image>().fillAmount);
 	}

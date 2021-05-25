@@ -972,7 +972,7 @@ MonoBehaviour:
   rb1: {fileID: 2081131910}
   rb2: {fileID: 848729515}
   rb3: {fileID: 1459623793}
-  Torch: {fileID: 0}
+  Torch: {fileID: 2012040364}
 --- !u!1 &178280465
 GameObject:
   m_ObjectHideFlags: 0
@@ -1368,7 +1368,7 @@ PrefabInstance:
     - target: {fileID: 2236598048264935512, guid: b7a17519752afcd40be96ffa76da1c15, type: 3}
       propertyPath: Torch
       value: 
-      objectReference: {fileID: 659445061}
+      objectReference: {fileID: 0}
     - target: {fileID: 2236598048264935513, guid: b7a17519752afcd40be96ffa76da1c15, type: 3}
       propertyPath: m_Center.x
       value: 0.2
@@ -7694,7 +7694,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb1: {fileID: 425445931}
   rb2: {fileID: 1535090314}
-  Torch: {fileID: 0}
+  Torch: {fileID: 659445061}
   Lua: {fileID: 1595235659}
 --- !u!1 &1165588903
 GameObject:
@@ -19121,7 +19121,7 @@ PrefabInstance:
     - target: {fileID: 3837355626840070449, guid: 16d65377b8d5cb8469a17d3e531edd6c, type: 3}
       propertyPath: Torch
       value: 
-      objectReference: {fileID: 659445061}
+      objectReference: {fileID: 0}
     - target: {fileID: 3837355626840070451, guid: 16d65377b8d5cb8469a17d3e531edd6c, type: 3}
       propertyPath: m_Name
       value: Statue Base 1L

@@ -2192,7 +2192,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 533236225706509959, guid: 421a69a5ec6bc6543a4666e26c27e206, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 257.4
+      value: 209.67
       objectReference: {fileID: 0}
     - target: {fileID: 533236225706509959, guid: 421a69a5ec6bc6543a4666e26c27e206, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5429,7 +5429,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 533236225706509956, guid: 421a69a5ec6bc6543a4666e26c27e206, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 533236225706509957, guid: 421a69a5ec6bc6543a4666e26c27e206, type: 3}
       propertyPath: bamboo
@@ -17882,8 +17882,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: -507.06055
-    y: -38.681877
+    x: -512.3797
+    y: -37.618046
     width: 89.71631
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -17991,7 +17991,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: -512.42694
+    x: -514.5547
     y: 19.695858
     width: 80.49645
     height: 40
@@ -18005,8 +18005,8 @@ MonoBehaviour:
   - {fileID: 1948301875}
   - {fileID: 1948301866}
   - {fileID: 1948301865}
-  - {fileID: 1948301874}
   - {fileID: 1948301864}
+  - {fileID: 1948301874}
   suppressAllAutoSelections: 0
 --- !u!114 &1948301868
 MonoBehaviour:
@@ -18709,7 +18709,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 533236225706509956, guid: 421a69a5ec6bc6543a4666e26c27e206, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 533236225706509957, guid: 421a69a5ec6bc6543a4666e26c27e206, type: 3}
       propertyPath: bamboo

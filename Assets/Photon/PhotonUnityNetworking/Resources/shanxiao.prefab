@@ -115,6 +115,7 @@ MonoBehaviour:
   enemyName: NormalShanxiao
   enemyImage: {fileID: -6132581351020953739, guid: fcf6b5b151e6976418be64f140c447c3, type: 3}
   attackSound: event:/Sounds/Imp_Attack
+  damageSound: 
   freezeSound: event:/Sounds/Imp_Freeze
   deathSound: event:/Sounds/Imp_Noise
   photonView: {fileID: 0}

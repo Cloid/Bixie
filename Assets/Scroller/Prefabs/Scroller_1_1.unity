@@ -4094,7 +4094,7 @@ Transform:
   - {fileID: 1615230854}
   - {fileID: 1156737257}
   - {fileID: 178280466}
-  - {fileID: 659445068}
+  - {fileID: 2128382518}
   - {fileID: 1120242543}
   - {fileID: 1595235665}
   m_Father: {fileID: 0}
@@ -7806,7 +7806,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb1: {fileID: 425445931}
   rb2: {fileID: 1535090314}
-  Torch: {fileID: 659445061}
+  Torch: {fileID: 2128382517}
   Lua: {fileID: 1595235659}
 --- !u!1 &1165588903
 GameObject:
@@ -19496,6 +19496,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2128382517 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 533236225706509956, guid: 421a69a5ec6bc6543a4666e26c27e206, type: 3}
+  m_PrefabInstance: {fileID: 812499910}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2128382518 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 533236225706509959, guid: 421a69a5ec6bc6543a4666e26c27e206, type: 3}
+  m_PrefabInstance: {fileID: 812499910}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2132383789
 GameObject:
   m_ObjectHideFlags: 0
@@ -20285,7 +20295,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1641553602763923511, guid: f8b3845adffa74442bc3229e1ea4c0c9, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8b3845adffa74442bc3229e1ea4c0c9, type: 3}
@@ -20651,7 +20661,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7578509151722214320, guid: 55d70e1f825334497a603f64a87a3d48, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7578509151722214326, guid: 55d70e1f825334497a603f64a87a3d48, type: 3}
       propertyPath: m_RootOrder

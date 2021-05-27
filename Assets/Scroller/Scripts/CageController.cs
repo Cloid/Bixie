@@ -56,6 +56,9 @@ public class CageController : MonoBehaviour
         isDead = true;
         Mei.constraints = RigidbodyConstraints.FreezeRotation;
         
+        // Play FMOD rock broken sounds
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Sounds/Rock_Break", GetComponent<Transform>().position);
+
 		//TODO: Make anim for broken cage
 		//anim.SetTrigger()
 		// Invoke("SpawnRocks", Random.Range(minBoomerangTime, maxBoomerangTime));

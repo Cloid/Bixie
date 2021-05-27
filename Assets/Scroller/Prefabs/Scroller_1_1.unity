@@ -3397,7 +3397,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 104.32182
     y: 203.08244
-    width: 120.790375
+    width: 118.453606
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -13298,6 +13298,8 @@ GameObject:
   - component: {fileID: 1948301884}
   - component: {fileID: 1948301887}
   - component: {fileID: 1948301886}
+  - component: {fileID: 1948301889}
+  - component: {fileID: 1948301888}
   m_Layer: 0
   m_Name: VN Controller
   m_TagString: Untagged
@@ -13343,8 +13345,7 @@ MonoBehaviour:
     y: 0
     width: 0
     height: 0
-  selectedBlocks:
-  - {fileID: 1948301765}
+  selectedBlocks: []
   selectedCommands: []
   variables: []
   description: 
@@ -13373,7 +13374,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 71.65214
     y: 305.97626
-    width: 157.80142
+    width: 158.0851
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -13492,7 +13493,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 74.90173
     y: 509.73657
-    width: 110.992905
+    width: 111.276596
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -14624,7 +14625,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 127.44378
     y: 735.3126
-    width: 108.86525
+    width: 107.87234
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -14657,7 +14658,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 130.1879
     y: 894.3289
-    width: 133.68793
+    width: 132.55319
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -15091,7 +15092,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -234.19867
     y: -8.674149
-    width: 145.03546
+    width: 144.46808
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -15449,7 +15450,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -223.08516
     y: 219.26494
-    width: 122.34042
+    width: 120.63829
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -15525,7 +15526,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 81
   indentLevel: 0
-  storyText: I have to reach the lantern so I can stop the monsters! {w=2}
+  storyText: I have to reach the lantern! {w=2}
   description: 
   character: {fileID: 1114271624}
   portrait: {fileID: 0}
@@ -15903,7 +15904,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -226.63388
     y: 117.85856
-    width: 101.77305
+    width: 101.91489
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -16119,7 +16120,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -227.83302
     y: 162.8648
-    width: 126.59574
+    width: 124.04255
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -16294,7 +16295,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -228.5116
     y: 76.903625
-    width: 138.65247
+    width: 138.51064
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -16417,7 +16418,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 131
   indentLevel: 0
-  storyText: Wow...the shadows really are repelled by my light! {w=2}
+  storyText: Wow... {w=1}
   description: 
   character: {fileID: 1114271624}
   portrait: {fileID: 0}
@@ -16444,9 +16445,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: -230.30983
+    x: -231.37366
     y: 34.641235
-    width: 74.11347
+    width: 73.82979
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -16459,10 +16460,12 @@ MonoBehaviour:
   - {fileID: 1948301837}
   - {fileID: 1948301836}
   - {fileID: 1948301809}
+  - {fileID: 1948301889}
   - {fileID: 1948301835}
   - {fileID: 1948301817}
   - {fileID: 1948301834}
   - {fileID: 1948301819}
+  - {fileID: 1948301888}
   - {fileID: 1948301833}
   - {fileID: 1948301832}
   - {fileID: 1948301878}
@@ -16707,7 +16710,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 133
   indentLevel: 0
-  storyText: "Yes...but I\u2019ve never actually had to do it before. {w=2}"
+  storyText: Yes! {w=1}
   description: 
   character: {fileID: 1114271624}
   portrait: {fileID: 0}
@@ -17996,7 +17999,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -512.3797
     y: -37.618046
-    width: 89.71631
+    width: 90
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -18105,7 +18108,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -514.5547
     y: 19.695858
-    width: 80.49645
+    width: 81.48936
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -18460,6 +18463,60 @@ MonoBehaviour:
   targetObject: {fileID: 271749843}
   methodName: muteML
   delay: 0
+--- !u!114 &1948301888
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1948301701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 222
+  indentLevel: 0
+  storyText: "...but I\u2019ve never actually done it before. {w=2}"
+  description: 
+  character: {fileID: 1114271624}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 0
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 1510435727}
+--- !u!114 &1948301889
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1948301701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 221
+  indentLevel: 0
+  storyText: the shadows really are repelled by my light! {w=2}
+  description: 
+  character: {fileID: 1114271624}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 0
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 1510435727}
 --- !u!1 &1975907523
 GameObject:
   m_ObjectHideFlags: 0

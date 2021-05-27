@@ -752,6 +752,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7e49aab1d8a2ac4cb67a5049086ecb5, type: 3}
+--- !u!114 &1074979865 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8020187326238795971, guid: e7e49aab1d8a2ac4cb67a5049086ecb5, type: 3}
+  m_PrefabInstance: {fileID: 1074979864}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a0bbe22c246e4c78ad8e9816cbae9d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1220728599
 GameObject:
   m_ObjectHideFlags: 0
@@ -919,6 +930,7 @@ GameObject:
   - component: {fileID: 1317180136}
   - component: {fileID: 1317180135}
   - component: {fileID: 1317180134}
+  - component: {fileID: 1317180155}
   m_Layer: 0
   m_Name: VN_2 Flowchart
   m_TagString: Untagged
@@ -986,6 +998,7 @@ MonoBehaviour:
   - {fileID: 1317180138}
   - {fileID: 1317180137}
   - {fileID: 1317180136}
+  - {fileID: 1317180155}
   - {fileID: 1317180132}
   - {fileID: 1317180129}
   - {fileID: 1317180135}
@@ -1020,7 +1033,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 1317180126}
   selectedCommands:
-  - {fileID: 1317180134}
+  - {fileID: 1317180155}
   variables: []
   description: 
   stepPause: 0
@@ -1737,6 +1750,21 @@ MonoBehaviour:
   orthoSizeTweenType: 4
   posTweenType: 4
   rotTweenType: 4
+--- !u!114 &1317180155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1317180124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d65d551a201c94bc79950076ff3eaf2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 27
+  indentLevel: 0
+  sayDialog: {fileID: 1074979865}
 --- !u!1 &1378572490
 GameObject:
   m_ObjectHideFlags: 0

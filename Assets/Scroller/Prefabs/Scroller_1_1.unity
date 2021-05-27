@@ -13300,6 +13300,7 @@ GameObject:
   - component: {fileID: 1948301886}
   - component: {fileID: 1948301889}
   - component: {fileID: 1948301888}
+  - component: {fileID: 1948301890}
   m_Layer: 0
   m_Name: VN Controller
   m_TagString: Untagged
@@ -13345,8 +13346,10 @@ MonoBehaviour:
     y: 0
     width: 0
     height: 0
-  selectedBlocks: []
-  selectedCommands: []
+  selectedBlocks:
+  - {fileID: 1948301765}
+  selectedCommands:
+  - {fileID: 1948301890}
   variables: []
   description: 
   stepPause: 0
@@ -15298,6 +15301,7 @@ MonoBehaviour:
   - {fileID: 1948301766}
   - {fileID: 1948301792}
   - {fileID: 1948301793}
+  - {fileID: 1948301890}
   - {fileID: 1948301795}
   - {fileID: 1948301796}
   - {fileID: 1948301824}
@@ -18517,6 +18521,24 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 1510435727}
+--- !u!114 &1948301890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1948301701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3315ad2ebb85443909a1203d56d9344e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 223
+  indentLevel: 0
+  _duration:
+    floatRef: {fileID: 0}
+    floatVal: 5
+  durationOLD: 0
 --- !u!1 &1975907523
 GameObject:
   m_ObjectHideFlags: 0

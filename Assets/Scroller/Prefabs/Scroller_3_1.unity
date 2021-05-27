@@ -531,6 +531,7 @@ MonoBehaviour:
   livesText: {fileID: 506809899}
   displayMessage: {fileID: 68908896}
   heartContainer: {fileID: 506809897}
+  heartContainer2: {fileID: 0}
   enemyUI: {fileID: 1123525382}
   enemySlider: {fileID: 1452822955}
   enemyName: {fileID: 0}
@@ -3119,6 +3120,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3340670118882284715, guid: a631ecf05493a7345be7fec2efb64559, type: 3}
   m_PrefabInstance: {fileID: 722855198}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &851200428
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 851200429}
+  m_Layer: 0
+  m_Name: Visual Novel Objects
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &851200429
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851200428}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 31.001717, y: 1.1425053, z: -20.38399}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1635255965}
+  m_Father: {fileID: 0}
+  m_RootOrder: 49
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &917170545
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7151,12 +7183,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1635255961}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -31.001717, y: -1.1425053, z: 20.38399}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 49
+  m_Father: {fileID: 851200429}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1635255966
 MonoBehaviour:

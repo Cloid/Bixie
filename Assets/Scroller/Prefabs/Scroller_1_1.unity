@@ -11838,6 +11838,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1686383464}
   m_CullTransparentMesh: 0
+--- !u!1 &1696544418 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3452768150720466643, guid: 088232685a3cb42f3afcd14e8c7b9878, type: 3}
+  m_PrefabInstance: {fileID: 3452768150139236949}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1710167398
 GameObject:
   m_ObjectHideFlags: 0
@@ -20630,7 +20635,7 @@ PrefabInstance:
     - target: {fileID: 1641553602763923508, guid: f8b3845adffa74442bc3229e1ea4c0c9, type: 3}
       propertyPath: PhotonInt
       value: 
-      objectReference: {fileID: 598555782}
+      objectReference: {fileID: 1696544418}
     - target: {fileID: 1641553602763923510, guid: f8b3845adffa74442bc3229e1ea4c0c9, type: 3}
       propertyPath: m_RootOrder
       value: 0

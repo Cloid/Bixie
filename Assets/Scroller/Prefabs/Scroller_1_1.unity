@@ -19373,14 +19373,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
-<<<<<<< HEAD
 --- !u!1 &2128382517 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 533236225706509956, guid: 421a69a5ec6bc6543a4666e26c27e206, type: 3}
   m_PrefabInstance: {fileID: 812499910}
   m_PrefabAsset: {fileID: 0}
-=======
->>>>>>> parent of 4c4e734 (Merge branch 'master' into josue-branch-statue-fix)
 --- !u!1 &2132383789
 GameObject:
   m_ObjectHideFlags: 0

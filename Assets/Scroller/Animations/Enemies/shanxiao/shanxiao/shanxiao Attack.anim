@@ -161,7 +161,7 @@ AnimationClip:
   m_Events:
   - time: 0.33333334
     functionName: PlayAnimSound
-    data: event:/Sounds/Monster_Attack
+    data: event:/Sounds/Imp_Attack
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0

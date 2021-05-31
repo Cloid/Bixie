@@ -17,8 +17,6 @@ public class Enemy : MonoBehaviour {
 	public string attackSound, damageSound, freezeSound, deathSound;
 	public PhotonView photonView;
 
-	public Transform shadow;
-
 	private float newTime = 0.0f;
 	private float curTime;
 	private float currentHealth;
@@ -112,13 +110,9 @@ public class Enemy : MonoBehaviour {
 			if (facingRight)
 			{
 				transform.eulerAngles = new Vector3(0, 180, 0);
-				shadow.transform.position = new Vector3(transform.position.x, (float)(-0.9 * 2), transform.position.z);
-				//Vector3 newTransform = transform.localScale;
-				//newTransform.x = -1;
-				//transform.localScale = newTransform;				
-				//Sprite.flipX = true;
+				// Sprite.flipX = true;
 				//sprite.flipX;
-				//var 
+				//var shadow = gameObject.transform.Find("shadow").gameObject;
 				//shadow.transform.eulerAngles = new Vector3(0, 180, 0);
 				//Debug.Log(shadow.transform.eulerAngles);
 
@@ -127,12 +121,8 @@ public class Enemy : MonoBehaviour {
 			{
 				// Sprite.flipX = false;
 				transform.eulerAngles = new Vector3(0, 0, 0);
-				// Vector3 newTransform = transform.localScale;
-				// newTransform.x = 1;
-				// transform.localScale = newTransform;
-				//Sprite.flipX = false;
 				//var shadow = gameObject.transform.Find("shadow").gameObject;
-				shadow.transform.position = new Vector3(transform.position.x, (float)(-0.9 * 2), transform.position.z);
+				//shadow.transform.eulerAngles = new Vector3(0, 0, 0);
 			}
 		}
 		

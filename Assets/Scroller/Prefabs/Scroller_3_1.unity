@@ -531,7 +531,6 @@ MonoBehaviour:
   livesText: {fileID: 506809899}
   displayMessage: {fileID: 68908896}
   heartContainer: {fileID: 506809897}
-  heartContainer2: {fileID: 0}
   enemyUI: {fileID: 1123525382}
   enemySlider: {fileID: 1452822955}
   enemyName: {fileID: 0}
@@ -2185,65 +2184,6 @@ Rigidbody:
   m_CorrespondingSourceObject: {fileID: 4727239881597771817, guid: 3b29f0c284e08ae4282713c069d0ef01, type: 3}
   m_PrefabInstance: {fileID: 537303742}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &540116241
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 540116242}
-  - component: {fileID: 540116243}
-  - component: {fileID: 540116244}
-  m_Layer: 0
-  m_Name: VN Trigger
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &540116242
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 540116241}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -30.4, y: 0, z: 15.2}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 851200429}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &540116243
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 540116241}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.6521301, y: 21.964947, z: 15.269888}
-  m_Center: {x: -0.32606506, y: -4.6631546, z: -0.8667917}
---- !u!114 &540116244
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 540116241}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b3ee978a857ba341b1c4cfffa6fd156, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  VNController: {fileID: 1635255964}
-  Block: TriggerDialogue
 --- !u!1 &576844463
 GameObject:
   m_ObjectHideFlags: 0
@@ -3179,38 +3119,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3340670118882284715, guid: a631ecf05493a7345be7fec2efb64559, type: 3}
   m_PrefabInstance: {fileID: 722855198}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &851200428
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 851200429}
-  m_Layer: 0
-  m_Name: Visual Novel Objects
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &851200429
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 851200428}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 31.001717, y: 1.1425053, z: -20.38399}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1635255965}
-  - {fileID: 540116242}
-  m_Father: {fileID: 0}
-  m_RootOrder: 49
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &917170545
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3439,7 +3347,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1641553602763923511, guid: f8b3845adffa74442bc3229e1ea4c0c9, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8b3845adffa74442bc3229e1ea4c0c9, type: 3}
@@ -3752,17 +3660,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 25.071484, z: 12.9678335}
   m_Center: {x: 0, y: -8.155607, z: -2.251556}
---- !u!114 &1072688407 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1614923605100398500, guid: 47aaa7f4822f90749a604c38d0e5ee6f, type: 3}
-  m_PrefabInstance: {fileID: 764975759}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a0bbe22c246e4c78ad8e9816cbae9d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1079930646
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7154,9 +7051,6 @@ GameObject:
   - component: {fileID: 1635255980}
   - component: {fileID: 1635255979}
   - component: {fileID: 1635255978}
-  - component: {fileID: 1635255984}
-  - component: {fileID: 1635255985}
-  - component: {fileID: 1635255986}
   m_Layer: 0
   m_Name: VN Controller
   m_TagString: Untagged
@@ -7193,8 +7087,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 336
-    y: 99
+    x: 65
+    y: 69
     width: 76
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -7236,9 +7130,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 1635255984}
+  - {fileID: 1635255963}
   selectedCommands:
-  - {fileID: 1635255985}
+  - {fileID: 1635255970}
   variables: []
   description: 
   stepPause: 0
@@ -7257,12 +7151,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1635255961}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -31.001717, y: -1.1425053, z: 20.38399}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 851200429}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 49
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1635255966
 MonoBehaviour:
@@ -7678,76 +7572,6 @@ MonoBehaviour:
   - {fileID: 1635255979}
   - {fileID: 1635255978}
   suppressAllAutoSelections: 0
---- !u!114 &1635255984
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1635255961}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nodeRect:
-    serializedVersion: 2
-    x: 324
-    y: 204
-    width: 144
-    height: 40
-  tint: {r: 1, g: 1, b: 1, a: 1}
-  useCustomTint: 0
-  itemId: 22
-  blockName: TriggerDialogue
-  description: 
-  eventHandler: {fileID: 0}
-  commandList:
-  - {fileID: 1635255986}
-  - {fileID: 1635255985}
-  suppressAllAutoSelections: 0
---- !u!114 &1635255985
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1635255961}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 23
-  indentLevel: 0
-  storyText: LETS GOOOOOO
-  description: 
-  character: {fileID: 35329339}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 0
-  stopVoiceover: 1
-  waitForVO: 0
-  setSayDialog: {fileID: 0}
---- !u!114 &1635255986
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1635255961}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d65d551a201c94bc79950076ff3eaf2e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 24
-  indentLevel: 0
-  sayDialog: {fileID: 1072688407}
 --- !u!1 &1635697609
 GameObject:
   m_ObjectHideFlags: 0

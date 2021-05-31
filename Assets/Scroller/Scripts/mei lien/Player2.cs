@@ -224,8 +224,8 @@ public class Player2 : MonoBehaviour
             }
             StartCoroutine(MoveProjectile(newProjectile));
 
-            // Spawn FMOD freezing sound 
-            FMODUnity.RuntimeManager.PlayOneShot("event:/Sounds/M_Freeze", newProjectile.GetComponent<Transform>().position);
+            // Spawn FMOD attack sound **maybe attach to the wave for better effect
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Sounds/M_Attack", newProjectile.GetComponent<Transform>().position);
 
             heavyAttackTime = 180f;
             canHeavyAttack = false;

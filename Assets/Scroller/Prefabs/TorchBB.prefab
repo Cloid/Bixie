@@ -108,7 +108,6 @@ MonoBehaviour:
   EnemySpawn: {fileID: 0}
   litBar: {fileID: 8837063205825407815, guid: 3dd706a94a484487ead39157a761fb69, type: 3}
   Test: {fileID: 0}
-  index: 0
 --- !u!65 &533236225706509952
 BoxCollider:
   m_ObjectHideFlags: 0

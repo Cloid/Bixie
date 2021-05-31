@@ -66,6 +66,3 @@ TagManager:
   - name: Bullets
     uniqueID: 2859262315
     locked: 0
-  - name: Foreground
-    uniqueID: 1631654767
-    locked: 0

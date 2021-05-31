@@ -132,7 +132,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2717138809104509050, guid: 7d00bcb580c7c48a5a36b98ee8eb6cd8, type: 3}
       propertyPath: sceneViewId
-      value: 45
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4685188276644675585, guid: 7d00bcb580c7c48a5a36b98ee8eb6cd8, type: 3}
       propertyPath: m_RootOrder
@@ -3783,7 +3783,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6695018599812040473, guid: 0df32ede0c7f1ab42bd6260d1a3d95c1, type: 3}
       propertyPath: sceneViewId
-      value: 44
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0df32ede0c7f1ab42bd6260d1a3d95c1, type: 3}
@@ -15239,7 +15239,6 @@ MonoBehaviour:
   livesText: {fileID: 1638804018}
   displayMessage: {fileID: 1021850082}
   heartContainer: {fileID: 858637770}
-  heartContainer2: {fileID: 0}
   enemyUI: {fileID: 246343618}
   enemySlider: {fileID: 1480186054}
   enemyName: {fileID: 0}

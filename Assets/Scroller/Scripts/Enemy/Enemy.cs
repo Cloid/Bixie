@@ -14,7 +14,8 @@ public class Enemy : MonoBehaviour {
 	public string enemyName;
 	
 	public Sprite enemyImage;
-	public string attackSound, damageSound, freezeSound, deathSound;
+	public AudioClip collisionSound;
+	public string damageSound, deathSound;
 	public PhotonView photonView;
 
 	public Transform shadow;
@@ -253,9 +254,7 @@ public class Enemy : MonoBehaviour {
 			currentHealth -= damage;
 			anim.SetTrigger("HitDamage");
 		}
-		
-		FMODUnity.RuntimeManager.PlayOneShot(deathSound, GetComponent<Transform>().position);
-
+		// PlaySound(damageSound, "Damage", damage);
 		// FindObjectOfType<UIManager>().UpdateEnemyUI(maxHealth, currentHealth, enemyName, enemyImage);
 		// Enemies get an effect depending on attackTag and stateTag
 		switch (attackTag)
@@ -288,10 +287,7 @@ public class Enemy : MonoBehaviour {
 			{
 				isDead = true;
 				rb.AddRelativeForce(new Vector3(3, 5, 0), ForceMode.Impulse);
-
-				// FMOD Death Sounds
-				FMODUnity.RuntimeManager.PlayOneShot(deathSound, GetComponent<Transform>().position);
-
+				PlaySound(deathSound, "Damage", (int)damage);
 				//Destroy(gameObject);
 				StartCoroutine(DestroyEnemy(0.5f));
 			}
@@ -306,10 +302,6 @@ public class Enemy : MonoBehaviour {
 			rb.isKinematic = true;
 			//currSprite.color = new Color(0, 134, 240);
 			anim.SetBool("Frozen", true);
-
-			// FMOD Freeze Sounds
-			FMODUnity.RuntimeManager.PlayOneShot(freezeSound, GetComponent<Transform>().position);
-
 			yield return new WaitForSeconds(numSecs);
 			rb.isKinematic = false;
 			//currSprite.color = new Color(255, 255, 255);

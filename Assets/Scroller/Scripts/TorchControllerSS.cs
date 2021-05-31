@@ -19,24 +19,18 @@ public class TorchControllerSS : MonoBehaviour
     public GameObject litBar;
 
     public Flowchart Test;
-    public bool isMeiInside;
-
     bool holding;
     QinyangControls controls;
     Coroutine lastRoutine = null;
     private GameObject tempBar;
-    private Vector3 mei_torch_position;
-    private Vector3 qing_torch_position;
+    private float torchDistance;
     private LitBar barControl;
-    private GameObject qing;
     private GameObject mei;
     private Player2 meiControl;
     private bool isHit;
-    private bool isCharging;
-    private bool isLighting;
+    private bool isCharging = false;
     private PhotonView photonView;
     private Animator anim;
-    private Animator mei_anim;
     // Start is called before the first frame update
 
     void Awake()
@@ -44,21 +38,18 @@ public class TorchControllerSS : MonoBehaviour
         photonView = GetComponent<PhotonView>();
         
         controls = new QinyangControls();
-        // controls.Gameplay.Interact.performed += ctx => photonView.RPC("lantern",RpcTarget.All);//lantern();
-        // controls.Gameplay.Interact.canceled += ctx => photonView.RPC("disableLantren",RpcTarget.All);//disableLantren();
+        controls.Gameplay.Interact.performed += ctx => photonView.RPC("lantern",RpcTarget.All);//lantern();
+        controls.Gameplay.Interact.canceled += ctx => photonView.RPC("disableLantren",RpcTarget.All);//disableLantren();
         // controls.Gameplay.Interact.performed += ctx => lantern();
         // controls.Gameplay.Interact.canceled += ctx => disableLantren();
         
         // controls.Gameplay.Interact.performed += ctx => holding = true;
         // controls.Gameplay.Interact.canceled += ctx => holding = false;
-        qing = GameObject.FindGameObjectWithTag("Player");
         mei = GameObject.FindGameObjectWithTag("Player2");
-
         meiControl = FindObjectOfType<Player2>();
         isHit = meiControl.isHit;
 
         anim = GetComponent<Animator>();
-        // mei_anim = mei.GetComponent<Animator>();
         
     }
     void Start()
@@ -78,20 +69,17 @@ public class TorchControllerSS : MonoBehaviour
         //     disableLantren();
         // }
         // print("actually lit: " + isLit);
-        mei_torch_position = transform.position - mei.transform.position;
-        qing_torch_position = transform.position - qing.transform.position;
-        isMeiInside = (Mathf.Abs(mei_torch_position.x) <= 1.5f) && (Mathf.Abs(mei_torch_position.y) <= 1.5f) && (Mathf.Abs(mei_torch_position.z) <= 1.5f);
-        // mei_torch_dist = mei_torch_position.x;
-        // qing_torch_dist = qing_torch_position.x;
+        Vector3 torchPosition = transform.position - mei.transform.position;
+        torchDistance = torchPosition.x;
 
         isHit = meiControl.isHit;
-        
+        print("isHit: " + isHit);
         if (isHit)
         {
             disableLantren();
         }
         anim.SetBool("isCharging", isCharging);
-        meiControl.isLighting = isCharging;
+
     }
 
     // private void OnTriggerEnter(Collider other) {
@@ -102,25 +90,24 @@ public class TorchControllerSS : MonoBehaviour
 
     // Lights lantern
     [PunRPC]
-    public void lantern()
+    void lantern()
     {
-        bool isMeiInside = (Mathf.Abs(mei_torch_position.x) <= 1.5f) && (Mathf.Abs(mei_torch_position.y) <= 1.5f) && (Mathf.Abs(mei_torch_position.z) <= 1.5f);
-        // print("started ritual");
-        // lastRoutine = StartCoroutine(lightLantern());
+        
+        print("started ritual");
+        lastRoutine = StartCoroutine(lightLantern());
     }
 
     [PunRPC]
-    public void disableLantren()
+    void disableLantren()
     {
         isCharging = false;
-        isLighting = false;
         print("canceled ritual");
         litBar.SetActive(false);
         // StopCoroutine(lightLantern());
-        // StopCoroutine(lastRoutine);
+        StopCoroutine(lastRoutine);
     }
 
-    public IEnumerator lightLantern()
+    IEnumerator lightLantern()
     {
         // Offset position above object bbox (in world space)
         // float offsetPosY = transform.position.y + 1.5f;
@@ -145,12 +132,9 @@ public class TorchControllerSS : MonoBehaviour
 
         if (isLit == false)
         {
-            print("this" + this);
-            bool isQingInside = (Mathf.Abs(qing_torch_position.x) <= 1.5f) && (Mathf.Abs(qing_torch_position.y) <= 1.5f) && (Mathf.Abs(qing_torch_position.z) <= 1.5f);
-            if (isMeiInside)
+            if (Mathf.Abs(torchDistance) <= 1.5f)
             {
                 print("within the DIS");
-                meiControl.isLighting = true;
                 isCharging = true;
                 litBar.SetActive(true);
                 litBar.transform.position = new Vector3(
@@ -189,9 +173,6 @@ public class TorchControllerSS : MonoBehaviour
             }
 
 
-        }else{
-            meiControl.isLighting = false;
-            isCharging = false;
         }
     }
 
@@ -231,13 +212,13 @@ public class TorchControllerSS : MonoBehaviour
     }
 
 
-    // void OnEnable()
-    // {
-    //     controls.Gameplay.Enable();
-    // }
+    void OnEnable()
+    {
+        controls.Gameplay.Enable();
+    }
 
-    // void OnDisable()
-    // {
-    //     controls.Gameplay.Disable();
-    // }
+    void OnDisable()
+    {
+        controls.Gameplay.Disable();
+    }
 }

@@ -165,10 +165,9 @@ MonoBehaviour:
   attackRate: 4
   enemyName: NormalShanxiao
   enemyImage: {fileID: -6132581351020953739, guid: fcf6b5b151e6976418be64f140c447c3, type: 3}
-  attackSound: event:/Sounds/Imp_Attack
-  damageSound: 
-  freezeSound: event:/Sounds/Imp_Freeze
-  deathSound: event:/Sounds/Imp_Noise
+  collisionSound: {fileID: 8300000, guid: bd57b795d021da74ba15f266af9cf7e9, type: 3}
+  damageSound: event:/Sounds/Monster_Damage
+  deathSound: event:/Sounds/Monster_Death
   photonView: {fileID: 0}
   shadow: {fileID: 5934445946218468251}
 --- !u!95 &7578509151722214324
@@ -420,12 +419,6 @@ MonoBehaviour:
   - Type: 9
     SynchronizeType: 0
     Name: Attack
-  - Type: 4
-    SynchronizeType: 0
-    Name: Frozen
-  - Type: 9
-    SynchronizeType: 0
-    Name: Knockback
   m_SynchronizeLayers:
   - SynchronizeType: 0
     LayerIndex: 0

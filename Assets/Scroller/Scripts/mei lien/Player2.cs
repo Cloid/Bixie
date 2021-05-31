@@ -18,7 +18,6 @@ public class Player2 : MonoBehaviour
     public AudioClip punchSound, collisionSound, healthItem;
     public string jumpSound, damageSound;
     public bool isHit = false;
-    public bool isLighting = false;
     public Flowchart VN_Controller;
 
     // Private variables
@@ -77,7 +76,6 @@ public class Player2 : MonoBehaviour
         // Set onGround and animation bools
         onGround2 = Physics.Linecast(transform.position, groundCheck2.position, 1 << LayerMask.NameToLayer("Ground"));
         anim2.SetBool("OnGround", onGround2);
-        anim2.SetBool("isLighting", isLighting);
     }
 
     public void SetInputVector(Vector2 direction)
@@ -226,8 +224,8 @@ public class Player2 : MonoBehaviour
             }
             StartCoroutine(MoveProjectile(newProjectile));
 
-            // Spawn FMOD freezing sound 
-            FMODUnity.RuntimeManager.PlayOneShot("event:/Sounds/M_Freeze", newProjectile.GetComponent<Transform>().position);
+            // Spawn FMOD attack sound **maybe attach to the wave for better effect
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Sounds/M_Attack", newProjectile.GetComponent<Transform>().position);
 
             heavyAttackTime = 180f;
             canHeavyAttack = false;

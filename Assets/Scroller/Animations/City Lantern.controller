@@ -20,7 +20,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: c075fa10c936c194f86803065e8a2cdf, type: 2}
+  m_Motion: {fileID: 7400000, guid: 79fb0be30f315f441aadb68600d60f1e, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -45,8 +45,8 @@ AnimatorStateMachine:
     m_State: {fileID: -2578509610615313865}
     m_Position: {x: 200, y: 160, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 4769787280355885730}
-    m_Position: {x: 200, y: 240, z: 0}
+    m_State: {fileID: -518518403195331439}
+    m_Position: {x: 200, y: 230, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -57,6 +57,32 @@ AnimatorStateMachine:
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: 1907701616760635668}
+--- !u!1102 &-518518403195331439
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: CityLanternCompleted
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: e21703027524d034fa67667d393a33c4, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
 --- !u!91 &9100000
 AnimatorController:
   m_ObjectHideFlags: 0
@@ -99,7 +125,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 37bdffd11af2e7f4481f4ea480ec641f, type: 2}
+  m_Motion: {fileID: 7400000, guid: c707b8de6c2d1d34f92059535407ef1b, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -151,7 +177,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 1fbdfa012416a99469cc1b8e8a1e5357, type: 2}
+  m_Motion: {fileID: 7400000, guid: 406200ecccd8ec94da2f9bbfb501596b, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

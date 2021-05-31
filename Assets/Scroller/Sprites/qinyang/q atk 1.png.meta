@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: cb41c15c29ad44645b7e54faa5fb8094
+guid: e53cb2e669ddf0544b49fd3f5f29d134
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8902451555822968797
-    second: q atk 1-0_0
+      213: -383920042443583862
+    second: q atk 1_0
   - first:
-      213: 425140512357075009
-    second: q atk 1-0_1
+      213: -682834128348907276
+    second: q atk 1_1
   - first:
-      213: 2588054503247127058
-    second: q atk 1-0_2
+      213: -4645718502751655765
+    second: q atk 1_2
   - first:
-      213: 1879776183679244430
-    second: q atk 1-0_3
+      213: -7141797022622164440
+    second: q atk 1_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -62,7 +62,7 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
@@ -103,13 +103,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: q atk 1-0_0
+      name: q atk 1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 24
+        width: 24
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -117,20 +117,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3206c092a73247480800000000000000
-      internalID: -8902451555822968797
+      spriteID: a8e4ff761ca0caaf0800000000000000
+      internalID: -383920042443583862
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: q atk 1-0_1
+      name: q atk 1_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 24
         y: 0
-        width: 32
-        height: 24
+        width: 24
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -138,20 +138,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 148cba22b0766e500800000000000000
-      internalID: 425140512357075009
+      spriteID: 4f8ff336af51686f0800000000000000
+      internalID: -682834128348907276
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: q atk 1-0_2
+      name: q atk 1_2
       rect:
         serializedVersion: 2
-        x: 64
+        x: 48
         y: 0
-        width: 32
-        height: 24
+        width: 24
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -159,20 +159,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 212256dcbdd9ae320800000000000000
-      internalID: 2588054503247127058
+      spriteID: ba82705c2a7178fb0800000000000000
+      internalID: -4645718502751655765
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: q atk 1-0_3
+      name: q atk 1_3
       rect:
         serializedVersion: 2
-        x: 96
+        x: 72
         y: 0
-        width: 32
-        height: 24
+        width: 24
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -180,8 +180,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e88d075ca7e461a10800000000000000
-      internalID: 1879776183679244430
+      spriteID: 82ad9a0627d33ec90800000000000000
+      internalID: -7141797022622164440
       vertices: []
       indices: 
       edges: []

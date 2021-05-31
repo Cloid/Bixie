@@ -442,6 +442,7 @@ MonoBehaviour:
   EnemySpawn: {fileID: 178280465}
   litBar: {fileID: 635815170}
   Test: {fileID: 0}
+  isMeiInside: 0
 --- !u!212 &65357628
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4047,7 +4048,7 @@ MonoBehaviour:
   ySmooth: 8
   posY: 0
   smoothTime: 0.3
-  maxXAndY: {x: 30, y: 0}
+  maxXAndY: {x: 20, y: 0}
   minXAndY: {x: -0.77, y: 0}
   alwaysY: 11.3
 --- !u!114 &523248706
@@ -15935,6 +15936,7 @@ MonoBehaviour:
   EnemySpawn: {fileID: 1177635044}
   litBar: {fileID: 635815170}
   Test: {fileID: 0}
+  isMeiInside: 0
 --- !u!212 &2121744998
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16584,7 +16586,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 500448453302365738, guid: 0a8e8e98c320c45afbbcb279a3c432be, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 26.6
+      value: 19.23
       objectReference: {fileID: 0}
     - target: {fileID: 500448453302365738, guid: 0a8e8e98c320c45afbbcb279a3c432be, type: 3}
       propertyPath: m_LocalPosition.y
@@ -16867,7 +16869,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1641553602763923511, guid: f8b3845adffa74442bc3229e1ea4c0c9, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8b3845adffa74442bc3229e1ea4c0c9, type: 3}

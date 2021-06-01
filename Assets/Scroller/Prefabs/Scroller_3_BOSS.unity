@@ -1446,6 +1446,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7753269862659246250, guid: e77769a74a59b4ccdad3c5fd4a87604a, type: 3}
   m_PrefabInstance: {fileID: 970530738}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &970530740 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3616114548808437273, guid: e77769a74a59b4ccdad3c5fd4a87604a, type: 3}
+  m_PrefabInstance: {fileID: 970530738}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1000555373
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4216,7 +4221,7 @@ MonoBehaviour:
   livesText: {fileID: 823662819}
   displayMessage: {fileID: 1021850082}
   heartContainer: {fileID: 222200229}
-  heartContainer2: {fileID: 0}
+  heartContainer2: {fileID: 970530740}
   enemyUI: {fileID: 246343618}
   enemySlider: {fileID: 1480186054}
   enemyName: {fileID: 0}

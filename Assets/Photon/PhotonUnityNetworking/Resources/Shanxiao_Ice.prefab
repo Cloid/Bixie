@@ -119,7 +119,7 @@ MonoBehaviour:
   freezeSound: 
   deathSound: event:/Sounds/Monster_Death
   photonView: {fileID: 0}
-  shadow: {fileID: 0}
+  shadow: {fileID: 879772215387527384}
 --- !u!95 &2701037823483506924
 Animator:
   serializedVersion: 3

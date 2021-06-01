@@ -2461,7 +2461,6 @@ GameObject:
   - component: {fileID: 703291815}
   - component: {fileID: 703291814}
   - component: {fileID: 703291813}
-  - component: {fileID: 703291819}
   m_Layer: 0
   m_Name: VN StatueTalk
   m_TagString: Untagged
@@ -2616,25 +2615,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 703291811}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2.652954, y: 14.558115, z: 22.47749}
   m_Center: {x: 1.3942223, y: -6.054488, z: -6.4698734}
---- !u!114 &703291819
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 703291811}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b3ee978a857ba341b1c4cfffa6fd156, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  VNController: {fileID: 0}
-  Block: 
 --- !u!1 &712730656
 GameObject:
   m_ObjectHideFlags: 0
@@ -6166,7 +6151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFlowchart: {fileID: 1635255964}
+  selectedFlowchart: {fileID: 703291817}
 --- !u!4 &1476870852
 Transform:
   m_ObjectHideFlags: 1
@@ -6324,14 +6309,6 @@ PrefabInstance:
     - target: {fileID: 3279995663177389029, guid: 9eee880d1dc12ea429022779ad21f7d9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6845009586743628864, guid: 9eee880d1dc12ea429022779ad21f7d9, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7224187411186185442, guid: 9eee880d1dc12ea429022779ad21f7d9, type: 3}
-      propertyPath: sceneViewId
-      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9eee880d1dc12ea429022779ad21f7d9, type: 3}
@@ -10388,6 +10365,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Offline Input Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 1641553602763923511, guid: f8b3845adffa74442bc3229e1ea4c0c9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8b3845adffa74442bc3229e1ea4c0c9, type: 3}
 --- !u!1 &1770220783
@@ -10854,6 +10835,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6121512075443834488, guid: 3114c3afd20ea834aad5218157ff4a41, type: 3}
+      propertyPath: litBar
+      value: 
+      objectReference: {fileID: 791175120}
     - target: {fileID: 7145370344321856048, guid: 3114c3afd20ea834aad5218157ff4a41, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -12411,14 +12396,6 @@ PrefabInstance:
     - target: {fileID: 2067066594489509023, guid: b25e3125d0f5d7d40924378c1098463a, type: 3}
       propertyPath: m_Name
       value: City Statue
-      objectReference: {fileID: 0}
-    - target: {fileID: 4026302231245292066, guid: b25e3125d0f5d7d40924378c1098463a, type: 3}
-      propertyPath: sceneViewId
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 6132030984007369873, guid: b25e3125d0f5d7d40924378c1098463a, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6374883348230962959, guid: b25e3125d0f5d7d40924378c1098463a, type: 3}
       propertyPath: m_RootOrder

@@ -21,7 +21,7 @@ public class Boss : Enemy {
 	{
 		if (!isDead)
 		{
-			anim.SetTrigger("Boomerang");
+			// anim.SetTrigger("Boomerang");
 			GameObject tempBoomerang = Instantiate(boomerang, transform.position, transform.rotation);
 			if (facingRight)
 			{

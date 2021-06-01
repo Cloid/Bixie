@@ -79,12 +79,14 @@ public class RockPush : MonoBehaviour
         // Shanxiao_BossACT1 moveScript = other.GetComponent<Shanxiao_BossACT1>();
         Boss1_body.constraints = RigidbodyConstraints.FreezeAll;
         Boss1_script.enabled = false;
-        Boss1_anim.enabled = false;
+        // Boss1_anim.enabled = false;
+        Boss1_anim.SetBool("isStun", true);
         yield return new WaitForSeconds(stunTime);
         
         Boss1_body.constraints = RigidbodyConstraints.FreezeRotation;
         Boss1_script.enabled = true;
-        Boss1_anim.enabled = true;
+        // Boss1_anim.enabled = true;
+        Boss1_anim.SetBool("isStun", false);
         Destroy(gameObject);
         
     }

@@ -239,6 +239,10 @@ public class Player : MonoBehaviour
         {
             anim.SetBool("IsDashing", true);
             Debug.Log("Player1 is doing a dash!");
+            
+            // FMOD Dash
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Sounds/Dash", GetComponent<Transform>().position);
+
             isDash = true;
             if (isFacingRight)
             {

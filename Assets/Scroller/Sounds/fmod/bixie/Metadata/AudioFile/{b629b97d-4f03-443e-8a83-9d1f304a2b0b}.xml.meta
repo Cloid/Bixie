@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Scroller/Sounds/fmod/bixie/Metadata/AudioFile/{b629b97d-4f03-443e-8a83-9d1f304a2b0b}.xml.meta
+guid: 7ed8178ad4986eb44bd290ed71c956d3
+TextScriptImporter:
+=======
+guid: 37bdffd11af2e7f4481f4ea480ec641f
+NativeFormatImporter:
+>>>>>>> c342005 (Reimplemented City Assets & Animations):Assets/Scroller/Animations/CityLanternIdle.anim.meta
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

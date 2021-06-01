@@ -136,7 +136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4026302231245292066, guid: b25e3125d0f5d7d40924378c1098463a, type: 3}
       propertyPath: sceneViewId
-      value: 7
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 6374883348230962959, guid: b25e3125d0f5d7d40924378c1098463a, type: 3}
       propertyPath: m_RootOrder
@@ -1555,7 +1555,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4026302231245292066, guid: b25e3125d0f5d7d40924378c1098463a, type: 3}
       propertyPath: sceneViewId
-      value: 14
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 6374883348230962959, guid: b25e3125d0f5d7d40924378c1098463a, type: 3}
       propertyPath: m_RootOrder
@@ -6328,6 +6328,10 @@ PrefabInstance:
     - target: {fileID: 6845009586743628864, guid: 9eee880d1dc12ea429022779ad21f7d9, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7224187411186185442, guid: 9eee880d1dc12ea429022779ad21f7d9, type: 3}
+      propertyPath: sceneViewId
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9eee880d1dc12ea429022779ad21f7d9, type: 3}
@@ -12407,6 +12411,10 @@ PrefabInstance:
     - target: {fileID: 2067066594489509023, guid: b25e3125d0f5d7d40924378c1098463a, type: 3}
       propertyPath: m_Name
       value: City Statue
+      objectReference: {fileID: 0}
+    - target: {fileID: 4026302231245292066, guid: b25e3125d0f5d7d40924378c1098463a, type: 3}
+      propertyPath: sceneViewId
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6132030984007369873, guid: b25e3125d0f5d7d40924378c1098463a, type: 3}
       propertyPath: m_IsTrigger

@@ -11,13 +11,15 @@ GameObject:
   - component: {fileID: 7145370344321856048}
   - component: {fileID: 6936910518908747589}
   - component: {fileID: 4511414191631371551}
+  - component: {fileID: 6121512075443834487}
+  - component: {fileID: 6121512075443834488}
   m_Layer: 0
   m_Name: City Lantern
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7145370344321856048
 Transform:
   m_ObjectHideFlags: 0
@@ -27,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 6051531212358855587}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -102,3 +104,38 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &6121512075443834487
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6051531212358855587}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.2819309, y: 1.5400343, z: 0.9449539}
+  m_Center: {x: -0.013941765, y: -0.045895815, z: 0.025776386}
+--- !u!114 &6121512075443834488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6051531212358855587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be2dccbf51a3ec746baffe7b96cdaf2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  torch: {fileID: 6051531212358855587}
+  ritualTime: 3
+  bamboo: {fileID: 0}
+  darkSprite: {fileID: 2979538299748910976, guid: 0dd178c6e0737254ea3fda4c1eb4f880, type: 3}
+  litSprite: {fileID: -2789630533462607416, guid: 0dd178c6e0737254ea3fda4c1eb4f880, type: 3}
+  isLit: 0
+  EnemySpawn: {fileID: 0}
+  litBar: {fileID: 0}
+  Test: {fileID: 0}
+  isMeiInside: 0

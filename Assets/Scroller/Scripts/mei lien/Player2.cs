@@ -265,6 +265,10 @@ public class Player2 : MonoBehaviour
         {
             Debug.Log("Player2 is doing a jump!");
             anim2.SetTrigger("Jumping");
+
+            // FMOD Jumping
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Sounds/M_Jump", GetComponent<Transform>().position);
+
             if(transform.position.y > 2){
                 rb.AddForce(Vector3.up * jumpForce/2);
             } else {

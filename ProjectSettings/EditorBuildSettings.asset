@@ -21,10 +21,25 @@ EditorBuildSettings:
     path: Assets/Scroller/Prefabs/Scroller_1_1.unity
     guid: 7bf376cd068c1dfee817bddb4f1e272f
   - enabled: 1
+    path: Assets/Visual Novel/Scenes/VN_2.unity
+    guid: ebe195adb6bc3f649968ea28acb61c4b
+  - enabled: 1
     path: Assets/Scroller/Prefabs/Scroller_1_Boss.unity
     guid: 229c3bd9a8ee545b1b1f9f2b75dded6c
   - enabled: 1
+    path: Assets/Visual Novel/Scenes/VN_3.unity
+    guid: d0abdda1db80d3746a1a62b23dd76fac
+  - enabled: 1
+    path: Assets/Visual Novel/Scenes/VN_4.unity
+    guid: 2c0126dcfbc889142b0086a4a3f3e49f
+  - enabled: 1
     path: Assets/Scroller/Prefabs/Scroller_3_1.unity
     guid: d53b844d870192b4895926894c0c08cc
+  - enabled: 1
+    path: Assets/Visual Novel/Scenes/VN_5.unity
+    guid: d39956f04ba8f154cb5e0d3c0c88405e
+  - enabled: 1
+    path: Assets/Visual Novel/Scenes/EndVN.unity
+    guid: 88fa58ebe0e4bbb4fb6c24e2ef5117c6
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 5ec37aa789bd0410a9acd81766f4ddcd, type: 2}

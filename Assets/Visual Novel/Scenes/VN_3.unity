@@ -467,6 +467,68 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a0bbe22c246e4c78ad8e9816cbae9d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &1076601026
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5991734221725856800, guid: 5023f6525e582664c8e7d3fae4a01b03, type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 5991734221725856800, guid: 5023f6525e582664c8e7d3fae4a01b03, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 186.12787
+      objectReference: {fileID: 0}
+    - target: {fileID: 5991734221725856800, guid: 5023f6525e582664c8e7d3fae4a01b03, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 27.038145
+      objectReference: {fileID: 0}
+    - target: {fileID: 5991734221725856800, guid: 5023f6525e582664c8e7d3fae4a01b03, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -57.16608
+      objectReference: {fileID: 0}
+    - target: {fileID: 5991734221725856800, guid: 5023f6525e582664c8e7d3fae4a01b03, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5991734221725856800, guid: 5023f6525e582664c8e7d3fae4a01b03, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5991734221725856800, guid: 5023f6525e582664c8e7d3fae4a01b03, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5991734221725856800, guid: 5023f6525e582664c8e7d3fae4a01b03, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5991734221725856800, guid: 5023f6525e582664c8e7d3fae4a01b03, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5991734221725856800, guid: 5023f6525e582664c8e7d3fae4a01b03, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5991734221725856800, guid: 5023f6525e582664c8e7d3fae4a01b03, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5991734221725856813, guid: 5023f6525e582664c8e7d3fae4a01b03, type: 3}
+      propertyPath: m_Name
+      value: PhotonVN_Sync
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5023f6525e582664c8e7d3fae4a01b03, type: 3}
+--- !u!1 &1076601027 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5991734221725856813, guid: 5023f6525e582664c8e7d3fae4a01b03, type: 3}
+  m_PrefabInstance: {fileID: 1076601026}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1183704693
 GameObject:
   m_ObjectHideFlags: 0
@@ -578,6 +640,9 @@ GameObject:
   - component: {fileID: 1317180179}
   - component: {fileID: 1317180180}
   - component: {fileID: 1317180181}
+  - component: {fileID: 1317180184}
+  - component: {fileID: 1317180183}
+  - component: {fileID: 1317180182}
   m_Layer: 0
   m_Name: VN_2 Flowchart
   m_TagString: Untagged
@@ -614,7 +679,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 63.96907
+    x: 59.84536
     y: 70
     width: 74.74226
     height: 40
@@ -678,6 +743,9 @@ MonoBehaviour:
   - {fileID: 1317180165}
   - {fileID: 1317180164}
   - {fileID: 1317180163}
+  - {fileID: 1317180184}
+  - {fileID: 1317180183}
+  - {fileID: 1317180182}
   suppressAllAutoSelections: 0
 --- !u!114 &1317180127
 MonoBehaviour:
@@ -706,7 +774,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 1317180126}
   selectedCommands:
-  - {fileID: 1317180181}
+  - {fileID: 1317180182}
   variables: []
   description: 
   stepPause: 0
@@ -2117,7 +2185,7 @@ MonoBehaviour:
   rotTweenType: 4
 --- !u!114 &1317180180
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -2138,7 +2206,7 @@ MonoBehaviour:
   rotTweenType: 4
 --- !u!114 &1317180181
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -2157,6 +2225,65 @@ MonoBehaviour:
   orthoSizeTweenType: 4
   posTweenType: 4
   rotTweenType: 4
+--- !u!114 &1317180182
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1317180124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 57
+  indentLevel: 0
+  targetObject: {fileID: 1076601027}
+  methodName: decideBool
+  delay: 0
+--- !u!114 &1317180183
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1317180124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 56
+  indentLevel: 0
+  storyText: Loading next level / waiting on other player
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &1317180184
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1317180124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d65d551a201c94bc79950076ff3eaf2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 55
+  indentLevel: 0
+  sayDialog: {fileID: 1517208288}
 --- !u!1 &1378572490
 GameObject:
   m_ObjectHideFlags: 0

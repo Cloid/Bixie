@@ -985,6 +985,9 @@ GameObject:
   - component: {fileID: 1317180135}
   - component: {fileID: 1317180134}
   - component: {fileID: 1317180155}
+  - component: {fileID: 1317180156}
+  - component: {fileID: 1317180158}
+  - component: {fileID: 1317180157}
   m_Layer: 0
   m_Name: VN_2 Flowchart
   m_TagString: Untagged
@@ -1023,7 +1026,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 65
     y: 70
-    width: 75.6
+    width: 76
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1059,6 +1062,9 @@ MonoBehaviour:
   - {fileID: 1317180133}
   - {fileID: 1317180131}
   - {fileID: 1317180134}
+  - {fileID: 1317180156}
+  - {fileID: 1317180158}
+  - {fileID: 1317180157}
   suppressAllAutoSelections: 0
 --- !u!114 &1317180127
 MonoBehaviour:
@@ -1087,7 +1093,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 1317180126}
   selectedCommands:
-  - {fileID: 1317180155}
+  - {fileID: 1317180157}
   variables: []
   description: 
   stepPause: 0
@@ -1245,7 +1251,7 @@ MonoBehaviour:
   waitUntilFinished: 0
 --- !u!114 &1317180134
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -1275,7 +1281,7 @@ MonoBehaviour:
   waitUntilFinished: 0
 --- !u!114 &1317180135
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -1305,7 +1311,7 @@ MonoBehaviour:
   waitUntilFinished: 0
 --- !u!114 &1317180136
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -1333,7 +1339,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &1317180137
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -1358,7 +1364,7 @@ MonoBehaviour:
   rotTweenType: 4
 --- !u!114 &1317180138
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -1385,7 +1391,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &1317180139
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -1410,7 +1416,7 @@ MonoBehaviour:
   rotTweenType: 4
 --- !u!114 &1317180140
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -1439,7 +1445,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &1317180141
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -1460,7 +1466,7 @@ MonoBehaviour:
   rotTweenType: 4
 --- !u!114 &1317180142
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -1488,7 +1494,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &1317180143
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -1509,7 +1515,7 @@ MonoBehaviour:
   rotTweenType: 4
 --- !u!114 &1317180144
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -1534,7 +1540,7 @@ MonoBehaviour:
   rotTweenType: 4
 --- !u!114 &1317180145
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -1561,7 +1567,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &1317180146
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -1590,7 +1596,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &1317180147
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -1618,7 +1624,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &1317180148
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -1646,7 +1652,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &1317180149
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -1671,7 +1677,7 @@ MonoBehaviour:
   rotTweenType: 4
 --- !u!114 &1317180150
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -1699,7 +1705,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &1317180151
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -1727,7 +1733,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &1317180152
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -1752,7 +1758,7 @@ MonoBehaviour:
   rotTweenType: 4
 --- !u!114 &1317180153
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -1781,7 +1787,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &1317180154
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -1806,7 +1812,7 @@ MonoBehaviour:
   rotTweenType: 4
 --- !u!114 &1317180155
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -1819,6 +1825,65 @@ MonoBehaviour:
   itemId: 27
   indentLevel: 0
   sayDialog: {fileID: 1074979865}
+--- !u!114 &1317180156
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1317180124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d65d551a201c94bc79950076ff3eaf2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 28
+  indentLevel: 0
+  sayDialog: {fileID: 1517208288}
+--- !u!114 &1317180157
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1317180124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 30
+  indentLevel: 0
+  targetObject: {fileID: 1673361266}
+  methodName: decideBool
+  delay: 0
+--- !u!114 &1317180158
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1317180124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 29
+  indentLevel: 0
+  storyText: Loading next level / waiting on other player
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
 --- !u!1 &1378572490
 GameObject:
   m_ObjectHideFlags: 0
@@ -2148,6 +2213,68 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1673361265
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5991734221725856800, guid: 5023f6525e582664c8e7d3fae4a01b03, type: 3}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5991734221725856800, guid: 5023f6525e582664c8e7d3fae4a01b03, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 186.12787
+      objectReference: {fileID: 0}
+    - target: {fileID: 5991734221725856800, guid: 5023f6525e582664c8e7d3fae4a01b03, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 27.038145
+      objectReference: {fileID: 0}
+    - target: {fileID: 5991734221725856800, guid: 5023f6525e582664c8e7d3fae4a01b03, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -57.16608
+      objectReference: {fileID: 0}
+    - target: {fileID: 5991734221725856800, guid: 5023f6525e582664c8e7d3fae4a01b03, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5991734221725856800, guid: 5023f6525e582664c8e7d3fae4a01b03, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5991734221725856800, guid: 5023f6525e582664c8e7d3fae4a01b03, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5991734221725856800, guid: 5023f6525e582664c8e7d3fae4a01b03, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5991734221725856800, guid: 5023f6525e582664c8e7d3fae4a01b03, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5991734221725856800, guid: 5023f6525e582664c8e7d3fae4a01b03, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5991734221725856800, guid: 5023f6525e582664c8e7d3fae4a01b03, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5991734221725856813, guid: 5023f6525e582664c8e7d3fae4a01b03, type: 3}
+      propertyPath: m_Name
+      value: PhotonVN_Sync
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5023f6525e582664c8e7d3fae4a01b03, type: 3}
+--- !u!1 &1673361266 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5991734221725856813, guid: 5023f6525e582664c8e7d3fae4a01b03, type: 3}
+  m_PrefabInstance: {fileID: 1673361265}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1959372544
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -161,7 +161,7 @@ public class TorchControllerSS : MonoBehaviour
                 if(gameObject.name == "TorchBB_TP"){
                     Debug.Log("TP Time");
                     if(PhotonNetwork.IsMasterClient){
-                        PhotonNetwork.LoadLevel("Scroller_1_Boss");
+                        PhotonNetwork.LoadLevel("VN_2");
                     }
                 } else {
                     Destroy(bamboo);

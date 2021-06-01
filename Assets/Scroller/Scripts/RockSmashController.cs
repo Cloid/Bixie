@@ -25,7 +25,7 @@ public class RockSmashController : MonoBehaviour
     [PunRPC]
     void DestroyRock(){
         health-=1;
-        currSprite.color = Color.red;
+        currSprite.color = Color.blue;
         StartCoroutine(whitecolor());
 		//yield return new WaitForSeconds(1);
         if(health==0){
@@ -33,7 +33,7 @@ public class RockSmashController : MonoBehaviour
         }
     }
     IEnumerator whitecolor() {
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.6f);
         GetComponent<SpriteRenderer> ().color = Color.white;
     }
 }

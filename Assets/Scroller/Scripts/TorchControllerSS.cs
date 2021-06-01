@@ -177,7 +177,9 @@ public class TorchControllerSS : MonoBehaviour
                     if(PhotonNetwork.IsMasterClient){
                         PhotonNetwork.LoadLevel("VN_2");
                     }
-                } else {
+                } else if(gameObject.name == "City Lantern 3"){
+                    PhotonNetwork.LoadLevel("VN_5");
+                    }else {
                     Destroy(bamboo);
                 }
                 if (EnemySpawn != null)

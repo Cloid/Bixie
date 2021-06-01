@@ -3857,7 +3857,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 773570561, guid: d00d46a330cf34de8956be298c6b33f8, type: 3}
       propertyPath: sceneViewId
-      value: 19
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 513987294778092716, guid: d00d46a330cf34de8956be298c6b33f8, type: 3}
       propertyPath: sceneViewId
@@ -5059,7 +5059,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxZ: -1.6
-  minZ: -8.4
+  minZ: -10
   enemy:
   - {fileID: 7578509151722214320, guid: 55d70e1f825334497a603f64a87a3d48, type: 3}
   - {fileID: 3280954224637263398, guid: 72f1dd2669fcf514580ef459adff4bb6, type: 3}
@@ -11117,7 +11117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxZ: -1.6
-  minZ: -8.4
+  minZ: -10
   enemy:
   - {fileID: 7578509151722214320, guid: 55d70e1f825334497a603f64a87a3d48, type: 3}
   - {fileID: 3280954224637263398, guid: 72f1dd2669fcf514580ef459adff4bb6, type: 3}
@@ -12275,7 +12275,7 @@ PrefabInstance:
       objectReference: {fileID: 155914037}
     - target: {fileID: 1682291828842334884, guid: 6ff773ca803e7814aa388c661e7cfd9d, type: 3}
       propertyPath: sceneViewId
-      value: 1
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 2036134646021136293, guid: 6ff773ca803e7814aa388c661e7cfd9d, type: 3}
       propertyPath: m_Name

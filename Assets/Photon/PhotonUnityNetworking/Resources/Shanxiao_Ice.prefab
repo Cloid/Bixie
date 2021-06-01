@@ -114,10 +114,12 @@ MonoBehaviour:
   attackRate: 4
   enemyName: IceShanxiao
   enemyImage: {fileID: -2089972969577747650, guid: 7a66e9a708a22d24081204ae4e7b2831, type: 3}
-  collisionSound: {fileID: 8300000, guid: bd57b795d021da74ba15f266af9cf7e9, type: 3}
+  attackSound: 
   damageSound: event:/Sounds/Monster_Damage
+  freezeSound: 
   deathSound: event:/Sounds/Monster_Death
   photonView: {fileID: 0}
+  shadow: {fileID: 0}
 --- !u!95 &2701037823483506924
 Animator:
   serializedVersion: 3

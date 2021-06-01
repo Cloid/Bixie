@@ -164,6 +164,7 @@ MonoBehaviour:
   maxHealth: 2
   attackRate: 4
   enemyName: NormalShanxiao
+  foodItem: {fileID: 6023910420615670184, guid: c2f1c83774b298e478e9035c4fda3af2, type: 3}
   enemyImage: {fileID: -6132581351020953739, guid: fcf6b5b151e6976418be64f140c447c3, type: 3}
   attackSound: event:/Sounds/Imp_Attack
   damageSound: 

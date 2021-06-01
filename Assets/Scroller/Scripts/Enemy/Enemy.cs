@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour {
 	public int maxHealth;
 	public float attackRate = 1f;
 	public string enemyName;
+	public GameObject foodItem;
 	
 	public Sprite enemyImage;
 	public string attackSound, damageSound, freezeSound, deathSound;
@@ -327,6 +328,13 @@ public class Enemy : MonoBehaviour {
 
 	[PunRPC]
 	public void DestroyEnemy(){
+		// Spawn food item 
+		float foodItemChance = Random.Range(0f, 1f);
+		if(foodItemChance <= 0.3f)
+        {
+			print("Enemy has spawned food!");
+			Instantiate(foodItem, transform.position, Quaternion.identity);
+        }
 		Destroy(gameObject);
 	}
 	public void DisableEnemy()

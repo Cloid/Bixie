@@ -113,6 +113,7 @@ MonoBehaviour:
   maxHealth: 2
   attackRate: 4
   enemyName: IceShanxiao
+  foodItem: {fileID: 6023910420615670184, guid: c2f1c83774b298e478e9035c4fda3af2, type: 3}
   enemyImage: {fileID: -2089972969577747650, guid: 7a66e9a708a22d24081204ae4e7b2831, type: 3}
   attackSound: 
   damageSound: event:/Sounds/Monster_Damage

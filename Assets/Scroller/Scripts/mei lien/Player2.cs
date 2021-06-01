@@ -18,6 +18,7 @@ public class Player2 : MonoBehaviour
     public AudioClip punchSound, collisionSound, healthItem;
     public string jumpSound, damageSound;
     public bool isHit = false;
+    public bool isLighting = false;
     public Flowchart VN_Controller;
 
     // Private variables
@@ -34,7 +35,7 @@ public class Player2 : MonoBehaviour
 
     // GameObjects
     private Player player1;
-    private Rigidbody rb;
+    public Rigidbody rb;
     private GameObject torch;
     private Animator anim2;
     private Transform groundCheck2;
@@ -76,6 +77,8 @@ public class Player2 : MonoBehaviour
         // Set onGround and animation bools
         onGround2 = Physics.Linecast(transform.position, groundCheck2.position, 1 << LayerMask.NameToLayer("Ground"));
         anim2.SetBool("OnGround", onGround2);
+        print("isLighting: " + isLighting);
+        anim2.SetBool("isLighting", isLighting);
     }
 
     public void SetInputVector(Vector2 direction)
@@ -341,6 +344,7 @@ public class Player2 : MonoBehaviour
 
             PlaySound(damageSound, "Damage", (int)damage);
             StartCoroutine(setHit());
+            print("currentHealth: " + player1.currentHealth);
 
             if (player1.currentHealth <= 0)
             {

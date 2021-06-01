@@ -243,7 +243,7 @@ MonoBehaviour:
   dashForce: 10
   minHeight: -8.4
   maxHeight: 3
-  maxHealth: 5
+  maxHealth: 10
   playerName: 
   playerImage: {fileID: 0}
   rb: {fileID: 0}

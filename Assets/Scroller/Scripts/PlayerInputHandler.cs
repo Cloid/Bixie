@@ -19,16 +19,20 @@ public class PlayerInputHandler : MonoBehaviour
     private GameObject cs_holder;
     private PhotonView cs_photonView;
     private CS_Control cs;
+    private TorchControllerSS[] TorchControls;
     private PhotonView photonView;
     public bool hostClient = false;
     QinyangControls controls;
     Vector2 move;
+    Coroutine lastRoutine = null;
 
     // Initialization
     void Awake()
     {
         photonView = GetComponent<PhotonView>();
         cs_holder = GameObject.Find("cc_control");
+        
+        
 
         if(SceneManager.GetActiveScene().buildIndex == 3){
             cs = cs_holder.GetComponent<CS_Control>();
@@ -102,7 +106,10 @@ public class PlayerInputHandler : MonoBehaviour
             {
                 player2 = FindObjectOfType<Player2>();
             }
+            
         }
+
+        TorchControls = (TorchControllerSS[]) GameObject.FindObjectsOfType (typeof(TorchControllerSS));
     }
 
     // onMove function 
@@ -226,30 +233,43 @@ public class PlayerInputHandler : MonoBehaviour
 
     // onJump function 
     // Allows players to call their interact function through callback context from input device
-    // public void onInteract(CallbackContext context)
-    // {
-    //     if (PhotonNetwork.OfflineMode || photonView.IsMine)
-    //     {
-    //         if (player1 != null && player2 != null)
-    //         {
-    //             if (index == 0)
-    //             {
-    //                 if (player1.interactObj != null)
-    //                 {
-    //                     player1.Interact(player1.interactObj);
-    //                 }
+    public void onInteract(CallbackContext context)
+    {
+        if (PhotonNetwork.OfflineMode || photonView.IsMine)
+        {
+            if (player1 != null && player2 != null)
+            {
+                if (index == 0)
+                {
 
-    //             }
-    //             else
-    //             {
+                }
+                else
+                {
 
-    //                 if (player2.interactObj != null)
-    //                 {
-    //                     player2.Interact(player2.interactObj);
-    //                 }
-    //             }
-    //         }
-    //     }
-    // }
+                    if (context.performed) {
+                        foreach (TorchControllerSS TorchControl in TorchControls)
+                        {
+                            if(TorchControl.isMeiInside){
+                                print("started ritual");
+                                lastRoutine = StartCoroutine(TorchControl.lightLantern());
+                                player2.isLighting = true;
+                                player2.rb.constraints = RigidbodyConstraints.FreezeAll;
+                            }
+                            
+                        }
+                    }
+                    if (context.canceled) {
+                        foreach (TorchControllerSS TorchControl in TorchControls)
+                        {
+                            TorchControl.disableLantren();
+                            if(lastRoutine != null) StopCoroutine(lastRoutine);
+                            player2.isLighting = false;
+                            player2.rb.constraints = RigidbodyConstraints.FreezeRotation;
+                        }
+                    }
+                }
+            }
+        }
+    }
 
 }

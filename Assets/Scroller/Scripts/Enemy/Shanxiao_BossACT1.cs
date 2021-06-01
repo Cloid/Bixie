@@ -97,7 +97,7 @@ public class Shanxiao_BossACT1 : Enemy
 		if (!isDead)
 		{
 			// justSpawned = true;
-			// anim_cage.SetTrigger("cage");
+			anim.SetTrigger("Boomerang");
 			print("mei lien location: " + player2.transform.position);
 			tempCage = PhotonNetwork.Instantiate(cage.gameObject.name,player2.transform.position, transform.rotation); //Instantiate(cage, player2.transform.position, transform.rotation);
 			anim_cage = tempCage.GetComponent<Animator>();

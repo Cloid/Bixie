@@ -3946,6 +3946,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &456924460 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3616114548808437273, guid: e77769a74a59b4ccdad3c5fd4a87604a, type: 3}
+  m_PrefabInstance: {fileID: 915032910}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &523248701
 GameObject:
   m_ObjectHideFlags: 0
@@ -15240,7 +15245,7 @@ MonoBehaviour:
   livesText: {fileID: 1638804018}
   displayMessage: {fileID: 1021850082}
   heartContainer: {fileID: 858637770}
-  heartContainer2: {fileID: 0}
+  heartContainer2: {fileID: 456924460}
   enemyUI: {fileID: 246343618}
   enemySlider: {fileID: 1480186054}
   enemyName: {fileID: 0}

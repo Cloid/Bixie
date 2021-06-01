@@ -354,11 +354,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   torch: {fileID: 65357624}
+  ritualTime: 0
   bamboo: {fileID: 0}
   darkSprite: {fileID: 21300000, guid: f549a46bf7bd2db6abe4515f83fd3d96, type: 3}
   litSprite: {fileID: 21300000, guid: 13659db861d6d2677b996192279abced, type: 3}
   isLit: 0
   EnemySpawn: {fileID: 178280465}
+  litBar: {fileID: 0}
+  Test: {fileID: 0}
+  isMeiInside: 0
 --- !u!212 &65357628
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3509,6 +3513,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7753269862659246250, guid: e77769a74a59b4ccdad3c5fd4a87604a, type: 3}
   m_PrefabInstance: {fileID: 970530738}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &970530740 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3616114548808437273, guid: e77769a74a59b4ccdad3c5fd4a87604a, type: 3}
+  m_PrefabInstance: {fileID: 970530738}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &981197560
 GameObject:
   m_ObjectHideFlags: 0
@@ -4143,7 +4152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   songEvent: event:/Music/Forest
-  intensity: 1
+  delay_time: 0
 --- !u!114 &1087027504 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1392887016546948655, guid: 5b8755d691e4e054788a1a9136718635, type: 3}
@@ -10778,6 +10787,7 @@ MonoBehaviour:
   livesText: {fileID: 823662819}
   displayMessage: {fileID: 1021850082}
   heartContainer: {fileID: 222200229}
+  heartContainer2: {fileID: 970530740}
   enemyUI: {fileID: 246343618}
   enemySlider: {fileID: 1480186054}
   enemyName: {fileID: 0}
@@ -11327,11 +11337,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   torch: {fileID: 2121744994}
+  ritualTime: 0
   bamboo: {fileID: 0}
   darkSprite: {fileID: 21300000, guid: f549a46bf7bd2db6abe4515f83fd3d96, type: 3}
   litSprite: {fileID: 21300000, guid: 13659db861d6d2677b996192279abced, type: 3}
   isLit: 0
   EnemySpawn: {fileID: 1177635044}
+  litBar: {fileID: 0}
+  Test: {fileID: 0}
+  isMeiInside: 0
 --- !u!212 &2121744998
 SpriteRenderer:
   m_ObjectHideFlags: 0

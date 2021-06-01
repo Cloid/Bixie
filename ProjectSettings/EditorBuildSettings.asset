@@ -39,6 +39,9 @@ EditorBuildSettings:
     path: Assets/Visual Novel/Scenes/VN_5.unity
     guid: d39956f04ba8f154cb5e0d3c0c88405e
   - enabled: 1
+    path: Assets/Scroller/Prefabs/Scroller_3_mobBoss.unity
+    guid: 7ff50eaaec9e9413289976bd71b39439
+  - enabled: 1
     path: Assets/Visual Novel/Scenes/EndVN.unity
     guid: 88fa58ebe0e4bbb4fb6c24e2ef5117c6
   m_configObjects:

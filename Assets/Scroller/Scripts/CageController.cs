@@ -18,7 +18,14 @@ public class CageController : MonoBehaviour
 
     private GameObject boss;
     private Rigidbody Mei;
+
     // Start is called before the first frame update
+    void Start()
+    {
+        // Play FMOD Rock Spawning
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Sounds/Rock_Build", GetComponent<Transform>().position);
+    }
+
     void Awake()
     {
         player2 = FindObjectOfType<Player2>();

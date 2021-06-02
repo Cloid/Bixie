@@ -220,7 +220,7 @@ public class TorchControllerSS : MonoBehaviour
 
 
     // }
-
+    [PunRPC]
     public void destroyU(){
         Destroy(bamboo);
     }

@@ -16620,6 +16620,10 @@ PrefabInstance:
       propertyPath: cage
       value: 
       objectReference: {fileID: 2034082304}
+    - target: {fileID: 495878423579096389, guid: 0a8e8e98c320c45afbbcb279a3c432be, type: 3}
+      propertyPath: maxHealth
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 496820030746479584, guid: 0a8e8e98c320c45afbbcb279a3c432be, type: 3}
       propertyPath: m_Name
       value: Shanxiao_ACT1Boss
@@ -16957,7 +16961,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1641553602763923511, guid: f8b3845adffa74442bc3229e1ea4c0c9, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8b3845adffa74442bc3229e1ea4c0c9, type: 3}

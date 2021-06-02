@@ -87,6 +87,7 @@ public class Shanxiao_BossACT1 : Enemy
 			music.PlaySong(music.levelClearSong);
 			FindObjectOfType<UIManager>().UpdateDisplayMessage("Level Clear");
 			if(PhotonNetwork.IsMasterClient){
+				Debug.Log("ran this");
 				BossDefeated();
 			}
 		}
@@ -109,13 +110,16 @@ public class Shanxiao_BossACT1 : Enemy
 
 	void BossDefeated()
 	{
+		Debug.Log("am ehre");
+		PhotonNetwork.LoadLevel("VN_3");
 		// FindObjectOfType<ResetCameraScript>().Activate();
 		// Invoke("Playtemp", 8f);
-		 Invoke("LoadScene", 6f);
+		 //Invoke("LoadScene", 6f);
 	}
 
 	void LoadScene()
 	{
+				Debug.Log("am ehr2222e");
 		PhotonNetwork.LoadLevel("Scroller_3_1");
 		//SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 	}

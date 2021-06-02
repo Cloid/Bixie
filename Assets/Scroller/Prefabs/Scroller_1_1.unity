@@ -11861,6 +11861,7 @@ GameObject:
   - component: {fileID: 1710430903}
   - component: {fileID: 1710430902}
   - component: {fileID: 1710430901}
+  - component: {fileID: 1710430904}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -11924,6 +11925,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1710430904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1710430900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bc76b7f1fb76db49bd1947cd8c287f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1722424771
 GameObject:
   m_ObjectHideFlags: 0
@@ -20390,6 +20403,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Photon_Lit
       objectReference: {fileID: 0}
+    - target: {fileID: 387409940634374057, guid: 98a2d988d27344941bce38911924da46, type: 3}
+      propertyPath: EventSystem
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 387409940634374058, guid: 98a2d988d27344941bce38911924da46, type: 3}
       propertyPath: m_RootOrder
       value: 57
@@ -20939,7 +20956,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1641553602763923511, guid: f8b3845adffa74442bc3229e1ea4c0c9, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8b3845adffa74442bc3229e1ea4c0c9, type: 3}

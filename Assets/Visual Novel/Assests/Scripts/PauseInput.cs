@@ -13,6 +13,8 @@ public class PauseInput : MonoBehaviour
     
     public bool inOptions = false;
 
+    public Event_Fix efix;
+
     //public bool error = false;
     // Start is called before the first frame update
     void Start()
@@ -23,7 +25,7 @@ public class PauseInput : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    
+        efix = FindObjectOfType<Event_Fix>();
         Keyboard kb = InputSystem.GetDevice<Keyboard>();
         Gamepad gp = InputSystem.GetDevice<Gamepad>();
         if (!inOptions)
@@ -53,7 +55,10 @@ public class PauseInput : MonoBehaviour
                     }
                 }
             }
-            else if (SceneManager.GetActiveScene().buildIndex == 4)
+            else if (SceneManager.GetActiveScene().buildIndex == 4 || 
+            SceneManager.GetActiveScene().buildIndex == 6 ||
+            SceneManager.GetActiveScene().buildIndex == 9 ||
+            SceneManager.GetActiveScene().buildIndex == 11)
             {
                 if (!inOptions)
                 {
@@ -61,6 +66,7 @@ public class PauseInput : MonoBehaviour
                     {
                         if (kb.escapeKey.wasPressedThisFrame)
                         {
+                            efix.inputMe();
                             Time.timeScale = 0;
                             //PauseMenu.SetActive(true);
                             inOptions = true;
@@ -72,6 +78,7 @@ public class PauseInput : MonoBehaviour
                     {
                         if (kb.escapeKey.wasPressedThisFrame || gp.startButton.wasPressedThisFrame)
                         {
+                            efix.inputMe();
                             Time.timeScale = 0;
                             //PauseMenu.SetActive(true);
                             inOptions = true;
@@ -91,6 +98,7 @@ public class PauseInput : MonoBehaviour
     public void ResumeScene()
     {
         Time.timeScale = 1;
+        efix.noinputMe();
         var FungusPause = FindObjectsOfType<DialogInput>();
         Debug.Log(FungusPause);
         for(int idx = 0; idx <= FungusPause.Length-1; idx++){

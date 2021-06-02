@@ -9,6 +9,8 @@ public class Photon_Lit : MonoBehaviour
     public TorchControllerSS[] TorchControls;
     Coroutine lastRoutine = null;
 
+    public GameObject EventSystem;
+
     public Player2 player2;
     // Start is called before the first frame update
     void Start()
@@ -16,6 +18,8 @@ public class Photon_Lit : MonoBehaviour
         photonView = GetComponent<PhotonView>();
         player2 = FindObjectOfType<Player2>();
         TorchControls = (TorchControllerSS[])GameObject.FindObjectsOfType(typeof(TorchControllerSS));
+        //EventSystem = GameObject.Find("EventSystem");
+        //testMe();
     }
 
     private void Update() {

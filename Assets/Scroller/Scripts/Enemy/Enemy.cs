@@ -334,7 +334,8 @@ public class Enemy : MonoBehaviour {
 		if(foodItemChance <= 0.3f)
         {
 			print("Enemy has spawned food!");
-			Instantiate(foodItem, transform.position, Quaternion.identity);
+			PhotonNetwork.Instantiate("Food", transform.position,Quaternion.identity);
+			//Instantiate(foodItem, transform.position, Quaternion.identity);
         }
 		Destroy(gameObject);
 	}

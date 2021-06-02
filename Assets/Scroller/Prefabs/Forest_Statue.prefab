@@ -16,8 +16,9 @@ GameObject:
   - component: {fileID: 3144939276535848778}
   - component: {fileID: 7185972358629144704}
   - component: {fileID: 2103215142619722281}
+  - component: {fileID: -5266617990427798624}
   m_Layer: 0
-  m_Name: Statue
+  m_Name: Forest_Statue
   m_TagString: Statue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: -613332221
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 755dc166d9c4f3c43a7f0dd47c044eb9, type: 3}
+  m_Sprite: {fileID: -3634791971477949041, guid: 53d7c3b83d99dab4f9301c86d85ef36b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -202,3 +203,22 @@ MonoBehaviour:
   m_SynchronizeAngularVelocity: 1
   m_TeleportEnabled: 0
   m_TeleportIfDistanceGreaterThan: 3
+--- !u!95 &-5266617990427798624
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4727239881597771816}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

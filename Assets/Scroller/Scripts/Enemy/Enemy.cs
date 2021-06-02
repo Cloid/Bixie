@@ -252,7 +252,6 @@ public class Enemy : MonoBehaviour {
 		{
 			damaged = true;
 			currentHealth -= damage;
-			anim.SetTrigger("HitDamage");
 		}
 		
 		FMODUnity.RuntimeManager.PlayOneShot(deathSound, GetComponent<Transform>().position);
@@ -262,9 +261,11 @@ public class Enemy : MonoBehaviour {
 		switch (attackTag)
             {
 				case "qinyangBasicAttack":
+					anim.SetTrigger("HitDamage");
 					newTime = Time.time;
 					break;
 				case "qinyangHeavyAttack":
+					anim.SetTrigger("HitDamage");
 					newTime = Time.time;
 					rb.AddForce(new Vector3(attackDir * 10, 0, 0), ForceMode.Impulse);
 					break;

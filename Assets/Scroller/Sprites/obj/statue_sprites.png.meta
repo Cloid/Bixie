@@ -1,7 +1,28 @@
 fileFormatVersion: 2
 guid: 53d7c3b83d99dab4f9301c86d85ef36b
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -3634791971477949041
+    second: statue_sprites_0
+  - first:
+      213: 8929077792871438643
+    second: statue_sprites_1
+  - first:
+      213: 8480072398675544156
+    second: statue_sprites_2
+  - first:
+      213: -6727950326402333631
+    second: statue_sprites_3
+  - first:
+      213: -377905399165797362
+    second: statue_sprites_4
+  - first:
+      213: -1284924325169257496
+    second: statue_sprites_5
+  - first:
+      213: 2355442668131655036
+    second: statue_sprites_6
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -41,7 +62,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -75,9 +96,168 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: statue_sprites_0
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 132
+        width: 48
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f857d9bb5ff9e8dc0800000000000000
+      internalID: -3634791971477949041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statue_sprites_1
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 66
+        width: 48
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3395eefb1f47aeb70800000000000000
+      internalID: 8929077792871438643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statue_sprites_2
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 66
+        width: 48
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5886a0dae44fa570800000000000000
+      internalID: 8480072398675544156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statue_sprites_3
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 66
+        width: 50
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 144c05803d481a2a0800000000000000
+      internalID: -6727950326402333631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statue_sprites_4
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 66
+        width: 48
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0c350caa0961caf0800000000000000
+      internalID: -377905399165797362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statue_sprites_5
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 66
+        width: 48
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e3270352280b2ee0800000000000000
+      internalID: -1284924325169257496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statue_sprites_6
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 0
+        width: 48
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7d19c280a630b020800000000000000
+      internalID: 2355442668131655036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

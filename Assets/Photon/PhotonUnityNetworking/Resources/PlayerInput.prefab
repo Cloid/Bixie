@@ -173,6 +173,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 0
   hostClient: 0
+  itsLit: {fileID: 0}
 --- !u!114 &2717138809104509050
 MonoBehaviour:
   m_ObjectHideFlags: 0

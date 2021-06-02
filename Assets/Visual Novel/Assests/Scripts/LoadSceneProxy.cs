@@ -11,7 +11,8 @@ public class LoadSceneProxy : MonoBehaviour
     {
         cs_Script = cc_Show.GetComponent<ControlsShow>();
         if(PhotonNetwork.IsMasterClient){
-            PhotonNetwork.LoadLevel("Scroller_1_1");
+            //PhotonNetwork.LoadLevel("Scroller_1_1");
+            PhotonNetwork.LoadLevel("Scroller_3_1");
         }
     }
 }

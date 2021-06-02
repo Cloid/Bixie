@@ -12957,10 +12957,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: City Lantern
       objectReference: {fileID: 0}
-    - target: {fileID: 6051531212358855587, guid: 3114c3afd20ea834aad5218157ff4a41, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6121512075443834488, guid: 3114c3afd20ea834aad5218157ff4a41, type: 3}
       propertyPath: bamboo
       value: 

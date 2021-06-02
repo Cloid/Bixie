@@ -118,30 +118,27 @@ public class Player : MonoBehaviour
                     }
                 }
 
-                // Debug.Log(isAttack);
+            // Player dash functionality
+            if (isDash)
+            {
+                dashTime -= Time.deltaTime;
+                rb.velocity = rb.velocity + dashVector * dashForce;
+                StartCoroutine(setDashAnim());
+            }
 
-                // Player dash functionality 
-                if (!isDash && dashTime <= 0f)
-                {
-                    dashTime = startDashTime;
-                    rb.velocity = Vector3.zero;
-                }
-                else if (!isAttack && isDash)
-                {
-                    dashTime -= Time.deltaTime;
-                    rb.velocity = dashVector * dashForce;
-                    StartCoroutine(setDashAnim());
-                }
 
-                IEnumerator setDashAnim()
-                {
-                    yield return new WaitForSeconds(0.5f);
-                    anim.SetBool("IsDashing", false);
-                    isDash = false;
-                }
+            IEnumerator setDashAnim()
+            {
+                yield return new WaitForSeconds(0.5f);
+                dashTime = startDashTime;
+                rb.velocity = Vector3.zero;
+                anim.SetBool("IsDashing", false);
+                isDash = false;
+                dashCooldown = 1f;
+            }
 
-                // Player dash cooldown
-                if(dashCooldown > 0f)
+            // Player dash cooldown
+            if (dashCooldown > 0f)
                 {
                     dashCooldown -= Time.deltaTime;
                     //print(dashCooldown);
@@ -175,7 +172,7 @@ public class Player : MonoBehaviour
             isAttack = true;
             curAttack.attackState = "qinyangBasicAttack";
             anim.SetTrigger("Attack");
-            Invoke("setAttack", 1);
+            Invoke("setAttack", 0.5f);
         } 
     }
 
@@ -188,11 +185,6 @@ public class Player : MonoBehaviour
             {
                 isAttack = false;
             }
-            else
-            {
-                isAttack = true;
-            }
-        
     }
 
     // Player 1's HeavyAttack Function
@@ -252,7 +244,6 @@ public class Player : MonoBehaviour
             {
                 dashVector = Vector3.left;
             }
-            dashCooldown = 0.5f;
         }
     }
 

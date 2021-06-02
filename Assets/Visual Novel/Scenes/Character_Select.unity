@@ -1630,6 +1630,10 @@ MonoBehaviour:
   photonView: {fileID: 0}
   loadObject: {fileID: 611211773}
   loadVar: 0
+  cS: {fileID: 0}
+  playerInputHandlers: []
+  p1: {fileID: 0}
+  p2: {fileID: 0}
 --- !u!114 &640987913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2088,6 +2092,8 @@ MonoBehaviour:
   photon_controls: {fileID: 2081219159}
   loadObject: {fileID: 611211773}
   loadVar: 0
+  p1index: 1
+  p2index: 1
   p1_none: {fileID: 1520800457}
   p1_ML: {fileID: 752982706}
   p1_Q: {fileID: 84190569}

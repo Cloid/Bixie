@@ -31,8 +31,8 @@ public class CS_Control : MonoBehaviour
     private PhotonGetter photonGetter;
     private PhotonView photonView;
     public bool loadVar = false;
-    private float p1index = 1;
-    private float p2index = 1;
+    public float p1index = 1;
+    public float p2index = 1;
 
     private bool runOnce = false;
     public GameObject p1_none;

@@ -12,11 +12,34 @@ public class ControlsShow : MonoBehaviour
     public GameObject loadObject;
 
     public bool loadVar = false;
+
+    public CS_Control cS;
+
+    public PlayerInputHandler[] playerInputHandlers;
+    public PlayerInputHandler p1;
+    public PlayerInputHandler p2;
     // Start is called before the first frame update
     void Start()
     {
         controls.SetActive(true);
         photonView = GetComponent<PhotonView>();
+        cS = FindObjectOfType<CS_Control>();
+        //TorchControls = (TorchControllerSS[])GameObject.FindObjectsOfType(typeof(TorchControllerSS));
+        playerInputHandlers = (PlayerInputHandler[])GameObject.FindObjectsOfType(typeof(PlayerInputHandler));
+        foreach(PlayerInputHandler playerInputHandler in playerInputHandlers){
+            if(playerInputHandler.index == 0){
+                p1 = playerInputHandler;
+            } 
+            else{
+                p2 = playerInputHandler;
+            }
+        }
+
+        if(cS.p1index == 0){
+            p1.index = 1;
+            p2.index = 0;
+        }
+
     }
 
     void OnEnable()

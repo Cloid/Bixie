@@ -21095,17 +21095,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 710407748054257497, guid: 55d70e1f825334497a603f64a87a3d48, type: 3}
-      propertyPath: sceneViewId
-      value: 44
-      objectReference: {fileID: 0}
     - target: {fileID: 7578509151722214320, guid: 55d70e1f825334497a603f64a87a3d48, type: 3}
       propertyPath: m_Name
       value: shanxiao
-      objectReference: {fileID: 0}
-    - target: {fileID: 7578509151722214320, guid: 55d70e1f825334497a603f64a87a3d48, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7578509151722214326, guid: 55d70e1f825334497a603f64a87a3d48, type: 3}
       propertyPath: m_RootOrder
@@ -21151,10 +21143,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7578509151722214327, guid: 55d70e1f825334497a603f64a87a3d48, type: 3}
-      propertyPath: foodItem
-      value: 
-      objectReference: {fileID: 6023910420615670184, guid: c2f1c83774b298e478e9035c4fda3af2, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55d70e1f825334497a603f64a87a3d48, type: 3}
 --- !u!1001 &6020564628664581905

@@ -22,7 +22,7 @@ public class PusheyCollider : MonoBehaviour
             // snap statue onto base
             var statuePos = other.gameObject.GetComponent<Transform>().position;
             statuePos.x = transform.position.x;
-            statuePos.z = transform.position.z - 0.05f;
+            //statuePos.z = transform.position.z - 0.05f;
             other.gameObject.GetComponent<Transform>().position = statuePos;
 
             rb.isKinematic = true;

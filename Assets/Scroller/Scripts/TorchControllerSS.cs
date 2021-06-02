@@ -34,7 +34,7 @@ public class TorchControllerSS : MonoBehaviour
     private bool isHit;
     private bool isCharging;
     private bool isLighting;
-    private PhotonView photonView;
+    public PhotonView photonView;
     private Animator anim;
     private Animator mei_anim;
     // Start is called before the first frame update
@@ -180,7 +180,7 @@ public class TorchControllerSS : MonoBehaviour
                 } else if(gameObject.name == "City Lantern 3"){
                     PhotonNetwork.LoadLevel("VN_5");
                     }else {
-                    Destroy(bamboo);
+                    photonView.RPC("destroyU",RpcTarget.AllBuffered);
                 }
                 if (EnemySpawn != null)
                 {
@@ -220,6 +220,10 @@ public class TorchControllerSS : MonoBehaviour
 
 
     // }
+
+    public void destroyU(){
+        Destroy(bamboo);
+    }
 
 
     public void darkLantern()

@@ -18,41 +18,44 @@ public class PlayerInputHandler : MonoBehaviour
     private Player2 player2;
     private GameObject cs_holder;
     private PhotonView cs_photonView;
+    private PhotonView torch_photonView;
     private CS_Control cs;
-    private TorchControllerSS[] TorchControls;
     private PhotonView photonView;
     public bool hostClient = false;
+    public Photon_Lit itsLit;
     QinyangControls controls;
     Vector2 move;
-    Coroutine lastRoutine = null;
 
     // Initialization
     void Awake()
     {
         photonView = GetComponent<PhotonView>();
         cs_holder = GameObject.Find("cc_control");
-        
-        
 
-        if(SceneManager.GetActiveScene().buildIndex == 3){
+
+
+        if (SceneManager.GetActiveScene().buildIndex == 3)
+        {
             cs = cs_holder.GetComponent<CS_Control>();
             cs_photonView = cs_holder.GetPhotonView();
         }
-        
+
 
         //int i = 0;
-       // var myUser = PlayerInput.all[0].user;
+        // var myUser = PlayerInput.all[0].user;
 
-        if(PhotonNetwork.IsMasterClient && !PhotonNetwork.OfflineMode){
+        if (PhotonNetwork.IsMasterClient && !PhotonNetwork.OfflineMode)
+        {
             hostClient = true;
         }
 
-        if(PhotonNetwork.OfflineMode){
+        if (PhotonNetwork.OfflineMode)
+        {
             //var device = myUser.pairedDevices;
-           // GameObject go = PhotonNetwork.Instantiate("Player Input Manager", new Vector3(0,0,0), Quaternion.identity);
-            
+            // GameObject go = PhotonNetwork.Instantiate("Player Input Manager", new Vector3(0,0,0), Quaternion.identity);
+
             //go.GetComponent<PlayerInput>().AddDevice
-            
+
             //var plop = GameObject.FindObjectOfType<PlayerInputManager>();
             //photonView.TransferOwnership(plop.GetComponent<PhotonView>().Owner);
             //photonView.TransferOwnership(PhotonNetwork.Player.id);
@@ -67,7 +70,9 @@ public class PlayerInputHandler : MonoBehaviour
             //photonView.RPC("Test", RpcTarget.AllBuffered);
 
             //InputSystem.UnpairDevice
-        } else{
+        }
+        else
+        {
             if (PhotonNetwork.PlayerList.Length == 2)
             {
                 index = 1;
@@ -85,11 +90,12 @@ public class PlayerInputHandler : MonoBehaviour
             playerInput = GetComponent<PlayerInput>();
             player1 = FindObjectOfType<Player>();
             player2 = FindObjectOfType<Player2>();
+            itsLit = FindObjectOfType<Photon_Lit>();
             players.Add(player1);
             players.Add(player2);
             //index = playerInput.playerIndex;
             //print("inx:"+index);
-            
+
             controls = new QinyangControls();
         }
     }
@@ -107,9 +113,13 @@ public class PlayerInputHandler : MonoBehaviour
                 player2 = FindObjectOfType<Player2>();
             }
             
+            if(itsLit == null){
+                itsLit = FindObjectOfType<Photon_Lit>();
+            }
+
         }
 
-        TorchControls = (TorchControllerSS[]) GameObject.FindObjectsOfType (typeof(TorchControllerSS));
+        
     }
 
     // onMove function 
@@ -117,7 +127,7 @@ public class PlayerInputHandler : MonoBehaviour
     public void OnMove(CallbackContext context)
     {
         //Debug.Log("Vector: " + context.ReadValue<Vector2>());
-        if (PhotonNetwork.OfflineMode ||photonView.IsMine)
+        if (PhotonNetwork.OfflineMode || photonView.IsMine)
         {
             if (player1 != null && player2 != null)
             {
@@ -133,10 +143,12 @@ public class PlayerInputHandler : MonoBehaviour
 
             if (SceneManager.GetActiveScene().buildIndex == 3 && cs != null && index == 0)
             {
-                cs_photonView.RPC("moveMe",RpcTarget.AllBuffered,context.ReadValue<Vector2>());
+                cs_photonView.RPC("moveMe", RpcTarget.AllBuffered, context.ReadValue<Vector2>());
                 //cs.moveMe(context.ReadValue<Vector2>());
-            } else if(SceneManager.GetActiveScene().buildIndex == 3 && cs != null && index == 1){
-                cs_photonView.RPC("moveMe2",RpcTarget.AllBuffered,context.ReadValue<Vector2>());
+            }
+            else if (SceneManager.GetActiveScene().buildIndex == 3 && cs != null && index == 1)
+            {
+                cs_photonView.RPC("moveMe2", RpcTarget.AllBuffered, context.ReadValue<Vector2>());
             }
         }
 
@@ -147,7 +159,7 @@ public class PlayerInputHandler : MonoBehaviour
     // Allows players to call their attack function through callback context from input device
     public void onAttack(CallbackContext context)
     {
-        if (PhotonNetwork.OfflineMode ||photonView.IsMine)
+        if (PhotonNetwork.OfflineMode || photonView.IsMine)
         {
             if (player1 != null && player2 != null)
             {
@@ -223,7 +235,7 @@ public class PlayerInputHandler : MonoBehaviour
 
             if (cs != null && SceneManager.GetActiveScene().buildIndex == 3)
             {
-                cs_photonView.RPC("charSelect",RpcTarget.AllBuffered);
+                cs_photonView.RPC("charSelect", RpcTarget.AllBuffered);
             }
         }
 
@@ -246,30 +258,23 @@ public class PlayerInputHandler : MonoBehaviour
                 else
                 {
 
-                    if (context.performed) {
-                        foreach (TorchControllerSS TorchControl in TorchControls)
-                        {
-                            if(TorchControl.isMeiInside){
-                                print("started ritual");
-                                lastRoutine = StartCoroutine(TorchControl.lightLantern());
-                                player2.isLighting = true;
-                                player2.rb.constraints = RigidbodyConstraints.FreezeAll;
-                            }
-                            
-                        }
+                    if (context.performed)
+                    {
+                        Debug.Log(itsLit);
+                        itsLit.photonView.RPC("litLantern", RpcTarget.AllBuffered);
+                        //photonView.RPC("litLantern", RpcTarget.AllBuffered);
+
                     }
-                    if (context.canceled) {
-                        foreach (TorchControllerSS TorchControl in TorchControls)
-                        {
-                            TorchControl.disableLantren();
-                            if(lastRoutine != null) StopCoroutine(lastRoutine);
-                            player2.isLighting = false;
-                            player2.rb.constraints = RigidbodyConstraints.FreezeRotation;
-                        }
+                    if (context.canceled)
+                    {
+                        itsLit.photonView.RPC("unlitLantern", RpcTarget.AllBuffered);
+                        //photonView.RPC("unlitLantern", RpcTarget.AllBuffered);
+
                     }
                 }
             }
         }
     }
+ 
 
 }

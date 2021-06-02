@@ -27,8 +27,10 @@ public class PusheyCollider : MonoBehaviour
 
             rb.isKinematic = true;
             if(rb.isKinematic == true){
-                other.GetComponent<SpriteRenderer>().color = Color.green;
-                if(Torch != null){
+                //other.GetComponent<SpriteRenderer>().color = Color.green;
+                other.GetComponent<Animator>().SetTrigger("isPlaced");
+                StartCoroutine(StartCompletion());
+                if (Torch != null){
                     Torch.SetActive(true);
                 }
                 if(Wall != null){
@@ -37,6 +39,12 @@ public class PusheyCollider : MonoBehaviour
                     Wall.GetComponent<SpriteRenderer>().color = tmp;
                 }          
             }
+        }
+
+        IEnumerator StartCompletion()
+        {
+            yield return new WaitForSeconds(0.5f);
+            other.GetComponent<Animator>().SetBool("isCompleted", true);
         }
     }
 }

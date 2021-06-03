@@ -26,19 +26,42 @@ public class ControlsShow : MonoBehaviour
         cS = FindObjectOfType<CS_Control>();
         //TorchControls = (TorchControllerSS[])GameObject.FindObjectsOfType(typeof(TorchControllerSS));
         playerInputHandlers = (PlayerInputHandler[])GameObject.FindObjectsOfType(typeof(PlayerInputHandler));
-        foreach(PlayerInputHandler playerInputHandler in playerInputHandlers){
-            if(playerInputHandler.index == 0){
-                p1 = playerInputHandler;
-            } 
-            else{
-                p2 = playerInputHandler;
+        if (PhotonNetwork.OfflineMode)
+        {
+            foreach (PlayerInputHandler playerInputHandler in playerInputHandlers)
+            {
+                if (playerInputHandler.index == 0)
+                {
+                    p1 = playerInputHandler;
+                }
+                else
+                {
+                    p2 = playerInputHandler;
+                }
+            }
+
+            if (cS.p1index == 0)
+            {
+                p1.index = 1;
+                p2.index = 0;
             }
         }
+        else
+        {
+            if (cS.p1index == 0)
+            {
+                foreach (PlayerInputHandler playerInputHandler in playerInputHandlers)
+                {
+                    if(PhotonNetwork.IsMasterClient){
+                        playerInputHandler.index = 1;
+                    } else {
+                        playerInputHandler.index = 0;
+                    }
+                }
+            }
 
-        if(cS.p1index == 0){
-            p1.index = 1;
-            p2.index = 0;
         }
+
 
     }
 
@@ -53,7 +76,8 @@ public class ControlsShow : MonoBehaviour
     }
 
     [PunRPC]
-    public void startOnline(){
+    public void startOnline()
+    {
         Debug.Log("Am here");
         if (PhotonNetwork.IsMasterClient)
         {

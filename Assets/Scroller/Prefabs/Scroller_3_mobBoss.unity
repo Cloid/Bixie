@@ -6258,7 +6258,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1641553602763923511, guid: f8b3845adffa74442bc3229e1ea4c0c9, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8b3845adffa74442bc3229e1ea4c0c9, type: 3}
@@ -6629,6 +6629,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 757338660}
     m_Modifications:
+    - target: {fileID: 3368128724314047670, guid: 3114c3afd20ea834aad5218157ff4a41, type: 3}
+      propertyPath: sceneViewId
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6051531212358855587, guid: 3114c3afd20ea834aad5218157ff4a41, type: 3}
       propertyPath: m_Name
       value: City Lantern (1)
@@ -7146,6 +7150,10 @@ PrefabInstance:
       propertyPath: m_PixelsPerUnitMultiplier
       value: 90.23
       objectReference: {fileID: 0}
+    - target: {fileID: 3616114548808437273, guid: e77769a74a59b4ccdad3c5fd4a87604a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5023594612147323311, guid: e77769a74a59b4ccdad3c5fd4a87604a, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -7189,7 +7197,7 @@ PrefabInstance:
     - target: {fileID: 7753269862659246245, guid: e77769a74a59b4ccdad3c5fd4a87604a, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 6ffcc2be8d99cec4fa45a88b441c6495, type: 3}
+      objectReference: {fileID: 21300000, guid: 0cdb6277b11597a46ad4fd2ae49a5df5, type: 3}
     - target: {fileID: 7753269862659246250, guid: e77769a74a59b4ccdad3c5fd4a87604a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -7286,6 +7294,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: LifeUI
       objectReference: {fileID: 0}
+    - target: {fileID: 7753269863196886069, guid: e77769a74a59b4ccdad3c5fd4a87604a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0cdb6277b11597a46ad4fd2ae49a5df5, type: 3}
+    - target: {fileID: 7753269863196886075, guid: e77769a74a59b4ccdad3c5fd4a87604a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7753269863395231284, guid: e77769a74a59b4ccdad3c5fd4a87604a, type: 3}
       propertyPath: m_SizeDelta.x
       value: 251.3548
@@ -7309,6 +7325,10 @@ PrefabInstance:
     - target: {fileID: 7753269863395231284, guid: e77769a74a59b4ccdad3c5fd4a87604a, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -4.3332
+      objectReference: {fileID: 0}
+    - target: {fileID: 7753269863395231285, guid: e77769a74a59b4ccdad3c5fd4a87604a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7753269863395231287, guid: e77769a74a59b4ccdad3c5fd4a87604a, type: 3}
       propertyPath: m_Type
@@ -8185,6 +8205,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2192672889551825030, guid: c1a17a0f08d3b4b6aa0a3277c5bd72b9, type: 3}
+      propertyPath: sceneViewId
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 9122698135328207977, guid: c1a17a0f08d3b4b6aa0a3277c5bd72b9, type: 3}
       propertyPath: m_RootOrder
       value: 46
@@ -8246,6 +8270,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 757338660}
     m_Modifications:
+    - target: {fileID: 3368128724314047670, guid: 3114c3afd20ea834aad5218157ff4a41, type: 3}
+      propertyPath: sceneViewId
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6051531212358855587, guid: 3114c3afd20ea834aad5218157ff4a41, type: 3}
       propertyPath: m_Name
       value: City Lantern

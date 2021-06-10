@@ -247,6 +247,7 @@ MonoBehaviour:
   isHit: 0
   isLighting: 0
   VN_Controller: {fileID: 0}
+  rb: {fileID: 0}
   currAudioSource: {fileID: 0}
   projectile: {fileID: 6332634676093631941, guid: b64e15b717e212e48ac074f3659efb9c, type: 3}
   photonView: {fileID: 0}
@@ -293,7 +294,7 @@ MonoBehaviour:
   m_PositionModel:
     SynchronizeEnabled: 1
     TeleportEnabled: 1
-    TeleportIfDistanceGreaterThan: 3
+    TeleportIfDistanceGreaterThan: 0.1
     InterpolateOption: 2
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 1
@@ -350,6 +351,9 @@ MonoBehaviour:
   - Type: 9
     SynchronizeType: 0
     Name: Jumping
+  - Type: 4
+    SynchronizeType: 0
+    Name: isLighting
   m_SynchronizeLayers:
   - SynchronizeType: 0
     LayerIndex: 0

@@ -1447,6 +1447,7 @@ GameObject:
   m_Component:
   - component: {fileID: 251117545}
   - component: {fileID: 251117546}
+  - component: {fileID: 251117547}
   m_Layer: 0
   m_Name: city_v2_bg_4-a
   m_TagString: Untagged
@@ -1520,6 +1521,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &251117547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 251117544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca387db57a2e3f148aea6f8b78f70da5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 523248701}
+  parallaxEffect: 0.8
 --- !u!1 &281296118
 GameObject:
   m_ObjectHideFlags: 0
@@ -2196,6 +2211,7 @@ GameObject:
   m_Component:
   - component: {fileID: 509107681}
   - component: {fileID: 509107682}
+  - component: {fileID: 509107683}
   m_Layer: 0
   m_Name: city_v2_bg_1-c
   m_TagString: Untagged
@@ -2269,6 +2285,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &509107683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 509107680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca387db57a2e3f148aea6f8b78f70da5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 523248701}
+  parallaxEffect: 0.2
 --- !u!1 &523248701
 GameObject:
   m_ObjectHideFlags: 0
@@ -2967,6 +2997,7 @@ GameObject:
   m_Component:
   - component: {fileID: 737487458}
   - component: {fileID: 737487459}
+  - component: {fileID: 737487460}
   m_Layer: 0
   m_Name: city_v2_bg_1-b
   m_TagString: Untagged
@@ -3040,6 +3071,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &737487460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 737487457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca387db57a2e3f148aea6f8b78f70da5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 523248701}
+  parallaxEffect: 0.2
 --- !u!1001 &747551517
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10580,6 +10625,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1739673120}
   - component: {fileID: 1739673121}
+  - component: {fileID: 1739673122}
   m_Layer: 0
   m_Name: city_v2_bg_2-b
   m_TagString: Untagged
@@ -10653,6 +10699,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1739673122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1739673119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca387db57a2e3f148aea6f8b78f70da5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 523248701}
+  parallaxEffect: 0.55
 --- !u!1 &1766402190
 GameObject:
   m_ObjectHideFlags: 0
@@ -10818,6 +10878,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1770220784}
   - component: {fileID: 1770220785}
+  - component: {fileID: 1770220786}
   m_Layer: 0
   m_Name: city_v2_bg_3
   m_TagString: Untagged
@@ -10891,6 +10952,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1770220786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1770220783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca387db57a2e3f148aea6f8b78f70da5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 523248701}
+  parallaxEffect: 0.6
 --- !u!1 &1778607465
 GameObject:
   m_ObjectHideFlags: 0
@@ -10901,6 +10976,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1778607466}
   - component: {fileID: 1778607467}
+  - component: {fileID: 1778607468}
   m_Layer: 0
   m_Name: city_v2_bg_1-a
   m_TagString: Untagged
@@ -10974,6 +11050,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1778607468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1778607465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca387db57a2e3f148aea6f8b78f70da5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 523248701}
+  parallaxEffect: 0.2
 --- !u!1 &1800222219
 GameObject:
   m_ObjectHideFlags: 0
@@ -12458,6 +12548,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2099224366}
   - component: {fileID: 2099224367}
+  - component: {fileID: 2099224368}
   m_Layer: 0
   m_Name: city_v2_bg_2-a
   m_TagString: Untagged
@@ -12531,6 +12622,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2099224368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2099224365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca387db57a2e3f148aea6f8b78f70da5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 523248701}
+  parallaxEffect: 0.5
 --- !u!1 &2109958932
 GameObject:
   m_ObjectHideFlags: 0
@@ -12574,6 +12679,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2116895749}
   - component: {fileID: 2116895750}
+  - component: {fileID: 2116895751}
   m_Layer: 0
   m_Name: city_v2_bg_4-b
   m_TagString: Untagged
@@ -12647,6 +12753,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2116895751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2116895748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca387db57a2e3f148aea6f8b78f70da5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 523248701}
+  parallaxEffect: 0.85
 --- !u!4 &2131274095 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3279995663177389029, guid: 9eee880d1dc12ea429022779ad21f7d9, type: 3}

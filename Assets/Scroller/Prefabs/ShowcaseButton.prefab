@@ -479,7 +479,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Scene 1
+  m_Text: Act 1
 --- !u!1 &7827436243862110413
 GameObject:
   m_ObjectHideFlags: 0
@@ -707,7 +707,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Scene 2
+  m_Text: Act 3
 --- !u!1 &7827436244069115890
 GameObject:
   m_ObjectHideFlags: 0

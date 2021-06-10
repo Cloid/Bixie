@@ -1041,6 +1041,18 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: -0.046128474
       objectReference: {fileID: 0}
+    - target: {fileID: 7185972358629144704, guid: 3b29f0c284e08ae4282713c069d0ef01, type: 3}
+      propertyPath: m_PositionModel.InterpolateOption
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7185972358629144704, guid: 3b29f0c284e08ae4282713c069d0ef01, type: 3}
+      propertyPath: m_PositionModel.InterpolateLerpSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7185972358629144704, guid: 3b29f0c284e08ae4282713c069d0ef01, type: 3}
+      propertyPath: m_PositionModel.TeleportIfDistanceGreaterThan
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b29f0c284e08ae4282713c069d0ef01, type: 3}
 --- !u!4 &165524042 stripped
@@ -2485,6 +2497,18 @@ PrefabInstance:
     - target: {fileID: 4727239881597771820, guid: 3b29f0c284e08ae4282713c069d0ef01, type: 3}
       propertyPath: m_Center.z
       value: -0.10287595
+      objectReference: {fileID: 0}
+    - target: {fileID: 7185972358629144704, guid: 3b29f0c284e08ae4282713c069d0ef01, type: 3}
+      propertyPath: m_PositionModel.InterpolateOption
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7185972358629144704, guid: 3b29f0c284e08ae4282713c069d0ef01, type: 3}
+      propertyPath: m_PositionModel.InterpolateLerpSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7185972358629144704, guid: 3b29f0c284e08ae4282713c069d0ef01, type: 3}
+      propertyPath: m_PositionModel.TeleportIfDistanceGreaterThan
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b29f0c284e08ae4282713c069d0ef01, type: 3}
@@ -3999,6 +4023,18 @@ PrefabInstance:
     - target: {fileID: 4727239881597771819, guid: 3b29f0c284e08ae4282713c069d0ef01, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7185972358629144704, guid: 3b29f0c284e08ae4282713c069d0ef01, type: 3}
+      propertyPath: m_PositionModel.InterpolateOption
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7185972358629144704, guid: 3b29f0c284e08ae4282713c069d0ef01, type: 3}
+      propertyPath: m_PositionModel.InterpolateLerpSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7185972358629144704, guid: 3b29f0c284e08ae4282713c069d0ef01, type: 3}
+      propertyPath: m_PositionModel.TeleportIfDistanceGreaterThan
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b29f0c284e08ae4282713c069d0ef01, type: 3}
@@ -5523,6 +5559,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7185972358629144704, guid: 3b29f0c284e08ae4282713c069d0ef01, type: 3}
+      propertyPath: m_PositionModel.InterpolateOption
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7185972358629144704, guid: 3b29f0c284e08ae4282713c069d0ef01, type: 3}
+      propertyPath: m_PositionModel.InterpolateLerpSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7185972358629144704, guid: 3b29f0c284e08ae4282713c069d0ef01, type: 3}
+      propertyPath: m_PositionModel.TeleportIfDistanceGreaterThan
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b29f0c284e08ae4282713c069d0ef01, type: 3}
 --- !u!4 &780744567 stripped
@@ -6390,6 +6438,14 @@ PrefabInstance:
     - target: {fileID: 2276603737524501364, guid: d00d46a330cf34de8956be298c6b33f8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5737550833260831651, guid: d00d46a330cf34de8956be298c6b33f8, type: 3}
+      propertyPath: m_PositionModel.InterpolateOption
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5737550833260831651, guid: d00d46a330cf34de8956be298c6b33f8, type: 3}
+      propertyPath: m_PositionModel.InterpolateLerpSpeed
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d00d46a330cf34de8956be298c6b33f8, type: 3}
@@ -10265,6 +10321,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7185972358629144704, guid: 3b29f0c284e08ae4282713c069d0ef01, type: 3}
+      propertyPath: m_PositionModel.InterpolateOption
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7185972358629144704, guid: 3b29f0c284e08ae4282713c069d0ef01, type: 3}
+      propertyPath: m_PositionModel.InterpolateLerpSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7185972358629144704, guid: 3b29f0c284e08ae4282713c069d0ef01, type: 3}
+      propertyPath: m_PositionModel.TeleportIfDistanceGreaterThan
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b29f0c284e08ae4282713c069d0ef01, type: 3}
 --- !u!4 &1535090313 stripped
@@ -13748,7 +13816,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 71.65214
     y: 305.97626
-    width: 158.0851
+    width: 157.80142
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -13867,7 +13935,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 74.90173
     y: 509.73657
-    width: 111.276596
+    width: 110.992905
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -14999,7 +15067,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 127.44378
     y: 735.3126
-    width: 107.87234
+    width: 108.86525
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -15032,7 +15100,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 130.1879
     y: 894.3289
-    width: 132.55319
+    width: 133.68793
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -15466,7 +15534,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -234.19867
     y: -8.674149
-    width: 144.46808
+    width: 145.03546
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -15825,7 +15893,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -223.08516
     y: 219.26494
-    width: 120.63829
+    width: 122.34042
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -16279,7 +16347,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -226.63388
     y: 117.85856
-    width: 101.91489
+    width: 101.77305
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -16495,7 +16563,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -227.83302
     y: 162.8648
-    width: 124.04255
+    width: 126.59574
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -16670,7 +16738,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -228.5116
     y: 76.903625
-    width: 138.51064
+    width: 138.65247
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -16822,7 +16890,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -231.37366
     y: 34.641235
-    width: 73.82979
+    width: 74.11347
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -18374,7 +18442,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -512.3797
     y: -37.618046
-    width: 90
+    width: 89.71631
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -18483,7 +18551,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -514.5547
     y: 19.695858
-    width: 81.48936
+    width: 80.49645
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -19774,6 +19842,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7185972358629144704, guid: 3b29f0c284e08ae4282713c069d0ef01, type: 3}
+      propertyPath: m_PositionModel.InterpolateOption
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7185972358629144704, guid: 3b29f0c284e08ae4282713c069d0ef01, type: 3}
+      propertyPath: m_PositionModel.InterpolateLerpSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7185972358629144704, guid: 3b29f0c284e08ae4282713c069d0ef01, type: 3}
+      propertyPath: m_PositionModel.TeleportIfDistanceGreaterThan
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b29f0c284e08ae4282713c069d0ef01, type: 3}
 --- !u!4 &2081131909 stripped
@@ -20962,7 +21042,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1641553602763923511, guid: f8b3845adffa74442bc3229e1ea4c0c9, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8b3845adffa74442bc3229e1ea4c0c9, type: 3}
@@ -20981,6 +21061,14 @@ PrefabInstance:
       propertyPath: VN_Controller
       value: 
       objectReference: {fileID: 1948301703}
+    - target: {fileID: 340022212059022747, guid: 6ff773ca803e7814aa388c661e7cfd9d, type: 3}
+      propertyPath: m_PositionModel.InterpolateOption
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 340022212059022747, guid: 6ff773ca803e7814aa388c661e7cfd9d, type: 3}
+      propertyPath: m_PositionModel.InterpolateLerpSpeed
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 1682291828842334884, guid: 6ff773ca803e7814aa388c661e7cfd9d, type: 3}
       propertyPath: sceneViewId
       value: 52
